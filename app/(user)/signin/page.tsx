@@ -73,13 +73,13 @@ export default function SignIn() {
             <GenHeader />
             <div className='flex justify-center items-center h-140 sm:px-10 px-5'>
 
-                <div className="w-full max-w-md rounded-2xl border border-black bg-white p-10 text-center">
+                <div className="w-full max-w-md rounded-2xl border border-black bg-white p-10 text-center ">
                     <h1 className="sm:text-3xl text-2xl font-semibold">Sign In</h1>
                     <p className="mt-2 text-xs text-gray-500 sm:text-sm">
                         choose a provider to continue to your dashboard.
                     </p>
 
-                    <div className="mt-8 space-y-4">
+                    <div className="mt-8 space-y-4 ">
                         {providers.map((provider) => (
                             <button
                                 key={provider.id}

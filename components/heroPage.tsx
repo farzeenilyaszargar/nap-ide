@@ -1,8 +1,15 @@
+"use client";
 
 import Image from 'next/image'
 import Link from 'next/link'
 import DownloadButton from './customDownload'
 
+const scrollByAmount = (amount: number) => {
+  window.scrollBy({
+    top: amount,
+    behavior: "smooth",
+  });
+};
 
 export default function HeroPage() {
     return (
@@ -12,7 +19,7 @@ export default function HeroPage() {
                 <p>Nap Editor is your always on coding partner - autocomplete, refactor, debug, and ship faster than ever. No setup. No friction. Just pure velocity.</p>
                 <div className='flex gap-4'>
                     <DownloadButton/>
-                    <a href='#features' className='underline flex justify-center items-center gap-1 sm:px-3 py-1 rounded-md sm:text-xl'>See Features <Image src={"/right-arrow.png"} width={15} height={15} alt='arrow'/> </a>
+                    <button onClick={() => scrollByAmount(500)} className='underline flex justify-center items-center gap-1 sm:px-3 py-1 rounded-md sm:text-xl'>See Features <Image src={"/right-arrow.png"} width={15} height={15} alt='arrow'/> </button>
                 </div>
 
             </div>

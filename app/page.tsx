@@ -12,10 +12,7 @@ export default function Home() {
     <div className="">
       <Header/>
       <HeroPage/>
-      <section id="features">
       <Features/>
-
-      </section>
       <FAQs/>
       <DemoVid/>
       <TrySurfers/>
