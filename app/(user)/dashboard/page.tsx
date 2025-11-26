@@ -1,0 +1,215 @@
+import { redirect } from 'next/navigation'
+import Image from 'next/image'
+
+import { LogoutButton } from '@/components/logout-button'
+import { createClient } from '@/lib/supabase/server'
+
+export default async function DashboardPage() {
+  const supabase = await createClient()
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (!user) {
+    redirect('/signin')
+  }
+
+  // Get user metadata
+  const fullName = user.user_metadata?.full_name || 
+                   user.user_metadata?.name || 
+                   user.email?.split('@')[0] || 
+                   'User'
+  const avatarUrl = user.user_metadata?.avatar_url || 
+                    user.user_metadata?.picture || 
+                    null
+  const provider = user.app_metadata?.provider || 'email'
+  const createdAt = user.created_at
+  const lastSignIn = user.last_sign_in_at
+
+  // Format dates
+  const formatDate = (dateString: string | null | undefined) => {
+    if (!dateString) return 'N/A'
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }
+
+  // Calculate account age
+  const getAccountAge = () => {
+    if (!createdAt) return 'N/A'
+    const created = new Date(createdAt)
+    const now = new Date()
+    const diffTime = Math.abs(now.getTime() - created.getTime())
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    
+    if (diffDays < 30) return `${diffDays} day${diffDays !== 1 ? 's' : ''}`
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) !== 1 ? 's' : ''}`
+    return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) !== 1 ? 's' : ''}`
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-6">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+            {/* Avatar */}
+            <div className="relative">
+              {avatarUrl ? (
+                <Image
+                  src={avatarUrl}
+                  alt={fullName}
+                  width={120}
+                  height={120}
+                  className="rounded-full border-4 border-gray-200"
+                />
+              ) : (
+                <div className="w-[120px] h-[120px] rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold border-4 border-gray-200">
+                  {fullName.charAt(0).toUpperCase()}
+                </div>
+              )}
+              <div className="absolute bottom-0 right-0 w-8 h-8 bg-green-500 rounded-full border-4 border-white"></div>
+            </div>
+
+            {/* User Info */}
+            <div className="flex-1 text-center sm:text-left">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                Welcome back, {fullName}!
+              </h1>
+              <p className="text-gray-600 mb-4">{user.email}</p>
+              <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                  {provider === 'google' ? 'Google' : provider === 'github' ? 'GitHub' : 'Email'}
+                </span>
+              </div>
+            </div>
+
+            {/* Logout Button */}
+            <div className="w-full sm:w-auto">
+              <LogoutButton />
+            </div>
+          </div>
+        </div>
+
+        {/* Statistics Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {/* Account Age Card */}
+          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                Account Age
+              </h3>
+              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <p className="text-3xl font-bold text-gray-900">{getAccountAge()}</p>
+            <p className="text-sm text-gray-500 mt-1">
+              Since {formatDate(createdAt)}
+            </p>
+          </div>
+
+          {/* Last Sign In Card */}
+          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                Last Sign In
+              </h3>
+              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <p className="text-3xl font-bold text-gray-900">
+              {lastSignIn ? formatDate(lastSignIn) : 'Just now'}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">Active session</p>
+          </div>
+
+          {/* Provider Card */}
+          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
+                Auth Provider
+              </h3>
+              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <p className="text-3xl font-bold text-gray-900 capitalize">
+              {provider}
+            </p>
+            <p className="text-sm text-gray-500 mt-1">Connected account</p>
+          </div>
+        </div>
+
+        {/* Additional Info Section */}
+        <div className="bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">Account Details</h2>
+          <div className="space-y-4">
+            <div className="flex justify-between items-center py-3 border-b border-gray-200">
+              <span className="text-gray-600">User ID</span>
+              <span className="text-sm font-mono text-gray-900 break-all">
+                {user.id.substring(0, 20)}...
+              </span>
+            </div>
+            <div className="flex justify-between items-center py-3 border-b border-gray-200">
+              <span className="text-gray-600">Email Verified</span>
+              <span className={`font-medium ${user.email_confirmed_at ? 'text-green-600' : 'text-yellow-600'}`}>
+                {user.email_confirmed_at ? 'Verified' : 'Pending'}
+              </span>
+            </div>
+            <div className="flex justify-between items-center py-3 border-b border-gray-200">
+              <span className="text-gray-600">Account Created</span>
+              <span className="text-gray-900">{formatDate(createdAt)}</span>
+            </div>
+            {lastSignIn && (
+              <div className="flex justify-between items-center py-3">
+                <span className="text-gray-600">Last Active</span>
+                <span className="text-gray-900">{formatDate(lastSignIn)}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
