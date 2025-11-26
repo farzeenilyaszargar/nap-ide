@@ -6,8 +6,13 @@ This Is The Website For Nap Editor.
 Vercel Hosted Link: https://nap-ide.vercel.app/
 
 <div style="flex items-center justify-center">
-    <img src="/logo.svg">
+    <img src="/public/logo.svg">
 </div>
+
+<div style="flex items-center justify-center">
+    <img src="/public/demo.png">
+</div>
+
 
 Nap Editor is a modern, intelligent coding platform built for developers who want speed, clarity, and automation. Designed for high performance software development, Nap Editor uses advanced AI to understand your entire codebase, generate clean code, fix errors instantly, and assist with complex multi file changes, all through natural language.
 
