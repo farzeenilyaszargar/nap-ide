@@ -3,8 +3,8 @@ import Image from "next/image";
 //features, blog, download, social, tos, pricing
 export default function Footer() {
     return (
-        <div className="bg-black text-white py-15 px-10 w-screen ">
-            <div className="flex justify-around ">
+        <div className="bg-black text-white py-15 sm:px-10 w-screen ">
+            <div className="flex justify-around">
                 <div className="flex flex-col w-1/4 ">
                     <p className="font-medium">Resources</p>
                     <a className="text-gray-400 hover:text-white" href="/download" >Download</a>
@@ -17,8 +17,8 @@ export default function Footer() {
                     <a className="text-gray-400 hover:text-white" href="https://www.surfers.bot" target="_blank">Surfers</a>
                     <a className="text-gray-400 hover:text-white" href="https://www.blog.napeditor.com" target="_blank">Blog</a>
                     <a className="text-gray-400 hover:text-white" href="/devs">Developers</a>
-                    <a className="text-gray-400 hover:text-white" href="/tc">Terms and Conditions</a>
-                    <a className="text-gray-400 hover:text-white" href="/privacy">Privacy Policy</a>
+                    <a className="text-gray-400 hover:text-white" href="/tc">T&C</a>
+                    <a className="text-gray-400 hover:text-white" href="/privacy">Privacy</a>
                 </div>
                 <div className="flex flex-col w-1/4">
                     <p className="font-medium">Social</p>

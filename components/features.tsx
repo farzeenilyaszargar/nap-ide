@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Features() {
     return (
-        <section className="w-full sm:p-15  p-5 flex flex-col gap-20">
+        <section className="w-full sm:p-15 p-5 pt-10 flex flex-col gap-20">
 
             {/* Feature 1 */}
             <div className="flex flex-col md:flex-row items-center gap-10">

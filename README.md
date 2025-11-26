@@ -3,11 +3,11 @@
 Hello There
 This Is The Website For Nap Editor.
 
-Vercel Hosted Link: https://nap-ide.vercel.app/
+#### Vercel Hosted Link: https://nap-ide.vercel.app/
 
 
-<div style="flex items-center justify-center">
-    <img src="/public/demo.png">
+<div style="flex items-center justify-center w-screen">
+    <img src="/public/logo.svg">
 </div>
 
 
@@ -23,7 +23,3 @@ Contributors:
     - @farzeenilyaszargar
     - @aaravbangs
 
-
-<div style="flex items-center justify-center">
-    <img src="/public/logo.svg">
-</div>
