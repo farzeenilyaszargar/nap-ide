@@ -68,7 +68,7 @@ export default function Header() {
             <Link href="/" className="flex justify-center items-center">
                 <Image src={"./logo.svg"} width={25} height={25} alt="logo" />
                 <h1 className="font-black text-2xl italic ml-1">nap</h1>
-                <h1 className="text-2xl italic ml-1">ide</h1>
+                <h1 className="text-2xl italic ml-1">editor</h1>
             </Link>
             <div className="flex justify-center items-center gap-5">
                 {loading ? (
@@ -169,7 +169,7 @@ export default function Header() {
                 )}
                 <Link
                     href="/download"
-                    className="hidden sm:block border-black px-3 py-1 rounded-md bg-black text-white hover:bg-gray-800 transition-colors"
+                    className="hidden sm:block border-black px-3 py-1 rounded-md bg-black text-white hover:bg-gray-900 transition-colors"
                 >
                     Download
                 </Link>

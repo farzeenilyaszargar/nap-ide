@@ -1,9 +1,11 @@
+import GenHeader from "@/components/genericHeader";
 
 export default function FAQs() {
 
   return (
-    <div className="max-w-md mx-auto p-6">
-      faq page
-    </div>
-  );
+      <div className="">
+        <GenHeader/>
+        faq page to be made
+      </div>
+    );
 }

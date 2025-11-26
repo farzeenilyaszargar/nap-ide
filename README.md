@@ -5,9 +5,6 @@ This Is The Website For Nap Editor.
 
 Vercel Hosted Link: https://nap-ide.vercel.app/
 
-<div style="flex items-center justify-center">
-    <img src="/public/logo.svg">
-</div>
 
 <div style="flex items-center justify-center">
     <img src="/public/demo.png">
@@ -25,3 +22,8 @@ Nap Editor is the future of coding; faster development, fewer errors, and smarte
 Contributors: 
     - @farzeenilyaszargar
     - @aaravbangs
+
+
+<div style="flex items-center justify-center">
+    <img src="/public/logo.svg">
+</div>
