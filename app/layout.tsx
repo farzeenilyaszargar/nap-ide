@@ -5,9 +5,9 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Surfers | The Best Way To Code With AI",
+  title: "Nap Editor | The Best Way To Code With AI",
   description: "The Cursor Killer",
-  keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool"],
+  keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool","nap","editor","nap editor"],
   alternates: { canonical: "www.surfers.bot" },
   icons: { icon: "/favicon.ico" },
   robots: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     nocache: false
   },
   openGraph: {
-    title: "Surfers IDE",
+    title: "Nap Editor",
     description: "The Cursor Killer",
     url: "www.surfers.bot",
     images: [

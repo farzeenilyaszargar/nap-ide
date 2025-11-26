@@ -1,7 +1,8 @@
 Hello There.
 
-This Is The Website For Surfers IDE.
+This Is The Website For NAP IDE.
+
 
 <div style="flex items-center justify-center">
-    <img src="./logo.png">
+    <img src="./logo.svg">
 </div>
