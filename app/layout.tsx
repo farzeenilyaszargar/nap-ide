@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Nap Editor | The Best Way To Code With AI",
-  description: "The Cursor Killer",
+  description: "The Best Way To Code With AI",
   keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool","nap","editor","nap editor"],
   alternates: { canonical: "www.surfers.bot" },
   icons: { icon: "/favicon.ico" },
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nap Editor",
-    description: "The Cursor Killer",
+    description: "The Best Way To Code With AI",
     url: "www.surfers.bot",
     images: [
       {
         url: "",
         width: 0,
         height: 0,
-        alt: "surfer preview"
+        alt: "nap preview"
       }
     ],
     locale: "en_US",
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your Title",
-    description: "Your description.",
+    title: "Nap Editor",
+    description: "The Best Way To Code With AI.",
     images: ["/og-image.png"],
   },
 
