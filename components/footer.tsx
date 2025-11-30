@@ -8,6 +8,7 @@ export default function Footer() {
                 <div className="flex flex-col w-1/4 ">
                     <p className="font-medium">Resources</p>
                     <a className="text-gray-400 hover:text-white" href="/download" >Download</a>
+                    <a className="text-gray-400 hover:text-white" href="/pricing" >Pricing</a>
                     <a className="text-gray-400 hover:text-white" href="/faqs">FAQ's</a>
                     <a className="text-gray-400 hover:text-white" href="/support">Support</a>
                 </div>
