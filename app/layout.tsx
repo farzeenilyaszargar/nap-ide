@@ -5,7 +5,7 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Nap Editor | The Best Way To Code With AI",
+  title: "Nap Editor | Best Way To Code With AI",
   description: "The Best Way To Code With AI",
   keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool","nap","editor","nap editor"],
   alternates: { canonical: "www.surfers.bot" },

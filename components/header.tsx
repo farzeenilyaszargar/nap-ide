@@ -64,12 +64,16 @@ export default function Header() {
         'User'
 
     return (
-        <div className="w-screen flex h-14 justify-between sticky top-0 bg-white/20 backdrop-blur-md sm:px-10 px-5 z-10">
+        <div className="w-screen flex h-14 justify-between sticky top-0 bg-white/20 backdrop-blur-md sm:px-15 px-5 z-10">
             <Link href="/" className="flex justify-center items-center">
-                <Image src={"./logo.svg"} width={25} height={25} alt="logo" />
-                <h1 className="font-black text-2xl italic ml-1">nap</h1>
-                <h1 className="text-2xl italic ml-1">editor</h1>
+                <h1 className="font-bold text-2xl italic ml-1">Nap</h1>
             </Link>
+            <div className='gap-5 flex-1 mx-5 justify-end hidden sm:flex'>
+                <Link href="/" className="flex justify-center items-center">Overview</Link>
+                <Link href="/pricing" className="flex justify-center items-center">Pricing</Link>
+                <Link href="/community" className="flex justify-center items-center">Community</Link>
+                <Link href="/blogs" className="flex justify-center items-center">Blogs</Link>
+            </div>
             <div className="flex justify-center items-center gap-5">
                 {loading ? (
                     <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse" />
@@ -167,12 +171,6 @@ export default function Header() {
                         Sign In
                     </Link>
                 )}
-                <Link
-                    href="/download"
-                    className="hidden sm:block border-black px-3 py-1 rounded-md bg-black text-white hover:bg-gray-900 transition-colors"
-                >
-                    Download
-                </Link>
             </div>
         </div>
     )

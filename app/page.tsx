@@ -17,10 +17,6 @@ export default function Home() {
       <FAQs/>
       <DemoVid/>
       <TrySurfers/>
-      <div className="w-screen h-50 flex justify-center items-center">
-        <Checkout/>
-
-      </div>
       <Footer/>
       
     </div>

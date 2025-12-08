@@ -16,13 +16,13 @@ export default async function DashboardPage() {
   }
 
   // Get user metadata
-  const fullName = user.user_metadata?.full_name || 
-                   user.user_metadata?.name || 
-                   user.email?.split('@')[0] || 
-                   'User'
-  const avatarUrl = user.user_metadata?.avatar_url || 
-                    user.user_metadata?.picture || 
-                    null
+  const fullName = user.user_metadata?.full_name ||
+    user.user_metadata?.name ||
+    user.email?.split('@')[0] ||
+    'User'
+  const avatarUrl = user.user_metadata?.avatar_url ||
+    user.user_metadata?.picture ||
+    null
   const provider = user.app_metadata?.provider || 'email'
   const createdAt = user.created_at
   const lastSignIn = user.last_sign_in_at
@@ -44,10 +44,35 @@ export default async function DashboardPage() {
     const now = new Date()
     const diffTime = Math.abs(now.getTime() - created.getTime())
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-    
+
     if (diffDays < 30) return `${diffDays} day${diffDays !== 1 ? 's' : ''}`
     if (diffDays < 365) return `${Math.floor(diffDays / 30)} month${Math.floor(diffDays / 30) !== 1 ? 's' : ''}`
     return `${Math.floor(diffDays / 365)} year${Math.floor(diffDays / 365) !== 1 ? 's' : ''}`
+  }
+
+  // Fetch usage stats
+  const { data: usage } = await supabase
+    .from('user_usage')
+    .select(`
+      *,
+      plans (
+        name,
+        token_limit,
+        request_limit
+      )
+    `)
+    .eq('user_id', user.id)
+    .single()
+
+  // Default values if no usage record exists
+  const stats = {
+    planName: usage?.plans?.name || 'Free',
+    tokensUsed: usage?.tokens_used || 0,
+    tokenLimit: usage?.plans?.token_limit || 1000,
+    requestsUsed: usage?.requests_count || 0,
+    requestLimit: usage?.plans?.request_limit || 100,
+    expiry: usage?.plan_expiry_date,
+    totalSpent: usage?.total_spent || 0
   }
 
   return (
@@ -84,6 +109,9 @@ export default async function DashboardPage() {
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
                   {provider === 'google' ? 'Google' : provider === 'github' ? 'GitHub' : 'Email'}
                 </span>
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                  {stats.planName} Plan
+                </span>
               </div>
             </div>
 
@@ -94,7 +122,62 @@ export default async function DashboardPage() {
           </div>
         </div>
 
-        {/* Statistics Cards */}
+        {/* Subscription & Usage Stats */}
+        <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-6">Subscription & Usage</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Visual Stats */}
+            <div className="space-y-6">
+              <div>
+                <div className="flex justify-between text-sm font-medium mb-2">
+                  <span className="text-gray-600">Tokens Used</span>
+                  <span className="text-gray-900">{stats.tokensUsed.toLocaleString()} / {stats.tokenLimit.toLocaleString()}</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    className="bg-blue-600 h-2.5 rounded-full"
+                    style={{ width: `${Math.min((stats.tokensUsed / stats.tokenLimit) * 100, 100)}%` }}
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm font-medium mb-2">
+                  <span className="text-gray-600">Requests</span>
+                  <span className="text-gray-900">{stats.requestsUsed.toLocaleString()} / {stats.requestLimit.toLocaleString()}</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div
+                    className="bg-green-500 h-2.5 rounded-full"
+                    style={{ width: `${Math.min((stats.requestsUsed / stats.requestLimit) * 100, 100)}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Details */}
+            <div className="space-y-4 border-l pl-0 md:pl-8 border-gray-100">
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Current Plan</span>
+                <span className="font-bold text-gray-900">{stats.planName}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Valid Until</span>
+                <span className="font-medium text-gray-900">{formatDate(stats.expiry)}</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-gray-600">Total Spent</span>
+                <span className="font-medium text-gray-900">₹{(stats.totalSpent / 100).toFixed(2)}</span>
+              </div>
+              <div className="pt-4">
+                <a href="/pricing" className="block w-full text-center bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                  Upgrade Plan
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Existing Statistics Cards (Account Age, Last Sign In, Provider) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {/* Account Age Card */}
           <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
