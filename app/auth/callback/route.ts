@@ -10,9 +10,12 @@ export async function GET(request: Request) {
     const error = requestUrl.searchParams.get('error')
     const errorDescription = requestUrl.searchParams.get('error_description')
 
+    // Determine the base URL for redirection
+    const origin = process.env.NEXT_PUBLIC_SITE_URL || requestUrl.origin
+
     // If there's an error from the OAuth provider, redirect with error
     if (error) {
-      const errorUrl = new URL('/signin', requestUrl.origin)
+      const errorUrl = new URL('/signin', origin)
       errorUrl.searchParams.set('error', errorDescription || error)
       return NextResponse.redirect(errorUrl)
     }
@@ -21,21 +24,22 @@ export async function GET(request: Request) {
     if (code) {
       const supabase = await createClient()
       const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code)
-      
+
       if (exchangeError) {
         console.error('Error exchanging code for session:', exchangeError)
-        const errorUrl = new URL('/signin', requestUrl.origin)
+        const errorUrl = new URL('/signin', origin)
         errorUrl.searchParams.set('error', exchangeError.message)
         return NextResponse.redirect(errorUrl)
       }
     }
 
     // Redirect to the specified next URL or dashboard
-    return NextResponse.redirect(new URL(next, requestUrl.origin))
+    return NextResponse.redirect(new URL(next, origin))
   } catch (error) {
     console.error('Callback route error:', error)
     const requestUrl = new URL(request.url)
-    const errorUrl = new URL('/signin', requestUrl.origin)
+    const origin = process.env.NEXT_PUBLIC_SITE_URL || requestUrl.origin
+    const errorUrl = new URL('/signin', origin)
     errorUrl.searchParams.set('error', 'An unexpected error occurred during authentication')
     return NextResponse.redirect(errorUrl)
   }
