@@ -64,14 +64,14 @@ export default function Header() {
         'User'
 
     return (
-        <div className="w-screen flex h-14 justify-between sticky top-0 bg-white/20 backdrop-blur-md sm:px-15 px-5 z-10">
+        <div className="w-screen flex h-14 justify-between sticky top-0 bg-black/20 backdrop-blur-md sm:px-15 px-5 z-10">
             <Link href="/" className="flex justify-center items-center">
                 <h1 className="font-bold text-2xl italic ml-1">Nap</h1>
             </Link>
             <div className='gap-5 flex-1 mx-5 justify-end hidden sm:flex'>
                 <Link href="/" className="flex justify-center items-center">Overview</Link>
                 <Link href="/pricing" className="flex justify-center items-center">Pricing</Link>
-                <Link href="/community" className="flex justify-center items-center">Community</Link>
+                <Link href="/features" className="flex justify-center items-center">Features</Link>
                 <Link href="/blogs" className="flex justify-center items-center">Blogs</Link>
             </div>
             <div className="flex justify-center items-center gap-5">
@@ -166,7 +166,7 @@ export default function Header() {
                 ) : (
                     <Link
                         href="/signin"
-                        className="border border-black px-3 py-0.5 rounded-md hover:bg-black hover:text-white transition-colors"
+                        className="border border-white px-3 py-0.5 rounded-md hover:bg-white hover:text-black transition-colors"
                     >
                         Sign In
                     </Link>

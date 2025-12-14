@@ -73,7 +73,7 @@ export default function SignIn() {
             <GenHeader />
             <div className='flex justify-center items-center h-140 sm:px-10 px-5'>
 
-                <div className="w-full max-w-md rounded-2xl border border-black bg-white p-10 text-center ">
+                <div className="w-full max-w-md rounded-2xl border p-10 text-center ">
                     <h1 className="sm:text-3xl text-2xl font-semibold">Sign In</h1>
                     <p className="mt-2 text-xs text-gray-500 sm:text-sm">
                         choose a provider to continue to your dashboard.
@@ -86,7 +86,7 @@ export default function SignIn() {
                                 type="button"
                                 onClick={() => handleSignIn(provider.id)}
                                 disabled={!!activeProvider}
-                                className="flex w-full items-center justify-center rounded-xl border border-black px-5 py-3 text-left text-sm font-medium transition hover:border-gray-400 disabled:cursor-not-allowed disabled:opacity-70"
+                                className="flex w-full items-center justify-center rounded-xl border px-5 py-3 text-left text-sm font-medium transition hover:border-gray-400 disabled:cursor-not-allowed disabled:opacity-70"
                             >
                                 <span className=" items-center gap-3 text-lg hidden sm:flex">
                                     <Image

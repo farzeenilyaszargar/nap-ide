@@ -11,14 +11,13 @@ import TrySurfers from "@/components/trySurfer";
 export default function Home() {
   return (
     <div className="">
-      <Header/>
-      <HeroPage/>
-      <Features/>
-      <FAQs/>
-      <DemoVid/>
-      <TrySurfers/>
-      <Footer/>
-      
+      <Header />
+      <HeroPage />
+      <Features />
+      <DemoVid />
+      <TrySurfers />
+      <Footer />
+
     </div>
   );
 }

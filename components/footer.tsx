@@ -3,7 +3,7 @@ import Image from "next/image";
 //features, blog, download, social, tos, pricing
 export default function Footer() {
     return (
-        <div className="bg-black text-white py-15 sm:px-10 w-screen ">
+        <div className="bg-black text-white py-15 sm:px-10 w-screen border-t border-[#414141] ">
             <div className="flex justify-around">
                 <div className="flex flex-col w-1/4 ">
                     <p className="font-medium">Resources</p>

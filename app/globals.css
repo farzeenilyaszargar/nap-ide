@@ -1,2 +1,16 @@
 @import "tailwindcss";
 
+
+
+@theme {
+  --color-background: rgba(16, 16, 16, 1);
+  --color-foreground: #ffffff;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply antialiased;
+  }
+}
