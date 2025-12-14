@@ -15,8 +15,8 @@ const providers: Array<{
     label2: string
     icon: string
 }> = [
-        { id: 'google', label1: 'Continue with Google',label2: 'Google', icon: '/google-icon.png' },
-        { id: 'github', label1: 'Continue with GitHub',label2: 'Github', icon: '/github-icon.png' },
+        { id: 'google', label1: 'Continue with Google', label2: 'Google', icon: '/google-icon.png' },
+        { id: 'github', label1: 'Continue with GitHub', label2: 'Github', icon: '/github-icon.png' },
     ]
 
 export default function SignIn() {

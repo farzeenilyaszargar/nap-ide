@@ -1,15 +1,37 @@
+"use client"
+
 import Link from "next/link"
-import Image from "next/image"
+import { Home, ArrowLeft } from "lucide-react"
 
 export default function NotFound() {
     return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center">
-            <p className="text-8xl font-black">404</p>
-            <p className="text-4xl">Not Found</p>
-            <Link href="/" className="border text-3xl mt-10 bg-black text-white px-3 py-1 rounded flex justify-center items-center gap-2">
-                <p>Go Back</p>
-                <Image src="/diagonal-arrow-w.png" alt="arrow" width={20} height={20} />
-            </Link>
+        <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center px-4">
+            <div className="text-center space-y-6 max-w-lg">
+                <h1 className="text-9xl font-black text-gray-200">404</h1>
+                <div className="space-y-2">
+                    <h2 className="text-3xl font-bold text-gray-900">Page not found</h2>
+                    <p className="text-gray-500 text-lg">
+                        Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
+                    </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <Link
+                        href="/"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium"
+                    >
+                        <Home className="w-4 h-4" />
+                        Go Home
+                    </Link>
+                    <button
+                        onClick={() => window.history.back()}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200 font-medium"
+                    >
+                        <ArrowLeft className="w-4 h-4" />
+                        Go Back
+                    </button>
+                </div>
+            </div>
         </div>
     )
 }

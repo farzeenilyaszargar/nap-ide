@@ -14,9 +14,8 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col w-1/4">
                     <p className="font-medium">Company</p>
-                    <a className="text-gray-400 hover:text-white" href="#" target="_blank">Nap</a>
-                    <a className="text-gray-400 hover:text-white" href="https://www.surfers.bot" target="_blank">Surfers</a>
-                    <a className="text-gray-400 hover:text-white" href="https://www.blog.napeditor.com" target="_blank">Blog</a>
+                    <a className="text-gray-400 hover:text-white" href="https://www.surfers.bot" target="_blank">Try Surfers</a>
+                    <a className="text-gray-400 hover:text-white" href="/blogs" target="_blank">Blog</a>
                     <a className="text-gray-400 hover:text-white" href="/devs">Developers</a>
                     <a className="text-gray-400 hover:text-white" href="/tc">T&C</a>
                     <a className="text-gray-400 hover:text-white" href="/privacy">Privacy</a>

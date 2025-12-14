@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
+import Header from "@/components/header";
 
 export default function PricingPage() {
     const [monthly, setMonthly] = useState(true);
@@ -94,7 +95,7 @@ export default function PricingPage() {
 
     return (
         <div className="">
-            <GenHeader />
+            <Header />
             <div className="flex flex-col justify-center items-center gap-5 my-20">
                 <h1 className="font-bold text-4xl">Pricing</h1>
                 <p>Flexible pricing, ultra flexible plans, cancel anytime.</p>

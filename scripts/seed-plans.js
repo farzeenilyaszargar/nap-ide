@@ -29,28 +29,32 @@ async function seedPlans() {
             description: 'Monthly Basic Plan',
             price_inr: 200, // ₹2
             token_limit: 10000,
-            request_limit: 1000
+            request_limit: 1000,
+            device_limit: 2
         },
         {
             name: 'Pro Plan',
             description: 'Monthly Pro Plan',
             price_inr: 500, // ₹5
             token_limit: 100000,
-            request_limit: 10000
+            request_limit: 10000,
+            device_limit: 5
         },
         {
             name: 'Basic Annual',
             description: 'Annual Basic Plan',
             price_inr: 2400, // ₹24
             token_limit: 120000,
-            request_limit: 12000
+            request_limit: 12000,
+            device_limit: 2
         },
         {
             name: 'Pro Annual',
             description: 'Annual Pro Plan',
             price_inr: 6000, // ₹60
             token_limit: 1200000,
-            request_limit: 120000
+            request_limit: 120000,
+            device_limit: 5
         }
     ];
 

@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import { LogoutButton } from '@/components/logout-button'
 import { createClient } from '@/lib/supabase/server'
+import Header from '@/components/header'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -76,8 +77,9 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <Header />
+      <div className="max-w-4xl mx-auto py-5">
         {/* Header */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
