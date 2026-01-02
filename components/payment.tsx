@@ -9,7 +9,7 @@ export default function Checkout() {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
       amount: order.amount,
       currency: "INR",
-      name: "Nap Editor",
+      name: "Surfers Editor",
       description: "Credits Example Testing Payment",
       order_id: order.id,
 
@@ -33,7 +33,7 @@ export default function Checkout() {
   return (
     <button
       onClick={createOrder}
-      className="px-4 py-2 bg-black text-white rounded"
+      className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
     >
       Pay Now
     </button>

@@ -5,9 +5,9 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Nap Editor | Best Way To Code With AI",
+  title: "Surfers Editor | Best Way To Code With AI",
   description: "The Best Way To Code With AI",
-  keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool","nap","editor","nap editor"],
+  keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool", "surfers", "editor", "surfers editor"],
   alternates: { canonical: "www.surfers.bot" },
   icons: { icon: "/favicon.ico" },
   robots: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     nocache: false
   },
   openGraph: {
-    title: "Nap Editor",
+    title: "Surfers Editor",
     description: "The Best Way To Code With AI",
     url: "www.surfers.bot",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: "",
         width: 0,
         height: 0,
-        alt: "nap preview"
+        alt: "surfers preview"
       }
     ],
     locale: "en_US",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nap Editor",
+    title: "Surfers Editor",
     description: "The Best Way To Code With AI.",
     images: ["/og-image.png"],
   },

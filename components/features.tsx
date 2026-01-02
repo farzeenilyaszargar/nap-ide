@@ -18,10 +18,10 @@ export default function Features() {
                     </div>
                 </div>
                 <div className="md:w-2/3 w-full px-5 md:pr-20 text-center">
-                    <h2 className="text-3xl font-semibold mb-4  text-[#9B9B9B]">For the <span className="text-white">extraordinarily productive devs,</span><br></br>
-                        Nap is the <span className="text-white">best</span> way to code with <span className="text-white">AI.</span></h2>
-                    <p className=" text-lg leading-relaxed  text-[#696969]">
-                        For developers who live in their tools Nap delivers a world-class intelligent agent that sees your entire codebase with absolute clarity, understands every file, every pattern, every nuance, and builds with the sophistication of a top-tier engineer.
+                    <h2 className="text-3xl font-semibold mb-4  text-gray-500">For the <span className="text-black">extraordinarily productive devs,</span><br></br>
+                        Surfers is the <span className="text-black">best</span> way to code with <span className="text-black">AI.</span></h2>
+                    <p className=" text-lg leading-relaxed  text-gray-500">
+                        For developers who live in their tools Surfers delivers a world-class intelligent agent that sees your entire codebase with absolute clarity, understands every file, every pattern, every nuance, and builds with the sophistication of a top-tier engineer.
                     </p>
                 </div>
             </div>
@@ -40,10 +40,10 @@ export default function Features() {
                     </div>
                 </div>
                 <div className="md:w-2/3 w-full px-5 md:pl-20 text-center">
-                    <h2 className="text-3xl font-semibold mb-4 text-white">Nap edits multiple files at a time,
-                    sk anything you want & go to sleep.</h2>
-                                        <p className="text-gray-400 text-lg leading-relaxed">
-                                            Nap gets things done fantastic — be it the code indexing of your entire files or making multiple edits in a single go or even change the whole codebase for the updated needs of the developers. 
+                    <h2 className="text-3xl font-semibold mb-4 text-black">Surfers edits multiple files at a time,
+                        sk anything you want & go to sleep.</h2>
+                    <p className="text-gray-500 text-lg leading-relaxed">
+                        Surfers gets things done fantastic — be it the code indexing of your entire files or making multiple edits in a single go or even change the whole codebase for the updated needs of the developers.
                     </p>
                 </div>
             </div>
@@ -61,11 +61,22 @@ export default function Features() {
                         />
                     </div>
                 </div>
-                <div className="md:w-1/2 w-full px-5 md:pr-20 text-right">
-                    <h2 className="text-3xl font-semibold mb-4 text-white">Control anything & 
-everything on Nap.</h2>
-                    <p className="text-gray-400 text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence — branches and repos synced without a ripple.
+                <div className="md:w-1/2 w-full px-5 text-center    ">
+                    <h2 className="text-3xl font-semibold mb-4 text-black">Control anything &
+                        everything on Surfers.</h2>
+                    <p className="text-gray-500 text-lg leading-relaxed">Surfers pushes your work to GitHub with the grace of engineered silence — branches and repos synced without a ripple.
                     </p>
+                </div>
+                <div className="md:w-1/2 w-full flex flex-col text-center items-center justify-center">
+                    <Image
+                        src="/terminal.png"
+                        alt="Built for Performance"
+                        className="rounded-r-2xl shadow-2xl object-cover w-1/2 "
+                        width={500}
+                        height={500}
+                    />
+                    <h1 className="text-5xl font-semibold mb-4 text-gray-400">Control</h1>
+                    <h1 className="text-5xl font-semibold mb-4 text-gray-300">Terminal</h1>
                 </div>
             </div>
 

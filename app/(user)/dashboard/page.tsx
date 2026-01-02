@@ -2,8 +2,10 @@ import { redirect } from 'next/navigation'
 import Image from 'next/image'
 
 import { LogoutButton } from '@/components/logout-button'
+import { UsageChart } from '@/components/usage-chart'
 import { createClient } from '@/lib/supabase/server'
 import Header from '@/components/header'
+
 
 export default async function DashboardPage() {
   const supabase = await createClient()
@@ -65,6 +67,52 @@ export default async function DashboardPage() {
     .eq('user_id', user.id)
     .single()
 
+  // Fetch Usage History (Last 7 Days)
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+  sevenDaysAgo.setHours(0, 0, 0, 0);
+
+  const { data: usageLogs } = await supabase
+    .from('usage_logs')
+    .select('created_at, tokens_used')
+    .eq('user_id', user.id)
+    .gte('created_at', sevenDaysAgo.toISOString())
+    .order('created_at', { ascending: true });
+
+  // Aggregate usage by date
+  const usageMap = new Map<string, number>();
+
+  // Initialize last 7 days with 0
+  for (let i = 0; i < 7; i++) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const dateKey = d.toLocaleDateString('en-US', { weekday: 'short' });
+    // We strictly want the last 7 days order, so let's build the array later, just map here
+    // actually, simpler to just Map<DateString, Total>
+  }
+
+  // Process logs
+  if (usageLogs) {
+    usageLogs.forEach((log: any) => {
+      const date = new Date(log.created_at).toLocaleDateString('en-US', { weekday: 'short' });
+      usageMap.set(date, (usageMap.get(date) || 0) + log.tokens_used);
+    });
+  }
+
+  // Build final data array for chart (reversed to confirm chronological order if loop puts today first? 
+  // No, let's construct explicit array of last 7 days from -6 to today)
+  const chartData = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const dateKey = d.toLocaleDateString('en-US', { weekday: 'short' });
+    chartData.push({
+      date: dateKey,
+      usage: usageMap.get(dateKey) || 0
+    });
+  }
+
+
   // Default values if no usage record exists
   const stats = {
     planName: usage?.plans?.name || 'Free',
@@ -77,11 +125,11 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen">
       <Header />
       <div className="max-w-4xl mx-auto py-5">
         {/* Header */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8 mb-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
             {/* Avatar */}
             <div className="relative">
@@ -103,15 +151,15 @@ export default async function DashboardPage() {
 
             {/* User Info */}
             <div className="flex-1 text-center sm:text-left">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-3xl font-bold text-black mb-2">
                 Welcome back, {fullName}!
               </h1>
-              <p className="text-gray-600 mb-4">{user.email}</p>
+              <p className="text-gray-500 mb-4">{user.email}</p>
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700">
                   {provider === 'google' ? 'Google' : provider === 'github' ? 'GitHub' : 'Email'}
                 </span>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-700">
                   {stats.planName} Plan
                 </span>
               </div>
@@ -125,15 +173,15 @@ export default async function DashboardPage() {
         </div>
 
         {/* Subscription & Usage Stats */}
-        <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">Subscription & Usage</h2>
+        <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 mb-6">
+          <h2 className="text-xl font-semibold text-black mb-6">Subscription & Usage</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Visual Stats */}
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between text-sm font-medium mb-2">
-                  <span className="text-gray-600">Tokens Used</span>
-                  <span className="text-gray-900">{stats.tokensUsed.toLocaleString()} / {stats.tokenLimit.toLocaleString()}</span>
+                  <span className="text-gray-500">Tokens Used</span>
+                  <span className="text-black">{stats.tokensUsed.toLocaleString()} / {stats.tokenLimit.toLocaleString()}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
                   <div
@@ -144,8 +192,8 @@ export default async function DashboardPage() {
               </div>
               <div>
                 <div className="flex justify-between text-sm font-medium mb-2">
-                  <span className="text-gray-600">Requests</span>
-                  <span className="text-gray-900">{stats.requestsUsed.toLocaleString()} / {stats.requestLimit.toLocaleString()}</span>
+                  <span className="text-gray-500">Requests</span>
+                  <span className="text-black">{stats.requestsUsed.toLocaleString()} / {stats.requestLimit.toLocaleString()}</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
                   <div
@@ -157,21 +205,21 @@ export default async function DashboardPage() {
             </div>
 
             {/* Details */}
-            <div className="space-y-4 border-l pl-0 md:pl-8 border-gray-100">
+            <div className="space-y-4 border-l pl-0 md:pl-8 border-gray-200">
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Current Plan</span>
-                <span className="font-bold text-gray-900">{stats.planName}</span>
+                <span className="text-gray-500">Current Plan</span>
+                <span className="font-bold text-black">{stats.planName}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Valid Until</span>
-                <span className="font-medium text-gray-900">{formatDate(stats.expiry)}</span>
+                <span className="text-gray-500">Valid Until</span>
+                <span className="font-medium text-black">{formatDate(stats.expiry)}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Total Spent</span>
-                <span className="font-medium text-gray-900">₹{(stats.totalSpent / 100).toFixed(2)}</span>
+                <span className="text-gray-500">Total Spent</span>
+                <span className="font-medium text-black">₹{(stats.totalSpent / 100).toFixed(2)}</span>
               </div>
               <div className="pt-4">
-                <a href="/pricing" className="block w-full text-center bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition text-sm">
+                <a href="/pricing" className="block w-full text-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition text-sm">
                   Upgrade Plan
                 </a>
               </div>
@@ -179,10 +227,19 @@ export default async function DashboardPage() {
           </div>
         </div>
 
+        {/* Analytics Charts */}
+        <div className="w-full mb-6">
+          <UsageChart
+            title="Daily Token Usage"
+            data={chartData}
+            color="#3b82f6"
+          />
+        </div>
+
         {/* Existing Statistics Cards (Account Age, Last Sign In, Provider) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
           {/* Account Age Card */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 hover:border-gray-400 transition-all">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                 Account Age
@@ -203,14 +260,14 @@ export default async function DashboardPage() {
                 </svg>
               </div>
             </div>
-            <p className="text-3xl font-bold text-gray-900">{getAccountAge()}</p>
+            <p className="text-3xl font-bold text-black">{getAccountAge()}</p>
             <p className="text-sm text-gray-500 mt-1">
               Since {formatDate(createdAt)}
             </p>
           </div>
 
           {/* Last Sign In Card */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 hover:border-gray-400 transition-all">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                 Last Sign In
@@ -231,14 +288,14 @@ export default async function DashboardPage() {
                 </svg>
               </div>
             </div>
-            <p className="text-3xl font-bold text-gray-900">
+            <p className="text-3xl font-bold text-black">
               {lastSignIn ? formatDate(lastSignIn) : 'Just now'}
             </p>
             <p className="text-sm text-gray-500 mt-1">Active session</p>
           </div>
 
           {/* Provider Card */}
-          <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 hover:border-gray-400 transition-all">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                 Auth Provider
@@ -259,7 +316,7 @@ export default async function DashboardPage() {
                 </svg>
               </div>
             </div>
-            <p className="text-3xl font-bold text-gray-900 capitalize">
+            <p className="text-3xl font-bold text-black capitalize">
               {provider}
             </p>
             <p className="text-sm text-gray-500 mt-1">Connected account</p>
@@ -267,29 +324,29 @@ export default async function DashboardPage() {
         </div>
 
         {/* Additional Info Section */}
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">Account Details</h2>
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
+          <h2 className="text-xl font-semibold text-black mb-6">Account Details</h2>
           <div className="space-y-4">
             <div className="flex justify-between items-center py-3 border-b border-gray-200">
-              <span className="text-gray-600">User ID</span>
-              <span className="text-sm font-mono text-gray-900 break-all">
+              <span className="text-gray-500">User ID</span>
+              <span className="text-sm font-mono text-black break-all">
                 {user.id.substring(0, 20)}...
               </span>
             </div>
             <div className="flex justify-between items-center py-3 border-b border-gray-200">
-              <span className="text-gray-600">Email Verified</span>
+              <span className="text-gray-500">Email Verified</span>
               <span className={`font-medium ${user.email_confirmed_at ? 'text-green-600' : 'text-yellow-600'}`}>
                 {user.email_confirmed_at ? 'Verified' : 'Pending'}
               </span>
             </div>
             <div className="flex justify-between items-center py-3 border-b border-gray-200">
-              <span className="text-gray-600">Account Created</span>
-              <span className="text-gray-900">{formatDate(createdAt)}</span>
+              <span className="text-gray-500">Account Created</span>
+              <span className="text-black">{formatDate(createdAt)}</span>
             </div>
             {lastSignIn && (
               <div className="flex justify-between items-center py-3">
-                <span className="text-gray-600">Last Active</span>
-                <span className="text-gray-900">{formatDate(lastSignIn)}</span>
+                <span className="text-gray-500">Last Active</span>
+                <span className="text-black">{formatDate(lastSignIn)}</span>
               </div>
             )}
           </div>

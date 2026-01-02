@@ -34,18 +34,18 @@ export default function FAQs() {
     return (
         <div className="flex justify-center items-center w-screen overflow-hidden mt-20">
             <div className="md:min-w-5xl px-10 space-y-4">
-                <h2 className="text-3xl font-semibold mb-4 text-center">Frequently Asked Questions</h2>
+                <h2 className="text-3xl font-semibold mb-4 text-center text-black">Frequently Asked Questions</h2>
                 {faqs.map((faq, index) => (
                     <div
                         key={index}
-                        className="border rounded-2xl p-4 shadow-sm bg-white/80 backdrop-blur"
+                        className="border border-gray-200 rounded-2xl p-4 shadow-sm bg-gray-50"
                     >
                         <button
                             onClick={() => toggle(index)}
                             className="w-full text-left flex justify-between items-center"
                         >
-                            <span className="text-lg font-medium">{faq.question}</span>
-                            <span>{open === index ? "−" : "+"}</span>
+                            <span className="text-lg font-medium text-black">{faq.question}</span>
+                            <span className="text-black">{open === index ? "−" : "+"}</span>
                         </button>
 
                         {open === index && (

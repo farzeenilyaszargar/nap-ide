@@ -64,15 +64,15 @@ export default function Header() {
         'User'
 
     return (
-        <div className="w-screen flex h-14 justify-between sticky top-0 bg-black/20 backdrop-blur-md sm:px-15 px-5 z-10">
+        <div className="w-screen flex h-14 justify-between sticky top-0  backdrop-blur-md sm:px-15 px-5 z-10 bg-white/80">
             <Link href="/" className="flex justify-center items-center">
-                <h1 className="font-bold text-2xl italic ml-1">Nap</h1>
+                <Image src="/real_logo.svg" alt="Surfers" width={120} height={40} className="h-8 w-auto" />
             </Link>
             <div className='gap-5 flex-1 mx-5 justify-end hidden sm:flex'>
-                <Link href="/" className="flex justify-center items-center">Overview</Link>
-                <Link href="/pricing" className="flex justify-center items-center">Pricing</Link>
-                <Link href="/features" className="flex justify-center items-center">Features</Link>
-                <Link href="/blogs" className="flex justify-center items-center">Blogs</Link>
+                <Link href="/" className="flex justify-center items-center text-gray-700 hover:text-black">Overview</Link>
+                <Link href="/pricing" className="flex justify-center items-center text-gray-700 hover:text-black">Pricing</Link>
+                <Link href="/features" className="flex justify-center items-center text-gray-700 hover:text-black">Features</Link>
+                <Link href="/blogs" className="flex justify-center items-center text-gray-700 hover:text-black">Blogs</Link>
             </div>
             <div className="flex justify-center items-center gap-5">
                 {loading ? (
@@ -81,7 +81,7 @@ export default function Header() {
                     <div className="relative" ref={dropdownRef}>
                         <button
                             onClick={() => setDropdownOpen(!dropdownOpen)}
-                            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-black rounded-full"
+                            className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-full"
                         >
                             {avatarUrl ? (
                                 <Image
@@ -89,10 +89,10 @@ export default function Header() {
                                     alt={fullName}
                                     width={32}
                                     height={32}
-                                    className="rounded-full border-2 border-black"
+                                    className="rounded-full border-2 border-gray-300"
                                 />
                             ) : (
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold border-2 border-black">
+                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold border-2 border-gray-300">
                                     {fullName.charAt(0).toUpperCase()}
                                 </div>
                             )}
@@ -166,7 +166,7 @@ export default function Header() {
                 ) : (
                     <Link
                         href="/signin"
-                        className="border border-white px-3 py-0.5 rounded-md hover:bg-white hover:text-black transition-colors"
+                        className="bg-black text-white border border-white px-3 py-0.5 rounded-md hover:bg-white hover:text-black hover:border-black transition-colors"
                     >
                         Sign In
                     </Link>

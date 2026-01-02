@@ -3,14 +3,14 @@
 
 
 @theme {
-  --color-background: rgba(16, 16, 16, 1);
-  --color-foreground: #ffffff;
+  --color-background: rgba(255, 255, 255, 1);
+  --color-foreground: rgba(0, 0, 0, 1);
 }
 
 @layer base {
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    @apply antialiased;
+
   }
 }
