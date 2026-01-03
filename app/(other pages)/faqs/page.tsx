@@ -1,27 +1,80 @@
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 export default function FAQs() {
   const faqs = [
-    { q: "What is Surfers Editor?", a: "Surfers Editor is a powerful, flexible text editor designed for developers and writers who need a distraction-free environment." },
-    { q: "Is there a free trial?", a: "Yes, we offer a free tier with basic features. You can upgrade to Pro for advanced capabilities." },
-    { q: "Can I cancel my subscription?", a: "Unless you are on an annual plan, you can cancel your subscription at any time from your dashboard." },
-    { q: "How do I contact support?", a: "You can reach our support team via the Support page or email us at support@surferseditor.com." }
+    {
+      q: "What is Surfers Editor?",
+      a: "Surfers Editor is a next-generation AI-powered code editor built for developers who demand speed, intelligence, and precision. It features an advanced AI agent that understands your entire codebase with absolute clarity — every file, every pattern, every nuance. Whether you're building web apps, mobile apps, backend systems, or large-scale projects, Surfers provides a fast, intuitive, and AI-enhanced workspace that keeps you productive and focused."
+    },
+    {
+      q: "How does the AI understand my codebase?",
+      a: "Surfers uses advanced code indexing and semantic analysis to build a comprehensive understanding of your project. It analyzes file relationships, function dependencies, coding patterns, and project structure. This allows the AI to provide context-aware suggestions, make intelligent multi-file edits, and understand the implications of changes across your entire codebase — not just the file you're working on."
+    },
+    {
+      q: "Is there a free plan available?",
+      a: "Yes! We offer a generous free tier that includes basic AI features, code completion, and access to community support. The free plan is perfect for getting started, personal projects, or trying out Surfers before committing. You can upgrade to Pro at any time for advanced features like unlimited AI requests, priority support, and team collaboration tools."
+    },
+    {
+      q: "What platforms does Surfers support?",
+      a: "Surfers Editor is available for macOS (Intel and Apple Silicon), Windows (10/11 64-bit), and Linux (Debian, Ubuntu, Fedora). We provide native installers optimized for each platform to ensure the best performance. The editor is built on Rust for lightning-fast startup times and zero-latency typing experience."
+    },
+    {
+      q: "Can Surfers edit multiple files at once?",
+      a: "Absolutely! One of Surfers' most powerful features is its ability to make intelligent multi-file edits. When you ask the AI to implement a feature or refactor code, it can modify multiple files simultaneously while maintaining consistency across your codebase. This includes updating imports, adjusting function signatures, and ensuring all related code stays in sync."
+    },
+    {
+      q: "How secure is my code?",
+      a: "Your code security is our top priority. By default, your code never leaves your machine unless you explicitly choose to use cloud-based AI features. All communications are encrypted using industry-standard TLS/SSL protocols. For enterprise customers, we offer on-premise deployment options and additional security certifications to meet your compliance requirements."
+    },
+    {
+      q: "Can I use my existing VS Code extensions?",
+      a: "Yes! Surfers is fully compatible with the VS Code extension ecosystem. You can install and use your favorite extensions directly within Surfers. This means you don't have to give up the tools you love — just enhance them with Surfers' powerful AI capabilities."
+    },
+    {
+      q: "How do I cancel my subscription?",
+      a: "You can cancel your subscription at any time from your dashboard. If you're on a monthly plan, your access will continue until the end of your current billing period. For annual plans, please contact our support team to discuss your options. We also offer prorated refunds in certain circumstances."
+    },
+    {
+      q: "Does Surfers integrate with GitHub?",
+      a: "Yes, Surfers has deep GitHub integration. You can push code, create branches, manage repos, and sync your work seamlessly — all from within the editor. The AI can even help you write meaningful commit messages and manage your Git workflow with the grace of engineered precision."
+    },
+    {
+      q: "How do I contact support?",
+      a: "We offer multiple support channels to help you. You can email us at support@surferseditor.com for a response within 24 hours, call our support line Monday-Friday 9am-6pm, or use the live chat feature for real-time assistance. Pro and Enterprise customers get priority support with faster response times."
+    }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <div className="max-w-3xl mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-8 text-center text-black">Frequently Asked Questions</h1>
-        <div className="space-y-4">
+      <div className="flex-1 max-w-4xl mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h1>
+          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+            Everything you need to know about Surfers Editor. Can't find what you're looking for? Contact our support team.
+          </p>
+        </div>
+        <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 p-6 hover:border-gray-400 transition-all">
-              <h3 className="text-lg font-semibold text-black mb-2">{faq.q}</h3>
-              <p className="text-gray-500">{faq.a}</p>
+            <div key={index} className="bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gray-400 hover:shadow-lg transition-all">
+              <h3 className="text-xl font-semibold text-black mb-4">{faq.q}</h3>
+              <p className="text-gray-600 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
+        <div className="mt-16 text-center bg-gray-50 rounded-2xl border border-gray-200 p-10">
+          <h2 className="text-2xl font-bold text-black mb-4">Still have questions?</h2>
+          <p className="text-gray-500 mb-6">Our team is here to help you with anything you need.</p>
+          <a
+            href="/support"
+            className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+          >
+            Contact Support
+          </a>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
