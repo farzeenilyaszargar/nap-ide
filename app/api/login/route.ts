@@ -16,6 +16,6 @@ export async function POST(req: Request) {
   );
 
   return NextResponse.redirect(
-    `http://localhost:3000/electron-auth-success?token=${token}`
+    `https://nap-ide.vercel.app/electron-auth-success?token=${token}`
   );
 }
