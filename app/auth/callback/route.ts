@@ -11,7 +11,9 @@ export async function GET(request: Request) {
     const errorDescription = requestUrl.searchParams.get('error_description')
 
     // Determine the base URL for redirection
-    const origin = process.env.NEXT_PUBLIC_SITE_URL || requestUrl.origin
+    let origin = process.env.NEXT_PUBLIC_SITE_URL || requestUrl.origin
+    // Sanitize: remove trailing slash if exists
+    origin = origin.replace(/\/$/, '')
 
     // If there's an error from the OAuth provider, redirect with error
     if (error) {
