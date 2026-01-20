@@ -15,7 +15,6 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col text-center sm:text-left">
                     <p className="font-medium mb-2">Company</p>
-                    <Link className="text-gray-500 transition-colors hover:text-[#ffffff]" href="https://www.surfers.bot" target="_blank">Try Surfers</Link>
                     <Link className="text-gray-500 transition-colors hover:text-[#ffffff]" href="/blogs" target="_blank">Blog</Link>
                     <Link className="text-gray-500 transition-colors hover:text-[#ffffff]" href="/devs">Developers</Link>
                     <Link className="text-gray-500 transition-colors hover:text-[#ffffff]" href="/tc">T&C</Link>
