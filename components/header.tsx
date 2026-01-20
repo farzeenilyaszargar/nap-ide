@@ -202,7 +202,7 @@ export default function Header() {
                     ) : (
                         <Link
                             href="/signin"
-                            className="bg-black text-white border border-white px-3 py-0.5 rounded-md hover:bg-white hover:text-black hover:border-black transition-colors"
+                            className="bg-black text-white border   px-3 py-1 rounded-md hover:bg-white hover:text-black hover:border-black transition-colors"
                         >
                             Sign In
                         </Link>
