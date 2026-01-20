@@ -2,41 +2,10 @@
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const blogs = [
-    {
-        id: 1,
-        title: "Introducing Surfers Editor: The Future of AI-Powered Coding",
-        excerpt: "Today we're excited to announce the launch of Surfers Editor — a next-generation code editor built from the ground up with AI at its core. Unlike traditional editors that bolt on AI features as an afterthought, Surfers was designed to make AI an integral part of your development workflow.",
-        author: "Farzeen Ilyas",
-        date: "December 15, 2025",
-        readTime: "5 min read",
-        category: "Announcement",
-        image: "/demo.png"
-    },
-    {
-        id: 2,
-        title: "How Surfers Understands Your Entire Codebase",
-        excerpt: "One of the most powerful features of Surfers is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing, how it builds a comprehensive map of your project, and why this matters for AI-assisted development.",
-        author: "Surfers Team",
-        date: "December 28, 2025",
-        readTime: "8 min read",
-        category: "Technical",
-        image: "/demo.png"
-    },
-    {
-        id: 3,
-        title: "10 Tips to Maximize Your Productivity with Surfers",
-        excerpt: "Whether you're new to Surfers or a seasoned user, these 10 tips will help you get the most out of your AI coding assistant. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.",
-        author: "Surfers Team",
-        date: "January 2, 2026",
-        readTime: "6 min read",
-        category: "Tutorial",
-        image: "/demo.png"
-    }
-];
+import { blogs } from "./data";
 
 export default function BlogsPage() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -107,9 +76,12 @@ export default function BlogsPage() {
                                 <span className="text-gray-700 font-medium">{currentBlog.author}</span>
                             </div>
 
-                            <button className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+                            <Link
+                                href={`/blogs/${currentBlog.slug}`}
+                                className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                            >
                                 Read Article
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
@@ -139,8 +111,8 @@ export default function BlogsPage() {
                                 setCurrentIndex(index);
                             }}
                             className={`w-3 h-3 rounded-full transition-all ${index === currentIndex
-                                    ? 'bg-black w-8'
-                                    : 'bg-gray-300 hover:bg-gray-400'
+                                ? 'bg-black w-8'
+                                : 'bg-gray-300 hover:bg-gray-400'
                                 }`}
                         />
                     ))}

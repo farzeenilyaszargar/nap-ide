@@ -127,7 +127,7 @@ export default async function DashboardPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      <div className="max-w-4xl mx-auto py-5">
+      <div className="max-w-4xl mx-auto py-5 px-4 sm:px-6">
         {/* Header */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8 mb-6">
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
