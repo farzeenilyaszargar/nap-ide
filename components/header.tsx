@@ -88,7 +88,7 @@ export default function Header() {
         <>
             <div className="w-screen flex h-14 justify-between sticky top-0 backdrop-blur-md sm:px-15 px-5 z-10 bg-white/80">
                 <Link href="/" className="flex justify-center items-center">
-                    <Image src="/logo.png" alt="Surfers" width={40} height={40} className="h-5 w-auto" />
+                    <Image src="/logo.png" alt="Surfers" width={40} height={40} className="h-5 w-auto rounded-md" />
                 </Link>
 
                 {/* Desktop Navigation */}

@@ -101,6 +101,7 @@ export default function SignIn() {
                                         width={24}
                                         height={24}
                                         alt={`${provider.label1} logo`}
+                                        className="rounded-md"
                                     />
                                     {provider.label1}
                                 </span>
@@ -110,6 +111,7 @@ export default function SignIn() {
                                         width={24}
                                         height={24}
                                         alt={`${provider.label1} logo`}
+                                        className="rounded-md"
                                     />
                                     {provider.label2}
                                 </span>

@@ -25,10 +25,10 @@ export default function DownloadButton() {
     //   <Image src={"/download.png"} width={20} height={20} alt='download' />
     // </Link>
     <Link href="/waitlist"
-      className="border border-gray-300 sm:flex justify-center items-center gap-1 bg-black text-white px-5 py-2 rounded-full text-xl hidden hover:bg-gray-800 transition">
+      className="border border-gray-300 sm:flex justify-center items-center gap-1 bg-black text-white px-7 py-2 rounded-full text-xl hidden hover:bg-gray-800 transition">
 
       Join Waitlist
-      <Image src={"/download.png"} width={20} height={20} alt='download' />
+      <Image src={"/right-arrow.png"} width={15} height={15} alt='download' className="invert mt-0.5 ml-1" />
     </Link>
   );
 }

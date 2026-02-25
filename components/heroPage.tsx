@@ -24,7 +24,7 @@ export default function HeroPage() {
 
 
             <div className='w-full flex justify-center items-center'>
-                <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full' />
+                <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-3xl' />
             </div>
 
         </div>
