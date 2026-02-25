@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { createClient } from '@/lib/supabase/client'
-import { User, Mail, Calendar, Trash2, Loader2, ShieldAlert } from 'lucide-react'
+import { User, Mail, Trash2, Loader2, ShieldAlert } from 'lucide-react'
 
 interface WaitlistEntry {
     id: string
-    created_at: string
     name: string
     email: string
 }
@@ -42,7 +41,6 @@ export default function WaitlistAdmin() {
             const { data, error: supabaseError } = await supabase
                 .from('waitlist')
                 .select('*')
-                .order('created_at', { ascending: false })
 
             if (supabaseError) {
                 setError(supabaseError.message)
@@ -139,16 +137,15 @@ export default function WaitlistAdmin() {
                             <table className="w-full text-left border-collapse">
                                 <thead>
                                     <tr className="bg-gray-50/50 border-b border-gray-100">
-                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600">Name</th>
-                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600">Email</th>
-                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600">Joined Date</th>
-                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600 text-right">Actions</th>
+                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600 font-medium">Name</th>
+                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600 font-medium">Email</th>
+                                        <th className="px-6 py-4 text-sm font-semibold text-gray-600 text-right font-medium">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-gray-50">
                                     {entries.length === 0 ? (
                                         <tr>
-                                            <td colSpan={4} className="px-6 py-12 text-center text-gray-400">
+                                            <td colSpan={3} className="px-6 py-12 text-center text-gray-400">
                                                 No entries found yet.
                                             </td>
                                         </tr>
@@ -167,12 +164,6 @@ export default function WaitlistAdmin() {
                                                     <div className="flex items-center gap-2 text-gray-600">
                                                         <Mail size={14} />
                                                         <span>{entry.email}</span>
-                                                    </div>
-                                                </td>
-                                                <td className="px-6 py-4">
-                                                    <div className="flex items-center gap-2 text-gray-500 text-sm">
-                                                        <Calendar size={14} />
-                                                        {new Date(entry.created_at).toLocaleDateString()}
                                                     </div>
                                                 </td>
                                                 <td className="px-6 py-4 text-right">

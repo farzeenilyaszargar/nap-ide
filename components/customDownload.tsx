@@ -18,10 +18,16 @@ export default function DownloadButton() {
   if (!os) return null;
 
   return (
-    <Link
-      href={os === "mac" ? "/downloads/app.dmg" : os === "windows" ? "/downloads/app.exe" : "/downloads/app.deb"}
+    // <Link
+    //   href={os === "mac" ? "/downloads/app.dmg" : os === "windows" ? "/downloads/app.exe" : "/downloads/app.deb"}
+    //   className="border border-gray-300 sm:flex justify-center items-center gap-1 bg-black text-white px-5 py-2 rounded-full text-xl hidden hover:bg-gray-800 transition">
+    //   Download for {os === "mac" ? "macOS" : os.charAt(0).toUpperCase() + os.slice(1)}
+    //   <Image src={"/download.png"} width={20} height={20} alt='download' />
+    // </Link>
+    <Link href="/waitlist"
       className="border border-gray-300 sm:flex justify-center items-center gap-1 bg-black text-white px-5 py-2 rounded-full text-xl hidden hover:bg-gray-800 transition">
-      Download for {os === "mac" ? "macOS" : os.charAt(0).toUpperCase() + os.slice(1)}
+
+      Join Waitlist
       <Image src={"/download.png"} width={20} height={20} alt='download' />
     </Link>
   );

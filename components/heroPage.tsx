@@ -16,15 +16,15 @@ export default function HeroPage() {
                     <DownloadButton />
                 </div>
                 <div className='w-full flex justify-center items-center'>
-                    <Link href="/waitlist" className='text-lg hover:underline text-[#9B9B9B]'>Join Waitlist</Link>
-                    <Image src="/next.svg" width={20} height={20} alt='arrow' className='ml-2' />
+                    <Link href="/features" className='text-lg hover:underline text-[#9B9B9B]'>See Features</Link>
+                    <Image src="/next.svg" width={15} height={15} alt='arrow' className='ml-2' />
                 </div>
 
             </div>
 
 
             <div className='w-full flex justify-center items-center'>
-                <Image src={"/demo.png"} width={1280} height={720} alt='demo' className='w-full' />
+                <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full' />
             </div>
 
         </div>

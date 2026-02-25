@@ -1,7 +1,6 @@
 -- Create waitlist table
 CREATE TABLE IF NOT EXISTS public.waitlist (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-    created_at TIMESTAMPTZ DEFAULT now(),
     name TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL
 );
