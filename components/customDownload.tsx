@@ -28,7 +28,7 @@ export default function DownloadButton() {
       className="border border-gray-300 sm:flex justify-center items-center gap-1 bg-black text-white px-7 py-2 rounded-full text-xl hidden hover:bg-gray-800 transition">
 
       Join Waitlist
-      <Image src={"/right-arrow.png"} width={15} height={15} alt='download' className="invert mt-0.5 ml-1" />
+      <Image src={"/right-arrow.png"} width={16} height={16} alt='download' className="invert mt-0.5 ml-1 rotate-320" />
     </Link>
   );
 }
