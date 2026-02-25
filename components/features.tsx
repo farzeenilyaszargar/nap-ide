@@ -12,7 +12,7 @@ export default function Features() {
                 </div>
                 <div className="flex flex-col mx-4 sm:m-10 bg-[#1A1A1A] rounded-2xl p-6 sm:p-15 gap-6 sm:gap-15 text-center">
                     <Image src="/files.jpeg" width={2000} height={2000} alt="img" className="rounded-2xl" />
-                    <p className="text-xl sm:text-3xl font-bold text-[#EAEAEA]">Surfers edits <span className="text-[#6D6D6D]">multiple files at a time</span>  <br></br> so relax <span className="text-[#6D6D6D]">&amp; take a nap.</span></p>
+                    <p className="text-xl sm:text-3xl font-bold text-[#EAEAEA]">Surfers edits <span className="text-[#6D6D6D]">multiple files at a time</span>  so relax <span className="text-[#6D6D6D]">&amp; take a nap.</span></p>
                     <p className="text-sm sm:text-base text-[#6D6D6D]">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
                 </div>
             </div>

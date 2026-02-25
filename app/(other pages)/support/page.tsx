@@ -26,10 +26,10 @@ export default function SupportPage() {
             </div>
             <h3 className="text-xl font-bold mb-3 text-black">Email Support</h3>
             <p className="text-gray-500 mb-6">Get a detailed response from our team within 24 hours. Best for non-urgent inquiries.</p>
-            <a href="mailto:support@surferseditor.com" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+            <a href="mailto:support@napeditor.com" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
               Send Email
             </a>
-            <p className="text-sm text-gray-400 mt-4">support@surferseditor.com</p>
+            <p className="text-sm text-gray-400 mt-4">support@napeditor.com</p>
           </div>
 
           <div className="bg-gray-50 p-10 rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all text-center">

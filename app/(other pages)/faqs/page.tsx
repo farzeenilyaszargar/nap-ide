@@ -41,7 +41,7 @@ export default function FAQs() {
     },
     {
       q: "How do I contact support?",
-      a: "We offer multiple support channels to help you. You can email us at support@surferseditor.com for a response within 24 hours, call our support line Monday-Friday 9am-6pm, or use the live chat feature for real-time assistance. Pro and Enterprise customers get priority support with faster response times."
+      a: "We offer multiple support channels to help you. You can email us at support@napeditor.com for a response within 24 hours, call our support line Monday-Friday 9am-6pm, or use the live chat feature for real-time assistance. Pro and Enterprise customers get priority support with faster response times."
     }
   ];
 
