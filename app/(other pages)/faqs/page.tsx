@@ -4,24 +4,24 @@ import Footer from "@/components/footer";
 export default function FAQs() {
   const faqs = [
     {
-      q: "What is Surfers Editor?",
-      a: "Surfers Editor is a next-generation AI-powered code editor built for developers who demand speed, intelligence, and precision. It features an advanced AI agent that understands your entire codebase with absolute clarity — every file, every pattern, every nuance. Whether you're building web apps, mobile apps, backend systems, or large-scale projects, Surfers provides a fast, intuitive, and AI-enhanced workspace that keeps you productive and focused."
+      q: "What is Nap Editor?",
+      a: "Nap Editor is a next-generation AI-powered code editor built for developers who demand speed, intelligence, and precision. It features an advanced AI agent that understands your entire codebase with absolute clarity — every file, every pattern, every nuance. Whether you're building web apps, mobile apps, backend systems, or large-scale projects, Nap provides a fast, intuitive, and AI-enhanced workspace that keeps you productive and focused."
     },
     {
       q: "How does the AI understand my codebase?",
-      a: "Surfers uses advanced code indexing and semantic analysis to build a comprehensive understanding of your project. It analyzes file relationships, function dependencies, coding patterns, and project structure. This allows the AI to provide context-aware suggestions, make intelligent multi-file edits, and understand the implications of changes across your entire codebase — not just the file you're working on."
+      a: "Nap uses advanced code indexing and semantic analysis to build a comprehensive understanding of your project. It analyzes file relationships, function dependencies, coding patterns, and project structure. This allows the AI to provide context-aware suggestions, make intelligent multi-file edits, and understand the implications of changes across your entire codebase — not just the file you're working on."
     },
     {
       q: "Is there a free plan available?",
-      a: "Yes! We offer a generous free tier that includes basic AI features, code completion, and access to community support. The free plan is perfect for getting started, personal projects, or trying out Surfers before committing. You can upgrade to Pro at any time for advanced features like unlimited AI requests, priority support, and team collaboration tools."
+      a: "Yes! We offer a generous free tier that includes basic AI features, code completion, and access to community support. The free plan is perfect for getting started, personal projects, or trying out Nap before committing. You can upgrade to Pro at any time for advanced features like unlimited AI requests, priority support, and team collaboration tools."
     },
     {
-      q: "What platforms does Surfers support?",
-      a: "Surfers Editor is available for macOS (Intel and Apple Silicon), Windows (10/11 64-bit), and Linux (Debian, Ubuntu, Fedora). We provide native installers optimized for each platform to ensure the best performance. The editor is built on Rust for lightning-fast startup times and zero-latency typing experience."
+      q: "What platforms does Nap support?",
+      a: "Nap Editor is available for macOS (Intel and Apple Silicon), Windows (10/11 64-bit), and Linux (Debian, Ubuntu, Fedora). We provide native installers optimized for each platform to ensure the best performance. The editor is built on Rust for lightning-fast startup times and zero-latency typing experience."
     },
     {
-      q: "Can Surfers edit multiple files at once?",
-      a: "Absolutely! One of Surfers' most powerful features is its ability to make intelligent multi-file edits. When you ask the AI to implement a feature or refactor code, it can modify multiple files simultaneously while maintaining consistency across your codebase. This includes updating imports, adjusting function signatures, and ensuring all related code stays in sync."
+      q: "Can Nap edit multiple files at once?",
+      a: "Absolutely! One of Nap's most powerful features is its ability to make intelligent multi-file edits. When you ask the AI to implement a feature or refactor code, it can modify multiple files simultaneously while maintaining consistency across your codebase. This includes updating imports, adjusting function signatures, and ensuring all related code stays in sync."
     },
     {
       q: "How secure is my code?",
@@ -29,7 +29,7 @@ export default function FAQs() {
     },
     {
       q: "Can I use my existing VS Code extensions?",
-      a: "Yes! Surfers is fully compatible with the VS Code extension ecosystem. You can install and use your favorite extensions directly within Surfers. This means you don't have to give up the tools you love — just enhance them with Surfers' powerful AI capabilities."
+      a: "Yes! Nap is fully compatible with the VS Code extension ecosystem. You can install and use your favorite extensions directly within Nap. This means you don't have to give up the tools you love — just enhance them with Nap's powerful AI capabilities."
     },
     {
       q: "How do I cancel my subscription?",
@@ -37,7 +37,7 @@ export default function FAQs() {
     },
     {
       q: "Does Surfers integrate with GitHub?",
-      a: "Yes, Surfers has deep GitHub integration. You can push code, create branches, manage repos, and sync your work seamlessly — all from within the editor. The AI can even help you write meaningful commit messages and manage your Git workflow with the grace of engineered precision."
+      a: "Yes, Nap has deep GitHub integration. You can push code, create branches, manage repos, and sync your work seamlessly — all from within the editor. The AI can even help you write meaningful commit messages and manage your Git workflow with the grace of engineered precision."
     },
     {
       q: "How do I contact support?",
@@ -52,7 +52,7 @@ export default function FAQs() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Everything you need to know about Surfers Editor. Can't find what you're looking for? Contact our support team.
+            Everything you need to know about Nap Editor. Can't find what you're looking for? Contact our support team.
           </p>
         </div>
         <div className="space-y-6">

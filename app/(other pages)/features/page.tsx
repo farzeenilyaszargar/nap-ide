@@ -3,7 +3,7 @@
 import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import TrySurfers from "@/components/trySurfer";
+import TryNap from "@/components/trySurfer";
 import { Zap, Shield, Plug } from "lucide-react";
 
 export default function FeaturesPage() {
@@ -48,7 +48,7 @@ export default function FeaturesPage() {
                 </div>
             </div>
 
-            <TrySurfers />
+            <TryNap />
             <Footer />
         </div>
     );

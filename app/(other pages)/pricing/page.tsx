@@ -7,7 +7,7 @@ import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import Header from "@/components/header";
-import TrySurfers from "@/components/trySurfer";
+import TryNap from "@/components/trySurfer";
 import { Check } from "lucide-react";
 
 export default function PricingPage() {
@@ -129,7 +129,7 @@ export default function PricingPage() {
                     </div>
                 </div>
             </div>
-            <TrySurfers />
+            <TryNap />
             <Footer />
         </div>
     );

@@ -5,10 +5,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Surfers Editor | Best Way To Code With AI",
+  title: "Nap Editor | Best Way To Code With AI",
   description: "The Best Way To Code With AI",
-  keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool", "surfers", "editor", "surfers editor"],
-  alternates: { canonical: "www.surfers.bot" },
+  keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool", "nap", "editor", "nap editor"],
+  alternates: { canonical: "www.nap.bot" },
   icons: { icon: "/favicon.ico" },
   robots: {
     index: true,
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     nocache: false
   },
   openGraph: {
-    title: "Surfers Editor",
+    title: "Nap Editor",
     description: "The Best Way To Code With AI",
-    url: "www.surfers.bot",
+    url: "www.nap.bot",
     images: [
       {
         url: "",
         width: 0,
         height: 0,
-        alt: "surfers preview"
+        alt: "nap preview"
       }
     ],
     locale: "en_US",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Surfers Editor",
+    title: "Nap Editor",
     description: "The Best Way To Code With AI.",
     images: ["/og-image.png"],
   },

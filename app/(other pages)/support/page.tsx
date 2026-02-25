@@ -12,7 +12,7 @@ export default function SupportPage() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold text-black mb-6">How can we help?</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Our dedicated support team is here to assist you with any questions, issues, or feedback you might have about Surfers Editor.
+            Our dedicated support team is here to assist you with any questions, issues, or feedback you might have about Nap Editor.
           </p>
         </div>
       </div>

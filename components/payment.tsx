@@ -9,7 +9,7 @@ export default function Checkout() {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID!,
       amount: order.amount,
       currency: "INR",
-      name: "Surfers Editor",
+      name: "Nap Editor",
       description: "Credits Example Testing Payment",
       order_id: order.id,
 

@@ -8,7 +8,7 @@ export default function DownloadPage() {
       <Header />
       <div className="max-w-7xl mx-auto px-4 py-20 flex flex-col items-center">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-black mb-6">Download Surfers Editor</h1>
+          <h1 className="text-5xl font-bold text-black mb-6">Download Nap Editor</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Experience the future of code editing on your preferred platform. Fast, lightweight, and powerful.
           </p>

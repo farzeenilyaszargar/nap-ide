@@ -30,7 +30,7 @@ export default function Footer() {
             </div>
 
 
-            <div className="text-gray-300 text-sm text-center mt-20">© {new Date().getFullYear()} Surfers Inc.</div>
+            <div className="text-gray-300 text-sm text-center mt-20">© {new Date().getFullYear()} Nap Inc.</div>
 
 
 

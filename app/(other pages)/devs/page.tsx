@@ -9,7 +9,7 @@ export default function Devs() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4 text-black">Developer Resources</h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Everything you need to build with Surfers Editor. API references, SDKs, and guides.
+            Everything you need to build with Nap Editor. API references, SDKs, and guides.
           </p>
         </div>
 

@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroPage from "@/components/heroPage";
 import Checkout from "@/components/payment";
-import TrySurfers from "@/components/trySurfer";
+import TryNap from "@/components/trySurfer";
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <HeroPage />
       <Features />
 
-      <TrySurfers />
+      <TryNap />
       <Footer />
 
     </div>
