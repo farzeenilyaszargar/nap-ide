@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <HeroPage />
       <Features />
-      <DemoVid />
+
       <TrySurfers />
       <Footer />
 

@@ -36,7 +36,22 @@ export async function GET(request: Request) {
     }
 
     // Redirect to the specified next URL or dashboard
-    return NextResponse.redirect(new URL(next, origin))
+    const finalUrl = new URL(next, origin)
+
+    // If we're going to the electron auth success page, we need to pass the tokens
+    if (next === '/electron-auth-success') {
+      const supabase = await createClient()
+      const { data: { session } } = await supabase.auth.getSession()
+
+      if (session) {
+        finalUrl.searchParams.set('token', session.access_token)
+        if (session.refresh_token) {
+          finalUrl.searchParams.set('refresh_token', session.refresh_token)
+        }
+      }
+    }
+
+    return NextResponse.redirect(finalUrl)
   } catch (error) {
     console.error('Callback route error:', error)
     const requestUrl = new URL(request.url)

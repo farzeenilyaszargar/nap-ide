@@ -16,7 +16,7 @@ export default function HeroPage() {
                     <DownloadButton />
                 </div>
                 <div className='w-full flex justify-center items-center'>
-                    <Link href="/features" className='text-xl hover:underline text-[#9B9B9B]'>See Features</Link>
+                    <Link href="/waitlist" className='text-lg hover:underline text-[#9B9B9B]'>Join Waitlist</Link>
                     <Image src="/next.svg" width={20} height={20} alt='arrow' className='ml-2' />
                 </div>
 

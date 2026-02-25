@@ -39,7 +39,14 @@ export default function SignIn() {
         let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
         // Sanitize: remove trailing slash if exists
         siteUrl = siteUrl.replace(/\/$/, '')
-        const redirectUrl = `${siteUrl}/auth/callback?next=/dashboard`
+
+        // Check for redirect destination from URL params or sessionStorage
+        const urlRedirectTo = searchParams.get('redirect_to')
+        const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
+        const nextPath = urlRedirectTo || sessionRedirectTo || '/dashboard'
+
+        // For IDE logins, we need to ensure the OAuth callback knows to redirect to electron-auth-success
+        const redirectUrl = `${siteUrl}/auth/callback?next=${encodeURIComponent(nextPath)}`
 
         const baseOptions = {
             redirectTo: redirectUrl,
