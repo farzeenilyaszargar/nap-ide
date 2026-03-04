@@ -9,10 +9,10 @@ export default function HeroPage() {
     <section className="mx-auto flex w-full max-w-7xl flex-col px-5 pb-8 pt-10 sm:px-10 lg:px-14">
       <div className="fade-up-delay mx-auto max-w-4xl text-center">
         <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-[var(--text-strong)] sm:text-6xl lg:text-7xl">
-          Download Nap Editor and ship features before others finish planning.
+          Ship faster with Nap.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--text-muted)] sm:text-lg">
-          Nap is an AI coding partner designed for serious builders. It understands your codebase, executes real work across files, and keeps GitHub synced without friction.
+          AI coding that understands your codebase, executes real changes, and helps you deliver in less time.
         </p>
       </div>
 
