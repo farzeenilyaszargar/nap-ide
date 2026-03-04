@@ -214,6 +214,7 @@ export default function Header() {
                     </div>
                 </div>
             </header>
+            <div aria-hidden="true" className="h-16" />
 
             {mobileMenuOpen && (
                 <div className="fixed inset-0 z-50 md:hidden">

@@ -6,7 +6,7 @@ import TryNap from "@/components/trySurfer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden pt-16">
+    <main className="min-h-screen w-full overflow-x-hidden">
       <Header />
       <HeroPage />
       <Features />
