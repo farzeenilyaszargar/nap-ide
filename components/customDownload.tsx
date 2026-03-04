@@ -4,9 +4,10 @@ import Link from "next/link";
 
 type DownloadButtonProps = {
   className?: string;
+  iconClassName?: string;
 };
 
-export default function DownloadButton({ className = "" }: DownloadButtonProps) {
+export default function DownloadButton({ className = "", iconClassName = "" }: DownloadButtonProps) {
   return (
     <Link
       href="/download"
@@ -18,7 +19,7 @@ export default function DownloadButton({ className = "" }: DownloadButtonProps) 
         width={16}
         height={16}
         alt="platform icon"
-        className="h-4 w-4 object-contain"
+        className={`h-4 w-4 object-contain ${iconClassName}`}
       />
     </Link>
   );

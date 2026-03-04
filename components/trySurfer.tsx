@@ -13,7 +13,7 @@ export default function TryNap() {
           Join the waitlist for early access and get updates as new desktop builds roll out.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <DownloadButton className="border-white/25 bg-white text-[#0f1713] hover:bg-white/90" />
+          <DownloadButton className="border-white/25 bg-white text-black hover:bg-white/90" iconClassName="invert" />
           <Link
             href="/pricing"
             className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10 sm:text-base"
