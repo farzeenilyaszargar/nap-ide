@@ -14,9 +14,6 @@ export default function HeroPage() {
         <h1 className="mt-1 text-5xl font-bold leading-tight tracking-tight text-zinc-500 sm:text-6xl lg:text-7xl">
           Lightning. Fast.
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--text-muted)] sm:text-lg">
-          AI coding that understands your codebase, executes real changes, and helps you deliver in less time.
-        </p>
       </div>
 
       <div className="fade-up-delay mt-10 flex flex-wrap items-center justify-center gap-4">
