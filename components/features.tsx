@@ -6,23 +6,23 @@ export default function Features() {
       title: "Work on many files in one instruction.",
       body: "Nap edits large surfaces of your project in one go, so feature work feels like execution instead of coordination.",
       image: "/files.jpeg",
-      tone: "bg-[#0f1713] text-white border-white/10",
+      tone: "bg-[var(--surface-strong)] text-white border-white/10",
       bodyTone: "text-white/80"
     },
     {
       title: "See your repository with context, not guesses.",
       body: "Your codebase is treated as one connected system, giving better decisions and fewer broken assumptions.",
       image: "/parallel.jpeg",
-      tone: "bg-white text-[#111512] border-black/10",
-      bodyTone: "text-[#56615b]"
+      tone: "bg-white text-[var(--text-strong)] border-[var(--line-soft)]",
+      bodyTone: "text-[var(--text-muted)]"
     }
   ];
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-12 pt-8 sm:px-10 lg:px-14">
       <div className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-semibold tracking-[0.14em] text-[#56615b] uppercase">Why Teams Switch</p>
-        <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#111512] sm:text-5xl">
+        <p className="text-xs font-semibold tracking-[0.14em] text-[var(--text-muted)] uppercase">Why Teams Switch</p>
+        <h2 className="mt-3 text-3xl font-semibold leading-tight text-[var(--text-strong)] sm:text-5xl">
           A sharper workflow from first prompt to shipped commit.
         </h2>
       </div>
@@ -48,13 +48,13 @@ export default function Features() {
         ))}
       </div>
 
-      <article className="mt-6 grid items-center gap-8 rounded-[26px] border border-black/10 bg-white p-6 shadow-[0_12px_34px_rgba(12,31,24,0.07)] md:grid-cols-2 md:p-10">
+      <article className="mt-6 grid items-center gap-8 rounded-[26px] border border-[var(--line-soft)] bg-white p-6 shadow-[0_12px_34px_rgba(12,31,24,0.07)] md:grid-cols-2 md:p-10">
         <div>
-          <p className="text-xs font-semibold tracking-[0.14em] text-[#56615b] uppercase">GitHub Native Flow</p>
-          <h3 className="mt-3 text-3xl font-semibold leading-tight text-[#111512]">
+          <p className="text-xs font-semibold tracking-[0.14em] text-[var(--text-muted)] uppercase">GitHub Native Flow</p>
+          <h3 className="mt-3 text-3xl font-semibold leading-tight text-[var(--text-strong)]">
             Keep branches clean and release velocity high.
           </h3>
-          <p className="mt-4 text-sm leading-relaxed text-[#56615b] sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)] sm:text-base">
             Nap works like an engineer who understands version control discipline. Changes stay structured, review-ready, and easy to ship.
           </p>
           <div className="mt-6 flex flex-wrap gap-2 text-xs sm:text-sm">
