@@ -24,10 +24,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    background-image:
-      radial-gradient(circle at 20% 0%, rgba(19, 138, 99, 0.22), transparent 36%),
-      radial-gradient(circle at 80% 12%, rgba(22, 75, 57, 0.12), transparent 32%),
-      linear-gradient(180deg, #f8faf9 0%, #edf1ee 60%, #eef3f0 100%);
+    background-image: linear-gradient(180deg, #f8faf9 0%, #f1f3f2 58%, #ecefed 100%);
     min-height: 100vh;
   }
 
