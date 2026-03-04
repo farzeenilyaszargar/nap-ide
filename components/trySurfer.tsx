@@ -1,4 +1,3 @@
-import Link from "next/link";
 import DownloadButton from "./customDownload";
 
 export default function TryNap() {
@@ -12,14 +11,8 @@ export default function TryNap() {
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
           Join the waitlist for early access and get updates as new desktop builds roll out.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <DownloadButton variant="light" />
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10 sm:text-base"
-          >
-            View Pricing
-          </Link>
+        <div className="mt-8 flex items-center justify-center">
+          <DownloadButton variant="light" className="px-10 py-4 text-base sm:text-lg" />
         </div>
       </div>
     </section>
