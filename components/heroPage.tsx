@@ -8,8 +8,11 @@ export default function HeroPage() {
   return (
     <section className="mx-auto flex w-full max-w-7xl flex-col px-5 pb-8 pt-10 sm:px-10 lg:px-14">
       <div className="fade-up-delay mx-auto max-w-4xl text-center">
-        <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight text-[var(--text-strong)] sm:text-6xl lg:text-7xl">
-          Ship faster with Nap.
+        <h1 className="text-5xl font-bold leading-tight tracking-tight text-zinc-800 sm:text-6xl lg:text-7xl">
+          Code.
+        </h1>
+        <h1 className="mt-1 text-5xl font-bold leading-tight tracking-tight text-zinc-500 sm:text-6xl lg:text-7xl">
+          Lightning. Fast.
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[var(--text-muted)] sm:text-lg">
           AI coding that understands your codebase, executes real changes, and helps you deliver in less time.
