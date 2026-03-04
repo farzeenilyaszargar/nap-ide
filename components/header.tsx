@@ -91,7 +91,7 @@ export default function Header() {
                 <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-10 lg:px-14">
                     <Link href="/" className="flex items-center gap-2.5">
                         <Image src="/logo.png" alt="Nap" width={36} height={20} className="h-5 w-auto rounded-md object-contain" />
-                        <span className="hidden text-base font-semibold text-[var(--text-strong)] sm:block">Nap</span>
+                        <span className="hidden text-xl font-extrabold italic text-[var(--text-strong)] sm:block">Nap</span>
                     </Link>
 
                     <nav className='mx-6 hidden flex-1 items-center justify-center gap-1 md:flex'>
