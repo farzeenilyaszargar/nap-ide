@@ -106,13 +106,6 @@ export default function Header() {
                     </nav>
 
                     <div className="flex items-center gap-2 sm:gap-3">
-                        <Link
-                            href="/download"
-                            className="hidden rounded-full border border-[#1d3f32] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#192922] sm:inline-flex"
-                        >
-                            Download Now
-                        </Link>
-
                         {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -251,14 +244,6 @@ export default function Header() {
                                     {link.label}
                                 </Link>
                             ))}
-
-                            <Link
-                                href="/download"
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="mt-2 block rounded-lg border border-[#1d3f32] bg-[var(--surface-strong)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#192922]"
-                            >
-                                Download Now
-                            </Link>
 
                             {user && (
                                 <>
