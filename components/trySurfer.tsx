@@ -9,7 +9,7 @@ export default function TryNap() {
           Download Nap Editor and turn ideas into shipped product.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-          Join the waitlist for early access and get updates as new desktop builds roll out.
+          Download Nap now and start building faster with a codebase-aware AI editor.
         </p>
         <div className="mt-8 flex items-center justify-center">
           <DownloadButton variant="light" className="px-10 py-4 text-base sm:text-lg" />
