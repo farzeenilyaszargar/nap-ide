@@ -1,44 +1,78 @@
 import Image from "next/image";
 
 export default function Features() {
-    return (
-        <section className="w-full py-10 sm:py-20 flex flex-col gap-16 sm:gap-32 overflow-hidden px-4 sm:px-0">
+  const cards = [
+    {
+      title: "Work on many files in one instruction.",
+      body: "Nap edits large surfaces of your project in one go, so feature work feels like execution instead of coordination.",
+      image: "/files.jpeg",
+      tone: "bg-[var(--surface-strong)] text-white border-white/10",
+      bodyTone: "text-white/80"
+    },
+    {
+      title: "See your repository with context, not guesses.",
+      body: "Your codebase is treated as one connected system, giving better decisions and fewer broken assumptions.",
+      image: "/parallel.jpeg",
+      tone: "bg-white text-[var(--text-strong)] border-[var(--line-soft)]",
+      bodyTone: "text-[var(--text-muted)]"
+    }
+  ];
 
-            <div className="flex flex-col md:flex-row gap-6 sm:gap-0">
-                <div className="flex flex-col mx-4 sm:m-10 bg-[#F5F5F5] rounded-2xl p-6 sm:p-15 gap-6 sm:gap-15 text-center">
-                    <p className="text-xl sm:text-3xl font-bold text-[#7E7E7E]">For the <span className="text-[#414141]">real devs</span>  <br></br>Nap is the best way to <span className="text-[#414141]">code.</span></p>
-                    <p className="text-sm sm:text-base">For developers who builds real stuff nap delivers a world-class intelligent agent that sees your entire codebase with absolute clarity, understands every file, every nuance, and builds with the sophistication of a top-tier engineer.</p>
-                    <Image src="/parallel.jpeg" width={2000} height={2000} alt="img" className="rounded-2xl" />
-                </div>
-                <div className="flex flex-col mx-4 sm:m-10 bg-[#1A1A1A] rounded-2xl p-6 sm:p-15 gap-6 sm:gap-15 text-center">
-                    <Image src="/files.jpeg" width={2000} height={2000} alt="img" className="rounded-2xl" />
-                    <p className="text-xl sm:text-3xl font-bold text-[#EAEAEA]">Nap edits <span className="text-[#6D6D6D]">multiple files at a time</span>  so relax <span className="text-[#6D6D6D]">&amp; take a nap.</span></p>
-                    <p className="text-sm sm:text-base text-[#6D6D6D]">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
-                </div>
+  return (
+    <section className="mx-auto w-full max-w-7xl px-5 pb-12 pt-8 sm:px-10 lg:px-14">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-xs font-semibold tracking-[0.14em] text-[var(--text-muted)] uppercase">Why Teams Switch</p>
+        <h2 className="mt-3 text-3xl font-semibold leading-tight text-[var(--text-strong)] sm:text-5xl">
+          A sharper workflow from first prompt to shipped commit.
+        </h2>
+      </div>
+
+      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        {cards.map((card) => (
+          <article
+            key={card.title}
+            className={`group overflow-hidden rounded-[24px] border p-6 shadow-[0_10px_30px_rgba(10,25,19,0.06)] transition duration-300 hover:-translate-y-1 ${card.tone}`}
+          >
+            <h3 className="text-2xl font-semibold leading-tight sm:text-3xl">{card.title}</h3>
+            <p className={`mt-4 text-sm leading-relaxed sm:text-base ${card.bodyTone}`}>{card.body}</p>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-black/10">
+              <Image
+                src={card.image}
+                width={1800}
+                height={1200}
+                alt={card.title}
+                className="h-auto w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+              />
             </div>
+          </article>
+        ))}
+      </div>
 
-
-            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-10">
-                <div className="md:w-1/2 w-full relative px-4 md:px-10">
-                    <div className=" transition-transform hover:scale-105 duration-500">
-                        <Image
-                            src="/git.jpeg"
-                            alt="Built for Performance"
-                            className="rounded-2xl md:rounded-r-2xl object-cover"
-                            width={800}
-                            height={600}
-                        />
-                    </div>
-                </div>
-                <div className="md:w-1/2 w-full px-5 text-center">
-                    <h2 className="text-2xl sm:text-3xl font-semibold mb-4 text-black">Control anything &amp;
-                        everything on Nap.</h2>
-                    <p className="text-gray-500 text-base sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
-                </div>
-
-            </div>
-
-        </section>
-    );
+      <article className="mt-6 grid items-center gap-8 rounded-[26px] border border-[var(--line-soft)] bg-white p-6 shadow-[0_12px_34px_rgba(12,31,24,0.07)] md:grid-cols-2 md:p-10">
+        <div>
+          <p className="text-xs font-semibold tracking-[0.14em] text-[var(--text-muted)] uppercase">GitHub Native Flow</p>
+          <h3 className="mt-3 text-3xl font-semibold leading-tight text-[var(--text-strong)]">
+            Keep branches clean and release velocity high.
+          </h3>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)] sm:text-base">
+            Nap works like an engineer who understands version control discipline. Changes stay structured, review-ready, and easy to ship.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2 text-xs sm:text-sm">
+            <span className="rounded-full bg-[#edf6f2] px-3 py-1.5 font-medium text-[#14553f]">Commit-ready changes</span>
+            <span className="rounded-full bg-[#edf6f2] px-3 py-1.5 font-medium text-[#14553f]">Branch-safe execution</span>
+            <span className="rounded-full bg-[#edf6f2] px-3 py-1.5 font-medium text-[#14553f]">Lower merge friction</span>
+          </div>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-black/10">
+          <Image
+            src="/git.jpeg"
+            alt="Nap Editor with GitHub workflow"
+            className="h-auto w-full object-cover transition duration-500 hover:scale-[1.03]"
+            width={1100}
+            height={780}
+          />
+        </div>
+      </article>
+    </section>
+  );
 }
-

@@ -1,16 +1,58 @@
 @import "tailwindcss";
 
-
-
 @theme {
-  --color-background: rgba(255, 255, 255, 1);
-  --color-foreground: rgba(0, 0, 0, 1);
+  --color-background: #f2f5f3;
+  --color-foreground: #121513;
 }
 
 @layer base {
+  :root {
+    --site-bg: #f2f5f3;
+    --surface: #ffffff;
+    --surface-strong: #0f1713;
+    --text-strong: #111512;
+    --text-muted: #56615b;
+    --accent: #138a63;
+    --accent-strong: #0f6a4d;
+    --line-soft: rgba(17, 21, 18, 0.08);
+  }
+
+  * {
+    border-color: var(--line-soft);
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(19, 138, 99, 0.22), transparent 36%),
+      radial-gradient(circle at 80% 12%, rgba(22, 75, 57, 0.12), transparent 32%),
+      linear-gradient(180deg, #f8faf9 0%, #edf1ee 60%, #eef3f0 100%);
+    min-height: 100vh;
   }
+
+  ::selection {
+    background: rgba(19, 138, 99, 0.18);
+    color: #07110d;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: rise 0.75s ease-out both;
+}
+
+.fade-up-delay {
+  animation: rise 0.75s ease-out 0.18s both;
 }
