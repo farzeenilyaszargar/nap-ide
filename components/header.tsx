@@ -93,7 +93,7 @@ export default function Header() {
                         <Image src="/logo.png" alt="Nap" width={36} height={20} className="h-5 w-auto rounded-md object-contain" />
                     </Link>
 
-                    <nav className='mx-6 hidden flex-1 items-center justify-center gap-1 md:flex'>
+                    <nav className='mx-6 hidden flex-1 items-center justify-end gap-1 md:flex'>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
