@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #f2f5f3;
+  --color-background: #ffffff;
   --color-foreground: #121513;
 }
 
 @layer base {
   :root {
-    --site-bg: #f2f5f3;
+    --site-bg: #ffffff;
     --surface: #ffffff;
     --surface-strong: #0f1713;
     --text-strong: #111512;
@@ -24,7 +24,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    background-image: linear-gradient(180deg, #f8faf9 0%, #f1f3f2 58%, #ecefed 100%);
+    background-image: none;
     min-height: 100vh;
   }
 
