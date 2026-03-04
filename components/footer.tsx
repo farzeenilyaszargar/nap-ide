@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 w-full max-w-7xl border-t border-white/10 pt-5 text-sm text-white/50">
+      <div className="mx-auto mt-10 w-full max-w-7xl pt-5 text-center text-sm text-white/50">
         © {new Date().getFullYear()} Nap Inc. All rights reserved.
       </div>
     </footer>
