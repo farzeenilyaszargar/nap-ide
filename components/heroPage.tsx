@@ -11,8 +11,9 @@ export default function HeroPage() {
         <h1 className="text-5xl font-bold leading-tight tracking-tight text-zinc-800 sm:text-6xl lg:text-7xl">
           Code.
         </h1>
-        <h1 className="mt-1 text-5xl font-bold leading-tight tracking-tight text-zinc-500 sm:text-6xl lg:text-7xl">
-          Lightning. Fast.
+        <h1 className="mt-1 text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+          <span className="text-zinc-500">Lightning.</span>{" "}
+          <span className="text-zinc-400">Fast.</span>
         </h1>
       </div>
 
