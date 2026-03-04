@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({ subsets: ["latin"] });
+const wixMadeforText = Wix_Madefor_Text({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nap Editor | Best Way To Code With AI",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={`${sora.className} antialiased`}>
+      <body className={`${wixMadeforText.className} antialiased`}>
         {children}
       </body>
     </html>
