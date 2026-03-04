@@ -21,7 +21,7 @@ export default function HeroPage() {
         <DownloadButton />
         <Link
           href="/features"
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--line-soft)] bg-white px-6 py-3 text-sm font-medium text-[var(--text-strong)] transition hover:-translate-y-0.5 hover:bg-[#f7faf8] sm:text-base"
+          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 underline underline-offset-4 transition hover:text-zinc-800 sm:text-base"
         >
           See Features
           <Image src="/next.svg" width={15} height={15} alt="arrow" className="h-3.5 w-3.5" />
