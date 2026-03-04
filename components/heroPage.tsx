@@ -7,11 +7,11 @@ import DownloadButton from "./customDownload";
 export default function HeroPage() {
   return (
     <section className="mx-auto flex w-full max-w-7xl flex-col px-5 pb-8 pt-10 sm:px-10 lg:px-14">
-      <div className="fade-up-delay mx-auto max-w-4xl text-center">
-        <h1 className="text-5xl font-bold leading-tight tracking-tight text-zinc-800 sm:text-6xl lg:text-7xl">
+      <div className="fade-up-delay mx-auto mt-4 max-w-4xl text-center">
+        <h1 className="text-4xl font-bold leading-tight tracking-tight text-zinc-800 sm:text-5xl lg:text-6xl">
           Code.
         </h1>
-        <h1 className="mt-1 text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+        <h1 className="mt-1 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
           <span className="text-zinc-500">Lightning.</span>{" "}
           <span className="text-zinc-400">Fast.</span>
         </h1>
