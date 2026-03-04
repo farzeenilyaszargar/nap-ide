@@ -27,11 +27,14 @@ export default function HeroPage() {
         </Link>
       </div>
 
-      <div className="fade-up mt-12 rounded-[28px] border border-[var(--line-soft)] bg-white/80 p-3 shadow-[0_16px_40px_rgba(8,24,17,0.08)] backdrop-blur sm:p-5">
-        <div className="relative overflow-hidden rounded-[22px] border border-black/5">
-          <Image src="/main.jpeg" width={1280} height={720} alt="Nap editor demo" className="h-auto w-full object-cover" priority />
-        </div>
-      </div>
+      <Image
+        src="/main.jpeg"
+        width={1280}
+        height={720}
+        alt="Nap editor demo"
+        className="fade-up mt-12 h-auto w-full rounded-[22px] object-cover"
+        priority
+      />
     </section>
   );
 }
