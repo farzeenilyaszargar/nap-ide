@@ -8,13 +8,13 @@ type DownloadButtonProps = {
 };
 
 export default function DownloadButton({ className = "" }: DownloadButtonProps) {
-  const osLabel = useMemo(() => {
-    if (typeof navigator === "undefined") return "Desktop";
+  const osIcon = useMemo(() => {
+    if (typeof navigator === "undefined") return "/download.png";
     const ua = navigator.userAgent.toLowerCase();
-    if (ua.includes("mac os") || ua.includes("macintosh")) return "macOS";
-    if (ua.includes("windows")) return "Windows";
-    if (ua.includes("linux")) return "Linux";
-    return "Desktop";
+    if (ua.includes("mac os") || ua.includes("macintosh")) return "/apple-icon.png";
+    if (ua.includes("windows")) return "/windows-icon.png";
+    if (ua.includes("linux")) return "/linux-icon.png";
+    return "/download.png";
   }, []);
 
   return (
@@ -23,8 +23,14 @@ export default function DownloadButton({ className = "" }: DownloadButtonProps) 
       className={`inline-flex items-center justify-center gap-3 rounded-full border border-[#0e5a42] bg-[var(--surface-strong)] px-7 py-3 text-sm font-semibold tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-[#15261f] sm:text-base ${className}`}
     >
       <span>Download Now</span>
-      <span className="rounded-full border border-white/25 bg-white/10 px-2 py-0.5 text-[11px] uppercase tracking-wider text-white/90">
-        {osLabel}
+      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-white">
+        <Image
+          src={osIcon}
+          width={14}
+          height={14}
+          alt="platform icon"
+          className="h-3.5 w-3.5 object-contain"
+        />
       </span>
       <Image
         src="/right-arrow.png"
