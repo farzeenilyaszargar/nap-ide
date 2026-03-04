@@ -23,15 +23,13 @@ export default function DownloadButton({ className = "" }: DownloadButtonProps) 
       className={`inline-flex items-center justify-center gap-3 rounded-full border border-[#0e5a42] bg-[var(--surface-strong)] px-7 py-3 text-sm font-semibold tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-[#15261f] sm:text-base ${className}`}
     >
       <span>Download Now</span>
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/30 bg-white">
-        <Image
-          src={osIcon}
-          width={14}
-          height={14}
-          alt="platform icon"
-          className="h-3.5 w-3.5 object-contain"
-        />
-      </span>
+      <Image
+        src={osIcon}
+        width={16}
+        height={16}
+        alt="platform icon"
+        className="h-4 w-4 object-contain"
+      />
       <Image
         src="/right-arrow.png"
         width={16}
