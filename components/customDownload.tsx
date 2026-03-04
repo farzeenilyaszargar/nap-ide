@@ -14,7 +14,7 @@ export default function DownloadButton({ className = "", iconClassName = "", var
   return (
     <Link
       href="/download"
-      className={`inline-flex items-center justify-center gap-3 rounded-full px-7 py-3 text-sm font-semibold tracking-wide transition hover:-translate-y-0.5 sm:text-base ${
+      className={`hidden items-center justify-center gap-3 rounded-full px-7 py-3 text-sm font-semibold tracking-wide transition hover:-translate-y-0.5 sm:inline-flex sm:text-base ${
         isLight
           ? "border-white/25 bg-white text-black hover:bg-white/90"
           : "border-[#0e5a42] bg-[var(--surface-strong)] text-white hover:bg-[#15261f]"

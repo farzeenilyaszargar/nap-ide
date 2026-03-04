@@ -12,6 +12,9 @@ export default function DownloadPage() {
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-500 sm:text-lg">
             Choose your platform and install Nap in minutes. Fast startup, smooth typing, and AI-assisted development out of the box.
           </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-zinc-500 sm:hidden">
+            Desktop installers are available on laptop/desktop devices.
+          </p>
         </div>
 
         <div className="grid w-full max-w-5xl gap-6 md:grid-cols-3">
@@ -19,7 +22,7 @@ export default function DownloadPage() {
             <Image src="/apple-icon.png" alt="macOS" width={64} height={64} className="mb-6 rounded-xl invert" />
             <h3 className="mb-2 text-2xl font-bold text-zinc-900">macOS</h3>
             <p className="mb-8 text-zinc-500">macOS 11.0 or later</p>
-            <div className="space-y-3 w-full">
+            <div className="hidden w-full space-y-3 sm:block">
               <button className="w-full rounded-lg bg-zinc-900 py-3 font-medium text-white transition-colors hover:bg-zinc-800">
                 Download for Intel
               </button>
@@ -33,7 +36,7 @@ export default function DownloadPage() {
             <Image src="/windows-icon.png" alt="Windows" width={64} height={64} className="mb-6 rounded-xl invert" />
             <h3 className="mb-2 text-2xl font-bold text-zinc-900">Windows</h3>
             <p className="mb-8 text-zinc-500">Windows 10/11 (64-bit)</p>
-            <div className="mt-auto flex w-full justify-center">
+            <div className="mt-auto hidden w-full justify-center sm:flex">
               <button className="w-full max-w-[260px] rounded-lg bg-zinc-900 py-3 font-medium text-white transition-colors hover:bg-zinc-800">
                 Download for Windows
               </button>
@@ -44,7 +47,7 @@ export default function DownloadPage() {
             <Image src="/linux-icon.png" alt="Linux" width={64} height={64} className="mb-6 rounded-xl invert" />
             <h3 className="mb-2 text-2xl font-bold text-zinc-900">Linux</h3>
             <p className="mb-8 text-zinc-500">Debian, Ubuntu, Fedora</p>
-            <div className="space-y-3 w-full mt-auto">
+            <div className="mt-auto hidden w-full space-y-3 sm:block">
               <button className="w-full rounded-lg bg-zinc-900 py-3 font-medium text-white transition-colors hover:bg-zinc-800">
                 Download .deb
               </button>

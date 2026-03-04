@@ -13,6 +13,7 @@ export default function TryNap() {
         </p>
         <div className="mt-8 flex items-center justify-center">
           <DownloadButton variant="light" className="px-10 py-4 text-base sm:text-lg" />
+          <p className="text-sm text-white/70 sm:hidden">Desktop download is available on macOS, Windows, and Linux.</p>
         </div>
       </div>
     </section>

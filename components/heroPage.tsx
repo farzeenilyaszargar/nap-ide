@@ -19,6 +19,7 @@ export default function HeroPage() {
 
       <div className="fade-up-delay mt-10 flex flex-wrap items-center justify-center gap-4">
         <DownloadButton />
+        <p className="text-sm text-zinc-500 sm:hidden">Desktop download is available on macOS, Windows, and Linux.</p>
         <Link
           href="/features"
           className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 transition hover:text-zinc-800 hover:underline hover:underline-offset-4 sm:text-base"
