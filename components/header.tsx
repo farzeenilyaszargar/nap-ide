@@ -90,7 +90,7 @@ export default function Header() {
             <header className="sticky top-0 z-40 w-full bg-white">
                 <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-10 lg:px-14">
                     <Link href="/" className="flex items-center gap-2.5">
-                        <Image src="/logo.png" alt="Nap" width={52} height={30} className="h-7 w-auto rounded-md object-contain" />
+                        <Image src="/logo.png" alt="Nap" width={42} height={24} className="h-6 w-auto rounded-md object-contain" />
                         <span className="hidden text-lg font-black tracking-[0.14em] italic text-[var(--text-strong)] sm:block">NAP</span>
                     </Link>
 
