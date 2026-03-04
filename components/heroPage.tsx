@@ -24,7 +24,7 @@ export default function HeroPage() {
           className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 transition hover:text-zinc-800 hover:underline hover:underline-offset-4 sm:text-base"
         >
           See Features
-          <Image src="/next.svg" width={15} height={15} alt="arrow" className="h-3.5 w-3.5" />
+          <Image src="/right-arrow.png" width={15} height={15} alt="arrow" className="h-3.5 w-3.5" />
         </Link>
       </div>
 
