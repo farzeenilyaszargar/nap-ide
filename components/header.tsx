@@ -87,8 +87,8 @@ export default function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-40 w-full px-5 pb-2 pt-4 sm:px-10 lg:px-14">
-                <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-2xl border border-[var(--line-soft)] bg-white/80 px-4 shadow-[0_10px_26px_rgba(8,23,16,0.07)] backdrop-blur">
+            <header className="sticky top-0 z-40 w-full border-b border-[var(--line-soft)] bg-white/80 backdrop-blur">
+                <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-10 lg:px-14">
                     <Link href="/" className="flex items-center gap-2.5">
                         <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-8 w-8 rounded-md object-cover" />
                         <span className="hidden text-base font-semibold tracking-wide text-[var(--text-strong)] sm:block">Nap Editor</span>
@@ -108,10 +108,10 @@ export default function Header() {
 
                     <div className="flex items-center gap-2 sm:gap-3">
                         <Link
-                            href="/waitlist"
+                            href="/download"
                             className="hidden rounded-full border border-[#1d3f32] bg-[var(--surface-strong)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#192922] sm:inline-flex"
                         >
-                            Get Access
+                            Download Now
                         </Link>
 
                         {/* Mobile Menu Button */}
@@ -254,11 +254,11 @@ export default function Header() {
                             ))}
 
                             <Link
-                                href="/waitlist"
+                                href="/download"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="mt-2 block rounded-lg border border-[#1d3f32] bg-[var(--surface-strong)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#192922]"
                             >
-                                Get Access
+                                Download Now
                             </Link>
 
                             {user && (

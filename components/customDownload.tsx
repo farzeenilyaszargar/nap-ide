@@ -19,10 +19,10 @@ export default function DownloadButton({ className = "" }: DownloadButtonProps) 
 
   return (
     <Link
-      href="/waitlist"
+      href="/download"
       className={`inline-flex items-center justify-center gap-3 rounded-full border border-[#0e5a42] bg-[var(--surface-strong)] px-7 py-3 text-sm font-semibold tracking-wide text-white transition hover:-translate-y-0.5 hover:bg-[#15261f] sm:text-base ${className}`}
     >
-      <span>Join Waitlist</span>
+      <span>Download Now</span>
       <span className="rounded-full border border-white/25 bg-white/10 px-2 py-0.5 text-[11px] uppercase tracking-wider text-white/90">
         {osLabel}
       </span>
