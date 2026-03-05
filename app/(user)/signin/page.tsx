@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import GenHeader from '@/components/genericHeader'
 
-type Provider = 'google' | 'github'
+type Provider = 'google'
 
 const providers: Array<{
     id: Provider
@@ -23,13 +23,8 @@ export default function SignIn() {
     const searchParams = useSearchParams()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
     const [error, setError] = useState<string | null>(null)
-
-    useEffect(() => {
-        const errorParam = searchParams.get('error')
-        if (errorParam) {
-            setError(errorParam)
-        }
-    }, [searchParams])
+    const queryError = searchParams.get('error')
+    const desktopMode = searchParams.get('desktop') === '1'
 
     const handleSignIn = async (provider: Provider) => {
         const supabase = createClient()
@@ -45,11 +40,33 @@ export default function SignIn() {
         const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
         const nextPath = urlRedirectTo || sessionRedirectTo || '/dashboard'
 
-        // For IDE logins, we need to ensure the OAuth callback knows to redirect to electron-auth-success
-        const redirectUrl = `${siteUrl}/auth/callback?next=${encodeURIComponent(nextPath)}`
+        const redirectUrlObject = new URL('/auth/callback', siteUrl)
+
+        if (desktopMode) {
+            const state = searchParams.get('state')
+            const nonce = searchParams.get('nonce')
+            const protocol = searchParams.get('protocol')
+            const redirect = searchParams.get('redirect')
+            const callback = searchParams.get('callback')
+
+            if (!state) {
+                setError('Missing desktop state. Please restart login from the app.')
+                setActiveProvider(null)
+                return
+            }
+
+            redirectUrlObject.searchParams.set('desktop', '1')
+            redirectUrlObject.searchParams.set('state', state)
+            if (nonce) redirectUrlObject.searchParams.set('nonce', nonce)
+            if (protocol) redirectUrlObject.searchParams.set('protocol', protocol)
+            if (redirect) redirectUrlObject.searchParams.set('redirect', redirect)
+            if (callback) redirectUrlObject.searchParams.set('callback', callback)
+        } else {
+            redirectUrlObject.searchParams.set('next', nextPath)
+        }
 
         const baseOptions = {
-            redirectTo: redirectUrl,
+            redirectTo: redirectUrlObject.toString(),
             skipBrowserRedirect: false,
         } as const
 
@@ -99,10 +116,12 @@ export default function SignIn() {
                             </div>
 
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                                Welcome Back
+                                {desktopMode ? 'Continue to Nap Desktop' : 'Welcome Back'}
                             </h1>
                             <p className="mt-3 text-[15px] leading-relaxed text-gray-500">
-                                Sign in to continue to your dashboard and start building with AI.
+                                {desktopMode
+                                    ? 'Use Google sign-in to securely authenticate and return to the desktop app.'
+                                    : 'Sign in to continue to your dashboard and start building with AI.'}
                             </p>
                         </div>
 
@@ -137,10 +156,10 @@ export default function SignIn() {
                             ))}
                         </div>
 
-                        {error && (
+                        {(error || queryError) && (
                             <div className="mt-6 animate-in fade-in zoom-in-95 duration-300">
                                 <div className="rounded-xl bg-red-50 px-4 py-3 text-center">
-                                    <p className="text-sm font-medium text-red-600">{error}</p>
+                                    <p className="text-sm font-medium text-red-600">{error || queryError}</p>
                                 </div>
                             </div>
                         )}
@@ -157,8 +176,9 @@ export default function SignIn() {
 
                     <div className="mt-8 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
                         <p className="text-sm text-gray-500">
-                            Don't have an account? No problem. <br />
-                            Signing in creates one automatically.
+                            {desktopMode
+                                ? 'After sign in, this browser tab will guide you back to the app.'
+                                : <>Don&apos;t have an account? No problem. <br />Signing in creates one automatically.</>}
                         </p>
                     </div>
                 </div>
