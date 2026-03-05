@@ -55,12 +55,13 @@ export async function proxy(request: NextRequest) {
         }
     )
 
-    const { data: { user }, error } = await supabase.auth.getUser()
+    const { data: { user } } = await supabase.auth.getUser()
 
     // 2. Protect API Routes
     if (request.nextUrl.pathname.startsWith('/api') &&
         !request.nextUrl.pathname.startsWith('/api/razorpay') && // Allow callbacks
-        !request.nextUrl.pathname.startsWith('/api/auth')) { // Allow auth endpoints
+        !request.nextUrl.pathname.startsWith('/api/auth') && // Allow auth endpoints
+        !request.nextUrl.pathname.startsWith('/api/desktop')) { // Desktop routes use header auth
 
         if (!user) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
