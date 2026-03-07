@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import Image from "next/image";
 
 export default function DownloadPage() {
-  const macReleasesUrl = "https://github.com/aaravbangsmetal/xMetallic/releases/latest";
+  const macDownloadUrl = "/api/download/mac";
 
   return (
     <div className="min-h-screen">
@@ -22,9 +22,7 @@ export default function DownloadPage() {
             <h3 className="text-2xl font-bold mb-2 text-black">macOS</h3>
             <p className="text-gray-500 mb-8">macOS 11.0 or later</p>
             <a
-              href={macReleasesUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={macDownloadUrl}
               className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors inline-flex items-center justify-center"
             >
               Download for macOS
