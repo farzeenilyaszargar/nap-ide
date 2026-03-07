@@ -9,10 +9,16 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    const headers: HeadersInit = {
+      Accept: "application/vnd.github+json",
+    };
+    const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
+
     const response = await fetch(RELEASES_API_URL, {
-      headers: {
-        Accept: "application/vnd.github+json",
-      },
+      headers,
       cache: "no-store",
     });
 
@@ -24,12 +30,21 @@ export async function GET() {
       assets?: Array<{ name?: string; browser_download_url?: string }>;
     };
 
-    const asset = release.assets?.find((item) => {
+    // Prefer DMG for mac install UX, fall back to mac zip asset.
+    const dmgAsset = release.assets?.find((item) => {
       const name = item.name?.toLowerCase() ?? "";
-      return name.endsWith("-arm64-mac.zip");
+      return name.endsWith(".dmg");
+    });
+    const zipAsset = release.assets?.find((item) => {
+      const name = item.name?.toLowerCase() ?? "";
+      return name.endsWith("-arm64-mac.zip") || name.endsWith("-mac.zip");
     });
 
-    const target = asset?.browser_download_url || RELEASES_FALLBACK_URL;
+    const target =
+      dmgAsset?.browser_download_url ||
+      zipAsset?.browser_download_url ||
+      RELEASES_FALLBACK_URL;
+
     return NextResponse.redirect(target, { status: 302 });
   } catch {
     return NextResponse.redirect(RELEASES_FALLBACK_URL, { status: 302 });
