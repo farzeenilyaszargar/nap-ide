@@ -86,9 +86,10 @@ export default function Header() {
 
     return (
         <>
-            <div className="w-screen flex h-14 justify-between sticky top-0 backdrop-blur-md sm:px-15 px-5 z-10 bg-white/80">
+            <header className="sticky top-0 z-20 w-full border-b border-black/5 bg-white/85 backdrop-blur-md">
+                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                 <Link href="/" className="flex justify-center items-center">
-                    <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-5 w-auto rounded-md" />
+                    <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-4 w-auto rounded-md sm:h-5" />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -208,7 +209,8 @@ export default function Header() {
                         </Link>
                     )}
                 </div>
-            </div>
+                </div>
+            </header>
 
             {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
@@ -220,7 +222,7 @@ export default function Header() {
                     />
 
                     {/* Menu Panel */}
-                    <div className="absolute top-0 right-0 w-64 h-full bg-white shadow-xl">
+                    <div className="absolute top-0 right-0 h-full w-72 max-w-[85vw] bg-white shadow-xl">
                         <div className="flex items-center justify-between p-4 border-b border-gray-200">
                             <span className="font-semibold text-black">Menu</span>
                             <button

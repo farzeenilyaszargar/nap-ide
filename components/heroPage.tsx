@@ -6,27 +6,27 @@ import DownloadButton from './customDownload'
 
 export default function HeroPage() {
     return (
-        <div className='w-screen flex-row  justify-center items-center sm:px-10 px-5 gap-5 md:mt-0 mt-20'>
-            <div className='flex flex-col gap-10 h-120 justify-center items-center'>
-                <div className='flex flex-col gap-10'>
-                    <h1 className='sm:text-6xl text-5xl text-center font-bold text-[#383838]'>Code.</h1>
-                    <h1 className='sm:text-6xl text-5xl text-center font-bold -mt-7 '><span className='text-[#696969]'>Lightning.</span><span className='text-[#A4A4A4]'>Fast.</span></h1>
+        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-8 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 lg:px-10'>
+            <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
+                <div className='flex flex-col gap-3 sm:gap-6'>
+                    <h1 className='text-center text-3xl font-bold text-[#383838] sm:text-6xl'>Code.</h1>
+                    <h1 className='-mt-1 text-center text-3xl font-bold sm:-mt-4 sm:text-6xl'><span className='text-[#696969]'>Lightning.</span><span className='text-[#A4A4A4]'>Fast.</span></h1>
                 </div>
-                <div className='flex gap-4'>
+                <div className='flex w-full justify-center'>
                     <DownloadButton />
                 </div>
-                <div className='w-full flex justify-center items-center'>
-                    <Link href="/features" className='text-lg hover:underline text-[#9B9B9B]'>See Features</Link>
+                <div className='flex w-full items-center justify-center'>
+                    <Link href="/features" className='text-base text-[#9B9B9B] hover:underline sm:text-lg'>See Features</Link>
                     <Image src="/next.svg" width={15} height={15} alt='arrow' className='ml-2' />
                 </div>
 
             </div>
 
 
-            <div className='w-full flex justify-center items-center'>
-                <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-3xl' />
+            <div className='flex w-full items-center justify-center'>
+                <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-2xl sm:rounded-3xl' />
             </div>
 
-        </div>
+        </section>
     )
 }

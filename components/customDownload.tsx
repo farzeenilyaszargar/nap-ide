@@ -8,15 +8,15 @@ export default function DownloadButton() {
   return (
     <Link
       href={MAC_DOWNLOAD_URL}
-      className="border border-gray-300 sm:flex justify-center items-center gap-1 bg-black text-white px-7 py-2 rounded-full text-xl hidden hover:bg-gray-800 transition"
+      className="hidden items-center justify-center gap-2 rounded-full border border-gray-300 bg-black px-7 py-2 text-xl text-white transition hover:bg-gray-800 sm:inline-flex"
     >
       Download for macOS
       <Image
-        src="/right-arrow.png"
+        src="/apple-icon.png"
         width={16}
         height={16}
-        alt="download"
-        className="invert mt-0.5 ml-1 rotate-320"
+        alt="apple"
+        className="h-4 w-4"
       />
     </Link>
   );
