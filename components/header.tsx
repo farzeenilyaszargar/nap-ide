@@ -86,7 +86,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-20 w-full border-b border-black/5 bg-white/85 backdrop-blur-md">
+            <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                 <Link href="/" className="flex justify-center items-center">
                     <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-4 w-auto rounded-md sm:h-5" />
