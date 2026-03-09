@@ -73,8 +73,8 @@ export default function Home() {
         <div className="hero-shell relative min-h-[78vh] w-full overflow-hidden p-0 m-0">
           <HeroOceanBackground />
           <div className="pointer-events-none absolute inset-0 z-[1] bg-black/20" />
-          <div className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-24 text-center sm:px-12 sm:pt-28 lg:px-20">
-            <h1 className="text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <div className="relative z-10 mx-auto max-w-6xl px-6 pb-5 pt-24 text-center sm:px-12 sm:pb-6 sm:pt-28 lg:px-20">
+            <h1 className="text-3xl leading-[1.05] font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Build software with
               <span className="block text-white/85">fast agent workflows</span>
               <span className="block text-white/70">that stay clean and predictable.</span>
@@ -83,7 +83,7 @@ export default function Home() {
               Nap gives you an execution-focused coding assistant for real repositories.
               Prompt, inspect changes, and ship with control.
             </p>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-8 flex justify-center">
               <Link
                 href="/api/download/mac"
                 className="inline-flex items-center gap-2 rounded-md border border-white bg-white px-8 py-4 text-base font-semibold text-[#0B0F16] transition hover:opacity-90 sm:text-lg"
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-10 sm:px-12 sm:pt-14 lg:px-20">
+      <section className="mx-auto max-w-7xl px-6 pb-16 pt-5 sm:px-12 sm:pt-5 lg:px-20">
         <div className="relative z-10">
           <Image
             src="/main.jpeg"
