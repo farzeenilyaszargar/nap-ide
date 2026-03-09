@@ -92,7 +92,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-xl">
+            <header className="fixed top-0 z-30 w-full bg-white/0 backdrop-blur-xl">
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                     <Link href="/" className="flex items-center justify-center">
                         <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-5 w-auto rounded-md" />
