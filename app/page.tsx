@@ -110,7 +110,7 @@ export default function Home() {
             width={1280}
             height={720}
             alt="Nap editor preview"
-            className="h-full w-full object-cover"
+            className="h-full w-full rounded-2xl object-cover"
           />
         </div>
       </section>
