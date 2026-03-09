@@ -114,7 +114,6 @@ export default function HeroOceanBackground({
       className={`hero-ocean pointer-events-none absolute inset-0 overflow-hidden ${className}`.trim()}
     >
       <div className="hero-ocean-gif" />
-      <div className="hero-ocean-cursor" />
       {showTrail ? <div ref={textLayerRef} className="hero-ocean-text-layer" /> : null}
       <div className="hero-ocean-vignette" />
     </div>
