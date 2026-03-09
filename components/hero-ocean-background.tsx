@@ -34,13 +34,16 @@ export default function HeroOceanBackground() {
       });
     };
 
-    element.addEventListener("mousemove", onMouseMove);
-    element.addEventListener("touchmove", onTouchMove, { passive: true });
+    const rect = element.getBoundingClientRect();
+    updatePosition(rect.left + rect.width * 0.5, rect.top + rect.height * 0.35);
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
 
     return () => {
       if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
-      element.removeEventListener("mousemove", onMouseMove);
-      element.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("touchmove", onTouchMove);
     };
   }, []);
 
@@ -48,7 +51,9 @@ export default function HeroOceanBackground() {
     <div ref={containerRef} className="hero-ocean pointer-events-none absolute inset-0 overflow-hidden">
       <div className="hero-ocean-wave hero-ocean-wave--one" />
       <div className="hero-ocean-wave hero-ocean-wave--two" />
+      <div className="hero-ocean-wave hero-ocean-wave--three" />
       <div className="hero-ocean-cursor" />
+      <div className="hero-ocean-grid" />
       <div className="hero-ocean-vignette" />
     </div>
   );
