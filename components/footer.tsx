@@ -19,7 +19,7 @@ export default function Footer() {
           <Link className="py-0.5 text-xs text-[#9BA4B5] transition-colors hover:text-[#F3F4F6] sm:text-sm" href="/privacy">Privacy</Link>
         </div>
         <div className="col-span-2 flex flex-col text-center sm:col-span-1 sm:text-left">
-          <p className="mb-2 text-sm font-medium text-[#F3F4F6]">Developer Channels</p>
+          <p className="mb-2 text-sm font-medium text-[#F3F4F6]">Socials</p>
           <Link className="py-0.5 text-xs text-[#9BA4B5] transition-colors hover:text-[#F3F4F6] sm:text-sm" href="https://x.com/farzeenilya" target="_blank">X</Link>
           <Link className="py-0.5 text-xs text-[#9BA4B5] transition-colors hover:text-[#F3F4F6] sm:text-sm" href="https://www.linkedin.com/in/farzeenilyaszargar/" target="_blank">LinkedIn</Link>
           <Link className="py-0.5 text-xs text-[#9BA4B5] transition-colors hover:text-[#F3F4F6] sm:text-sm" href="https://www.youtube.com/@surfersbot" target="_blank">YouTube</Link>
