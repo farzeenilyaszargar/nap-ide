@@ -180,7 +180,10 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-12 sm:px-12 lg:px-20">
-        <div className="rounded-2xl border border-white/10 bg-[linear-gradient(180deg,#121720_0%,#0A0E14_100%)] px-6 py-12 text-center sm:px-12">
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,#121720_0%,#0A0E14_100%)] px-6 py-12 text-center sm:px-12">
+          <HeroOceanBackground className="hero-ocean--cta" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_65%_at_50%_0%,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_70%)]" />
+          <div className="relative z-10">
           <h2 className="mx-auto mb-5 max-w-2xl text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">
             Move from idea to reviewed code, without breaking your workflow.
           </h2>
@@ -192,6 +195,7 @@ export default function Home() {
               <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4" />
               Download for macOS
             </Link>
+          </div>
           </div>
         </div>
       </section>

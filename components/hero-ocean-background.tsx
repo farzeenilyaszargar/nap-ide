@@ -2,7 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
-export default function HeroOceanBackground() {
+type HeroOceanBackgroundProps = {
+  className?: string;
+};
+
+export default function HeroOceanBackground({ className = "" }: HeroOceanBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
 
@@ -48,7 +52,10 @@ export default function HeroOceanBackground() {
   }, []);
 
   return (
-    <div ref={containerRef} className="hero-ocean pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      ref={containerRef}
+      className={`hero-ocean pointer-events-none absolute inset-0 overflow-hidden ${className}`.trim()}
+    >
       <div className="hero-ocean-wave hero-ocean-wave--one" />
       <div className="hero-ocean-wave hero-ocean-wave--two" />
       <div className="hero-ocean-wave hero-ocean-wave--three" />
