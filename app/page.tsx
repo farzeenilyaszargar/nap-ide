@@ -113,7 +113,7 @@ export default function Home() {
         <h2 className="relative z-10 mb-8 text-center text-3xl font-normal tracking-tight text-[#E7EBF1] sm:text-4xl">
           See Nap in action
         </h2>
-        <div className="relative z-10 overflow-hidden rounded-2xl border border-white/10 bg-[#0C1016] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
+        <div className="relative z-10 overflow-hidden rounded-2xl">
           <Image
             src="/main.jpeg"
             width={1280}
@@ -130,7 +130,7 @@ export default function Home() {
           {features.map((feature, index) => (
             <article
               key={feature.title}
-              className={`grid items-center gap-6 rounded-2xl border border-white/10 bg-[#0C1016] p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 ${
+              className={`grid items-center gap-6 lg:grid-cols-2 lg:gap-12 ${
                 index % 2 === 1 ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
               }`}
             >
@@ -138,7 +138,7 @@ export default function Home() {
                 <h3 className="text-2xl font-normal tracking-tight text-[#F3F4F6]">{feature.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-[#B8C0CC] sm:text-base">{feature.description}</p>
               </div>
-              <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0A0E13]">
+              <div className="overflow-hidden rounded-xl">
                 <Image
                   src={feature.image}
                   width={900}
@@ -154,9 +154,9 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
         <h2 className="mb-8 text-center text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">FAQs</h2>
-        <div className="grid gap-3">
+        <div className="grid gap-1">
           {faqs.map((item) => (
-            <article key={item.q} className="rounded-xl border border-white/10 bg-[#0C1016] p-5">
+            <article key={item.q} className="border-b border-white/10 py-5 last:border-b-0">
               <h3 className="mb-2 text-base font-normal text-[#F3F4F6] sm:text-lg">{item.q}</h3>
               <p className="text-sm leading-relaxed text-[#B8C0CC]">{item.a}</p>
             </article>
@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-12 sm:px-12 lg:px-20">
-        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(180deg,#121720_0%,#0A0E14_100%)] px-6 py-12 text-center sm:px-12">
+        <div className="relative overflow-hidden px-2 py-12 text-center sm:px-4">
           <HeroOceanBackground className="hero-ocean--cta" />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_65%_at_50%_0%,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_70%)]" />
           <div className="relative z-10">
