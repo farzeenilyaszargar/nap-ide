@@ -81,13 +81,12 @@ export default function Home() {
           <HeroOceanBackground />
           <div className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-24 text-center sm:px-12 sm:pt-28 lg:px-20">
             <h1 className="text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Build software with
-              <span className="block text-white/85">fast agent workflows</span>
-              <span className="block text-white/70">that stay clean and predictable.</span>
+              Code faster.
+              <span className="block text-white/85">Ship cleaner.</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
-              Nap gives you an execution-focused coding assistant for real repositories.
-              Prompt, inspect changes, and ship with control.
+              AI coding workflows for real repositories.
+              Prompt, inspect, edit, and merge.
             </p>
             <div className="mt-10 flex justify-center">
               <Link

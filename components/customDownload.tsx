@@ -16,7 +16,7 @@ export default function DownloadButton() {
         width={16}
         height={16}
         alt="apple"
-        className="h-4 w-4 invert"
+        className="h-4 w-4"
       />
     </Link>
   );
