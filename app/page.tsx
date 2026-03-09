@@ -73,44 +73,45 @@ const faqs = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F6F7F8] text-[#121417]">
+    <main className="min-h-screen bg-[#07090D] text-[#E5E7EB]">
       <Header />
 
-      <section className="mx-auto max-w-7xl px-6 pb-12 pt-20 sm:px-12 lg:px-20">
-        <div className="hero-shell relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-[#E4E7EC] px-5 py-14 text-center sm:px-10 sm:py-16">
+      <section className="relative p-0 m-0">
+        <div className="hero-shell relative min-h-[78vh] w-full overflow-hidden p-0 m-0">
           <HeroOceanBackground />
-          <div className="relative z-10 mx-auto max-w-4xl">
-          <p className="mb-6 text-xs font-medium tracking-[0.18em] text-[#6B7280] uppercase">Nap Editor</p>
-          <h1 className="text-4xl leading-[1.05] font-semibold tracking-tight text-[#121417] sm:text-6xl lg:text-7xl">
-            Build software with
-            <span className="block text-[#121417]/72">fast agent workflows</span>
-            <span className="block text-[#121417]/42">that stay clean and predictable.</span>
-          </h1>
-          <p className="mx-auto mt-7 max-w-2xl text-sm leading-relaxed text-[#525866] sm:text-base">
-            Nap gives you an execution-focused coding assistant for real repositories.
-            Prompt, inspect changes, and ship with control.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/api/download/mac"
-              className="inline-flex items-center gap-2 rounded-md border border-[#111827] bg-[#111827] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
-            >
-              <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4" />
-              Download for macOS
-            </Link>
-            <Link
-              href="/features"
-              className="inline-flex items-center rounded-md border border-[#D3D8DF] bg-white px-5 py-2.5 text-sm font-medium text-[#1F2937] transition hover:border-[#B7BEC9]"
-            >
-              Explore Features
-            </Link>
+          <div className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-24 text-center sm:px-12 sm:pt-28 lg:px-20">
+            <p className="mb-6 text-xs font-medium tracking-[0.18em] text-[#6B7280] uppercase">Nap Editor</p>
+            <h1 className="text-4xl leading-[1.05] font-semibold tracking-tight text-[#121417] sm:text-6xl lg:text-7xl">
+              Build software with
+              <span className="block text-[#121417]/72">fast agent workflows</span>
+              <span className="block text-[#121417]/42">that stay clean and predictable.</span>
+            </h1>
+            <p className="mx-auto mt-7 max-w-2xl text-sm leading-relaxed text-[#3D4654] sm:text-base">
+              Nap gives you an execution-focused coding assistant for real repositories.
+              Prompt, inspect changes, and ship with control.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/api/download/mac"
+                className="inline-flex items-center gap-2 rounded-md border border-[#111827] bg-[#111827] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+              >
+                <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4" />
+                Download for macOS
+              </Link>
+              <Link
+                href="/features"
+                className="inline-flex items-center rounded-md border border-[#D3D8DF] bg-white px-5 py-2.5 text-sm font-medium text-[#1F2937] transition hover:border-[#B7BEC9]"
+              >
+                Explore Features
+              </Link>
+            </div>
           </div>
-          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-[#07090D]/65 to-[#07090D]" />
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-16 sm:px-12 lg:px-20">
-        <div className="overflow-hidden rounded-2xl border border-[#E4E7EC] bg-white shadow-[0_20px_60px_rgba(17,24,39,0.08)]">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0C1016] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
           <Image
             src="/main.jpeg"
             width={1280}
@@ -122,20 +123,20 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
-        <div className="mb-10 text-center text-[11px] font-medium tracking-[0.2em] text-[#7A818E] uppercase">Features</div>
+        <div className="mb-10 text-center text-[11px] font-medium tracking-[0.2em] text-[#98A2B3] uppercase">Features</div>
         <div className="space-y-10">
           {features.map((feature, index) => (
             <article
               key={feature.title}
-              className={`grid items-center gap-6 rounded-2xl border border-[#E6E9EF] bg-white p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 ${
+              className={`grid items-center gap-6 rounded-2xl border border-white/10 bg-[#0C1016] p-4 sm:p-6 lg:grid-cols-2 lg:gap-10 ${
                 index % 2 === 1 ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
               }`}
             >
               <div>
-                <h3 className="text-2xl font-semibold tracking-tight text-[#111827]">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#4B5563] sm:text-base">{feature.description}</p>
+                <h3 className="text-2xl font-semibold tracking-tight text-[#F3F4F6]">{feature.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#B8C0CC] sm:text-base">{feature.description}</p>
               </div>
-              <div className="overflow-hidden rounded-xl border border-[#E6E9EF] bg-[#F9FAFB]">
+              <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0A0E13]">
                 <Image
                   src={feature.image}
                   width={900}
@@ -150,42 +151,42 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
-        <div className="mb-8 text-center text-[11px] font-medium tracking-[0.2em] text-[#7A818E] uppercase">FAQs</div>
+        <div className="mb-8 text-center text-[11px] font-medium tracking-[0.2em] text-[#98A2B3] uppercase">FAQs</div>
         <div className="grid gap-3">
           {faqs.map((item) => (
-            <article key={item.q} className="rounded-xl border border-[#E6E9EF] bg-white p-5">
-              <h3 className="mb-2 text-sm font-semibold text-[#111827] sm:text-base">{item.q}</h3>
-              <p className="text-sm leading-relaxed text-[#4B5563]">{item.a}</p>
+            <article key={item.q} className="rounded-xl border border-white/10 bg-[#0C1016] p-5">
+              <h3 className="mb-2 text-sm font-semibold text-[#F3F4F6] sm:text-base">{item.q}</h3>
+              <p className="text-sm leading-relaxed text-[#B8C0CC]">{item.a}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
-        <div className="mb-8 text-center text-[11px] font-medium tracking-[0.2em] text-[#7A818E] uppercase">
+        <div className="mb-8 text-center text-[11px] font-medium tracking-[0.2em] text-[#98A2B3] uppercase">
           What Developers Are Saying
         </div>
         <div className="grid gap-4 lg:grid-cols-3">
           {testimonials.map((item) => (
-            <article key={item.name} className="rounded-xl border border-[#E6E9EF] bg-white p-5">
-              <p className="mb-4 text-sm leading-relaxed text-[#374151]">&quot;{item.quote}&quot;</p>
-              <p className="text-sm font-semibold text-[#111827]">{item.name}</p>
-              <p className="text-xs text-[#6B7280]">{item.role}</p>
+            <article key={item.name} className="rounded-xl border border-white/10 bg-[#0C1016] p-5">
+              <p className="mb-4 text-sm leading-relaxed text-[#CBD5E1]">&quot;{item.quote}&quot;</p>
+              <p className="text-sm font-semibold text-[#F3F4F6]">{item.name}</p>
+              <p className="text-xs text-[#98A2B3]">{item.role}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20 pt-12 sm:px-12 lg:px-20">
-        <div className="rounded-2xl border border-[#E6E9EF] bg-[linear-gradient(180deg,#FFFFFF_0%,#F9FAFB_100%)] px-6 py-12 text-center sm:px-12">
-          <p className="mb-3 text-[11px] font-medium tracking-[0.2em] text-[#7A818E] uppercase">For developers shipping every week</p>
-          <h2 className="mx-auto mb-5 max-w-2xl text-2xl font-semibold tracking-tight text-[#111827] sm:text-3xl">
+        <div className="rounded-2xl border border-white/10 bg-[linear-gradient(180deg,#121720_0%,#0A0E14_100%)] px-6 py-12 text-center sm:px-12">
+          <p className="mb-3 text-[11px] font-medium tracking-[0.2em] text-[#98A2B3] uppercase">For developers shipping every week</p>
+          <h2 className="mx-auto mb-5 max-w-2xl text-2xl font-semibold tracking-tight text-[#F3F4F6] sm:text-3xl">
             Move from idea to reviewed code, without breaking your workflow.
           </h2>
           <div className="flex justify-center">
             <Link
               href="/api/download/mac"
-              className="inline-flex items-center gap-2 rounded-md border border-[#111827] bg-[#111827] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-md border border-[#F3F4F6] bg-[#F3F4F6] px-5 py-2.5 text-sm font-medium text-[#0B0F16] transition hover:opacity-90"
             >
               <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4" />
               Download for macOS
