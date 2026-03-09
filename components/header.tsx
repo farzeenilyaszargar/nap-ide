@@ -86,7 +86,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
+            <header className="sticky top-0 z-20 w-full border-b border-white/10 bg-[#131110]/80 backdrop-blur-md">
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                 <Link href="/" className="flex justify-center items-center">
                     <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-4 w-auto rounded-md sm:h-5" />
@@ -95,7 +95,7 @@ export default function Header() {
                 {/* Desktop Navigation */}
                 <div className='gap-5 flex-1 mx-5 justify-end hidden sm:flex'>
                     {navLinks.map((link) => (
-                        <Link key={link.href} href={link.href} className="flex justify-center items-center text-gray-700 hover:text-black">
+                        <Link key={link.href} href={link.href} className="flex justify-center items-center text-[#A8A19E] hover:text-[#EAE8E6]">
                             {link.label}
                         </Link>
                     ))}
@@ -105,7 +105,7 @@ export default function Header() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="sm:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                        className="sm:hidden rounded-lg p-2 text-[#EAE8E6] transition-colors hover:bg-white/10"
                         aria-label="Toggle menu"
                     >
                         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,7 +118,7 @@ export default function Header() {
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                                className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-full"
+                                className="flex items-center gap-2 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
                             >
                                 {avatarUrl ? (
                                     <Image
@@ -134,7 +134,7 @@ export default function Header() {
                                     </div>
                                 )}
                                 <svg
-                                    className={`w-4 h-4 transition-transform hidden sm:block ${dropdownOpen ? 'rotate-180' : ''}`}
+                                    className={`hidden w-4 h-4 text-[#D3CECB] transition-transform sm:block ${dropdownOpen ? 'rotate-180' : ''}`}
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -149,15 +149,15 @@ export default function Header() {
                             </button>
 
                             {dropdownOpen && (
-                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
-                                    <div className="px-4 py-2 border-b border-gray-200">
-                                        <p className="text-sm font-medium text-gray-900">{fullName}</p>
-                                        <p className="text-xs text-gray-500 truncate">{user.email}</p>
+                                <div className="absolute right-0 z-50 mt-2 w-56 rounded-lg border border-white/10 bg-[#1A1716] py-2 shadow-lg">
+                                    <div className="border-b border-white/10 px-4 py-2">
+                                        <p className="text-sm font-medium text-[#EAE8E6]">{fullName}</p>
+                                        <p className="truncate text-xs text-[#A8A19E]">{user.email}</p>
                                     </div>
                                     <Link
                                         href="/dashboard"
                                         onClick={() => setDropdownOpen(false)}
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+                                        className="block px-4 py-2 text-sm text-[#D3CECB] transition-colors hover:bg-white/10"
                                     >
                                         <div className="flex items-center gap-2">
                                             <svg
@@ -178,7 +178,7 @@ export default function Header() {
                                     </Link>
                                     <button
                                         onClick={handleLogout}
-                                        className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                                        className="w-full px-4 py-2 text-left text-sm text-red-400 transition-colors hover:bg-red-500/15"
                                     >
                                         <div className="flex items-center gap-2">
                                             <svg
@@ -203,7 +203,7 @@ export default function Header() {
                     ) : (
                         <Link
                             href="/signin"
-                            className="rounded-md border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
+                            className="rounded-md border border-[#4A4440] bg-transparent px-3 py-1 text-[#EAE8E6] transition-colors hover:border-[#EAE8E6] hover:bg-[#EAE8E6] hover:text-[#131110]"
                         >
                             Sign In
                         </Link>
@@ -222,12 +222,12 @@ export default function Header() {
                     />
 
                     {/* Menu Panel */}
-                    <div className="absolute top-0 right-0 h-full w-72 max-w-[85vw] bg-white shadow-xl">
-                        <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                            <span className="font-semibold text-black">Menu</span>
+                    <div className="absolute top-0 right-0 h-full w-72 max-w-[85vw] border-l border-white/10 bg-[#1A1716] shadow-xl">
+                        <div className="flex items-center justify-between border-b border-white/10 p-4">
+                            <span className="font-semibold text-[#EAE8E6]">Menu</span>
                             <button
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="p-2 hover:bg-gray-100 rounded-lg"
+                                className="rounded-lg p-2 text-[#EAE8E6] hover:bg-white/10"
                             >
                                 <X className="w-5 h-5" />
                             </button>
@@ -239,7 +239,7 @@ export default function Header() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                                    className="block rounded-lg px-4 py-3 text-[#D3CECB] transition-colors hover:bg-white/10"
                                 >
                                     {link.label}
                                 </Link>
@@ -247,17 +247,17 @@ export default function Header() {
 
                             {user && (
                                 <>
-                                    <div className="border-t border-gray-200 my-4" />
+                                    <div className="my-4 border-t border-white/10" />
                                     <Link
                                         href="/dashboard"
                                         onClick={() => setMobileMenuOpen(false)}
-                                        className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                                        className="block rounded-lg px-4 py-3 text-[#D3CECB] transition-colors hover:bg-white/10"
                                     >
                                         Dashboard
                                     </Link>
                                     <button
                                         onClick={handleLogout}
-                                        className="w-full text-left px-4 py-3 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                        className="w-full rounded-lg px-4 py-3 text-left text-red-400 transition-colors hover:bg-red-500/15"
                                     >
                                         Log out
                                     </button>
