@@ -70,7 +70,7 @@ export default function Home() {
       <Header />
 
       <section className="relative p-0 m-0">
-        <div className="hero-shell relative min-h-[78vh] w-full overflow-hidden p-0 m-0">
+        <div className="hero-shell relative min-h-[90vh] w-full overflow-hidden p-0 m-0">
           <HeroOceanBackground />
           <div className="pointer-events-none absolute inset-0 z-[1] bg-black/40" />
           <div className="relative z-10 mx-auto max-w-6xl px-6 pb-5 pt-24 text-center sm:px-12 sm:pb-6 sm:pt-28 lg:px-20">
