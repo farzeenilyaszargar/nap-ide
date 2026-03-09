@@ -111,7 +111,7 @@ export default function SignIn() {
                                     alt="Surfers Logo"
                                     width={160}
                                     height={50}
-                                    className="h-10 w-auto rounded-lg"
+                                    className="h-10 w-auto rounded-lg [transform:scaleY(-1)]"
                                 />
                             </div>
 
