@@ -4,11 +4,15 @@ import { useEffect, useRef } from "react";
 
 type HeroOceanBackgroundProps = {
   className?: string;
+  showTrail?: boolean;
 };
 
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-export default function HeroOceanBackground({ className = "" }: HeroOceanBackgroundProps) {
+export default function HeroOceanBackground({
+  className = "",
+  showTrail = false,
+}: HeroOceanBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const textLayerRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
@@ -17,9 +21,10 @@ export default function HeroOceanBackground({ className = "" }: HeroOceanBackgro
   useEffect(() => {
     const element = containerRef.current;
     const textLayer = textLayerRef.current;
-    if (!element || !textLayer) return;
+    if (!element) return;
 
     const spawnLetter = (localX: number, localY: number) => {
+      if (!showTrail || !textLayer) return;
       const token = document.createElement("span");
       const size = 11 + Math.random() * 8;
       token.className = "hero-float-letter";
@@ -48,27 +53,29 @@ export default function HeroOceanBackground({ className = "" }: HeroOceanBackgro
       element.style.setProperty("--mx", `${x}%`);
       element.style.setProperty("--my", `${y}%`);
 
-      const localX = clientX - rect.left;
-      const localY = clientY - rect.top;
-      const last = lastPointRef.current;
+      if (showTrail) {
+        const localX = clientX - rect.left;
+        const localY = clientY - rect.top;
+        const last = lastPointRef.current;
 
-      if (!last) {
-        spawnLetter(localX, localY);
+        if (!last) {
+          spawnLetter(localX, localY);
+          lastPointRef.current = { x: localX, y: localY };
+          return;
+        }
+
+        const dx = localX - last.x;
+        const dy = localY - last.y;
+        const distance = Math.hypot(dx, dy);
+        if (distance < 8) return;
+
+        const steps = Math.min(12, Math.floor(distance / 8));
+        for (let i = 1; i <= steps; i += 1) {
+          const t = i / steps;
+          spawnLetter(last.x + dx * t, last.y + dy * t);
+        }
         lastPointRef.current = { x: localX, y: localY };
-        return;
       }
-
-      const dx = localX - last.x;
-      const dy = localY - last.y;
-      const distance = Math.hypot(dx, dy);
-      if (distance < 8) return;
-
-      const steps = Math.min(12, Math.floor(distance / 8));
-      for (let i = 1; i <= steps; i += 1) {
-        const t = i / steps;
-        spawnLetter(last.x + dx * t, last.y + dy * t);
-      }
-      lastPointRef.current = { x: localX, y: localY };
     };
 
     const onMouseMove = (event: MouseEvent) => {
@@ -99,7 +106,7 @@ export default function HeroOceanBackground({ className = "" }: HeroOceanBackgro
       window.removeEventListener("touchmove", onTouchMove);
       lastPointRef.current = null;
     };
-  }, []);
+  }, [showTrail]);
 
   return (
     <div
@@ -108,7 +115,7 @@ export default function HeroOceanBackground({ className = "" }: HeroOceanBackgro
     >
       <div className="hero-ocean-gif" />
       <div className="hero-ocean-cursor" />
-      <div ref={textLayerRef} className="hero-ocean-text-layer" />
+      {showTrail ? <div ref={textLayerRef} className="hero-ocean-text-layer" /> : null}
       <div className="hero-ocean-vignette" />
     </div>
   );
