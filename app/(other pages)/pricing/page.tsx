@@ -27,40 +27,40 @@ export default function PricingPage() {
     const Feature = ({ text }: { text: string }) => (
         <div className="flex items-center gap-2">
             <div className="p-0.5 rounded-full bg-black/10">
-                <Check className="w-3 h-3 text-black" />
+                <Check className="w-3 h-3 text-[#F3F4F6]" />
             </div>
-            <span className="text-sm text-gray-600">{text}</span>
+            <span className="text-sm text-[#B8C0CC]">{text}</span>
         </div>
     );
 
     return (
-        <div className="">
+        <div className="min-h-screen bg-[#07090D] text-[#E5E7EB]">
             <Header />
             <div className="flex flex-col justify-center items-center gap-5 my-20">
-                <h1 className="font-bold text-4xl text-black">Pricing</h1>
-                <p className="text-gray-500">Flexible pricing, ultra flexible plans, cancel anytime.</p>
-                <div className="border border-gray-300 rounded-full p-1 flex items-center justify-around overflow-hidden bg-gray-100">
-                    <button onClick={() => setMonthly(true)} className={`px-4 py-1 rounded-full transition-all ${monthly ? 'bg-black text-white' : 'text-gray-500 hover:text-black'} `}>Monthly</button>
-                    <button onClick={() => setMonthly(false)} className={`px-4 py-1 rounded-full transition-all ${!monthly ? 'bg-black text-white' : 'text-gray-500 hover:text-black'} `}>Annually</button>
+                <h1 className="font-bold text-4xl text-[#F3F4F6]">Pricing</h1>
+                <p className="text-[#B8C0CC]">Flexible pricing, ultra flexible plans, cancel anytime.</p>
+                <div className="border border-white/20 rounded-full p-1 flex items-center justify-around overflow-hidden bg-[#0F141B]">
+                    <button onClick={() => setMonthly(true)} className={`px-4 py-1 rounded-full transition-all ${monthly ? 'bg-[#F3F4F6] text-[#0B0F16]' : 'text-[#B8C0CC] hover:text-[#F3F4F6]'} `}>Monthly</button>
+                    <button onClick={() => setMonthly(false)} className={`px-4 py-1 rounded-full transition-all ${!monthly ? 'bg-[#F3F4F6] text-[#0B0F16]' : 'text-[#B8C0CC] hover:text-[#F3F4F6]'} `}>Annually</button>
                 </div>
 
                 <div className="w-screen flex flex-col justify-center items-center mt-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl px-4">
 
                         {/* Free Plan */}
-                        <div className="border border-gray-200 rounded-2xl flex flex-col p-6 gap-6 bg-gray-50 hover:border-gray-400 transition-all">
+                        <div className="border border-white/10 rounded-2xl flex flex-col p-6 gap-6 bg-[#0C1016] hover:border-white/30 transition-all">
                             <div className="space-y-2">
-                                <h2 className="text-xl font-bold text-black">Free Plan</h2>
+                                <h2 className="text-xl font-bold text-[#F3F4F6]">Free Plan</h2>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-bold text-black">₹0</span>
-                                    <span className="text-gray-500">/{monthly ? 'month' : 'year'}</span>
+                                    <span className="text-4xl font-bold text-[#F3F4F6]">₹0</span>
+                                    <span className="text-[#B8C0CC]">/{monthly ? 'month' : 'year'}</span>
                                 </div>
-                                <p className="text-gray-500 text-sm">Perfect for getting started</p>
+                                <p className="text-[#B8C0CC] text-sm">Perfect for getting started</p>
                             </div>
 
                             <button
                                 onClick={handleFree}
-                                className="w-full bg-black text-white font-semibold py-2 rounded-lg hover:bg-gray-800 transition"
+                                className="w-full bg-[#F3F4F6] text-[#0B0F16] font-semibold py-2 rounded-lg hover:opacity-90 transition"
                             >
                                 Get Started
                             </button>
@@ -74,19 +74,19 @@ export default function PricingPage() {
                         </div>
 
                         {/* Pro Plan */}
-                        <div className="border border-gray-200 rounded-2xl flex flex-col p-6 gap-6 bg-gray-50 hover:border-gray-400 transition-all">
+                        <div className="border border-white/10 rounded-2xl flex flex-col p-6 gap-6 bg-[#0C1016] hover:border-white/30 transition-all">
                             <div className="space-y-2">
-                                <h2 className="text-xl font-bold text-black">Pro Plan</h2>
+                                <h2 className="text-xl font-bold text-[#F3F4F6]">Pro Plan</h2>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-bold text-black">₹{monthly ? '5' : '60'}</span>
-                                    <span className="text-gray-500">/{monthly ? 'month' : 'year'}</span>
+                                    <span className="text-4xl font-bold text-[#F3F4F6]">₹{monthly ? '5' : '60'}</span>
+                                    <span className="text-[#B8C0CC]">/{monthly ? 'month' : 'year'}</span>
                                 </div>
-                                <p className="text-gray-500 text-sm">For power users</p>
+                                <p className="text-[#B8C0CC] text-sm">For power users</p>
                             </div>
 
                             <button
                                 disabled
-                                className="w-full bg-gray-200 text-gray-500 font-semibold py-2 rounded-lg cursor-not-allowed"
+                                className="w-full bg-[#141B24] text-[#B8C0CC] font-semibold py-2 rounded-lg cursor-not-allowed"
                             >
                                 Coming Soon
                             </button>
@@ -101,18 +101,18 @@ export default function PricingPage() {
                         </div>
 
                         {/* Enterprise Plan */}
-                        <div className="border border-gray-200 rounded-2xl flex flex-col p-6 gap-6 bg-gray-50 hover:border-gray-400 transition-all">
+                        <div className="border border-white/10 rounded-2xl flex flex-col p-6 gap-6 bg-[#0C1016] hover:border-white/30 transition-all">
                             <div className="space-y-2">
-                                <h2 className="text-xl font-bold text-black">Enterprise</h2>
+                                <h2 className="text-xl font-bold text-[#F3F4F6]">Enterprise</h2>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-3xl font-bold text-black">Custom</span>
+                                    <span className="text-3xl font-bold text-[#F3F4F6]">Custom</span>
                                 </div>
-                                <p className="text-gray-500 text-sm">For large teams</p>
+                                <p className="text-[#B8C0CC] text-sm">For large teams</p>
                             </div>
 
                             <button
                                 disabled
-                                className="w-full bg-gray-200 text-gray-500 font-semibold py-2 rounded-lg cursor-not-allowed"
+                                className="w-full bg-[#141B24] text-[#B8C0CC] font-semibold py-2 rounded-lg cursor-not-allowed"
                             >
                                 Coming Soon
                             </button>

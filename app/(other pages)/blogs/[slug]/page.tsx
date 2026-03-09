@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, User } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -26,14 +26,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
     }
 
     return (
-        <div className="min-h-screen flex flex-col bg-white">
+        <div className="min-h-screen flex flex-col bg-[#07090D] text-[#E5E7EB]">
             <Header />
 
             <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 {/* Back Button */}
                 <Link
                     href="/blogs"
-                    className="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors mb-10"
+                    className="inline-flex items-center gap-2 text-[#B8C0CC] hover:text-[#F3F4F6] transition-colors mb-10"
                 >
                     <ArrowLeft className="w-4 h-4" />
                     <span>Back to Blogs</span>
@@ -43,17 +43,17 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 <article>
                     <header className="mb-10">
                         <div className="flex items-center gap-3 mb-6">
-                            <span className="bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
+                            <span className="bg-[#F3F4F6] text-[#0B0F16] text-xs font-medium px-3 py-1 rounded-full">
                                 {blog.category}
                             </span>
-                            <span className="text-gray-400 text-sm">{blog.date}</span>
+                            <span className="text-[#98A2B3] text-sm">{blog.date}</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#F3F4F6] mb-6 leading-tight">
                             {blog.title}
                         </h1>
 
-                        <div className="flex items-center gap-6 text-gray-600">
+                        <div className="flex items-center gap-6 text-[#B8C0CC]">
                             <div className="flex items-center gap-2">
                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     {blog.author.charAt(0)}
@@ -73,14 +73,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             // Check if it's a heading
                             if (paragraph.startsWith('## ')) {
                                 return (
-                                    <h2 key={index} className="text-2xl font-bold text-black mt-10 mb-4">
+                                    <h2 key={index} className="text-2xl font-bold text-[#F3F4F6] mt-10 mb-4">
                                         {paragraph.replace('## ', '')}
                                     </h2>
                                 );
                             }
                             if (paragraph.startsWith('### ')) {
                                 return (
-                                    <h3 key={index} className="text-xl font-semibold text-black mt-8 mb-3">
+                                    <h3 key={index} className="text-xl font-semibold text-[#F3F4F6] mt-8 mb-3">
                                         {paragraph.replace('### ', '')}
                                     </h3>
                                 );
@@ -89,7 +89,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             if (paragraph.startsWith('- ')) {
                                 const items = paragraph.split('\n');
                                 return (
-                                    <ul key={index} className="list-disc list-inside mb-4 text-gray-700 space-y-2">
+                                    <ul key={index} className="list-disc list-inside mb-4 text-[#D3D9E3] space-y-2">
                                         {items.map((item, i) => (
                                             <li key={i} className="leading-relaxed">
                                                 {item.replace('- ', '')}
@@ -100,7 +100,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             }
                             // Regular paragraph
                             return (
-                                <p key={index} className="text-gray-700 leading-relaxed mb-6">
+                                <p key={index} className="text-[#D3D9E3] leading-relaxed mb-6">
                                     {paragraph}
                                 </p>
                             );
@@ -109,17 +109,17 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 </article>
 
                 {/* Footer CTA */}
-                <div className="mt-16 pt-10 border-t border-gray-200">
+                <div className="mt-16 pt-10 border-t border-white/10">
                     <div className="text-center">
-                        <h3 className="text-2xl font-bold text-black mb-4">
+                        <h3 className="text-2xl font-bold text-[#F3F4F6] mb-4">
                             Ready to supercharge your coding?
                         </h3>
-                        <p className="text-gray-600 mb-6">
+                        <p className="text-[#B8C0CC] mb-6">
                             Try Nap Editor today and experience AI-powered development.
                         </p>
                         <Link
                             href="/"
-                            className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                            className="inline-block bg-[#F3F4F6] text-[#0B0F16] px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-colors"
                         >
                             Get Started
                         </Link>

@@ -46,29 +46,29 @@ export default function FAQs() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#07090D] text-[#E5E7EB]">
       <Header />
       <div className="flex-1 max-w-4xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+          <h1 className="text-5xl font-bold mb-4 text-[#F3F4F6]">Frequently Asked Questions</h1>
+          <p className="text-xl text-[#B8C0CC] max-w-2xl mx-auto">
             Everything you need to know about Nap Editor. Can't find what you're looking for? Contact our support team.
           </p>
         </div>
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gray-400 hover:shadow-lg transition-all">
-              <h3 className="text-xl font-semibold text-black mb-4">{faq.q}</h3>
-              <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+            <div key={index} className="bg-[#0C1016] rounded-2xl border border-white/10 p-8 hover:border-white/30 hover:shadow-lg transition-all">
+              <h3 className="text-xl font-semibold text-[#F3F4F6] mb-4">{faq.q}</h3>
+              <p className="text-[#B8C0CC] leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
-        <div className="mt-16 text-center bg-gray-50 rounded-2xl border border-gray-200 p-10">
-          <h2 className="text-2xl font-bold text-black mb-4">Still have questions?</h2>
-          <p className="text-gray-500 mb-6">Our team is here to help you with anything you need.</p>
+        <div className="mt-16 text-center bg-[#0C1016] rounded-2xl border border-white/10 p-10">
+          <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">Still have questions?</h2>
+          <p className="text-[#B8C0CC] mb-6">Our team is here to help you with anything you need.</p>
           <a
             href="/support"
-            className="inline-block bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+            className="inline-block bg-[#F3F4F6] text-[#0B0F16] px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-colors"
           >
             Contact Support
           </a>
