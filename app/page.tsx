@@ -75,7 +75,8 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 z-[1] bg-black/40" />
           <div className="relative z-10 mx-auto max-w-6xl px-6 pb-5 pt-24 text-center sm:px-12 sm:pb-6 sm:pt-28 lg:px-20">
             <h1 className="text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Build software with fast agent workflows
+              Build software with
+              <span className="block">fast agent workflows</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
               Nap gives you an execution-focused coding assistant for real repositories.
