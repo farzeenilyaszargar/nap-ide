@@ -107,7 +107,7 @@ export default function Header() {
             >
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                     <Link href="/" className="flex items-center justify-center">
-                        <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-5 w-auto rounded-md [transform:scaleY(-1)]" />
+                        <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-5 w-auto rounded-md" />
                     </Link>
 
                     <div className='mx-5 hidden flex-1 justify-end gap-5 sm:flex'>
