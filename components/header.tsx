@@ -8,8 +8,18 @@ import { Menu, X } from 'lucide-react'
 
 import { createClient } from '@/lib/supabase/client'
 
+type HeaderUser = {
+    email?: string | null
+    user_metadata?: {
+        avatar_url?: string
+        picture?: string
+        full_name?: string
+        name?: string
+    } | null
+}
+
 export default function Header() {
-    const [user, setUser] = useState<any>(null)
+    const [user, setUser] = useState<HeaderUser | null>(null)
     const [loading, setLoading] = useState(true)
     const [dropdownOpen, setDropdownOpen] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -19,23 +29,20 @@ export default function Header() {
     useEffect(() => {
         const supabase = createClient()
 
-        // Get initial session
         supabase.auth.getUser().then(({ data: { user } }) => {
-            setUser(user)
+            setUser(user as HeaderUser | null)
             setLoading(false)
         })
 
-        // Listen for auth changes
         const {
             data: { subscription },
         } = supabase.auth.onAuthStateChange((_event, session) => {
-            setUser(session?.user ?? null)
+            setUser((session?.user as HeaderUser | null) ?? null)
         })
 
         return () => subscription.unsubscribe()
     }, [])
 
-    // Close dropdown when clicking outside
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -49,7 +56,6 @@ export default function Header() {
         }
     }, [])
 
-    // Close mobile menu on resize to desktop
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 640) {
@@ -86,182 +92,137 @@ export default function Header() {
 
     return (
         <>
-            <header className="sticky top-0 z-20 w-full bg-[#131110]/80 backdrop-blur-md">
+            <header className="sticky top-0 z-20 w-full bg-[#F6F7F8]/90 backdrop-blur-md">
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
-                <Link href="/" className="flex items-center justify-center">
-                    <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-4 w-auto rounded-md sm:h-5" />
-                </Link>
+                    <Link href="/" className="flex items-center justify-center">
+                        <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-5 w-auto rounded-md" />
+                    </Link>
 
-                {/* Desktop Navigation */}
-                <div className='gap-5 flex-1 mx-5 justify-end hidden sm:flex'>
-                    {navLinks.map((link) => (
-                        <Link key={link.href} href={link.href} className="flex justify-center items-center text-[#A8A19E] hover:text-[#EAE8E6]">
-                            {link.label}
-                        </Link>
-                    ))}
-                </div>
+                    <div className='mx-5 hidden flex-1 justify-end gap-5 sm:flex'>
+                        {navLinks.map((link) => (
+                            <Link key={link.href} href={link.href} className="flex items-center justify-center text-sm text-[#6B7280] transition hover:text-[#111827]">
+                                {link.label}
+                            </Link>
+                        ))}
+                    </div>
 
-                <div className="flex justify-center items-center gap-3">
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="sm:hidden rounded-lg p-2 text-[#EAE8E6] transition-colors hover:bg-white/10"
-                        aria-label="Toggle menu"
-                    >
-                        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
+                    <div className="flex items-center justify-center gap-3">
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="rounded-lg p-2 text-[#111827] transition-colors hover:bg-black/5 sm:hidden"
+                            aria-label="Toggle menu"
+                        >
+                            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        </button>
 
-                    {/* User Avatar / Sign In */}
-                    {loading ? (
-                        <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse" />
-                    ) : user ? (
-                        <div className="relative" ref={dropdownRef}>
-                            <button
-                                onClick={() => setDropdownOpen(!dropdownOpen)}
-                                className="flex items-center gap-2 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
-                            >
-                                {avatarUrl ? (
-                                    <Image
-                                        src={avatarUrl}
-                                        alt={fullName}
-                                        width={32}
-                                        height={32}
-                                        className="rounded-full border-2 border-gray-300"
-                                    />
-                                ) : (
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold border-2 border-gray-300">
-                                        {fullName.charAt(0).toUpperCase()}
+                        {loading ? (
+                            <div className="h-8 w-8 animate-pulse rounded-full bg-[#E5E7EB]" />
+                        ) : user ? (
+                            <div className="relative" ref={dropdownRef}>
+                                <button
+                                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                                    className="flex items-center gap-2 rounded-full focus:outline-none focus:ring-2 focus:ring-[#D1D5DB]"
+                                >
+                                    {avatarUrl ? (
+                                        <Image
+                                            src={avatarUrl}
+                                            alt={fullName}
+                                            width={32}
+                                            height={32}
+                                            className="rounded-full border-2 border-[#D1D5DB]"
+                                        />
+                                    ) : (
+                                        <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#D1D5DB] bg-[#111827] text-sm font-bold text-white">
+                                            {fullName.charAt(0).toUpperCase()}
+                                        </div>
+                                    )}
+                                    <svg
+                                        className={`hidden h-4 w-4 text-[#6B7280] transition-transform sm:block ${dropdownOpen ? 'rotate-180' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </button>
+
+                                {dropdownOpen && (
+                                    <div className="absolute right-0 z-50 mt-2 w-56 rounded-lg border border-[#E5E7EB] bg-white py-2 shadow-lg">
+                                        <div className="border-b border-[#EEF0F3] px-4 py-2">
+                                            <p className="text-sm font-medium text-[#111827]">{fullName}</p>
+                                            <p className="truncate text-xs text-[#6B7280]">{user.email}</p>
+                                        </div>
+                                        <Link
+                                            href="/dashboard"
+                                            onClick={() => setDropdownOpen(false)}
+                                            className="block px-4 py-2 text-sm text-[#374151] transition-colors hover:bg-[#F9FAFB]"
+                                        >
+                                            Dashboard
+                                        </Link>
+                                        <button
+                                            onClick={handleLogout}
+                                            className="w-full px-4 py-2 text-left text-sm text-red-600 transition-colors hover:bg-red-50"
+                                        >
+                                            Log out
+                                        </button>
                                     </div>
                                 )}
-                                <svg
-                                    className={`hidden w-4 h-4 text-[#D3CECB] transition-transform sm:block ${dropdownOpen ? 'rotate-180' : ''}`}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                    />
-                                </svg>
-                            </button>
-
-                            {dropdownOpen && (
-                                <div className="absolute right-0 z-50 mt-2 w-56 rounded-lg border border-white/10 bg-[#1A1716] py-2 shadow-lg">
-                                    <div className="border-b border-white/10 px-4 py-2">
-                                        <p className="text-sm font-medium text-[#EAE8E6]">{fullName}</p>
-                                        <p className="truncate text-xs text-[#A8A19E]">{user.email}</p>
-                                    </div>
-                                    <Link
-                                        href="/dashboard"
-                                        onClick={() => setDropdownOpen(false)}
-                                        className="block px-4 py-2 text-sm text-[#D3CECB] transition-colors hover:bg-white/10"
-                                    >
-                                        <div className="flex items-center gap-2">
-                                            <svg
-                                                className="w-4 h-4"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                                                />
-                                            </svg>
-                                            Dashboard
-                                        </div>
-                                    </Link>
-                                    <button
-                                        onClick={handleLogout}
-                                        className="w-full px-4 py-2 text-left text-sm text-red-400 transition-colors hover:bg-red-500/15"
-                                    >
-                                        <div className="flex items-center gap-2">
-                                            <svg
-                                                className="w-4 h-4"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                                                />
-                                            </svg>
-                                            Log out
-                                        </div>
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    ) : (
-                        <Link
-                            href="/signin"
-                            className="rounded-md border border-[#4A4440] bg-transparent px-3 py-1 text-[#EAE8E6] transition-colors hover:border-[#EAE8E6] hover:bg-[#EAE8E6] hover:text-[#131110]"
-                        >
-                            Sign In
-                        </Link>
-                    )}
-                </div>
+                            </div>
+                        ) : (
+                            <Link
+                                href="/signin"
+                                className="rounded-md border border-[#111827] bg-transparent px-3 py-1 text-sm text-[#111827] transition-colors hover:bg-[#111827] hover:text-white"
+                            >
+                                Sign In
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </header>
 
-            {/* Mobile Menu Overlay */}
             {mobileMenuOpen && (
                 <div className="fixed inset-0 z-50 sm:hidden">
-                    {/* Backdrop */}
                     <div
-                        className="absolute inset-0 bg-black/50"
+                        className="absolute inset-0 bg-black/20"
                         onClick={() => setMobileMenuOpen(false)}
                     />
 
-                    {/* Menu Panel */}
-                    <div className="absolute top-0 right-0 h-full w-72 max-w-[85vw] border-l border-white/10 bg-[#1A1716] shadow-xl">
-                        <div className="flex items-center justify-between border-b border-white/10 p-4">
-                            <span className="font-semibold text-[#EAE8E6]">Menu</span>
+                    <div className="absolute right-0 top-0 h-full w-72 max-w-[85vw] border-l border-[#E5E7EB] bg-white shadow-xl">
+                        <div className="flex items-center justify-between border-b border-[#EEF0F3] p-4">
+                            <span className="font-semibold text-[#111827]">Menu</span>
                             <button
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="rounded-lg p-2 text-[#EAE8E6] hover:bg-white/10"
+                                className="rounded-lg p-2 text-[#111827] hover:bg-black/5"
                             >
-                                <X className="w-5 h-5" />
+                                <X className="h-5 w-5" />
                             </button>
                         </div>
 
-                        <nav className="p-4 space-y-2">
+                        <nav className="space-y-2 p-4">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="block rounded-lg px-4 py-3 text-[#D3CECB] transition-colors hover:bg-white/10"
+                                    className="block rounded-lg px-3 py-2 text-[#374151] transition-colors hover:bg-[#F9FAFB]"
                                 >
                                     {link.label}
                                 </Link>
                             ))}
 
-                            {user && (
-                                <>
-                                    <div className="my-4 border-t border-white/10" />
-                                    <Link
-                                        href="/dashboard"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="block rounded-lg px-4 py-3 text-[#D3CECB] transition-colors hover:bg-white/10"
-                                    >
-                                        Dashboard
-                                    </Link>
-                                    <button
-                                        onClick={handleLogout}
-                                        className="w-full rounded-lg px-4 py-3 text-left text-red-400 transition-colors hover:bg-red-500/15"
-                                    >
-                                        Log out
-                                    </button>
-                                </>
+                            {!loading && !user && (
+                                <Link
+                                    href="/signin"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className="mt-4 block rounded-lg border border-[#111827] px-3 py-2 text-center font-medium text-[#111827] transition-colors hover:bg-[#111827] hover:text-white"
+                                >
+                                    Sign In
+                                </Link>
                             )}
                         </nav>
                     </div>
