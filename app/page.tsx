@@ -89,19 +89,13 @@ export default function Home() {
               Nap gives you an execution-focused coding assistant for real repositories.
               Prompt, inspect changes, and ship with control.
             </p>
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-10 flex justify-center">
               <Link
                 href="/api/download/mac"
-                className="inline-flex items-center gap-2 rounded-md border border-[#111827] bg-[#111827] px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-md border border-white bg-white px-8 py-4 text-base font-semibold text-[#0B0F16] transition hover:opacity-90 sm:text-lg"
               >
-                <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4" />
+                <Image src="/apple-icon.png" alt="apple" width={18} height={18} className="h-5 w-5" />
                 Download for macOS
-              </Link>
-              <Link
-                href="/features"
-                className="inline-flex items-center rounded-md border border-[#D3D8DF] bg-white px-5 py-2.5 text-sm font-medium text-[#1F2937] transition hover:border-[#B7BEC9]"
-              >
-                Explore Features
               </Link>
             </div>
           </div>
