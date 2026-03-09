@@ -67,7 +67,7 @@ const faqs = [
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#07090D] text-[#E5E7EB]">
-      <Header />
+      <Header transparentOnTop />
 
       <section className="relative p-0 m-0">
         <div className="hero-shell relative min-h-[90vh] w-full overflow-hidden p-0 m-0">

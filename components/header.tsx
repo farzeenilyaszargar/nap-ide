@@ -18,7 +18,11 @@ type HeaderUser = {
     } | null
 }
 
-export default function Header() {
+type HeaderProps = {
+    transparentOnTop?: boolean
+}
+
+export default function Header({ transparentOnTop = false }: HeaderProps) {
     const [user, setUser] = useState<HeaderUser | null>(null)
     const [loading, setLoading] = useState(true)
     const [dropdownOpen, setDropdownOpen] = useState(false)
@@ -103,7 +107,7 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 z-30 w-full transition-colors duration-300 ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
+                className={`fixed top-0 z-30 w-full transition-colors duration-300 ${transparentOnTop && !isScrolled ? 'bg-transparent' : 'bg-black'}`}
             >
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                     <Link href="/" className="flex items-center justify-center">
@@ -115,7 +119,7 @@ export default function Header() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`flex items-center justify-center text-sm transition ${isScrolled ? 'text-white/80 hover:text-white' : 'text-black/80 hover:text-black'}`}
+                                className={`flex items-center justify-center text-sm transition ${(transparentOnTop && !isScrolled) ? 'text-black/80 hover:text-black' : 'text-white/80 hover:text-white'}`}
                             >
                                 {link.label}
                             </Link>
@@ -125,7 +129,7 @@ export default function Header() {
                     <div className="flex items-center justify-center gap-3">
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className={`rounded-lg p-2 transition-colors sm:hidden ${isScrolled ? 'text-white hover:bg-white/10' : 'text-black hover:bg-black/10'}`}
+                            className={`rounded-lg p-2 transition-colors sm:hidden ${(transparentOnTop && !isScrolled) ? 'text-black hover:bg-black/10' : 'text-white hover:bg-white/10'}`}
                             aria-label="Toggle menu"
                         >
                             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -192,7 +196,7 @@ export default function Header() {
                         ) : (
                             <Link
                                 href="/signin"
-                                className={`rounded-md border bg-transparent px-3 py-1 text-sm transition-colors ${isScrolled ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'}`}
+                                className={`rounded-md border bg-transparent px-3 py-1 text-sm transition-colors ${(transparentOnTop && !isScrolled) ? 'border-black text-black hover:bg-black hover:text-white' : 'border-white text-white hover:bg-white hover:text-black'}`}
                             >
                                 Sign In
                             </Link>
