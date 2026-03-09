@@ -112,7 +112,11 @@ export default function Header() {
 
                     <div className='mx-5 hidden flex-1 justify-end gap-5 sm:flex'>
                         {navLinks.map((link) => (
-                            <Link key={link.href} href={link.href} className="flex items-center justify-center text-sm text-white/80 transition hover:text-white">
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`flex items-center justify-center text-sm transition ${isScrolled ? 'text-white/80 hover:text-white' : 'text-black/80 hover:text-black'}`}
+                            >
                                 {link.label}
                             </Link>
                         ))}
@@ -121,7 +125,7 @@ export default function Header() {
                     <div className="flex items-center justify-center gap-3">
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 sm:hidden"
+                            className={`rounded-lg p-2 transition-colors sm:hidden ${isScrolled ? 'text-white hover:bg-white/10' : 'text-black hover:bg-black/10'}`}
                             aria-label="Toggle menu"
                         >
                             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -188,7 +192,7 @@ export default function Header() {
                         ) : (
                             <Link
                                 href="/signin"
-                                className="rounded-md border border-white bg-transparent px-3 py-1 text-sm text-white transition-colors hover:bg-white hover:text-black"
+                                className={`rounded-md border bg-transparent px-3 py-1 text-sm transition-colors ${isScrolled ? 'border-white text-white hover:bg-white hover:text-black' : 'border-black text-black hover:bg-black hover:text-white'}`}
                             >
                                 Sign In
                             </Link>
