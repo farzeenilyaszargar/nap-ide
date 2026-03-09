@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-5 sm:px-12 sm:pt-5 lg:px-20">
+      <section className="relative z-20 mx-auto max-w-7xl -mt-14 px-6 pb-16 pt-0 sm:-mt-16 sm:px-12 lg:-mt-20 lg:px-20">
         <div className="relative z-10">
           <Image
             src="/main.jpeg"
