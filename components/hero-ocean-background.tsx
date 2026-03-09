@@ -6,18 +6,31 @@ type HeroOceanBackgroundProps = {
   className?: string;
 };
 
-const FLOAT_WORDS = ["build", "ship", "commit", "refactor", "agent", "code", "deploy", "merge"];
+const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 export default function HeroOceanBackground({ className = "" }: HeroOceanBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const textLayerRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
-  const lastSpawnAtRef = useRef<number>(0);
+  const lastPointRef = useRef<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const element = containerRef.current;
     const textLayer = textLayerRef.current;
     if (!element || !textLayer) return;
+
+    const spawnLetter = (localX: number, localY: number) => {
+      const token = document.createElement("span");
+      const size = 11 + Math.random() * 8;
+      token.className = "hero-float-letter";
+      token.textContent = LETTERS[Math.floor(Math.random() * LETTERS.length)];
+      token.style.left = `${localX}px`;
+      token.style.top = `${localY}px`;
+      token.style.fontSize = `${size}px`;
+      token.style.opacity = `${0.5 + Math.random() * 0.35}`;
+      textLayer.appendChild(token);
+      token.addEventListener("animationend", () => token.remove(), { once: true });
+    };
 
     const updatePosition = (clientX: number, clientY: number) => {
       const rect = element.getBoundingClientRect();
@@ -35,22 +48,27 @@ export default function HeroOceanBackground({ className = "" }: HeroOceanBackgro
       element.style.setProperty("--mx", `${x}%`);
       element.style.setProperty("--my", `${y}%`);
 
-      const now = performance.now();
-      if (now - lastSpawnAtRef.current < 55) return;
-      lastSpawnAtRef.current = now;
+      const localX = clientX - rect.left;
+      const localY = clientY - rect.top;
+      const last = lastPointRef.current;
 
-      const token = document.createElement("span");
-      const jitterX = (Math.random() - 0.5) * 64;
-      const jitterY = (Math.random() - 0.5) * 40;
-      const size = 11 + Math.random() * 7;
-      token.className = "hero-float-text";
-      token.textContent = FLOAT_WORDS[Math.floor(Math.random() * FLOAT_WORDS.length)];
-      token.style.left = `${clientX - rect.left + jitterX}px`;
-      token.style.top = `${clientY - rect.top + jitterY}px`;
-      token.style.fontSize = `${size}px`;
-      token.style.opacity = `${0.48 + Math.random() * 0.36}`;
-      textLayer.appendChild(token);
-      token.addEventListener("animationend", () => token.remove(), { once: true });
+      if (!last) {
+        spawnLetter(localX, localY);
+        lastPointRef.current = { x: localX, y: localY };
+        return;
+      }
+
+      const dx = localX - last.x;
+      const dy = localY - last.y;
+      const distance = Math.hypot(dx, dy);
+      if (distance < 8) return;
+
+      const steps = Math.min(12, Math.floor(distance / 8));
+      for (let i = 1; i <= steps; i += 1) {
+        const t = i / steps;
+        spawnLetter(last.x + dx * t, last.y + dy * t);
+      }
+      lastPointRef.current = { x: localX, y: localY };
     };
 
     const onMouseMove = (event: MouseEvent) => {
@@ -79,6 +97,7 @@ export default function HeroOceanBackground({ className = "" }: HeroOceanBackgro
       if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("touchmove", onTouchMove);
+      lastPointRef.current = null;
     };
   }, []);
 

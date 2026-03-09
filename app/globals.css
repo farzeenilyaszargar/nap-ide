@@ -19,7 +19,7 @@
 }
 
 .hero-shell {
-  background: linear-gradient(180deg, #f7fafc 0%, #eef2f6 58%, #d8dde5 84%, #07090d 100%);
+  background: transparent;
 }
 
 .hero-ocean {
@@ -33,8 +33,8 @@
   background-image: url("/gray-bg.gif");
   background-size: cover;
   background-position: center;
-  filter: grayscale(100%) contrast(1.05) brightness(1.04);
-  opacity: 0.96;
+  filter: grayscale(100%) contrast(1.08) brightness(1.02);
+  opacity: 1;
 }
 
 .hero-ocean-cursor {
@@ -44,7 +44,7 @@
   width: 34rem;
   height: 34rem;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.66) 0%, rgba(255, 255, 255, 0) 66%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.56) 0%, rgba(255, 255, 255, 0) 66%);
   transform: translate(-50%, -50%);
   transition: left 200ms ease-out, top 200ms ease-out;
 }
@@ -54,23 +54,23 @@
   inset: 0;
 }
 
-.hero-float-text {
+.hero-float-letter {
   position: absolute;
-  color: rgba(0, 0, 0, 0.74);
+  color: rgba(0, 0, 0, 0.72);
   font-weight: 500;
   letter-spacing: 0.02em;
   white-space: nowrap;
   transform: translate(-50%, -50%);
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.18);
-  animation: heroTextPop 1.35s ease-out forwards;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  animation: heroLetterTrail 2s linear forwards;
 }
 
 .hero-ocean-vignette {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.44) 0%, rgba(255, 255, 255, 0) 38%),
-    radial-gradient(120% 100% at 50% 100%, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0) 62%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 35%),
+    radial-gradient(120% 100% at 50% 100%, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0) 65%);
 }
 
 .hero-ocean--cta .hero-ocean-gif {
@@ -83,6 +83,7 @@
 }
 
 .hero-ocean--cta .hero-float-text {
+.hero-ocean--cta .hero-float-letter {
   color: rgba(0, 0, 0, 0.58);
 }
 
@@ -92,16 +93,16 @@
     radial-gradient(120% 100% at 50% 100%, rgba(3, 6, 10, 0.9) 0%, rgba(3, 6, 10, 0.45) 74%);
 }
 
-@keyframes heroTextPop {
+@keyframes heroLetterTrail {
   0% {
-    transform: translate(-50%, -50%) translateY(12px) scale(0.88);
+    transform: translate(-50%, -50%) scale(0.95);
     opacity: 0;
   }
-  20% {
-    opacity: 0.78;
+  10% {
+    opacity: 0.8;
   }
   100% {
-    transform: translate(-50%, -50%) translateY(-18px) scale(1.04);
+    transform: translate(-50%, -50%) translateY(-2px) scale(1);
     opacity: 0;
   }
 }
