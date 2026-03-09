@@ -112,7 +112,7 @@ export default function Header() {
 
                     <div className='mx-5 hidden flex-1 justify-end gap-5 sm:flex'>
                         {navLinks.map((link) => (
-                            <Link key={link.href} href={link.href} className="flex items-center justify-center text-sm text-[#6B7280] transition hover:text-[#111827]">
+                            <Link key={link.href} href={link.href} className="flex items-center justify-center text-sm text-white/80 transition hover:text-white">
                                 {link.label}
                             </Link>
                         ))}
@@ -121,7 +121,7 @@ export default function Header() {
                     <div className="flex items-center justify-center gap-3">
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="rounded-lg p-2 text-[#111827] transition-colors hover:bg-black/5 sm:hidden"
+                            className="rounded-lg p-2 text-white transition-colors hover:bg-white/10 sm:hidden"
                             aria-label="Toggle menu"
                         >
                             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
