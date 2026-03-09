@@ -9,6 +9,21 @@ import {
 import { createAdminClient } from '@/lib/supabase/admin'
 import { createClient } from '@/lib/supabase/server'
 
+async function ensureUserUsageBootstrap(userId: string) {
+  try {
+    const admin = createAdminClient()
+    const { error } = await admin
+      .from('user_usage')
+      .upsert({ user_id: userId, balance: 0 }, { onConflict: 'user_id' })
+
+    if (error) {
+      console.error('Unable to upsert user_usage during auth callback:', error)
+    }
+  } catch (error) {
+    console.error('Unexpected user_usage bootstrap error:', error)
+  }
+}
+
 function addDesktopParams(
   target: URL,
   params: {
@@ -102,6 +117,13 @@ export async function GET(request: Request) {
           callbackUri,
         })
         return NextResponse.redirect(errorUrl)
+      }
+
+      const {
+        data: { user: exchangedUser },
+      } = await supabase.auth.getUser()
+      if (exchangedUser?.id) {
+        await ensureUserUsageBootstrap(exchangedUser.id)
       }
     }
 
