@@ -72,7 +72,7 @@ export default function Home() {
       <section className="relative p-0 m-0">
         <div className="hero-shell relative min-h-[90vh] w-full overflow-hidden p-0 m-0">
           <HeroOceanBackground />
-          <div className="pointer-events-none absolute inset-0 z-[1] bg-black/40" />
+          <div className="pointer-events-none absolute inset-0 z-[1] bg-black/20" />
           <div className="relative z-10 mx-auto max-w-6xl px-6 pb-5 pt-24 text-center sm:px-12 sm:pb-6 sm:pt-28 lg:px-20">
             <h1 className="text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Build software with
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-20 mx-auto max-w-7xl -mt-14 px-6 pb-16 pt-0 sm:-mt-16 sm:px-12 lg:-mt-20 lg:px-20">
+      <section className="relative z-20 mx-auto max-w-7xl -mt-24 px-6 pb-16 pt-0 sm:-mt-28 sm:px-12 lg:-mt-32 lg:px-20">
         <div className="relative z-10">
           <Image
             src="/main.jpeg"
