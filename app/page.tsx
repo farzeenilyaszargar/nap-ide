@@ -95,7 +95,7 @@ export default function Home() {
                 href="/api/download/mac"
                 className="inline-flex items-center gap-2 rounded-md border border-white bg-white px-8 py-4 text-base font-semibold text-[#0B0F16] transition hover:opacity-90 sm:text-lg"
               >
-                <Image src="/apple-icon.png" alt="apple" width={18} height={18} className="h-5 w-5" />
+                <Image src="/apple-icon.png" alt="apple" width={18} height={18} className="h-5 w-5 invert" />
                 Download for macOS
               </Link>
             </div>
@@ -183,7 +183,7 @@ export default function Home() {
               href="/api/download/mac"
               className="inline-flex items-center gap-2 rounded-md border border-[#F3F4F6] bg-[#F3F4F6] px-5 py-2.5 text-sm font-medium text-[#0B0F16] transition hover:opacity-90"
             >
-              <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4" />
+              <Image src="/apple-icon.png" alt="apple" width={16} height={16} className="h-4 w-4 invert" />
               Download for macOS
             </Link>
           </div>
