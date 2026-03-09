@@ -110,7 +110,7 @@ export default function Home() {
 
       <section className="relative mx-auto max-w-7xl px-6 pb-16 pt-10 sm:px-12 sm:pt-14 lg:px-20">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-[#DFE4EB] via-[#646F82] to-[#07090D]" />
-        <div className="relative z-10 overflow-hidden rounded-2xl">
+        <div className="relative z-10">
           <Image
             src="/main.jpeg"
             width={1280}
