@@ -54,7 +54,7 @@ export default function Home() {
       <section className="mx-auto my-6 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-8 pt-14 sm:my-8 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
         <div className="flex flex-col items-center justify-center gap-5 text-center">
           <h1 className="text-2xl leading-tight font-semibold sm:text-4xl">
-            Nap is the best way to code with agents.
+            <span className="hero-dotted">Nap</span> is the best way to code with agents.
           </h1>
           <p className="max-w-2xl text-xs leading-relaxed text-[#BDB7B3] sm:text-sm">
             Run AI coding workflows like a clean terminal loop: prompt, inspect, edit, ship.
