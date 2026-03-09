@@ -82,12 +82,13 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 z-[1] bg-black/20" />
           <div className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-24 text-center sm:px-12 sm:pt-28 lg:px-20">
             <h1 className="text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Code faster.
-              <span className="block text-white/85">Ship cleaner.</span>
+              Build software with
+              <span className="block text-white/85">fast agent workflows</span>
+              <span className="block text-white/70">that stay clean and predictable.</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
-              AI coding workflows for real repositories.
-              Prompt, inspect, edit, and merge.
+              Nap gives you an execution-focused coding assistant for real repositories.
+              Prompt, inspect changes, and ship with control.
             </p>
             <div className="mt-10 flex justify-center">
               <Link
