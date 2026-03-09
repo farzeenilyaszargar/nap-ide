@@ -13,13 +13,6 @@ const features = [
     alt: "Parallel execution view",
   },
   {
-    title: "Terminal-Native Agent Loop",
-    description:
-      "Prompt, inspect, edit, and ship with a terminal-like flow designed for practical engineering work.",
-    image: "/terminal.png",
-    alt: "Terminal style coding experience",
-  },
-  {
     title: "Git-Aware by Default",
     description:
       "Stay safe while moving fast with branch-aware changes, clean diffs, and commit-friendly outputs.",
