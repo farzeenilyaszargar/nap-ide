@@ -110,9 +110,6 @@ export default function Home() {
 
       <section className="relative mx-auto max-w-7xl px-6 pb-16 pt-10 sm:px-12 sm:pt-14 lg:px-20">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-[#DFE4EB] via-[#646F82] to-[#07090D]" />
-        <h2 className="relative z-10 mb-8 text-center text-3xl font-normal tracking-tight text-[#E7EBF1] sm:text-4xl">
-          See Nap in action
-        </h2>
         <div className="relative z-10 overflow-hidden rounded-2xl">
           <Image
             src="/main.jpeg"
