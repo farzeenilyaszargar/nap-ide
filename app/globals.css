@@ -27,30 +27,14 @@
   --my: 40%;
 }
 
-.hero-ocean-wave {
+.hero-ocean-gif {
   position: absolute;
-  inset: -30%;
-  border-radius: 999px;
-  filter: blur(56px);
-  opacity: 0.7;
-}
-
-.hero-ocean-wave--one {
-  background: radial-gradient(circle, rgba(20, 24, 34, 0.22) 0%, rgba(20, 24, 34, 0) 66%);
-  transform: translate3d(-10%, -8%, 0);
-  animation: oceanDriftA 12s ease-in-out infinite alternate;
-}
-
-.hero-ocean-wave--two {
-  background: radial-gradient(circle, rgba(123, 136, 156, 0.24) 0%, rgba(123, 136, 156, 0) 68%);
-  transform: translate3d(14%, 12%, 0);
-  animation: oceanDriftB 16s ease-in-out infinite alternate;
-}
-
-.hero-ocean-wave--three {
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0) 60%);
-  transform: translate3d(0, -16%, 0);
-  animation: oceanDriftC 18s ease-in-out infinite alternate;
+  inset: 0;
+  background-image: url("/gray-bg.gif");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(1.05) brightness(1.04);
+  opacity: 0.96;
 }
 
 .hero-ocean-cursor {
@@ -60,79 +44,64 @@
   width: 34rem;
   height: 34rem;
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0) 66%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.66) 0%, rgba(255, 255, 255, 0) 66%);
   transform: translate(-50%, -50%);
   transition: left 200ms ease-out, top 200ms ease-out;
 }
 
-.hero-ocean-grid {
+.hero-ocean-text-layer {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(17, 24, 39, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 24, 39, 0.06) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(circle at 50% 45%, black 35%, transparent 80%);
-  opacity: 0.35;
+}
+
+.hero-float-text {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.74);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.18);
+  animation: heroTextPop 1.35s ease-out forwards;
 }
 
 .hero-ocean-vignette {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 38%),
-    radial-gradient(120% 100% at 50% 100%, rgba(15, 23, 42, 0.11) 0%, rgba(15, 23, 42, 0) 62%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.44) 0%, rgba(255, 255, 255, 0) 38%),
+    radial-gradient(120% 100% at 50% 100%, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0) 62%);
 }
 
-.hero-ocean--cta .hero-ocean-wave--one {
-  opacity: 0.52;
-}
-
-.hero-ocean--cta .hero-ocean-wave--two {
-  opacity: 0.48;
-}
-
-.hero-ocean--cta .hero-ocean-wave--three {
-  opacity: 0.3;
-}
-
-.hero-ocean--cta .hero-ocean-grid {
-  opacity: 0.22;
+.hero-ocean--cta .hero-ocean-gif {
+  opacity: 0.42;
+  filter: grayscale(100%) contrast(1.2) brightness(0.72);
 }
 
 .hero-ocean--cta .hero-ocean-cursor {
-  opacity: 0.58;
+  opacity: 0.28;
+}
+
+.hero-ocean--cta .hero-float-text {
+  color: rgba(0, 0, 0, 0.58);
 }
 
 .hero-ocean--cta .hero-ocean-vignette {
   background:
-    linear-gradient(180deg, rgba(10, 14, 20, 0.62) 0%, rgba(10, 14, 20, 0.2) 45%),
-    radial-gradient(120% 100% at 50% 100%, rgba(3, 6, 10, 0.78) 0%, rgba(3, 6, 10, 0.2) 72%);
+    linear-gradient(180deg, rgba(10, 14, 20, 0.82) 0%, rgba(10, 14, 20, 0.36) 45%),
+    radial-gradient(120% 100% at 50% 100%, rgba(3, 6, 10, 0.9) 0%, rgba(3, 6, 10, 0.45) 74%);
 }
 
-@keyframes oceanDriftA {
+@keyframes heroTextPop {
   0% {
-    transform: translate3d(-12%, -7%, 0) scale(1);
+    transform: translate(-50%, -50%) translateY(12px) scale(0.88);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.78;
   }
   100% {
-    transform: translate3d(6%, 10%, 0) scale(1.08);
-  }
-}
-
-@keyframes oceanDriftB {
-  0% {
-    transform: translate3d(16%, 10%, 0) scale(1);
-  }
-  100% {
-    transform: translate3d(-7%, -10%, 0) scale(1.1);
-  }
-}
-
-@keyframes oceanDriftC {
-  0% {
-    transform: translate3d(-8%, -18%, 0) scale(0.96);
-  }
-  100% {
-    transform: translate3d(10%, 6%, 0) scale(1.08);
+    transform: translate(-50%, -50%) translateY(-18px) scale(1.04);
+    opacity: 0;
   }
 }
