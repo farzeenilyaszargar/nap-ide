@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-20 mx-auto max-w-7xl -mt-24 px-6 pb-16 pt-0 sm:-mt-28 sm:px-12 lg:-mt-32 lg:px-20">
+      <section className="relative z-20 mx-auto max-w-7xl -mt-32 px-6 pb-16 pt-0 sm:-mt-36 sm:px-12 lg:-mt-40 lg:px-20">
         <div className="relative z-10">
           <Image
             src="/main.jpeg"
