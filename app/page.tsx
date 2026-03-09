@@ -108,7 +108,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
-        <h2 className="mb-10 text-center text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">Features</h2>
+        <h2 className="mb-10 text-center text-4xl font-normal tracking-tight text-[#F3F4F6] sm:text-5xl">Features</h2>
         <div className="space-y-10">
           {features.map((feature, index) => (
             <article
@@ -118,8 +118,8 @@ export default function Home() {
               }`}
             >
               <div>
-                <h3 className="text-2xl font-normal tracking-tight text-[#F3F4F6]">{feature.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#B8C0CC] sm:text-base">{feature.description}</p>
+                <h3 className="text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">{feature.title}</h3>
+                <p className="mt-4 text-base leading-relaxed text-[#B8C0CC] sm:text-lg">{feature.description}</p>
               </div>
               <div className="overflow-hidden rounded-xl">
                 <Image
