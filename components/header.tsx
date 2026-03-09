@@ -23,6 +23,7 @@ export default function Header() {
     const [loading, setLoading] = useState(true)
     const [dropdownOpen, setDropdownOpen] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
     const dropdownRef = useRef<HTMLDivElement>(null)
     const router = useRouter()
 
@@ -66,6 +67,15 @@ export default function Header() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 4)
+        }
+        handleScroll()
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     const handleLogout = async () => {
         const supabase = createClient()
         await supabase.auth.signOut()
@@ -92,7 +102,9 @@ export default function Header() {
 
     return (
         <>
-            <header className="fixed top-0 z-30 w-full bg-black">
+            <header
+                className={`fixed top-0 z-30 w-full transition-colors duration-300 ${isScrolled ? 'bg-black' : 'bg-transparent'}`}
+            >
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
                     <Link href="/" className="flex items-center justify-center">
                         <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-5 w-auto rounded-md" />
