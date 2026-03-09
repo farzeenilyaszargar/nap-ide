@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import HeroOceanBackground from "@/components/hero-ocean-background";
 
 const features = [
   {
@@ -76,7 +77,9 @@ export default function Home() {
       <Header />
 
       <section className="mx-auto max-w-7xl px-6 pb-12 pt-20 sm:px-12 lg:px-20">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="hero-shell relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-[#E4E7EC] px-5 py-14 text-center sm:px-10 sm:py-16">
+          <HeroOceanBackground />
+          <div className="relative z-10 mx-auto max-w-4xl">
           <p className="mb-6 text-xs font-medium tracking-[0.18em] text-[#6B7280] uppercase">Nap Editor</p>
           <h1 className="text-4xl leading-[1.05] font-semibold tracking-tight text-[#121417] sm:text-6xl lg:text-7xl">
             Build software with
@@ -101,6 +104,7 @@ export default function Home() {
             >
               Explore Features
             </Link>
+          </div>
           </div>
         </div>
       </section>
