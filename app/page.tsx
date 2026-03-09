@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
-        <h2 className="mb-8 text-center text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">FAQs</h2>
+        <h2 className="mb-8 text-center text-4xl font-normal tracking-tight text-[#F3F4F6] sm:text-5xl">FAQs</h2>
         <div className="grid gap-1">
           {faqs.map((item) => (
             <article key={item.q} className="border-b border-white/10 py-5 last:border-b-0">
@@ -148,7 +148,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-12 lg:px-20">
-        <h2 className="mb-8 text-center text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">
+        <h2 className="mb-8 text-center text-4xl font-normal tracking-tight text-[#F3F4F6] sm:text-5xl">
           What Developers Are Saying
         </h2>
         <div className="grid gap-4 lg:grid-cols-3">
@@ -167,7 +167,7 @@ export default function Home() {
           <HeroOceanBackground className="hero-ocean--cta" />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_65%_at_50%_0%,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_70%)]" />
           <div className="relative z-10">
-          <h2 className="mx-auto mb-5 max-w-2xl text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">
+          <h2 className="mx-auto mb-5 max-w-2xl text-4xl font-normal tracking-tight text-[#F3F4F6] sm:text-5xl">
             Move from idea to reviewed code, without breaking your workflow.
           </h2>
           <div className="flex justify-center">
