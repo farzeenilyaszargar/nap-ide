@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Wix_Madefor_Text } from "next/font/google";
 import "./globals.css";
-
-const wixMadefor = Wix_Madefor_Text({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-wix-madefor",
-});
 
 export const metadata: Metadata = {
   title: "Nap Editor | Best Way To Code With AI",
@@ -46,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={wixMadefor.variable}>
+      <body>
         {children}
       </body>
     </html>
