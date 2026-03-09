@@ -51,7 +51,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#131110] text-[#EAE8E6]">
       <Header />
 
-      <section className="mx-auto my-6 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-8 pt-14 sm:my-8 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
+      <section className="mx-auto my-8 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-10 pt-16 sm:my-10 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
         <div className="flex flex-col items-center justify-center gap-5 text-center">
           <h1 className="text-xl leading-tight font-semibold sm:text-3xl">
             <span className="hero-dotted">Nap</span> is the best way to code with agents.
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-6 sm:my-8 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
+      <section className="mx-auto my-8 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-8 sm:my-10 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
         <div className="overflow-hidden rounded-xl bg-[#1A1716] p-2">
           <Image
             src="/main.jpeg"
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 w-[calc(100%-1.5rem)] max-w-7xl px-6 py-10 sm:my-8 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
+      <section className="mx-auto my-8 w-[calc(100%-1.5rem)] max-w-7xl px-6 py-12 sm:my-10 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
         <div className="mb-6 text-center text-[11px] uppercase tracking-[0.2em] text-[#A8A19E]">
           Trusted by builders at
         </div>
@@ -107,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 w-[calc(100%-1.5rem)] max-w-7xl px-6 py-10 sm:my-8 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
+      <section className="mx-auto my-8 w-[calc(100%-1.5rem)] max-w-7xl px-6 py-12 sm:my-10 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
         <div className="mb-6 text-center text-[11px] uppercase tracking-[0.2em] text-[#A8A19E]">Testimonials</div>
         <div className="grid gap-4 lg:grid-cols-3">
           {testimonials.map((item) => (
@@ -132,7 +132,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto my-6 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-14 pt-8 text-center sm:my-8 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
+      <section className="mx-auto my-8 w-[calc(100%-1.5rem)] max-w-7xl px-6 pb-16 pt-10 text-center sm:my-10 sm:w-[calc(100%-3rem)] sm:px-12 lg:px-24 xl:px-32">
         <p className="mb-3 text-[11px] uppercase tracking-[0.2em] text-[#A8A19E]">
           Build faster. Ship cleaner.
         </p>
