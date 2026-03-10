@@ -10,8 +10,12 @@ type DownloadButtonProps = {
 
 type OsKind = "mac" | "windows" | "linux" | "unknown";
 
-const RELEASES_URL =
-  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases";
+const RELEASES_URLS: Record<OsKind, string> = {
+  mac: "/api/download/mac",
+  windows: "/api/download/windows",
+  linux: "/api/download/linux",
+  unknown: "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases",
+};
 
 export default function DownloadButton({
   className = "",
@@ -41,18 +45,30 @@ export default function DownloadButton({
   const config = useMemo(() => {
     switch (os) {
       case "windows":
-        return { label: "Windows", icon: "/windows-icon.png" };
+        return {
+          label: "Windows",
+          icon: "/windows-icon.png",
+          href: RELEASES_URLS.windows,
+        };
       case "linux":
-        return { label: "Linux", icon: "/linux-icon.png" };
+        return {
+          label: "Linux",
+          icon: "/linux-icon.png",
+          href: RELEASES_URLS.linux,
+        };
       case "mac":
       default:
-        return { label: "macOS", icon: "/apple-icon.png" };
+        return {
+          label: "macOS",
+          icon: "/apple-icon.png",
+          href: RELEASES_URLS.mac,
+        };
     }
   }, [os]);
 
   return (
     <Link
-      href={RELEASES_URL}
+      href={config.href}
       className={`${showOnMobile ? "inline-flex" : "hidden sm:inline-flex"} items-center justify-center gap-2 rounded-full border border-gray-300 bg-black px-7 py-2 text-xl text-white transition hover:bg-gray-800 ${className}`.trim()}
     >
       Download for {config.label}
