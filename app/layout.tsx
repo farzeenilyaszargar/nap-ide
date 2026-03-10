@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "software engineering",
     "code assistant"
   ],
-  alternates: { canonical: "https://www.nap.bot" },
+  alternates: { canonical: "https://nap-code.com" },
   icons: { icon: "/logo-white.ico" },
   robots: {
     index: true,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nap Code",
     description: "AI-native code editor for fast, reliable development.",
-    url: "https://www.nap.bot",
+    url: "https://nap-code.com",
     images: [
       {
         url: "/og-image.png",
