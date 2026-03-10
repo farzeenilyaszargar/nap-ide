@@ -10,7 +10,7 @@ import TryNap from "@/components/trySurfer";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-white text-black">
       <Header />
       <HeroPage />
       <Features />
