@@ -11,7 +11,7 @@ type DownloadButtonProps = {
 type OsKind = "mac" | "windows" | "linux" | "unknown";
 
 const RELEASES_URL =
-  "https://github.com/aaravbangsmetal/xMetallic/releases/latest";
+  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases";
 
 export default function DownloadButton({
   className = "",
@@ -58,8 +58,8 @@ export default function DownloadButton({
       Download for {config.label}
       <Image
         src={config.icon}
-        width={16}
-        height={16}
+        width={18}
+        height={18}
         alt={config.label}
         className="h-4 w-4"
       />

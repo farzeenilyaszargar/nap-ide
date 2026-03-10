@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function DownloadPage() {
-  const releasesUrl = "https://github.com/aaravbangsmetal/xMetallic/releases/latest";
+  const releasesUrl = "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases";
 
   return (
     <div className="min-h-screen bg-white text-black">
