@@ -34,7 +34,7 @@ export default function PricingPage() {
     );
 
     return (
-        <div className="">
+        <div className="min-h-screen bg-white text-black">
             <Header />
             <div className="flex flex-col justify-center items-center gap-5 my-20">
                 <h1 className="font-bold text-4xl text-black">Pricing</h1>

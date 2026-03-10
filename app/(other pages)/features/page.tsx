@@ -8,7 +8,7 @@ import { Zap, Shield, Plug } from "lucide-react";
 
 export default function FeaturesPage() {
     return (
-        <div className="">
+        <div className="min-h-screen bg-white text-black">
             <Header />
 
             <div className="flex flex-col items-center justify-center pt-20 px-5 text-center space-y-6">
