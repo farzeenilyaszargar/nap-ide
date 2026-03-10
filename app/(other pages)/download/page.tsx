@@ -6,7 +6,7 @@ export default function DownloadPage() {
   const macDownloadUrl = "/api/download/mac";
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white text-black">
       <Header />
       <div className="max-w-7xl mx-auto px-4 py-20 flex flex-col items-center">
         <div className="text-center mb-12">

@@ -3,7 +3,7 @@ import Footer from "@/components/footer";
 
 export default function TC() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white text-black">
       <Header />
 
       {/* Hero Section */}

@@ -34,7 +34,7 @@ export default function BlogsPage() {
     const currentBlog = blogs[currentIndex];
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-white text-black">
             <Header />
 
             {/* Hero Header */}

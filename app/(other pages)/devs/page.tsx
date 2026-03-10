@@ -3,7 +3,7 @@ import { Code, Terminal, Boxes } from "lucide-react";
 
 export default function Devs() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white text-black">
       <Header />
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">

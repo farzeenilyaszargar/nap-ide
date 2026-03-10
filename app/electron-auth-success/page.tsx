@@ -62,7 +62,7 @@ export default function ElectronAuthSuccess() {
 
   return (
     <main className="min-h-screen bg-white text-gray-900">
-      <div className="mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-6 text-center">
+      <div className="mx-auto flex min-h-screen max-w-xl bg-white text-black flex-col items-center justify-center px-6 text-center">
         <h1 className="text-2xl font-semibold">Authentication Complete</h1>
         <p className="mt-4 text-sm text-gray-600">{statusText}</p>
 

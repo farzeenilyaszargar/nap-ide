@@ -108,7 +108,7 @@ export default function WaitlistAdmin() {
     }
 
     return (
-        <div className="min-h-screen flex flex-col bg-gray-50/50">
+        <div className="min-h-screen flex flex-col bg-white text-black">
             <Header />
 
             <main className="flex-grow p-6 sm:p-12">
