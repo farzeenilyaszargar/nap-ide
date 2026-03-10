@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://nap-code.com"),
   title: "Nap | Run a team of coding agents on your PC",
-  description: "Run a team of coding agents on your PC",
+  description: "Run multiple coding agents on your PC",
   keywords: [
     "Nap",
     "Nap Code",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nap Code",
-    description: "AI-native code editor for fast, reliable development.",
+    description: "Run multiple coding agents on your PC.",
     url: "https://nap-code.com",
     images: [
       {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Nap Code",
-    description: "AI-native code editor for fast, reliable development.",
+    description: "Run multiple coding agents on your PC.",
     images: ["/og-image.png"],
   },
 
