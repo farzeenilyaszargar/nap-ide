@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nap-code.com"),
-  title: "Nap | Run a team of coding agents on your PC",
+  title: "Nap | Run multiple coding agents on your PC",
   description: "Run multiple coding agents on your PC",
   keywords: [
     "Nap",
