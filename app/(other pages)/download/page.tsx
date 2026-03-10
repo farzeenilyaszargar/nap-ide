@@ -24,7 +24,7 @@ export default function DownloadPage() {
         <div className="mt-10 w-full max-w-3xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
-              <Image src="/apple-icon.png" alt="macOS" width={28} height={28} className="mx-auto mb-3" />
+              <Image src="/apple-icon.png" alt="macOS" width={40} height={40} className="mx-auto mb-3 brightness-0" />
               <p className="text-sm font-semibold text-black">macOS</p>
               <Link
                 href={releasesUrl}
@@ -34,7 +34,7 @@ export default function DownloadPage() {
               </Link>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
-              <Image src="/windows-icon.png" alt="Windows" width={28} height={28} className="mx-auto mb-3" />
+              <Image src="/windows-icon.png" alt="Windows" width={40} height={40} className="mx-auto mb-3 brightness-0" />
               <p className="text-sm font-semibold text-black">Windows</p>
               <button
                 type="button"
@@ -45,7 +45,7 @@ export default function DownloadPage() {
               </button>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
-              <Image src="/linux-icon.png" alt="Linux" width={28} height={28} className="mx-auto mb-3" />
+              <Image src="/linux-icon.png" alt="Linux" width={40} height={40} className="mx-auto mb-3 brightness-0" />
               <p className="text-sm font-semibold text-black">Linux</p>
               <button
                 type="button"
