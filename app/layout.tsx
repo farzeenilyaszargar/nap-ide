@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "The Best Way To Code With AI",
   keywords: ["ide", "dev tool", "ai dev tools", "ai ide", "ai developement", "developement platform", "developement tool", "nap", "editor", "nap editor"],
   alternates: { canonical: "www.nap.bot" },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/logo.ico" },
   robots: {
     index: true,
     follow: true,
