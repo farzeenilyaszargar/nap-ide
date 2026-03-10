@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nap-code.com"),
   title: "Nap Code | AI Code Editor for Fast, Reliable Development",
   description: "Nap Code is an AI-native code editor that helps developers ship faster with reliable agent workflows, multi-file edits, and clean diffs.",
   keywords: [
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://nap-code.com" },
   icons: { icon: "/logo-white.ico" },
+  applicationName: "Nap Code",
   robots: {
     index: true,
     follow: true,
