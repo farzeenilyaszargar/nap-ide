@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #f6f7f8;
-  --color-foreground: #121417;
+  --color-background: #f4f2ee;
+  --color-foreground: #6b6f76;
 }
 
 @layer base {
@@ -28,13 +28,7 @@
 }
 
 .hero-ocean-gif {
-  position: absolute;
-  inset: 0;
-  background-image: url("/gray-bg.gif");
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%) contrast(1.08) brightness(1.02);
-  opacity: 1;
+  display: none;
 }
 
 .hero-ocean-cursor {
@@ -52,6 +46,17 @@
 .hero-ocean-text-layer {
   position: absolute;
   inset: 0;
+}
+
+.hero-shimmer {
+  background: linear-gradient(120deg, #6d747d 0%, #8e969f 16%, #b7bcc3 33%, #d7dbe0 50%, #b7bcc3 67%, #8e969f 84%, #6d747d 100%);
+  background-size: 800% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(214, 219, 225, 0.35));
+  animation: heroShimmer 3.6s ease-in-out infinite alternate;
 }
 
 .hero-float-letter {
@@ -103,5 +108,14 @@
   100% {
     transform: translate(-50%, -50%) translateY(-2px) scale(1);
     opacity: 0;
+  }
+}
+
+@keyframes heroShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }

@@ -6,16 +6,16 @@ import HeroOceanBackground from "@/components/hero-ocean-background";
 
 const features = [
   {
-    title: "Parallel Execution, Real Throughput",
+    title: "Code.\nLightning Fast",
     description:
-      "Run multi-file tasks faster with parallel workflows and clear execution tracking across your repository.",
+      "Take your productivity to the next level by delegating the coding to the AGENTS who turn your visions into a code while you direct your intent,nudge until the iteration is perfect or maybe just take a nap.",
     image: "/parallel.jpeg",
     alt: "Parallel execution view",
   },
   {
     title: "Git-Aware by Default",
     description:
-      "Stay safe while moving fast with branch-aware changes, clean diffs, and commit-friendly outputs.",
+      "For developers who build real products, Nap delivers world-class AI coding agents that understand your entire codebase with complete clarity. They read every file, grasp every nuance, and build with the sophistication of a top-tier engineer.",
     image: "/git.jpeg",
     alt: "Git workflow integration",
   },
@@ -76,11 +76,10 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-6xl px-6 pb-5 pt-24 text-center sm:px-12 sm:pb-6 sm:pt-28 lg:px-20">
             <h1 className="text-4xl leading-[1.05] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
               Build software with
-              <span className="block">fast agent workflows</span>
+              <span className="block">fast <span className="hero-shimmer">AGENT</span> workflows</span>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
-              Nap gives you an execution-focused coding assistant for real repositories.
-              Prompt, inspect changes, and ship with control.
+              Your Vision The Agent implements, All by natural language prompts
             </p>
             <div className="mt-8 flex justify-center">
               <Link
@@ -118,7 +117,23 @@ export default function Home() {
               }`}
             >
               <div>
-                <h3 className="text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">{feature.title}</h3>
+                <h3 className="text-3xl font-normal tracking-tight text-[#F3F4F6] sm:text-4xl">
+                  {feature.title.split("\n").map((line, idx) => {
+                    const trimmed = line.trim();
+                    const applyShimmer = trimmed.toLowerCase() === "lightning fast";
+                    return (
+                      <span key={`${feature.title}-${idx}`} className="block">
+                        {applyShimmer ? (
+                          <>
+                            <span className="hero-shimmer">Lightning</span> Fast
+                          </>
+                        ) : (
+                          line
+                        )}
+                      </span>
+                    );
+                  })}
+                </h3>
                 <p className="mt-4 text-base leading-relaxed text-[#B8C0CC] sm:text-lg">{feature.description}</p>
               </div>
               <div className="overflow-hidden rounded-xl">
