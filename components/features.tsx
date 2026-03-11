@@ -33,7 +33,7 @@ export default function Features() {
                 <div className="md:w-1/2 w-full px-5 text-center">
                     <h2 className="text-xl sm:text-3xl font-semibold mb-4 text-black">Control anything &amp;
                         everything on Nap.</h2>
-                    <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
+                    <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Manage agents, workflows, and project state from one place. Switch contexts fast, track changes, and keep the entire build loop under your control.</p>
                 </div>
 
             </div>
