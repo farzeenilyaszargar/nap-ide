@@ -79,16 +79,6 @@ export default function ElectronAuthSuccess() {
               </button>
             )}
 
-            {callbackHref && callbackHref !== primaryHref && (
-              <button
-                className="rounded-xl border border-gray-300 px-5 py-3 text-sm font-medium text-gray-800 hover:bg-gray-100"
-                onClick={() => {
-                  window.location.href = callbackHref;
-                }}
-              >
-                Try local callback
-              </button>
-            )}
           </div>
         )}
       </div>
