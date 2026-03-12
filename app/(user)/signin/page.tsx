@@ -23,13 +23,11 @@ export default function SignIn() {
     const searchParams = useSearchParams()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
     const [emailLoading, setEmailLoading] = useState(false)
-    const [emailStep, setEmailStep] = useState<'idle' | 'sent' | 'verifying'>('idle')
+    const [emailSent, setEmailSent] = useState(false)
     const [email, setEmail] = useState('')
-    const [otpDigits, setOtpDigits] = useState<string[]>(Array(6).fill(''))
     const [error, setError] = useState<string | null>(null)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
-    const isVerifyingOtp = emailStep === 'verifying'
 
     const redirectUrlObject = useMemo(() => {
         let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
@@ -104,7 +102,7 @@ export default function SignIn() {
     const handleEmailSignIn = async () => {
         const supabase = createClient()
         setError(null)
-        setEmailStep('idle')
+        setEmailSent(false)
 
         const trimmedEmail = email.trim()
         if (!trimmedEmail) {
@@ -133,37 +131,8 @@ export default function SignIn() {
             return
         }
 
-        setEmailStep('sent')
+        setEmailSent(true)
         setEmailLoading(false)
-    }
-
-    const handleVerifyOtp = async () => {
-        const supabase = createClient()
-        setError(null)
-
-        const trimmedEmail = email.trim()
-        const trimmedOtp = otpDigits.join('').trim()
-
-        if (!trimmedEmail || trimmedOtp.length !== 6) {
-            setError('Please enter the email and OTP code.')
-            return
-        }
-
-        setEmailStep('verifying')
-
-        const { error } = await supabase.auth.verifyOtp({
-            email: trimmedEmail,
-            token: trimmedOtp,
-            type: 'email',
-        })
-
-        if (error) {
-            setError(error.message)
-            setEmailStep('sent')
-            return
-        }
-
-        window.location.href = redirectUrlObject.toString()
     }
 
     return (
@@ -234,52 +203,16 @@ export default function SignIn() {
                                     <button
                                         type="button"
                                         onClick={handleEmailSignIn}
-                                        disabled={emailLoading || isVerifyingOtp}
+                                        disabled={emailLoading}
                                         className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
                                     >
                                         {emailLoading ? 'Sending...' : 'Continue'}
                                     </button>
                             </div>
-                                {emailStep === 'sent' && (
-                                    <div className="mt-3 space-y-2">
-                                    <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                        Enter OTP
-                                    </label>
-                                    <div className="flex gap-2">
-                                        {otpDigits.map((digit, index) => (
-                                            <input
-                                                key={index}
-                                                type="text"
-                                                inputMode="numeric"
-                                                maxLength={1}
-                                                value={digit}
-                                                onChange={(event) => {
-                                                    const value = event.target.value.replace(/\D/g, '').slice(-1)
-                                                    const next = [...otpDigits]
-                                                    next[index] = value
-                                                    setOtpDigits(next)
-                                                    if (value && event.currentTarget.nextElementSibling instanceof HTMLInputElement) {
-                                                        event.currentTarget.nextElementSibling.focus()
-                                                    }
-                                                }}
-                                                onKeyDown={(event) => {
-                                                    if (event.key === 'Backspace' && !otpDigits[index] && event.currentTarget.previousElementSibling instanceof HTMLInputElement) {
-                                                        event.currentTarget.previousElementSibling.focus()
-                                                    }
-                                                }}
-                                                className="h-12 w-10 rounded-xl border border-gray-200 bg-white text-center text-lg font-semibold text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-                                            />
-                                        ))}
-                                    </div>
-                                        <button
-                                            type="button"
-                                            onClick={handleVerifyOtp}
-                                            disabled={isVerifyingOtp}
-                                            className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
-                                        >
-                                            {isVerifyingOtp ? 'Verifying...' : 'Verify OTP'}
-                                        </button>
-                                    </div>
+                                {emailSent && (
+                                    <p className="mt-3 text-xs text-emerald-600">
+                                        Magic link sent. Check your inbox to finish signing in.
+                                    </p>
                                 )}
                         </div>
 
