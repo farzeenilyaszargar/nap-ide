@@ -203,7 +203,7 @@ export default function SignIn() {
                                 <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
                                     Email address
                                 </label>
-                                <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                                <div className="mt-2 flex flex-col gap-3">
                                     <input
                                         type="email"
                                         value={email}
@@ -225,7 +225,7 @@ export default function SignIn() {
                                         <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
                                             Enter OTP
                                         </label>
-                                        <div className="flex flex-col gap-3 sm:flex-row">
+                                        <div className="flex flex-col gap-3">
                                             <input
                                                 type="text"
                                                 value={otp}
