@@ -178,18 +178,20 @@ export default function SignIn() {
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
                     <div className="overflow-hidden rounded-[32px] border border-gray-100 bg-white/80 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-12">
                         <div className="flex flex-col items-center text-center">
-                            <div className="mb-4 flex items-center justify-center">
-                                <Image
-                                    src="/logo.png"
-                                    alt="Nap logo"
-                                    width={140}
-                                    height={44}
-                                    className="h-9 w-auto rounded-lg"
-                                />
+                            <div className="mb-4 flex items-center justify-center gap-3">
+                                <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+                                    {desktopMode ? 'Continue to Nap Desktop' : 'Welcome To'}
+                                </h1>
+                                {!desktopMode && (
+                                    <Image
+                                        src="/logo.png"
+                                        alt="Nap logo"
+                                        width={110}
+                                        height={36}
+                                        className="h-8 w-auto rounded-lg"
+                                    />
+                                )}
                             </div>
-                            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                                {desktopMode ? 'Continue to Nap Desktop' : 'Welcome'}
-                            </h1>
                             <p className="mt-3 text-[15px] leading-relaxed text-gray-500">
                                 {desktopMode
                                     ? 'Use Google sign-in to securely authenticate and return to the desktop app.'
