@@ -188,7 +188,7 @@ export default function SignIn() {
                                 />
                             </div>
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                                {desktopMode ? 'Continue to Nap Desktop' : 'Sign in'}
+                                {desktopMode ? 'Continue to Nap Desktop' : 'Welcome'}
                             </h1>
                             <p className="mt-3 text-[15px] leading-relaxed text-gray-500">
                                 {desktopMode
