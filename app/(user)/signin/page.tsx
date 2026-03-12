@@ -170,26 +170,26 @@ export default function SignIn() {
         <div className="min-h-screen bg-white">
             <GenHeader />
 
-            <main className="relative flex min-h-[calc(100vh-56px)] flex-col items-center justify-center overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
+            <main className="relative flex min-h-[calc(100vh-56px)] flex-col items-center justify-center overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
                 {/* Modern subtle background background */}
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,123,255,0.03)_0%,rgba(255,255,255,0)_100%)]" />
                 <div className="absolute top-[20%] left-[10%] -z-10 h-64 w-64 rounded-full bg-blue-50/40 blur-3xl" />
                 <div className="absolute bottom-[20%] right-[10%] -z-10 h-72 w-72 rounded-full bg-indigo-50/40 blur-3xl" />
 
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
-                    <div className="overflow-hidden rounded-[32px] border border-gray-100 bg-white/80 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-12">
+                    <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                         <div className="flex flex-col items-center text-center">
-                            <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-900">
+                            <h1 className="mb-3 text-3xl font-bold tracking-tight text-gray-900">
                                 {desktopMode ? 'Continue to Nap Desktop' : 'Welcome'}
                             </h1>
-                            <p className="mt-3 text-[15px] leading-relaxed text-gray-500">
+                            <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
                                 {desktopMode
                                     ? 'Use Google sign-in to securely authenticate and return to the desktop app.'
                                     : 'Sign in to continue to your dashboard and start building with agents.'}
                             </p>
                         </div>
 
-                        <div className="mt-10 space-y-4">
+                        <div className="mt-6 space-y-3">
                             {providers.map((provider) => (
                                 <button
                                     key={provider.id}
@@ -218,7 +218,7 @@ export default function SignIn() {
                                     )}
                                 </button>
                             ))}
-                            <div className="flex items-center gap-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+                            <div className="flex items-center gap-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
                                 <span className="h-px flex-1 bg-gray-200" />
                                 <span>or</span>
                                 <span className="h-px flex-1 bg-gray-200" />
@@ -240,8 +240,8 @@ export default function SignIn() {
                                         {emailLoading ? 'Sending...' : 'Continue'}
                                     </button>
                             </div>
-                            {emailStep === 'sent' && (
-                                <div className="mt-4 space-y-2">
+                                {emailStep === 'sent' && (
+                                    <div className="mt-3 space-y-2">
                                     <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
                                         Enter OTP
                                     </label>
@@ -279,8 +279,8 @@ export default function SignIn() {
                                         >
                                             {isVerifyingOtp ? 'Verifying...' : 'Verify OTP'}
                                         </button>
-                                </div>
-                            )}
+                                    </div>
+                                )}
                         </div>
 
                         {(error || queryError) && (
@@ -291,7 +291,7 @@ export default function SignIn() {
                             </div>
                         )}
 
-                        <div className="mt-10 pt-8 border-t border-gray-50">
+                        <div className="mt-6 pt-5 border-t border-gray-50">
                             <p className="text-center text-xs text-gray-400">
                                 By signing in, you agree to our{' '}
                                 <Link href="/tc" className="font-medium text-gray-600 hover:text-black transition-colors underline underline-offset-4 decoration-gray-200 hover:decoration-gray-400">Terms</Link>
@@ -301,7 +301,7 @@ export default function SignIn() {
                         </div>
                     </div>
 
-                    <div className="mt-8 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
+                    <div className="mt-5 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
                         <p className="text-sm text-gray-500">
                             {desktopMode
                                 ? 'After sign in, this browser tab will guide you back to the app.'
