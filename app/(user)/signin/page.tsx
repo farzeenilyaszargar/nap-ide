@@ -25,7 +25,7 @@ export default function SignIn() {
     const [emailLoading, setEmailLoading] = useState(false)
     const [emailStep, setEmailStep] = useState<'idle' | 'sent' | 'verifying'>('idle')
     const [email, setEmail] = useState('')
-    const [otp, setOtp] = useState('')
+    const [otpDigits, setOtpDigits] = useState<string[]>(Array(6).fill(''))
     const [error, setError] = useState<string | null>(null)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
@@ -142,9 +142,9 @@ export default function SignIn() {
         setError(null)
 
         const trimmedEmail = email.trim()
-        const trimmedOtp = otp.trim()
+        const trimmedOtp = otpDigits.join('').trim()
 
-        if (!trimmedEmail || !trimmedOtp) {
+        if (!trimmedEmail || trimmedOtp.length !== 6) {
             setError('Please enter the email and OTP code.')
             return
         }
@@ -256,14 +256,32 @@ export default function SignIn() {
                                     <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
                                         Enter OTP
                                     </label>
-                                    <div className="flex flex-col gap-3">
-                                        <input
-                                            type="text"
-                                            value={otp}
-                                            onChange={(event) => setOtp(event.target.value)}
-                                            placeholder="6-digit code"
-                                            className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-                                        />
+                                    <div className="flex gap-2">
+                                        {otpDigits.map((digit, index) => (
+                                            <input
+                                                key={index}
+                                                type="text"
+                                                inputMode="numeric"
+                                                maxLength={1}
+                                                value={digit}
+                                                onChange={(event) => {
+                                                    const value = event.target.value.replace(/\D/g, '').slice(-1)
+                                                    const next = [...otpDigits]
+                                                    next[index] = value
+                                                    setOtpDigits(next)
+                                                    if (value && event.currentTarget.nextElementSibling instanceof HTMLInputElement) {
+                                                        event.currentTarget.nextElementSibling.focus()
+                                                    }
+                                                }}
+                                                onKeyDown={(event) => {
+                                                    if (event.key === 'Backspace' && !otpDigits[index] && event.currentTarget.previousElementSibling instanceof HTMLInputElement) {
+                                                        event.currentTarget.previousElementSibling.focus()
+                                                    }
+                                                }}
+                                                className="h-12 w-10 rounded-xl border border-gray-200 bg-white text-center text-lg font-semibold text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
+                                            />
+                                        ))}
+                                    </div>
                                         <button
                                             type="button"
                                             onClick={handleVerifyOtp}
@@ -272,7 +290,6 @@ export default function SignIn() {
                                         >
                                             {isVerifyingOtp ? 'Verifying...' : 'Verify OTP'}
                                         </button>
-                                    </div>
                                 </div>
                             )}
                         </div>
