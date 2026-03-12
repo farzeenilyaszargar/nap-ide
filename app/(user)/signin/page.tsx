@@ -22,6 +22,9 @@ const providers: Array<{
 export default function SignIn() {
     const searchParams = useSearchParams()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
+    const [emailLoading, setEmailLoading] = useState(false)
+    const [emailSent, setEmailSent] = useState(false)
+    const [email, setEmail] = useState('')
     const [error, setError] = useState<string | null>(null)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
@@ -92,6 +95,68 @@ export default function SignIn() {
         }
     }
 
+    const handleEmailSignIn = async () => {
+        const supabase = createClient()
+        setError(null)
+        setEmailSent(false)
+
+        const trimmedEmail = email.trim()
+        if (!trimmedEmail) {
+            setError('Please enter your email address.')
+            return
+        }
+
+        setEmailLoading(true)
+
+        let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
+        siteUrl = siteUrl.replace(/\/$/, '')
+
+        const urlRedirectTo = searchParams.get('redirect_to')
+        const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
+        const nextPath = urlRedirectTo || sessionRedirectTo || '/dashboard'
+
+        const redirectUrlObject = new URL('/auth/callback', siteUrl)
+
+        if (desktopMode) {
+            const state = searchParams.get('state')
+            const nonce = searchParams.get('nonce')
+            const protocol = searchParams.get('protocol')
+            const redirect = searchParams.get('redirect')
+            const callback = searchParams.get('callback')
+
+            if (!state) {
+                setError('Missing desktop state. Please restart login from the app.')
+                setEmailLoading(false)
+                return
+            }
+
+            redirectUrlObject.searchParams.set('desktop', '1')
+            redirectUrlObject.searchParams.set('state', state)
+            if (nonce) redirectUrlObject.searchParams.set('nonce', nonce)
+            if (protocol) redirectUrlObject.searchParams.set('protocol', protocol)
+            if (redirect) redirectUrlObject.searchParams.set('redirect', redirect)
+            if (callback) redirectUrlObject.searchParams.set('callback', callback)
+        } else {
+            redirectUrlObject.searchParams.set('next', nextPath)
+        }
+
+        const { error } = await supabase.auth.signInWithOtp({
+            email: trimmedEmail,
+            options: {
+                emailRedirectTo: redirectUrlObject.toString(),
+            },
+        })
+
+        if (error) {
+            setError(error.message)
+            setEmailLoading(false)
+            return
+        }
+
+        setEmailSent(true)
+        setEmailLoading(false)
+    }
+
     return (
         <div className="min-h-screen bg-white">
             <GenHeader />
@@ -126,6 +191,33 @@ export default function SignIn() {
                         </div>
 
                         <div className="mt-10 space-y-4">
+                            <div className="rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
+                                <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                    Email address
+                                </label>
+                                <div className="mt-2 flex flex-col gap-3 sm:flex-row">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(event) => setEmail(event.target.value)}
+                                        placeholder="you@company.com"
+                                        className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={handleEmailSignIn}
+                                        disabled={emailLoading}
+                                        className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
+                                    >
+                                        {emailLoading ? 'Sending...' : 'Email me a link'}
+                                    </button>
+                                </div>
+                                {emailSent && (
+                                    <p className="mt-3 text-xs text-emerald-600">
+                                        Magic link sent. Check your inbox to finish signing in.
+                                    </p>
+                                )}
+                            </div>
                             {providers.map((provider) => (
                                 <button
                                     key={provider.id}
