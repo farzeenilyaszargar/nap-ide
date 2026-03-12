@@ -61,7 +61,9 @@ export async function proxy(request: NextRequest) {
     if (request.nextUrl.pathname.startsWith('/api') &&
         !request.nextUrl.pathname.startsWith('/api/razorpay') && // Allow callbacks
         !request.nextUrl.pathname.startsWith('/api/auth') && // Allow auth endpoints
-        !request.nextUrl.pathname.startsWith('/api/desktop')) { // Desktop routes use header auth
+        !request.nextUrl.pathname.startsWith('/api/desktop') && // Desktop routes use header auth
+        !request.nextUrl.pathname.startsWith('/api/download') && // Public downloads
+        !request.nextUrl.pathname.startsWith('/api/updates')) { // Public update checks
 
         if (!user) {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
