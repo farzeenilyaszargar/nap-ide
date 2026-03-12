@@ -222,52 +222,50 @@ export default function SignIn() {
                                 <span>or</span>
                                 <span className="h-px flex-1 bg-gray-200" />
                             </div>
-                            <div className="rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
-                                <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                    Email address
-                                </label>
-                                <div className="mt-2 flex flex-col gap-3">
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(event) => setEmail(event.target.value)}
-                                        placeholder="you@company.com"
-                                        className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-                                    />
-                                    <button
-                                        type="button"
-                                        onClick={handleEmailSignIn}
-                                        disabled={emailLoading || emailStep === 'verifying'}
-                                        className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
-                                    >
-                                        {emailLoading ? 'Sending...' : 'Continue'}
-                                    </button>
-                                </div>
-                                {emailStep === 'sent' && (
-                                    <div className="mt-4 space-y-2">
-                                        <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                            Enter OTP
-                                        </label>
-                                        <div className="flex flex-col gap-3">
-                                            <input
-                                                type="text"
-                                                value={otp}
-                                                onChange={(event) => setOtp(event.target.value)}
-                                                placeholder="6-digit code"
-                                                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
-                                            />
-                                            <button
-                                                type="button"
-                                                onClick={handleVerifyOtp}
-                                                disabled={emailStep === 'verifying'}
-                                                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
-                                            >
-                                                {emailStep === 'verifying' ? 'Verifying...' : 'Verify OTP'}
-                                            </button>
-                                        </div>
-                                    </div>
-                                )}
+                            <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                Email address
+                            </label>
+                            <div className="-mt-2 flex flex-col gap-3">
+                                <input
+                                    type="email"
+                                    value={email}
+                                    onChange={(event) => setEmail(event.target.value)}
+                                    placeholder="you@company.com"
+                                    className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={handleEmailSignIn}
+                                    disabled={emailLoading || emailStep === 'verifying'}
+                                    className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
+                                >
+                                    {emailLoading ? 'Sending...' : 'Continue'}
+                                </button>
                             </div>
+                            {emailStep === 'sent' && (
+                                <div className="mt-4 space-y-2">
+                                    <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                        Enter OTP
+                                    </label>
+                                    <div className="flex flex-col gap-3">
+                                        <input
+                                            type="text"
+                                            value={otp}
+                                            onChange={(event) => setOtp(event.target.value)}
+                                            placeholder="6-digit code"
+                                            className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
+                                        />
+                                        <button
+                                            type="button"
+                                            onClick={handleVerifyOtp}
+                                            disabled={emailStep === 'verifying'}
+                                            className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+                                        >
+                                            {emailStep === 'verifying' ? 'Verifying...' : 'Verify OTP'}
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
 
                         {(error || queryError) && (
