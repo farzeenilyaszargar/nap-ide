@@ -147,6 +147,12 @@ export default function SignIn() {
                 <div className="absolute bottom-[20%] right-[10%] -z-10 h-72 w-72 rounded-full bg-indigo-50/40 blur-3xl" />
 
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
+                    {emailSent ? (
+                        <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 text-center shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
+                            <h1 className="text-2xl font-semibold text-gray-900">Open mail for confirmation</h1>
+                            <p className="mt-3 text-sm text-gray-500">We sent a magic link to your email.</p>
+                        </div>
+                    ) : (
                     <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                         <div className="flex flex-col items-center text-center">
                             <h1 className="mb-3 text-3xl font-bold tracking-tight text-gray-900">
@@ -210,7 +216,6 @@ export default function SignIn() {
                                         {emailLoading ? 'Sending...' : 'Continue'}
                                     </button>
                             </div>
-                            {emailSent && null}
                         </div>
 
                         {(error || queryError) && (
@@ -230,6 +235,7 @@ export default function SignIn() {
                             </p>
                         </div>
                     </div>
+                    )}
 
                     <div className="mt-5 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
                         <p className="text-sm text-gray-500">
