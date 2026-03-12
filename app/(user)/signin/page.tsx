@@ -228,7 +228,7 @@ export default function SignIn() {
                                     type="email"
                                     value={email}
                                     onChange={(event) => setEmail(event.target.value)}
-                                    placeholder="you@company.com"
+                                    placeholder="Email address"
                                     className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
                                 />
                                     <button
