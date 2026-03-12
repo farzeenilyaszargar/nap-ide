@@ -3,8 +3,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import DownloadButton from './customDownload'
+import { useEffect } from 'react'
 
 export default function HeroPage() {
+    useEffect(() => {
+        if (typeof window === 'undefined') return
+        const { search, pathname } = window.location
+        if (pathname !== '/') return
+        const params = new URLSearchParams(search)
+        if (params.has('code') || params.has('error')) {
+            window.location.replace(`/auth/callback${search}`)
+        }
+    }, [])
+
     return (
         <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-8 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 lg:px-10'>
             <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
@@ -24,7 +35,7 @@ export default function HeroPage() {
 
 
             <div className='flex w-full items-center justify-center'>
-                <div className='w-full rounded-2xl sm:rounded-3xl shadow-[0_40px_120px_rgba(0,0,0,0.18)]'>
+                <div className='w-full rounded-2xl sm:rounded-3xl shadow-[0_10px_10px_rgba(0,0,0,0.3)]'>
                     <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-2xl sm:rounded-3xl' />
                 </div>
             </div>
