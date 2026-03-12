@@ -210,11 +210,7 @@ export default function SignIn() {
                                         {emailLoading ? 'Sending...' : 'Continue'}
                                     </button>
                             </div>
-                                {emailSent && (
-                                    <p className="mt-3 text-xs text-emerald-600">
-                                        Magic link sent. Check your inbox to finish signing in.
-                                    </p>
-                                )}
+                            {emailSent && null}
                         </div>
 
                         {(error || queryError) && (
