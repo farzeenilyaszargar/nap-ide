@@ -235,6 +235,11 @@ export default function SignIn() {
                                     </div>
                                 )}
                             </div>
+                            <div className="flex items-center gap-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+                                <span className="h-px flex-1 bg-gray-200" />
+                                <span>or</span>
+                                <span className="h-px flex-1 bg-gray-200" />
+                            </div>
                             {providers.map((provider) => (
                                 <button
                                     key={provider.id}
