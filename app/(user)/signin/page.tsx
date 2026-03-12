@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -23,27 +23,22 @@ export default function SignIn() {
     const searchParams = useSearchParams()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
     const [emailLoading, setEmailLoading] = useState(false)
-    const [emailSent, setEmailSent] = useState(false)
+    const [emailStep, setEmailStep] = useState<'idle' | 'sent' | 'verifying'>('idle')
     const [email, setEmail] = useState('')
+    const [otp, setOtp] = useState('')
     const [error, setError] = useState<string | null>(null)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
 
-    const handleSignIn = async (provider: Provider) => {
-        const supabase = createClient()
-        setActiveProvider(provider)
-        setError(null)
-
+    const redirectUrlObject = useMemo(() => {
         let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
-        // Sanitize: remove trailing slash if exists
         siteUrl = siteUrl.replace(/\/$/, '')
 
-        // Check for redirect destination from URL params or sessionStorage
         const urlRedirectTo = searchParams.get('redirect_to')
         const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
         const nextPath = urlRedirectTo || sessionRedirectTo || '/dashboard'
 
-        const redirectUrlObject = new URL('/auth/callback', siteUrl)
+        const redirectUrl = new URL('/auth/callback', siteUrl)
 
         if (desktopMode) {
             const state = searchParams.get('state')
@@ -52,20 +47,30 @@ export default function SignIn() {
             const redirect = searchParams.get('redirect')
             const callback = searchParams.get('callback')
 
-            if (!state) {
-                setError('Missing desktop state. Please restart login from the app.')
-                setActiveProvider(null)
-                return
+            if (state) {
+                redirectUrl.searchParams.set('desktop', '1')
+                redirectUrl.searchParams.set('state', state)
+                if (nonce) redirectUrl.searchParams.set('nonce', nonce)
+                if (protocol) redirectUrl.searchParams.set('protocol', protocol)
+                if (redirect) redirectUrl.searchParams.set('redirect', redirect)
+                if (callback) redirectUrl.searchParams.set('callback', callback)
             }
-
-            redirectUrlObject.searchParams.set('desktop', '1')
-            redirectUrlObject.searchParams.set('state', state)
-            if (nonce) redirectUrlObject.searchParams.set('nonce', nonce)
-            if (protocol) redirectUrlObject.searchParams.set('protocol', protocol)
-            if (redirect) redirectUrlObject.searchParams.set('redirect', redirect)
-            if (callback) redirectUrlObject.searchParams.set('callback', callback)
         } else {
-            redirectUrlObject.searchParams.set('next', nextPath)
+            redirectUrl.searchParams.set('next', nextPath)
+        }
+
+        return redirectUrl
+    }, [desktopMode, searchParams])
+
+    const handleSignIn = async (provider: Provider) => {
+        const supabase = createClient()
+        setActiveProvider(provider)
+        setError(null)
+
+        if (desktopMode && !searchParams.get('state')) {
+            setError('Missing desktop state. Please restart login from the app.')
+            setActiveProvider(null)
+            return
         }
 
         const baseOptions = {
@@ -98,7 +103,7 @@ export default function SignIn() {
     const handleEmailSignIn = async () => {
         const supabase = createClient()
         setError(null)
-        setEmailSent(false)
+        setEmailStep('idle')
 
         const trimmedEmail = email.trim()
         if (!trimmedEmail) {
@@ -108,42 +113,16 @@ export default function SignIn() {
 
         setEmailLoading(true)
 
-        let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
-        siteUrl = siteUrl.replace(/\/$/, '')
-
-        const urlRedirectTo = searchParams.get('redirect_to')
-        const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
-        const nextPath = urlRedirectTo || sessionRedirectTo || '/dashboard'
-
-        const redirectUrlObject = new URL('/auth/callback', siteUrl)
-
-        if (desktopMode) {
-            const state = searchParams.get('state')
-            const nonce = searchParams.get('nonce')
-            const protocol = searchParams.get('protocol')
-            const redirect = searchParams.get('redirect')
-            const callback = searchParams.get('callback')
-
-            if (!state) {
-                setError('Missing desktop state. Please restart login from the app.')
-                setEmailLoading(false)
-                return
-            }
-
-            redirectUrlObject.searchParams.set('desktop', '1')
-            redirectUrlObject.searchParams.set('state', state)
-            if (nonce) redirectUrlObject.searchParams.set('nonce', nonce)
-            if (protocol) redirectUrlObject.searchParams.set('protocol', protocol)
-            if (redirect) redirectUrlObject.searchParams.set('redirect', redirect)
-            if (callback) redirectUrlObject.searchParams.set('callback', callback)
-        } else {
-            redirectUrlObject.searchParams.set('next', nextPath)
+        if (desktopMode && !searchParams.get('state')) {
+            setError('Missing desktop state. Please restart login from the app.')
+            setEmailLoading(false)
+            return
         }
 
         const { error } = await supabase.auth.signInWithOtp({
             email: trimmedEmail,
             options: {
-                emailRedirectTo: redirectUrlObject.toString(),
+                shouldCreateUser: true,
             },
         })
 
@@ -153,8 +132,37 @@ export default function SignIn() {
             return
         }
 
-        setEmailSent(true)
+        setEmailStep('sent')
         setEmailLoading(false)
+    }
+
+    const handleVerifyOtp = async () => {
+        const supabase = createClient()
+        setError(null)
+
+        const trimmedEmail = email.trim()
+        const trimmedOtp = otp.trim()
+
+        if (!trimmedEmail || !trimmedOtp) {
+            setError('Please enter the email and OTP code.')
+            return
+        }
+
+        setEmailStep('verifying')
+
+        const { error } = await supabase.auth.verifyOtp({
+            email: trimmedEmail,
+            token: trimmedOtp,
+            type: 'email',
+        })
+
+        if (error) {
+            setError(error.message)
+            setEmailStep('sent')
+            return
+        }
+
+        window.location.href = redirectUrlObject.toString()
     }
 
     return (
@@ -206,16 +214,35 @@ export default function SignIn() {
                                     <button
                                         type="button"
                                         onClick={handleEmailSignIn}
-                                        disabled={emailLoading}
+                                        disabled={emailLoading || emailStep === 'verifying'}
                                         className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
                                     >
-                                        {emailLoading ? 'Sending...' : 'Email me a link'}
+                                        {emailLoading ? 'Sending...' : 'Send OTP'}
                                     </button>
                                 </div>
-                                {emailSent && (
-                                    <p className="mt-3 text-xs text-emerald-600">
-                                        Magic link sent. Check your inbox to finish signing in.
-                                    </p>
+                                {emailStep === 'sent' && (
+                                    <div className="mt-4 space-y-2">
+                                        <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                            Enter OTP
+                                        </label>
+                                        <div className="flex flex-col gap-3 sm:flex-row">
+                                            <input
+                                                type="text"
+                                                value={otp}
+                                                onChange={(event) => setOtp(event.target.value)}
+                                                placeholder="6-digit code"
+                                                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
+                                            />
+                                            <button
+                                                type="button"
+                                                onClick={handleVerifyOtp}
+                                                disabled={emailStep === 'verifying'}
+                                                className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+                                            >
+                                                {emailStep === 'verifying' ? 'Verifying...' : 'Verify OTP'}
+                                            </button>
+                                        </div>
+                                    </div>
                                 )}
                             </div>
                             {providers.map((provider) => (
