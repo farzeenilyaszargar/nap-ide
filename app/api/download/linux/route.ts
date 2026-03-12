@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
 const RELEASES_FEED_URL =
-  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases/latest-linux.yml";
+  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/latest-linux.yml";
 const RELEASES_FALLBACK_URL =
-  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases";
+  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev";
 
 export const dynamic = "force-dynamic";
 
