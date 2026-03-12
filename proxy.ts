@@ -8,6 +8,12 @@ export async function proxy(request: NextRequest) {
         },
     })
 
+    if (request.nextUrl.pathname === '/' && (request.nextUrl.searchParams.has('code') || request.nextUrl.searchParams.has('error'))) {
+        const redirectUrl = new URL('/auth/callback', request.url)
+        redirectUrl.search = request.nextUrl.search
+        return NextResponse.redirect(redirectUrl)
+    }
+
     // 1. Supabase Auth Check
     const supabase = createServerClient(
         process.env.NEXT_PUBLIC_SUPABASE_URL!,
