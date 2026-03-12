@@ -121,6 +121,7 @@ export default function SignIn() {
         const { error } = await supabase.auth.signInWithOtp({
             email: trimmedEmail,
             options: {
+                emailRedirectTo: redirectUrlObject.toString(),
                 shouldCreateUser: true,
             },
         })
