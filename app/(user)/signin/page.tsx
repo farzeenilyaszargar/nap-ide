@@ -184,7 +184,7 @@ export default function SignIn() {
                             <p className="mt-3 text-[15px] leading-relaxed text-gray-500">
                                 {desktopMode
                                     ? 'Use Google sign-in to securely authenticate and return to the desktop app.'
-                                    : 'Sign in to continue to your dashboard and start building with AI.'}
+                                    : 'Sign in to continue to your dashboard and start building with agents.'}
                             </p>
                         </div>
 
