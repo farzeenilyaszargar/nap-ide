@@ -1,37 +1,35 @@
 "use client"
 
 import Link from "next/link"
-import { Home, ArrowLeft } from "lucide-react"
 
 export default function NotFound() {
-    return (
-        <div className="min-h-screen flex flex-col bg-white text-black justify-center items-center px-4">
-            <div className="text-center space-y-6 max-w-lg">
-                <h1 className="text-9xl font-black text-black">404</h1>
-                <div className="space-y-2">
-                    <h2 className="text-3xl font-bold text-black">Page not found</h2>
-                    <p className="text-gray-500 text-lg">
-                        Sorry, we couldn't find the page you're looking for. It might have been moved or deleted.
-                    </p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                    <Link
-                        href="/"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors duration-200 font-medium"
-                    >
-                        <Home className="w-4 h-4" />
-                        Go Home
-                    </Link>
-                    <button
-                        onClick={() => window.history.back()}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-300 bg-white text-gray-700 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-medium"
-                    >
-                        <ArrowLeft className="w-4 h-4" />
-                        Go Back
-                    </button>
-                </div>
-            </div>
+  return (
+    <main className="min-h-screen bg-white text-black">
+      <div className="mx-auto flex min-h-screen max-w-3xl flex-col items-center justify-center px-6 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+          404
+        </p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-gray-900">
+          Page not found
+        </h1>
+        <p className="mt-3 text-sm text-gray-500">
+          The page you are looking for doesn’t exist or has been moved.
+        </p>
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <Link
+            href="/"
+            className="rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-800"
+          >
+            Back to home
+          </Link>
+          <Link
+            href="/download"
+            className="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400"
+          >
+            Download
+          </Link>
         </div>
-    )
+      </div>
+    </main>
+  )
 }
