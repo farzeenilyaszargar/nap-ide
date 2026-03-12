@@ -189,6 +189,39 @@ export default function SignIn() {
                         </div>
 
                         <div className="mt-10 space-y-4">
+                            {providers.map((provider) => (
+                                <button
+                                    key={provider.id}
+                                    type="button"
+                                    onClick={() => handleSignIn(provider.id)}
+                                    disabled={!!activeProvider}
+                                    className="group relative flex w-full items-center justify-center gap-3 rounded-2xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-blue-200 hover:bg-blue-50/30 hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <div className="relative h-6 w-6 transform transition-transform group-hover:scale-110">
+                                            <Image
+                                                src={provider.icon}
+                                                fill
+                                                alt={`${provider.label1} logo`}
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                        <span className="hidden sm:inline">{provider.label1}</span>
+                                        <span className="sm:hidden">{provider.label2}</span>
+                                    </div>
+
+                                    {activeProvider === provider.id && (
+                                        <div className="absolute right-4">
+                                            <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-600/20 border-t-blue-600" />
+                                        </div>
+                                    )}
+                                </button>
+                            ))}
+                            <div className="flex items-center gap-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
+                                <span className="h-px flex-1 bg-gray-200" />
+                                <span>or</span>
+                                <span className="h-px flex-1 bg-gray-200" />
+                            </div>
                             <div className="rounded-2xl border border-gray-200 bg-white px-4 py-4 shadow-sm">
                                 <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
                                     Email address
@@ -235,39 +268,6 @@ export default function SignIn() {
                                     </div>
                                 )}
                             </div>
-                            <div className="flex items-center gap-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
-                                <span className="h-px flex-1 bg-gray-200" />
-                                <span>or</span>
-                                <span className="h-px flex-1 bg-gray-200" />
-                            </div>
-                            {providers.map((provider) => (
-                                <button
-                                    key={provider.id}
-                                    type="button"
-                                    onClick={() => handleSignIn(provider.id)}
-                                    disabled={!!activeProvider}
-                                    className="group relative flex w-full items-center justify-center gap-3 rounded-2xl border border-gray-200 bg-white px-5 py-3.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:border-blue-200 hover:bg-blue-50/30 hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <div className="relative h-6 w-6 transform transition-transform group-hover:scale-110">
-                                            <Image
-                                                src={provider.icon}
-                                                fill
-                                                alt={`${provider.label1} logo`}
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                        <span className="hidden sm:inline">{provider.label1}</span>
-                                        <span className="sm:hidden">{provider.label2}</span>
-                                    </div>
-
-                                    {activeProvider === provider.id && (
-                                        <div className="absolute right-4">
-                                            <div className="h-4 w-4 animate-spin rounded-full border-2 border-blue-600/20 border-t-blue-600" />
-                                        </div>
-                                    )}
-                                </button>
-                            ))}
                         </div>
 
                         {(error || queryError) && (
