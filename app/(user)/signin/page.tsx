@@ -222,10 +222,7 @@ export default function SignIn() {
                                 <span>or</span>
                                 <span className="h-px flex-1 bg-gray-200" />
                             </div>
-                            <label className="block text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                Email address
-                            </label>
-                            <div className="-mt-2 flex flex-col gap-3">
+                            <div className="flex flex-col gap-3">
                                 <input
                                     type="email"
                                     value={email}
