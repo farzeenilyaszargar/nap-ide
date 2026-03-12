@@ -178,16 +178,6 @@ export default function SignIn() {
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
                     <div className="overflow-hidden rounded-[32px] border border-gray-100 bg-white/80 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-12">
                         <div className="flex flex-col items-center text-center">
-                            <div className="mb-10 flex items-center justify-center transition-transform duration-500 hover:scale-105">
-                                <Image
-                                    src="/logo.png"
-                                    alt="Surfers Logo"
-                                    width={160}
-                                    height={50}
-                                    className="h-10 w-auto rounded-lg"
-                                />
-                            </div>
-
                             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
                                 {desktopMode ? 'Continue to Nap Desktop' : 'Welcome Back'}
                             </h1>
