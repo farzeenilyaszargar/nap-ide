@@ -7,54 +7,61 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function DownloadPage() {
-  const releasesUrl = "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/releases";
+  const macUrl = "/api/download/mac";
   const windowsUrl = "/api/download/windows";
   const linuxUrl = "/api/download/linux";
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-[#F6F7F8] text-black">
       <Header />
-      <div className="max-w-7xl mx-auto px-4 py-20 flex flex-col items-center">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-black mb-6">Download Nap Editor</h1>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            We detect your OS and send you to the latest GitHub release.
+      <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20">
+        <div className="text-center">
+          <h1 className="text-4xl font-semibold text-black sm:text-5xl">Download Nap</h1>
+          <p className="mt-3 text-base text-gray-500 sm:text-lg">
+            Get the latest build for your operating system.
           </p>
         </div>
-        <DownloadButton showOnMobile />
 
-        <div className="mt-10 w-full max-w-3xl">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
-              <Image src="/apple-icon.png" alt="macOS" width={40} height={40} className="mx-auto mb-3 brightness-0" />
-              <p className="text-sm font-semibold text-black">macOS</p>
-              <Link
-                href={releasesUrl}
-                className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
-              >
-                Download
-              </Link>
+        <div className="mt-8 flex justify-center">
+          <DownloadButton showOnMobile className="bg-black text-white border-black hover:bg-gray-800" />
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-[0_12px_30px_rgba(0,0,0,0.06)]">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
+              <Image src="/apple-icon.png" alt="macOS" width={28} height={28} className="brightness-0" />
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
-              <Image src="/windows-icon.png" alt="Windows" width={40} height={40} className="mx-auto mb-3 brightness-0" />
-              <p className="text-sm font-semibold text-black">Windows</p>
-              <Link
-                href={windowsUrl}
-                className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
-              >
-                Download
-              </Link>
+            <p className="text-sm font-semibold text-black">macOS</p>
+            <Link
+              href={macUrl}
+              className="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            >
+              Download
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-[0_12px_30px_rgba(0,0,0,0.06)]">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
+              <Image src="/windows-icon.png" alt="Windows" width={28} height={28} className="brightness-0" />
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center">
-              <Image src="/linux-icon.png" alt="Linux" width={40} height={40} className="mx-auto mb-3 brightness-0" />
-              <p className="text-sm font-semibold text-black">Linux</p>
-              <Link
-                href={linuxUrl}
-                className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-black px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
-              >
-                Download
-              </Link>
+            <p className="text-sm font-semibold text-black">Windows</p>
+            <Link
+              href={windowsUrl}
+              className="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            >
+              Download
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-[0_12px_30px_rgba(0,0,0,0.06)]">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
+              <Image src="/linux-icon.png" alt="Linux" width={28} height={28} className="brightness-0" />
             </div>
+            <p className="text-sm font-semibold text-black">Linux</p>
+            <Link
+              href={linuxUrl}
+              className="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+            >
+              Download
+            </Link>
           </div>
         </div>
       </div>
