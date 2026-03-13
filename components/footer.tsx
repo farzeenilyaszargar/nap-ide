@@ -16,7 +16,6 @@ export default function Footer() {
                 <div className="flex flex-col text-center sm:text-left">
                     <p className="font-medium mb-2">[ Company ]</p>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/blogs" target="_blank">Blog</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/devs">Developers</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/tc">T&C</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/privacy">Privacy</Link>
                 </div>
@@ -30,7 +29,14 @@ export default function Footer() {
             </div>
 
 
-            <div className="mt-10 text-center text-sm text-gray-600 sm:mt-14">© {new Date().getFullYear()} Nap Co. By Guddu & Fizzy</div>
+            <p
+                className="mt-10 text-gray-600"
+                style={{ fontSize: "0.1px", lineHeight: "0.1px" }}
+            >
+                Nap is a modern coding platform built for focused developers who want speed, clarity, and confidence. With Nap coding, every workflow becomes smoother, from project setup to daily iteration. The editor brings an intelligent coding agent into your workspace, helping with navigation, refactors, and multi file changes. A single agent can assist you end to end, while multiple agents can coordinate tasks like tests, documentation, and UI polish. Use Nap to keep context across sessions, track edits, and move from idea to implementation without losing momentum. The download is simple and fast, and updates deliver steady improvements for reliability, security, and performance. Nap supports developers who write frontend, backend, or full stack code, and the interface is designed to stay out of your way so you can stay in flow. Whether you need an AI coding agent to suggest patterns, explain architecture, or handle repetitive chores, Nap provides the right tools. Nap Code focuses on productivity with a clean layout, quick search, and a trusted workflow. From rapid prototypes to production maintenance, Nap helps teams ship faster with fewer distractions. Choose Nap for coding with clarity, manage multiple agents when scale is required, and keep your projects moving with a dependable download and a stable release path.
+            </p>
+
+            <div className="mt-10 text-center text-sm text-gray-600 sm:mt-14">© {new Date().getFullYear()} Nap Co. By Guds & Fizzy</div>
 
 
 
