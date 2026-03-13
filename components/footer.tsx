@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="w-full border-t border-gray-300 bg-black px-5 py-10 text-white sm:px-8 sm:py-14 lg:px-10">
-            <div className="mx-auto grid w-full max-w-5xl justify-items-center grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-8">
+            <div className="mx-auto grid w-full max-w-[88rem] justify-items-center grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-8">
                 <div className="flex w-full max-w-[200px] flex-col text-left">
                     <p className="font-medium mb-2">Resources</p>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/download">Download</Link>
