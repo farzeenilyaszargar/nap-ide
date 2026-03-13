@@ -42,7 +42,7 @@ export default function SupportPage() {
           <div className="flex items-center justify-center gap-3">
             <a
               href="mailto:support@nap-code.com"
-              className="text-2xl sm:text-4xl font-bold text-black hover:text-gray-700 transition-colors"
+              className="text-2xl sm:text-4xl font-semibold text-black hover:text-gray-700 transition-colors"
             >
               support@nap-code.com
             </a>
@@ -68,10 +68,10 @@ export default function SupportPage() {
         </div>
 
         {/* FAQ CTA */}
-        <div className="bg-black rounded-2xl p-12 mb-10 text-center">
+        <div className="bg-black rounded-2xl p-10 mb-10 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Looking for quick answers?</h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Check out our comprehensive FAQ section for answers to common questions about Surfers Editor.
+            Check out our comprehensive FAQ section for answers to common questions about Surfers.
           </p>
           <a href="/faqs" className="inline-block bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
             Browse FAQs
