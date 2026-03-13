@@ -1,7 +1,7 @@
 'use client'
 
-import { useMemo, useRef, useState, type ClipboardEvent, type KeyboardEvent } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useEffect, useMemo, useRef, useState, type ClipboardEvent, type KeyboardEvent } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -21,12 +21,14 @@ const providers: Array<{
 
 export default function SignIn() {
     const searchParams = useSearchParams()
+    const router = useRouter()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
     const [emailStep, setEmailStep] = useState<'idle' | 'sending' | 'sent' | 'verifying'>('idle')
     const [email, setEmail] = useState('')
     const [otpDigits, setOtpDigits] = useState(Array(6).fill(''))
     const otpRefs = useRef<Array<HTMLInputElement | null>>([])
     const [error, setError] = useState<string | null>(null)
+    const [suppressQueryError, setSuppressQueryError] = useState(false)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
 
@@ -69,6 +71,19 @@ export default function SignIn() {
         url.pathname = '/auth/callback-client'
         return url
     }, [redirectUrlObject])
+
+    useEffect(() => {
+        const supabase = createClient()
+        supabase.auth.getSession().then(({ data }) => {
+            if (data.session) {
+                setSuppressQueryError(true)
+                setError(null)
+                if (!desktopMode && queryError) {
+                    router.replace(nextPath)
+                }
+            }
+        })
+    }, [desktopMode, nextPath, queryError, router])
 
     const handleSignIn = async (provider: Provider) => {
         const supabase = createClient()
@@ -324,7 +339,7 @@ export default function SignIn() {
                             )}
                         </div>
 
-                        {(error || queryError) && (
+                        {(error || (!suppressQueryError && queryError)) && (
                             <div className="mt-6 animate-in fade-in zoom-in-95 duration-300">
                                 <div className="rounded-xl bg-red-50 px-4 py-3 text-center">
                                     <p className="text-sm font-medium text-red-600">{error || queryError}</p>
