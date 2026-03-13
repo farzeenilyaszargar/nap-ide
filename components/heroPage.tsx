@@ -17,7 +17,7 @@ export default function HeroPage() {
     }, [])
 
     return (
-        <section className='mx-auto flex w-full max-w-[88rem] flex-col items-center gap-8 px-3 pb-6 pt-8 sm:gap-12 sm:px-4 sm:pb-8 sm:pt-16 lg:px-6'>
+        <section className='mx-auto flex w-full max-w-[88rem] flex-col items-center gap-8 px-3 pb-6 pt-10 sm:gap-12 sm:px-4 sm:pb-8 sm:pt-20 lg:px-6'>
             <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h1 className='text-center text-3xl font-bold text-[#383838] sm:text-6xl'>Code.</h1>
