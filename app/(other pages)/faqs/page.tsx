@@ -49,9 +49,12 @@ export default function FAQs() {
     <div className="min-h-screen flex flex-col bg-white text-black">
       <Header />
       <div className="flex-1 max-w-4xl mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+          <div className="text-center">
+            <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
+            <h2 className="text-6xl font-bold text-black">faqs</h2>
+          </div>
+          <p className="mt-4 text-center text-gray-500">
             Everything you need to know about Nap Editor. Can't find what you're looking for? Contact our support team.
           </p>
         </div>
