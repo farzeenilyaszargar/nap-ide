@@ -38,10 +38,10 @@ export default function BlogsPage() {
             <Header />
 
             {/* Hero Header */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10">
                 <div className="text-center">
                     <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-                    <h2 className="text-6xl font-bold text-black">blogs</h2>
+                    <h2 className="text-6xl font-bold text-[#383838]">blogs</h2>
                 </div>
             </div>
 
