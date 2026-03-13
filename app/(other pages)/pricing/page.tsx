@@ -36,9 +36,12 @@ export default function PricingPage() {
     return (
         <div className="min-h-screen bg-white text-black">
             <Header />
-            <div className="flex flex-col justify-center items-center gap-5 my-20">
-                <h2 className="font-bold text-4xl text-black">Pricing</h2>
-                <p className="text-gray-500">Flexible pricing, ultra flexible plans, cancel anytime.</p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+                <div className="text-center">
+                    <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
+                    <h2 className="text-6xl font-bold text-black">pricing</h2>
+                </div>
+                <p className="mt-4 text-center text-gray-500">Flexible pricing, ultra flexible plans, cancel anytime.</p>
                 <div className="border border-gray-300 rounded-full p-1 flex items-center justify-around overflow-hidden bg-gray-100">
                     <button onClick={() => setMonthly(true)} className={`px-4 py-1 rounded-full transition-all ${monthly ? 'bg-black text-white' : 'text-gray-500 hover:text-black'} `}>Monthly</button>
                     <button onClick={() => setMonthly(false)} className={`px-4 py-1 rounded-full transition-all ${!monthly ? 'bg-black text-white' : 'text-gray-500 hover:text-black'} `}>Annually</button>
