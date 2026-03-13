@@ -27,7 +27,7 @@ export default function DownloadPage() {
             <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
               <Image src="/apple-icon.png" alt="macOS" width={48} height={48} className="brightness-0" />
             </div>
-            <p className="text-lg font-semibold text-black">macOS</p>
+            <p className="text-xl font-semibold text-black">macOS</p>
             <Link
               href={macUrl}
               className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
@@ -39,7 +39,7 @@ export default function DownloadPage() {
             <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
               <Image src="/windows-icon.png" alt="Windows" width={48} height={48} className="brightness-0" />
             </div>
-            <p className="text-lg font-semibold text-black">Windows</p>
+            <p className="text-xl font-semibold text-black">Windows</p>
             <Link
               href={windowsUrl}
               className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
@@ -51,7 +51,7 @@ export default function DownloadPage() {
             <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
               <Image src="/linux-icon.png" alt="Linux" width={48} height={48} className="brightness-0" />
             </div>
-            <p className="text-lg font-semibold text-black">Linux</p>
+            <p className="text-xl font-semibold text-black">Linux</p>
             <Link
               href={linuxUrl}
               className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
