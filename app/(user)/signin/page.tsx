@@ -39,7 +39,8 @@ export default function SignIn() {
     }, [searchParams])
 
     const redirectUrlObject = useMemo(() => {
-        let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
+        const browserOrigin = typeof window !== 'undefined' ? window.location.origin : ''
+        let siteUrl = desktopMode ? browserOrigin : (process.env.NEXT_PUBLIC_SITE_URL || browserOrigin)
         siteUrl = siteUrl.replace(/\/$/, '')
 
         const redirectUrl = new URL('/auth/callback', siteUrl)
