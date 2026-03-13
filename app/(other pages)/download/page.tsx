@@ -22,7 +22,7 @@ export default function DownloadPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
             <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
               <Image src="/apple-icon.png" alt="macOS" width={48} height={48} className="brightness-0" />
