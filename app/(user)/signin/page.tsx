@@ -150,7 +150,7 @@ export default function SignIn() {
                     {emailSent ? (
                         <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 text-center shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                             <h1 className="text-2xl font-semibold text-gray-900">Open mail for confirmation</h1>
-                            <p className="mt-3 text-sm text-gray-500">We sent a magic link to your email.</p>
+                            <p className="mt-3 text-sm text-gray-500">We just sent a secure sign-in link to your email.</p>
                         </div>
                     ) : (
                     <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
