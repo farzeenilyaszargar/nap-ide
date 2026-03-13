@@ -1,8 +1,23 @@
+"use client";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Copy } from "lucide-react";
+import { Check, Copy } from "lucide-react";
+import { useState } from "react";
 
 export default function SupportPage() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText("support@nap-code.com");
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1500);
+    } catch {
+      setCopied(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -31,7 +46,18 @@ export default function SupportPage() {
             >
               support@nap-code.com
             </a>
-            <Copy className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
+            <button
+              type="button"
+              onClick={handleCopy}
+              aria-label="Copy email"
+              className="inline-flex items-center justify-center rounded-full border border-black p-1.5 text-black transition-colors hover:bg-black hover:text-white"
+            >
+              {copied ? (
+                <Check className="w-4 h-4 sm:w-5 sm:h-5" />
+              ) : (
+                <Copy className="w-4 h-4 sm:w-5 sm:h-5" />
+              )}
+            </button>
           </div>
         </div>
 
