@@ -108,7 +108,7 @@ export default function Privacy() {
               <li><strong>Opt-out:</strong> Opt out of marketing communications at any time</li>
             </ul>
             <p className="text-gray-600 leading-relaxed mt-4">
-              To exercise these rights, please contact us at <a href="mailto:support@napeditor.com" className="text-blue-600 hover:underline">support@napeditor.com</a>.
+              To exercise these rights, please contact us at <a href="mailto:support@nap-code.com" className="text-blue-600 hover:underline">support@nap-code.com</a>.
             </p>
           </section>
 
@@ -130,7 +130,7 @@ export default function Privacy() {
           <section className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
             <h2 className="text-2xl font-bold text-black mb-4">8. Contact Us</h2>
             <p className="text-gray-600 leading-relaxed">
-              If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:support@napeditor.com" className="text-blue-600 hover:underline">support@napeditor.com</a> or visit our <a href="/support" className="text-blue-600 hover:underline">support page</a>.
+              If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:support@nap-code.com" className="text-blue-600 hover:underline">support@nap-code.com</a> or visit our <a href="/support" className="text-blue-600 hover:underline">support page</a>.
             </p>
           </section>
 

@@ -93,7 +93,7 @@ export default function TC() {
           <section className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
             <h2 className="text-2xl font-bold text-black mb-4">8. Contact Information</h2>
             <p className="text-gray-600 leading-relaxed">
-              If you have any questions about these Terms, please contact us at <a href="mailto:support@napeditor.com" className="text-blue-600 hover:underline">support@napeditor.com</a> or through our <a href="/support" className="text-blue-600 hover:underline">support page</a>.
+              If you have any questions about these Terms, please contact us at <a href="mailto:support@nap-code.com" className="text-blue-600 hover:underline">support@nap-code.com</a> or through our <a href="/support" className="text-blue-600 hover:underline">support page</a>.
             </p>
           </section>
 
