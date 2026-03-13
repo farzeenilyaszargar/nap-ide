@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Nap desktop"
   ],
   alternates: { canonical: "https://nap-code.com" },
-  icons: { icon: "/logo-white.ico" },
+  icons: { icon: "/favicon.ico" },
   applicationName: "Nap",
   robots: {
     index: true,
