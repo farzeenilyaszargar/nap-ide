@@ -9,9 +9,12 @@ export default function SupportPage() {
 
       {/* Hero Section */}
       <div className="bg-gradient-to-b from-gray-50 to-white py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-5xl font-bold text-black mb-6">How can we help?</h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+          <div className="text-center">
+            <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
+            <h2 className="text-6xl font-bold text-black">support</h2>
+          </div>
+          <p className="mt-4 text-center text-gray-500">
             Our dedicated support team is here to assist you with any questions, issues, or feedback you might have about Nap Editor.
           </p>
         </div>
