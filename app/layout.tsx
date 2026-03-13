@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://nap-code.com"),
   title: "Nap | Run coding agents on your PC",
-  description: "Nap is an AI-powered code editor that runs multiple coding agents on your PC, enabling you to build software faster and more efficiently. With Nap, you can manage agents, workflows, and project state from one place, switch contexts fast, track changes, and keep the entire build loop under your control. Download Nap today and experience the future of coding.",
+  description: "Nap is an AI-powered code editor that runs coding agents on your PC. Manage workflows, switch context fast, and ship faster with confidence.",
   keywords: [
     "Nap",
     "Nap Code",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nap Code",
-    description: "Run coding agents on your PC.",
+    description: "AI-powered code editor that runs coding agents on your PC.",
     url: "https://nap-code.com",
     siteName: "Nap Code",
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Nap Code",
-    description: "Run coding agents on your PC.",
+    description: "AI-powered code editor that runs coding agents on your PC.",
     images: ["/og-image.png"],
   },
 
