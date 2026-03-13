@@ -60,7 +60,7 @@ export default function Privacy() {
             <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-4">
               <p className="text-green-800 font-semibold mb-2">🔒 Your Code Stays Private</p>
               <p className="text-green-700">
-                By default, your code never leaves your machine. The AI features in Surfers Editor process your code locally. If you choose to use cloud-based AI features, your code is encrypted in transit and is not stored on our servers beyond the processing session.
+                By default, your code never leaves your machine. The AI features in Nap process your code locally. If you choose to use cloud-based AI features, your code is encrypted in transit and is not stored on our servers beyond the processing session.
               </p>
             </div>
             <p className="text-gray-600 leading-relaxed">
