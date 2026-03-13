@@ -22,43 +22,39 @@ export default function DownloadPage() {
           </p>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <DownloadButton showOnMobile className="bg-black text-white border-black hover:bg-gray-800" />
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-[0_12px_30px_rgba(0,0,0,0.06)]">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
-              <Image src="/apple-icon.png" alt="macOS" width={28} height={28} className="brightness-0" />
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
+              <Image src="/apple-icon.png" alt="macOS" width={36} height={36} className="brightness-0" />
             </div>
-            <p className="text-sm font-semibold text-black">macOS</p>
+            <p className="text-base font-semibold text-black">macOS</p>
             <Link
               href={macUrl}
-              className="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
             >
               Download
             </Link>
           </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-[0_12px_30px_rgba(0,0,0,0.06)]">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
-              <Image src="/windows-icon.png" alt="Windows" width={28} height={28} className="brightness-0" />
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
+              <Image src="/windows-icon.png" alt="Windows" width={36} height={36} className="brightness-0" />
             </div>
-            <p className="text-sm font-semibold text-black">Windows</p>
+            <p className="text-base font-semibold text-black">Windows</p>
             <Link
               href={windowsUrl}
-              className="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
             >
               Download
             </Link>
           </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-[0_12px_30px_rgba(0,0,0,0.06)]">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gray-50">
-              <Image src="/linux-icon.png" alt="Linux" width={28} height={28} className="brightness-0" />
+          <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
+            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
+              <Image src="/linux-icon.png" alt="Linux" width={36} height={36} className="brightness-0" />
             </div>
-            <p className="text-sm font-semibold text-black">Linux</p>
+            <p className="text-base font-semibold text-black">Linux</p>
             <Link
               href={linuxUrl}
-              className="mt-4 inline-flex w-full items-center justify-center rounded-lg border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              className="mt-5 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
             >
               Download
             </Link>
