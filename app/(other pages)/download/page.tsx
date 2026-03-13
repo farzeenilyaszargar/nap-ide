@@ -15,11 +15,11 @@ export default function DownloadPage() {
     <div className="min-h-screen bg-[#F6F7F8] text-black">
       <Header />
       <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20">
-        <div className="text-center">
-          <h2 className="text-4xl font-semibold text-black sm:text-5xl">Download Nap</h2>
-          <p className="mt-3 text-base text-gray-500 sm:text-lg">
-            Get the latest build for your operating system.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+          <div className="text-center">
+            <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
+            <h2 className="text-6xl font-bold text-black">download</h2>
+          </div>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
