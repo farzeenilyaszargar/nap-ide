@@ -31,9 +31,9 @@ export default function Features() {
                     </div>
                 </div>
                 <div className="md:w-1/2 w-full px-5 text-center">
-                    <h2 className="text-xl sm:text-3xl font-semibold mb-4 text-black">Control anything &amp;
+                    <h2 className="text-xl sm:text-4xl font-bold mb-4 text-black">Control anything &amp;
                         everything on Nap.</h2>
-                    <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
+                    <p className="text-gray-500 text-xs sm:text-base leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
                 </div>
 
             </div>
