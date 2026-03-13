@@ -89,7 +89,7 @@ export default function Header() {
             <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
                 <div className="mx-auto flex h-14 w-full max-w-[88rem] items-center justify-between px-3 sm:px-4 lg:px-6">
                 <Link href="/" className="flex justify-center items-center">
-                    <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-4 w-auto rounded-md sm:h-5" />
+                    <Image src="/logo.png" alt="Nap" width={36} height={36} className="h-3.5 w-auto rounded-md sm:h-4.5" />
                 </Link>
 
                 {/* Desktop Navigation */}
