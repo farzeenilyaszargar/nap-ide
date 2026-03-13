@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="bg-white text-black">
       <Header />
-      <h1 className="sr-only">Code Lightning Fast Nap edits multiple files at a time so relax take a Nap Try Nap Now Control Anything.</h1>
+      <h1 className="sr-only">nap codes multiple files with agents on your pc. download nap. write code fast and with ease. nap code.</h1>
       <HeroPage />
       <Features />
 
