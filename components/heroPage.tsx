@@ -20,8 +20,11 @@ export default function HeroPage() {
         <section className='mx-auto flex w-full max-w-[88rem] flex-col items-center gap-8 px-3 pb-6 pt-10 sm:gap-12 sm:px-4 sm:pb-8 sm:pt-20 lg:px-6'>
             <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
-                    <h1 className='text-center text-3xl font-bold text-[#383838] sm:text-6xl'>Code.</h1>
-                    <h1 className='-mt-1 text-center text-3xl font-bold sm:-mt-4 sm:text-6xl'><span className='text-[#696969]'>Lightning.</span><span className='text-[#A4A4A4]'>Fast.</span></h1>
+                    <h1 className='metallic-shine text-center text-3xl font-bold sm:text-6xl'>Code.</h1>
+                    <h1 className='-mt-1 text-center text-3xl font-bold sm:-mt-4 sm:text-6xl'>
+                        <span className='metallic-shine'>Lightning.</span>
+                        <span className='metallic-shine'>Fast.</span>
+                    </h1>
                 </div>
                 <div className='flex w-full justify-center'>
                     <DownloadButton />

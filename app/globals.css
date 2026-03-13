@@ -22,3 +22,22 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.metallic-shine {
+  background: linear-gradient(120deg, #6f7680 0%, #a8afb7 20%, #e3e6ea 40%, #9aa1a9 60%, #c6cbd1 80%, #6f7680 100%);
+  background-size: 240% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: metallicShine 3.4s ease-in-out infinite;
+}
+
+@keyframes metallicShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
