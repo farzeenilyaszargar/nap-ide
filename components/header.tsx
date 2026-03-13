@@ -78,8 +78,8 @@ export default function Header() {
         'User'
 
     const navLinks = [
-        { href: '/download', label: 'Download' },
         { href: '/features', label: 'Product' },
+        { href: '/download', label: 'Download' },
         { href: '/blogs', label: 'Blog' },
     ]
 
