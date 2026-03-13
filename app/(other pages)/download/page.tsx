@@ -24,8 +24,8 @@ export default function DownloadPage() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
-            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
-              <Image src="/apple-icon.png" alt="macOS" width={36} height={36} className="brightness-0" />
+            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
+              <Image src="/apple-icon.png" alt="macOS" width={48} height={48} className="brightness-0" />
             </div>
             <p className="text-base font-semibold text-black">macOS</p>
             <Link
@@ -36,8 +36,8 @@ export default function DownloadPage() {
             </Link>
           </div>
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
-            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
-              <Image src="/windows-icon.png" alt="Windows" width={36} height={36} className="brightness-0" />
+            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
+              <Image src="/windows-icon.png" alt="Windows" width={48} height={48} className="brightness-0" />
             </div>
             <p className="text-base font-semibold text-black">Windows</p>
             <Link
@@ -48,8 +48,8 @@ export default function DownloadPage() {
             </Link>
           </div>
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
-            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50">
-              <Image src="/linux-icon.png" alt="Linux" width={36} height={36} className="brightness-0" />
+            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
+              <Image src="/linux-icon.png" alt="Linux" width={48} height={48} className="brightness-0" />
             </div>
             <p className="text-base font-semibold text-black">Linux</p>
             <Link
