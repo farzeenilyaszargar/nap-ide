@@ -204,8 +204,7 @@ export default function SignIn() {
         }
 
         if (desktopMode) {
-            setError('Email OTP sign-in is not available for desktop yet. Please use Google.')
-            setEmailStep('sent')
+            window.location.assign(redirectUrlObject.toString())
             return
         }
 
