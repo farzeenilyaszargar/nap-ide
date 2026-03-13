@@ -32,26 +32,30 @@ export default function FAQs() {
     };
 
     return (
-        <div className="flex justify-center items-center w-screen overflow-hidden mt-20">
-            <div className="md:min-w-5xl px-10 space-y-4">
+        <div className="flex justify-center items-center w-full overflow-hidden mt-20">
+            <div className="w-full max-w-4xl px-6 sm:px-10 space-y-4">
                 <h2 className="text-3xl font-semibold mb-4 text-center text-black">Frequently Asked Questions</h2>
                 {faqs.map((faq, index) => (
-                    <div
+                    <button
                         key={index}
-                        className="border border-gray-200 rounded-2xl p-4 shadow-sm bg-gray-50"
+                        type="button"
+                        onClick={() => toggle(index)}
+                        aria-expanded={open === index}
+                        className={`w-full text-left rounded-2xl border p-5 transition-all ${
+                            open === index
+                                ? "border-black bg-white shadow-md"
+                                : "border-gray-200 bg-gray-50 hover:bg-white"
+                        }`}
                     >
-                        <button
-                            onClick={() => toggle(index)}
-                            className="w-full text-left flex justify-between items-center"
-                        >
+                        <div className="flex justify-between items-center gap-4">
                             <span className="text-lg font-medium text-black">{faq.question}</span>
-                            <span className="text-black">{open === index ? "−" : "+"}</span>
-                        </button>
+                            <span className="text-black text-xl">{open === index ? "−" : "+"}</span>
+                        </div>
 
                         {open === index && (
-                            <p className="mt-2 text-gray-600">{faq.answer}</p>
+                            <p className="mt-3 text-gray-600">{faq.answer}</p>
                         )}
-                    </div>
+                    </button>
                 ))}
             </div>
         </div>
