@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { useState } from "react";
 
 export default function FAQs() {
   const faqs = [
@@ -44,6 +45,7 @@ export default function FAQs() {
       a: "We offer multiple support channels to help you. You can email us at support@napeditor.com for a response within 24 hours, call our support line Monday-Friday 9am-6pm, or use the live chat feature for real-time assistance. Pro and Enterprise customers get priority support with faster response times."
     }
   ];
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
@@ -58,12 +60,27 @@ export default function FAQs() {
             Everything you need to know about Nap Editor. Can't find what you're looking for? Contact our support team.
           </p>
         </div>
-        <div className="space-y-6">
+        <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-gray-50 rounded-2xl border border-gray-200 p-8 hover:border-gray-400 hover:shadow-lg transition-all">
-              <h3 className="text-xl font-semibold text-black mb-4">{faq.q}</h3>
-              <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-            </div>
+            <button
+              key={index}
+              type="button"
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              aria-expanded={openIndex === index}
+              className={`w-full text-left rounded-2xl border p-6 transition-all ${
+                openIndex === index
+                  ? "border-black bg-white shadow-md"
+                  : "border-gray-200 bg-gray-50 hover:bg-white"
+              }`}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <h3 className="text-xl font-semibold text-black">{faq.q}</h3>
+                <span className="text-black text-xl">{openIndex === index ? "−" : "+"}</span>
+              </div>
+              {openIndex === index && (
+                <p className="mt-3 text-gray-600 leading-relaxed">{faq.a}</p>
+              )}
+            </button>
           ))}
         </div>
         <div className="mt-16 text-center bg-gray-50 rounded-2xl border border-gray-200 p-10">
