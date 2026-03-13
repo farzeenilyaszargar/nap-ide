@@ -204,8 +204,8 @@ export default function Header() {
                             href="/download"
                             className="hidden sm:flex items-center gap-2 rounded-md border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
                         >
-                            <Image src="/download.png" alt="Download" width={16} height={16} className="h-4 w-4" />
                             Download
+                            <Image src="/download.png" alt="Download" width={16} height={16} className="h-4 w-4" />
                         </Link>
                     )}
                 </div>
