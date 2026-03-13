@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Mail, Phone, MessageSquare, Clock, MapPin, Headphones } from "lucide-react";
+import { Copy } from "lucide-react";
 
 export default function SupportPage() {
   return (
@@ -9,7 +9,7 @@ export default function SupportPage() {
 
       {/* Hero Section */}
       <div className="bg-white py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
             <h2 className="text-6xl font-bold text-[#383838]">support</h2>
@@ -21,19 +21,22 @@ export default function SupportPage() {
       </div>
 
       {/* Contact Options */}
-      <div className="max-w-6xl mx-auto px-4 py-16 flex-1">
-        <div className="text-center max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4 my-5 flex-1">
+        <div className="text-center max-w-3xl mb-15 mx-auto">
           <p className="text-gray-500 mb-3">Contact</p>
-          <a
-            href="mailto:support@nap-code.com"
-            className="text-3xl sm:text-5xl font-bold text-black hover:text-gray-700 transition-colors"
-          >
-            support@nap-code.com
-          </a>
+          <div className="flex items-center justify-center gap-3">
+            <a
+              href="mailto:support@nap-code.com"
+              className="text-2xl sm:text-4xl font-bold text-black hover:text-gray-700 transition-colors"
+            >
+              support@nap-code.com
+            </a>
+            <Copy className="w-5 h-5 sm:w-6 sm:h-6 text-black" />
+          </div>
         </div>
 
         {/* FAQ CTA */}
-        <div className="bg-black rounded-2xl p-12 text-center">
+        <div className="bg-black rounded-2xl p-12 mb-10 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Looking for quick answers?</h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
             Check out our comprehensive FAQ section for answers to common questions about Surfers Editor.
