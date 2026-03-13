@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
 const RELEASES_API_URL =
-  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev/latest-mac.yml";
+  "https://downloads.nap-code.com/latest-mac.yml";
 const RELEASES_FALLBACK_URL =
-  "https://pub-e25e5e6494664382ac6f6979fa447e85.r2.dev";
+  "https://downloads.nap-code.com";
 
 export const dynamic = "force-dynamic";
 
