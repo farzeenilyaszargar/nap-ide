@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nap-code.com"),
+  metadataBase: new URL("https://www.nap-code.com"),
   title: "Nap | Run coding agents on your PC",
   description: "Nap is an AI-powered code editor that runs coding agents on your PC. Manage workflows, switch context fast, and ship faster with confidence.",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Nap download",
     "Nap desktop"
   ],
-  alternates: { canonical: "https://nap-code.com" },
+  alternates: { canonical: "https://www.nap-code.com" },
   icons: { icon: "/favicon.ico" },
   applicationName: "Nap Code",
   robots: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nap Code",
     description: "AI-powered code editor that runs coding agents on your PC.",
-    url: "https://nap-code.com",
+    url: "https://www.nap-code.com",
     siteName: "Nap Code",
     images: [
       {
