@@ -59,6 +59,12 @@ export default function SupportPage() {
               )}
             </button>
           </div>
+          <a
+            href="mailto:support@nap-code.com"
+            className="mt-6 inline-flex items-center justify-center rounded-md border border-black bg-black px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-black"
+          >
+            Send Mail Now
+          </a>
         </div>
 
         {/* FAQ CTA */}
