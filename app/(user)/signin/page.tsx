@@ -237,13 +237,15 @@ export default function SignIn() {
                     </div>
                     )}
 
-                    <div className="mt-5 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
-                        <p className="text-sm text-gray-500">
-                            {desktopMode
-                                ? 'After sign in, this browser tab will guide you back to the app.'
-                                : <>Don&apos;t have an account? No problem. <br />Signing in creates one automatically.</>}
-                        </p>
-                    </div>
+                    {!emailSent && (
+                        <div className="mt-5 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
+                            <p className="text-sm text-gray-500">
+                                {desktopMode
+                                    ? 'After sign in, this browser tab will guide you back to the app.'
+                                    : <>Don&apos;t have an account? No problem. <br />Signing in creates one automatically.</>}
+                            </p>
+                        </div>
+                    )}
                 </div>
             </main>
         </div>
