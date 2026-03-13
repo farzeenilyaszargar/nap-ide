@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     nocache: false
   },
   openGraph: {
-    title: "Nap",
-    description: "Run multiple coding agents on your PC.",
+    title: "Nap Code",
+    description: "Run coding agents on your PC.",
     url: "https://nap-code.com",
     siteName: "Nap Code",
     images: [
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Nap Code",
-    description: "Run multiple coding agents on your PC.",
+    description: "Run coding agents on your PC.",
     images: ["/og-image.png"],
   },
 
