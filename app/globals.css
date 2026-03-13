@@ -14,3 +14,11 @@
     overflow-x: hidden;
   }
 }
+
+.metallic-text {
+  background: linear-gradient(120deg, #6f7680 0%, #a8afb7 22%, #d4d8dd 45%, #9aa1a9 68%, #c6cbd1 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
