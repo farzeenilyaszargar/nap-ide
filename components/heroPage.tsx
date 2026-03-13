@@ -21,11 +21,11 @@ export default function HeroPage() {
             <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h1 className='text-center text-3xl font-bold text-[#383838] sm:text-6xl'>
-                        <span className="metallic-sheen">Code.</span>
+                        Code.
                     </h1>
                     <h1 className='-mt-1 text-center text-3xl font-bold sm:-mt-4 sm:text-6xl'>
-                        <span className='text-[#696969]'><span className="metallic-sheen">Lightning.</span></span>
-                        <span className='text-[#A4A4A4]'><span className="metallic-sheen">Fast.</span></span>
+                        <span className='text-[#696969]'>Lightning.</span>
+                        <span className='text-[#A4A4A4]'>Fast.</span>
                     </h1>
                 </div>
                 <div className='flex w-full justify-center'>
