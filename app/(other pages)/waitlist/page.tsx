@@ -76,9 +76,9 @@ export default function Waitlist() {
                         {!submitted ? (
                             <div className="space-y-8">
                                 <div className="text-center space-y-3">
-                                    <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
+                                    <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
                                         Join the <span className="text-gray-500">Waitlist</span>
-                                    </h1>
+                                    </h2>
                                     <p className="text-gray-500 text-lg max-w-sm mx-auto">
                                         Be the first to experience the future of AI-powered development.
                                     </p>

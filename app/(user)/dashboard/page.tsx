@@ -151,9 +151,9 @@ export default async function DashboardPage() {
 
             {/* User Info */}
             <div className="flex-1 text-center sm:text-left">
-              <h1 className="text-3xl font-bold text-black mb-2">
+              <h2 className="text-3xl font-bold text-black mb-2">
                 Welcome back, {fullName}!
-              </h1>
+              </h2>
               <p className="text-gray-500 mb-4">{user.email}</p>
               <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700">

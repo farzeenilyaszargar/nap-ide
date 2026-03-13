@@ -240,9 +240,9 @@ export default function SignIn() {
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
                     <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                         <div className="flex flex-col items-center text-center">
-                            <h1 className="mb-3 text-3xl font-bold tracking-tight text-gray-900">
+                            <h2 className="mb-3 text-3xl font-bold tracking-tight text-gray-900">
                                 {desktopMode ? 'Continue to Nap Desktop' : 'Welcome'}
-                            </h1>
+                            </h2>
                             <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
                                 {desktopMode
                                     ? 'Use Google sign-in to securely authenticate and return to the desktop app.'

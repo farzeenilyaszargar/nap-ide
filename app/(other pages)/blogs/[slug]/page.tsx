@@ -49,9 +49,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             <span className="text-gray-400 text-sm">{blog.date}</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
                             {blog.title}
-                        </h1>
+                        </h2>
 
                         <div className="flex items-center gap-6 text-gray-600">
                             <div className="flex items-center gap-2">

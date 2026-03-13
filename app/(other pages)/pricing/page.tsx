@@ -37,7 +37,7 @@ export default function PricingPage() {
         <div className="min-h-screen bg-white text-black">
             <Header />
             <div className="flex flex-col justify-center items-center gap-5 my-20">
-                <h1 className="font-bold text-4xl text-black">Pricing</h1>
+                <h2 className="font-bold text-4xl text-black">Pricing</h2>
                 <p className="text-gray-500">Flexible pricing, ultra flexible plans, cancel anytime.</p>
                 <div className="border border-gray-300 rounded-full p-1 flex items-center justify-around overflow-hidden bg-gray-100">
                     <button onClick={() => setMonthly(true)} className={`px-4 py-1 rounded-full transition-all ${monthly ? 'bg-black text-white' : 'text-gray-500 hover:text-black'} `}>Monthly</button>

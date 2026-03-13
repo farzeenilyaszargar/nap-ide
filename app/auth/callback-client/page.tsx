@@ -59,7 +59,7 @@ export default function CallbackClientPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
       <div className="mx-auto flex min-h-screen max-w-xl bg-white text-black flex-col items-center justify-center px-6 text-center">
-        <h1 className="text-2xl font-semibold">Signing You In</h1>
+        <h2 className="text-2xl font-semibold">Signing You In</h2>
         <p className="mt-4 text-sm text-gray-600">{status}</p>
       </div>
     </main>

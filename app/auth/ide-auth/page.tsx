@@ -44,7 +44,7 @@ export default function IDEAuthPage() {
         return (
             <div className="flex items-center justify-center min-h-screen bg-white px-4">
                 <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
-                    <h1 className="text-2xl font-bold text-gray-900 mb-4">IDE Authentication Required</h1>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">IDE Authentication Required</h2>
 
                     <div className="space-y-4 text-gray-700">
                         <p>

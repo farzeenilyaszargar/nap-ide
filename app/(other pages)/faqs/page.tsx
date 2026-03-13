@@ -50,7 +50,7 @@ export default function FAQs() {
       <Header />
       <div className="flex-1 max-w-4xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h1>
+          <h2 className="text-5xl font-bold mb-4 text-black">Frequently Asked Questions</h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Everything you need to know about Nap Editor. Can't find what you're looking for? Contact our support team.
           </p>

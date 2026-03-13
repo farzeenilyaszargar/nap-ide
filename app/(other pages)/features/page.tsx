@@ -11,13 +11,11 @@ export default function FeaturesPage() {
         <div className="min-h-screen bg-white text-black">
             <Header />
 
-            <div className="flex flex-col items-center justify-center pt-20 px-5 text-center space-y-6">
-                <h1 className="text-5xl md:text-6xl font-bold text-black">
-                    Supercharged <span className="text-gray-500">Features</span>
-                </h1>
-                <p className="text-xl text-gray-500 max-w-2xl">
-                    Everything you need to build faster, ship better, and stay in flow.
-                </p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+                <div className="text-center">
+                    <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
+                    <h2 className="text-6xl font-bold text-black">features</h2>
+                </div>
             </div>
 
             <Features />

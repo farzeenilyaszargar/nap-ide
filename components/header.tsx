@@ -86,7 +86,7 @@ export default function Header() {
     return (
         <>
             <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
-                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-4 sm:px-3">
+                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-5 lg:px-10">
                 <Link href="/" className="flex justify-center items-center">
                     <Image src="/logo.png" alt="Nap" width={40} height={40} className="h-4 w-auto rounded-md sm:h-5" />
                 </Link>
@@ -201,10 +201,10 @@ export default function Header() {
                         </div>
                     ) : (
                         <Link
-                            href="/signin"
+                            href="/download"
                             className="rounded-md border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
                         >
-                            Sign In
+                            Download
                         </Link>
                     )}
                 </div>

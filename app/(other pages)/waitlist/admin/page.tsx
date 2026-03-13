@@ -95,7 +95,7 @@ export default function WaitlistAdmin() {
                         <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 text-red-600 rounded-full">
                             <ShieldAlert size={32} />
                         </div>
-                        <h1 className="text-2xl font-bold text-gray-900">Admin Access Required</h1>
+                        <h2 className="text-2xl font-bold text-gray-900">Admin Access Required</h2>
                         <p className="text-gray-600">Please sign in with an authorized account to view the waitlist.</p>
                         <a href="/signin" className="inline-block px-6 py-3 bg-black text-white rounded-2xl font-semibold hover:bg-gray-800 transition-colors">
                             Sign In
@@ -115,7 +115,7 @@ export default function WaitlistAdmin() {
                 <div className="max-w-6xl mx-auto space-y-8">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                            <h1 className="text-3xl font-bold text-gray-900">Waitlist Management</h1>
+                            <h2 className="text-3xl font-bold text-gray-900">Waitlist Management</h2>
                             <p className="text-gray-500">There are {entries.length} people interested in your project.</p>
                         </div>
                         <button

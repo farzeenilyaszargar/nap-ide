@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <div className="bg-white text-black">
       <Header />
+      <h1 className="sr-only">Nap is an AI-powered code editor landing page highlighting speed, features, downloads, and trust, guiding developers to try it today.</h1>
       <HeroPage />
       <Features />
 

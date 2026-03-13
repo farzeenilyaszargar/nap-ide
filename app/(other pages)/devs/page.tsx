@@ -7,7 +7,7 @@ export default function Devs() {
       <Header />
       <div className="max-w-7xl mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4 text-black">Developer Resources</h1>
+          <h2 className="text-4xl font-bold mb-4 text-black">Developer Resources</h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Everything you need to build with Nap Editor. API references, SDKs, and guides.
           </p>
