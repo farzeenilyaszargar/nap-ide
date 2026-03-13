@@ -12,7 +12,7 @@ export default function HeroPage() {
         if (pathname !== '/') return
         const params = new URLSearchParams(search)
         if (params.has('code') || params.has('error')) {
-            window.location.replace(`/auth/callback${search}`)
+            window.location.replace(`/auth/callback-client${search}`)
         }
     }, [])
 

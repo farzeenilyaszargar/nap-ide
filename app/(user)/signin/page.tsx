@@ -61,6 +61,12 @@ export default function SignIn() {
         return redirectUrl
     }, [desktopMode, searchParams])
 
+    const clientRedirectUrl = useMemo(() => {
+        const url = new URL(redirectUrlObject.toString())
+        url.pathname = '/auth/callback-client'
+        return url
+    }, [redirectUrlObject])
+
     const handleSignIn = async (provider: Provider) => {
         const supabase = createClient()
         setActiveProvider(provider)
@@ -121,7 +127,7 @@ export default function SignIn() {
         const { error } = await supabase.auth.signInWithOtp({
             email: trimmedEmail,
             options: {
-                emailRedirectTo: redirectUrlObject.toString(),
+                emailRedirectTo: clientRedirectUrl.toString(),
                 shouldCreateUser: true,
             },
         })

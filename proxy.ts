@@ -9,7 +9,7 @@ export async function proxy(request: NextRequest) {
     })
 
     if (request.nextUrl.pathname === '/' && (request.nextUrl.searchParams.has('code') || request.nextUrl.searchParams.has('error'))) {
-        const redirectUrl = new URL('/auth/callback', request.url)
+        const redirectUrl = new URL('/auth/callback-client', request.url)
         redirectUrl.search = request.nextUrl.search
         return NextResponse.redirect(redirectUrl)
     }
