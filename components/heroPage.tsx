@@ -35,8 +35,8 @@ export default function HeroPage() {
 
 
             <div className='flex w-full items-center justify-center'>
-                <div className='w-full max-w-[88rem] rounded-2xl sm:rounded-3xl shadow-[0_10px_10px_rgba(0,0,0,0.3)]'>
-                    <Image src={"/main.jpeg"} width={1800} height={1012} alt='demo' className='w-full rounded-2xl sm:rounded-3xl' />
+                <div className='w-full max-w-[80rem] rounded-2xl sm:rounded-3xl shadow-[0_10px_10px_rgba(0,0,0,0.3)]'>
+                    <Image src={"/main.jpeg"} width={1680} height={945} alt='demo' className='w-full rounded-2xl sm:rounded-3xl' />
                 </div>
             </div>
 
