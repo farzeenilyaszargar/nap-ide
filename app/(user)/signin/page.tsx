@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState, type ClipboardEvent, type KeyboardEvent } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,20 +22,23 @@ const providers: Array<{
 export default function SignIn() {
     const searchParams = useSearchParams()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
-    const [emailLoading, setEmailLoading] = useState(false)
-    const [emailSent, setEmailSent] = useState(false)
+    const [emailStep, setEmailStep] = useState<'idle' | 'sending' | 'sent' | 'verifying'>('idle')
     const [email, setEmail] = useState('')
+    const [otpDigits, setOtpDigits] = useState(Array(6).fill(''))
+    const otpRefs = useRef<Array<HTMLInputElement | null>>([])
     const [error, setError] = useState<string | null>(null)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
 
+    const nextPath = useMemo(() => {
+        const urlRedirectTo = searchParams.get('redirect_to')
+        const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
+        return urlRedirectTo || sessionRedirectTo || '/dashboard'
+    }, [searchParams])
+
     const redirectUrlObject = useMemo(() => {
         let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')
         siteUrl = siteUrl.replace(/\/$/, '')
-
-        const urlRedirectTo = searchParams.get('redirect_to')
-        const sessionRedirectTo = typeof window !== 'undefined' ? sessionStorage.getItem('ide_redirect_to') : null
-        const nextPath = urlRedirectTo || sessionRedirectTo || '/dashboard'
 
         const redirectUrl = new URL('/auth/callback', siteUrl)
 
@@ -59,7 +62,7 @@ export default function SignIn() {
         }
 
         return redirectUrl
-    }, [desktopMode, searchParams])
+    }, [desktopMode, nextPath, searchParams])
 
     const clientRedirectUrl = useMemo(() => {
         const url = new URL(redirectUrlObject.toString())
@@ -108,7 +111,7 @@ export default function SignIn() {
     const handleEmailSignIn = async () => {
         const supabase = createClient()
         setError(null)
-        setEmailSent(false)
+        setEmailStep('idle')
 
         const trimmedEmail = email.trim()
         if (!trimmedEmail) {
@@ -116,30 +119,97 @@ export default function SignIn() {
             return
         }
 
-        setEmailLoading(true)
+        setEmailStep('sending')
 
         if (desktopMode && !searchParams.get('state')) {
             setError('Missing desktop state. Please restart login from the app.')
-            setEmailLoading(false)
+            setEmailStep('idle')
             return
         }
 
         const { error } = await supabase.auth.signInWithOtp({
             email: trimmedEmail,
             options: {
-                emailRedirectTo: clientRedirectUrl.toString(),
                 shouldCreateUser: true,
             },
         })
 
         if (error) {
             setError(error.message)
-            setEmailLoading(false)
+            setEmailStep('idle')
             return
         }
 
-        setEmailSent(true)
-        setEmailLoading(false)
+        setOtpDigits(Array(6).fill(''))
+        setEmailStep('sent')
+    }
+
+    const handleOtpChange = (index: number, value: string) => {
+        const digit = value.replace(/\D/g, '').slice(-1)
+        const nextDigits = [...otpDigits]
+        nextDigits[index] = digit
+        setOtpDigits(nextDigits)
+        if (digit && index < otpDigits.length - 1) {
+            otpRefs.current[index + 1]?.focus()
+        }
+    }
+
+    const handleOtpKeyDown = (index: number, event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Backspace' && !otpDigits[index] && index > 0) {
+            otpRefs.current[index - 1]?.focus()
+        }
+    }
+
+    const handleOtpPaste = (event: ClipboardEvent<HTMLDivElement>) => {
+        const paste = event.clipboardData.getData('text').replace(/\D/g, '').slice(0, otpDigits.length)
+        if (!paste) return
+        event.preventDefault()
+        const nextDigits = Array(otpDigits.length).fill('')
+        paste.split('').forEach((char, index) => {
+            nextDigits[index] = char
+        })
+        setOtpDigits(nextDigits)
+        const nextIndex = Math.min(paste.length, otpDigits.length - 1)
+        otpRefs.current[nextIndex]?.focus()
+    }
+
+    const handleVerifyOtp = async () => {
+        const supabase = createClient()
+        setError(null)
+
+        const token = otpDigits.join('')
+        if (token.length !== otpDigits.length) {
+            setError('Enter the 6-digit code sent to your email.')
+            return
+        }
+
+        const trimmedEmail = email.trim()
+        if (!trimmedEmail) {
+            setError('Please enter your email address.')
+            return
+        }
+
+        setEmailStep('verifying')
+
+        const { error } = await supabase.auth.verifyOtp({
+            email: trimmedEmail,
+            token,
+            type: 'email',
+        })
+
+        if (error) {
+            setError(error.message)
+            setEmailStep('sent')
+            return
+        }
+
+        if (desktopMode) {
+            setError('Email OTP sign-in is not available for desktop yet. Please use Google.')
+            setEmailStep('sent')
+            return
+        }
+
+        window.location.assign(nextPath)
     }
 
     return (
@@ -153,12 +223,6 @@ export default function SignIn() {
                 <div className="absolute bottom-[20%] right-[10%] -z-10 h-72 w-72 rounded-full bg-indigo-50/40 blur-3xl" />
 
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
-                    {emailSent ? (
-                        <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 text-center shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
-                            <h1 className="text-2xl font-semibold text-gray-900">Open mail for confirmation</h1>
-                            <p className="mt-3 text-sm text-gray-500">We just sent a secure sign-in link to your email.</p>
-                        </div>
-                    ) : (
                     <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                         <div className="flex flex-col items-center text-center">
                             <h1 className="mb-3 text-3xl font-bold tracking-tight text-gray-900">
@@ -209,19 +273,56 @@ export default function SignIn() {
                                 <input
                                     type="email"
                                     value={email}
-                                    onChange={(event) => setEmail(event.target.value)}
+                                    onChange={(event) => {
+                                        setEmail(event.target.value)
+                                        if (emailStep !== 'idle') {
+                                            setEmailStep('idle')
+                                            setOtpDigits(Array(6).fill(''))
+                                        }
+                                    }}
                                     placeholder="Email address"
                                     className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
                                 />
                                     <button
                                         type="button"
                                         onClick={handleEmailSignIn}
-                                        disabled={emailLoading}
+                                        disabled={emailStep === 'sending'}
                                         className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
                                     >
-                                        {emailLoading ? 'Sending...' : 'Continue'}
+                                        {emailStep === 'sending' ? 'Sending...' : 'Continue'}
                                     </button>
                             </div>
+                            {(emailStep === 'sent' || emailStep === 'verifying') && (
+                                <div className="mt-4 flex flex-col gap-3">
+                                    <p className="text-sm text-gray-500">Enter the 6-digit code sent to your email.</p>
+                                    <div className="flex justify-between gap-2" onPaste={handleOtpPaste}>
+                                        {otpDigits.map((digit, index) => (
+                                            <input
+                                                key={index}
+                                                ref={(el) => {
+                                                    otpRefs.current[index] = el
+                                                }}
+                                                type="text"
+                                                inputMode="numeric"
+                                                pattern="[0-9]*"
+                                                maxLength={1}
+                                                value={digit}
+                                                onChange={(event) => handleOtpChange(index, event.target.value)}
+                                                onKeyDown={(event) => handleOtpKeyDown(index, event)}
+                                                className="h-11 w-11 rounded-xl border border-gray-200 bg-white text-center text-base font-semibold text-gray-900 shadow-sm outline-none transition focus:border-gray-400 focus:ring-2 focus:ring-gray-200"
+                                            />
+                                        ))}
+                                    </div>
+                                    <button
+                                        type="button"
+                                        onClick={handleVerifyOtp}
+                                        disabled={emailStep === 'verifying'}
+                                        className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
+                                    >
+                                        {emailStep === 'verifying' ? 'Verifying...' : 'Verify'}
+                                    </button>
+                                </div>
+                            )}
                         </div>
 
                         {(error || queryError) && (
@@ -241,17 +342,14 @@ export default function SignIn() {
                             </p>
                         </div>
                     </div>
-                    )}
 
-                    {!emailSent && (
-                        <div className="mt-5 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
-                            <p className="text-sm text-gray-500">
-                                {desktopMode
-                                    ? 'After sign in, this browser tab will guide you back to the app.'
-                                    : <>Don&apos;t have an account? No problem. <br />Signing in creates one automatically.</>}
-                            </p>
-                        </div>
-                    )}
+                    <div className="mt-5 text-center animate-in fade-in slide-in-from-top-4 duration-1000 delay-300 fill-mode-both">
+                        <p className="text-sm text-gray-500">
+                            {desktopMode
+                                ? 'After sign in, this browser tab will guide you back to the app.'
+                                : <>Don&apos;t have an account? No problem. <br />Signing in creates one automatically.</>}
+                        </p>
+                    </div>
                 </div>
             </main>
         </div>
