@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nap-code.com"),
-  title: "Nap | Run multiple coding agents on your PC",
+  title: "Nap | Run coding agents on your PC",
   description: "Nap is an AI-powered code editor that runs multiple coding agents on your PC, enabling you to build software faster and more efficiently. With Nap, you can manage agents, workflows, and project state from one place, switch contexts fast, track changes, and keep the entire build loop under your control. Download Nap today and experience the future of coding.",
   keywords: [
     "Nap",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://nap-code.com" },
   icons: { icon: "/favicon.ico" },
-  applicationName: "Nap",
+  applicationName: "Nap Code",
   robots: {
     index: true,
     follow: true,
@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     title: "Nap",
     description: "Run multiple coding agents on your PC.",
     url: "https://nap-code.com",
+    siteName: "Nap Code",
     images: [
       {
         url: "/og-image.png",
