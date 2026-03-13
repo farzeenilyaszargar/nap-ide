@@ -1,8 +1,63 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.nap-code.com/#organization",
+      "name": "Nap Code",
+      "url": "https://www.nap-code.com",
+      "logo": "https://www.nap-code.com/logo.png",
+      "sameAs": [
+        "https://x.com/farzeenilya",
+        "https://www.linkedin.com/in/farzeenilyaszargar/",
+        "https://www.instagram.com/",
+        "https://www.youtube.com/@surfersbot",
+        "https://www.reddit.com/r/surfersbot/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nap-code.com/#website",
+      "url": "https://www.nap-code.com",
+      "name": "Nap Code",
+      "publisher": {
+        "@id": "https://www.nap-code.com/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.nap-code.com/#software",
+      "name": "Nap Code",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS, Windows, Linux",
+      "url": "https://www.nap-code.com",
+      "downloadUrl": "https://www.nap-code.com/download",
+      "publisher": {
+        "@id": "https://www.nap-code.com/#organization"
+      },
+      "description": "AI-powered code editor that runs coding agents on your PC."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.nap-code.com/#webpage",
+      "url": "https://www.nap-code.com",
+      "name": "Nap | Run coding agents on your PC",
+      "isPartOf": {
+        "@id": "https://www.nap-code.com/#website"
+      },
+      "about": {
+        "@id": "https://www.nap-code.com/#software"
+      }
+    }
+  ]
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nap-code.com"),
@@ -65,6 +120,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
         {children}
       </body>
     </html>
