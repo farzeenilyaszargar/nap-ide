@@ -8,55 +8,31 @@ export default function SupportPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-gray-50 to-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-10">
+      <div className="bg-white py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-6xl font-bold text-black">support</h2>
+            <h2 className="text-6xl font-bold text-[#383838]">support</h2>
           </div>
-          <p className="mt-4 text-center text-gray-500">
-            Our dedicated support team is here to assist you with any questions, issues, or feedback you might have about Nap Editor.
+          <p className="mt-7 text-center text-gray-500">
+            Message us to assist you with any questions, issues, or feedback you might have about Nap.
           </p>
         </div>
       </div>
 
       {/* Contact Options */}
       <div className="max-w-6xl mx-auto px-4 py-16 flex-1">
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 gap-8 mb-20 max-w-xl mx-auto">
           <div className="bg-gray-50 p-10 rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all text-center">
             <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <Mail className="w-8 h-8 text-blue-600" />
             </div>
             <h3 className="text-xl font-bold mb-3 text-black">Email Support</h3>
             <p className="text-gray-500 mb-6">Get a detailed response from our team within 24 hours. Best for non-urgent inquiries.</p>
-            <a href="mailto:support@napeditor.com" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+            <a href="mailto:support@nap-code.com" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
               Send Email
             </a>
-            <p className="text-sm text-gray-400 mt-4">support@napeditor.com</p>
-          </div>
-
-          <div className="bg-gray-50 p-10 rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Phone className="w-8 h-8 text-green-600" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-black">Phone Support</h3>
-            <p className="text-gray-500 mb-6">Speak directly with our support specialists. Available Monday through Friday.</p>
-            <a href="tel:+10123456789" className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors">
-              Call Now
-            </a>
-            <p className="text-sm text-gray-400 mt-4">Mon-Fri, 9am - 6pm IST</p>
-          </div>
-
-          <div className="bg-gray-50 p-10 rounded-2xl border border-gray-200 hover:border-gray-400 hover:shadow-lg transition-all text-center">
-            <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <MessageSquare className="w-8 h-8 text-purple-600" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-black">Live Chat</h3>
-            <p className="text-gray-500 mb-6">Chat with our team in real-time for quick questions and immediate assistance.</p>
-            <button className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors">
-              Start Chat
-            </button>
-            <p className="text-sm text-gray-400 mt-4">Average response: 2 minutes</p>
+            <p className="text-sm text-gray-400 mt-4">support@nap-code.com</p>
           </div>
         </div>
 
