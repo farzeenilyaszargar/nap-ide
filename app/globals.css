@@ -8,6 +8,10 @@
 }
 
 @layer base {
+  * {
+    border: 1px solid black;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
