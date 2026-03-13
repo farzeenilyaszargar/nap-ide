@@ -79,7 +79,7 @@ export default function SignIn() {
         }
 
         const baseOptions = {
-            redirectTo: redirectUrlObject.toString(),
+            redirectTo: clientRedirectUrl.toString(),
             skipBrowserRedirect: false,
         } as const
 
