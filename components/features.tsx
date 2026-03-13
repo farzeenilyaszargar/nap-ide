@@ -4,7 +4,7 @@ export default function Features() {
     return (
         <section className="w-full py-10 sm:py-20 flex flex-col gap-16 sm:gap-32 overflow-hidden px-4 sm:px-0">
 
-            <div className="flex flex-col md:flex-row gap-6 sm:gap-0">
+            <div className="flex flex-col md:flex-row gap-6 sm:gap-4">
                 <div className="flex flex-col mx-4 sm:m-10 bg-[#F5F5F5] rounded-2xl p-6 sm:p-15 gap-6 sm:gap-15 text-center">
                     <p className="text-lg sm:text-3xl font-bold text-[#7E7E7E]">For the <span className="text-[#414141]">real devs</span>  <br></br>Nap is the best way to <span className="text-[#414141]">code.</span></p>
                     <p className="text-xs sm:text-base">For developers who builds real stuff nap delivers a world-class intelligent agent that sees your entire codebase with absolute clarity, understands every file, every nuance, and builds with the sophistication of a top-tier engineer.</p>
