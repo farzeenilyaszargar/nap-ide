@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Clock, User } from "lucide-react";
+import { ArrowLeft, Clock } from "lucide-react";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -66,11 +66,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             <span className="text-gray-400 text-sm">{blog.date}</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-3 leading-tight">
                             {blog.title}
                         </h2>
+                        <p className="text-base md:text-lg text-gray-500 leading-relaxed">
+                            {blog.subtitle}
+                        </p>
 
-                        <div className="flex items-center gap-6 text-gray-600">
+                        <div className="mt-6 flex flex-wrap items-center gap-6 text-gray-600">
                             <div className="flex items-center gap-2">
                                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
                                     {blog.author.charAt(0)}
@@ -82,6 +85,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                 <span>{blog.readTime}</span>
                             </div>
                         </div>
+                        <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                     </header>
 
                     {/* Article Content */}
@@ -132,7 +136,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             Ready to supercharge your coding?
                         </h3>
                         <p className="text-gray-600 mb-6">
-                            Try Nap Editor today and experience agent-powered development.
+                            Try Nap today and experience agent-powered development.
                         </p>
                         <Link
                             href="/"

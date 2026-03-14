@@ -2,6 +2,7 @@ export interface BlogPost {
     id: number;
     slug: string;
     title: string;
+    subtitle: string;
     excerpt: string;
     content: string;
     author: string;
@@ -15,18 +16,19 @@ export const blogs: BlogPost[] = [
     {
         id: 1,
         slug: "introducing-nap-editor",
-        title: "Introducing Nap Editor: Orchestrated Agent Coding",
-        excerpt: "Today we're excited to announce the launch of Nap Editor, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.",
-        content: `Today we're excited to announce the launch of Nap Editor, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.
+        title: "Introducing Nap: Orchestrated Agent Coding",
+        subtitle: "Nap coordinates specialized coding agents so you can ship features across files with clarity and control.",
+        excerpt: "Today we're excited to announce the launch of Nap, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.",
+        content: `Today we're excited to announce the launch of Nap, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.
 
-## Why We Built Nap Editor
+## Why We Built Nap
 
 The way developers write code is changing rapidly. With the emergence of powerful AI models, we saw an opportunity to reimagine the entire coding experience. Traditional editors were designed for a world where developers typed every character themselves. Nap coordinates multiple agents and tools so you can delegate work across files and tasks with clear oversight.
 
 ## Key Features
 
 ### Intelligent Code Understanding
-Nap Editor doesn't just see your code as text. It understands the semantic meaning, relationships between functions, and the overall architecture of your project so agents can operate safely.
+Nap doesn't just see your code as text. It understands the semantic meaning, relationships between functions, and the overall architecture of your project so agents can operate safely.
 
 ### Natural Language Commands
 Tell Nap what you want to accomplish in plain English, and it will orchestrate coding agents to generate, refactor, or explain code for you.
@@ -47,6 +49,7 @@ This is just the beginning. We're constantly improving our AI models and adding 
         id: 2,
         slug: "understanding-your-codebase",
         title: "How Nap Understands Your Entire Codebase",
+        subtitle: "A deeper look at how Nap builds a live map of your project to coordinate reliable changes.",
         excerpt: "One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing and why it matters for agent orchestration.",
         content: `One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing and why it matters for agent orchestration.
 
@@ -56,7 +59,7 @@ Most code editors treat your code as simple text files. They might offer basic s
 
 ## Our Approach: Semantic Code Indexing
 
-When you open a project in Nap Editor, we build a comprehensive semantic index of your entire codebase. This includes:
+When you open a project in Nap, we build a comprehensive semantic index of your entire codebase. This includes:
 
 ### Function and Class Relationships
 We map out how functions call each other, which classes inherit from others, and how modules depend on one another.
@@ -88,6 +91,7 @@ Our indexing system uses a combination of static analysis, language servers, and
         id: 3,
         slug: "productivity-tips",
         title: "10 Tips to Maximize Your Productivity with Nap",
+        subtitle: "Practical habits and shortcuts that make agent workflows feel fast and predictable.",
         excerpt: "Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of Nap's agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.",
         content: `Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of Nap's agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.
 
