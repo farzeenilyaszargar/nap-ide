@@ -23,7 +23,7 @@ export default function TC() {
           <section className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
             <h2 className="text-2xl font-bold text-black mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              By accessing, downloading, installing, or using Nap ("the Software") or visiting our website at nap-code.com ("the Website"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Software or Website.
+              By accessing, downloading, installing, or using Nap ("the Software") or visiting our website at www.nap-code.com ("the Website"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Software or Website.
             </p>
             <p className="text-gray-600 leading-relaxed">
               These Terms constitute a legally binding agreement between you and Nap ("we," "us," or "our"). We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting on our Website.
