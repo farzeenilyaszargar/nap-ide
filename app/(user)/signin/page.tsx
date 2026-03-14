@@ -97,7 +97,7 @@ export default function SignIn() {
         }
 
         const baseOptions = {
-            redirectTo: redirectUrlObject.toString(),
+            redirectTo: desktopMode ? redirectUrlObject.toString() : clientRedirectUrl.toString(),
             skipBrowserRedirect: false,
         } as const
 
