@@ -5,7 +5,6 @@ const baseUrl = "https://www.nap-code.com";
 const routes = [
   "",
   "/download",
-  "/pricing",
   "/features",
   "/faqs",
   "/support",
@@ -20,6 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: now,
     changeFrequency: "weekly",
-    priority: route === "" ? 1 : 0.7,
+    priority: route === "" ? 1 : 0.6,
   }));
 }
