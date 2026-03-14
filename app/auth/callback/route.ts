@@ -52,8 +52,9 @@ export async function GET(request: Request) {
     const errorDescription = requestUrl.searchParams.get('error_description')
 
     // Determine the base URL for redirection
-    let origin = process.env.NEXT_PUBLIC_SITE_URL || requestUrl.origin
-    // Sanitize: remove trailing slash if exists
+    // Always use the request origin for web OAuth to preserve PKCE storage.
+    // The PKCE verifier is stored per-domain, so redirecting to a different host breaks the exchange.
+    let origin = requestUrl.origin
     origin = origin.replace(/\/$/, '')
 
     // If there's an error from the OAuth provider, redirect with error
