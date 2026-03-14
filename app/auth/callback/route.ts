@@ -71,6 +71,14 @@ export async function GET(request: Request) {
       return NextResponse.redirect(errorUrl)
     }
 
+    // If there's a code and we're not in desktop mode, complete on the client
+    if (code && !desktopMode) {
+      const clientUrl = new URL('/auth/callback-client', origin)
+      clientUrl.searchParams.set('code', code)
+      clientUrl.searchParams.set('next', next)
+      return NextResponse.redirect(clientUrl)
+    }
+
     // If there's a code, exchange it for a session
     if (code) {
       const supabase = await createClient()
