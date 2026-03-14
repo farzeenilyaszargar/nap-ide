@@ -38,11 +38,10 @@ export default function SupportPage() {
       {/* Contact Options */}
       <div className="max-w-6xl mx-auto px-4 my-5 flex-1">
         <div className="text-center max-w-3xl mb-15 mx-auto">
-          <p className="text-gray-500 mb-3">Contact</p>
           <div className="flex items-center justify-center gap-3">
             <a
               href="mailto:support@nap-code.com"
-              className="text-2xl sm:text-4xl font-semibold text-black hover:text-gray-700 transition-colors"
+              className="text-2xl sm:text-4xl font-semibold text-black hover:text-gray-700 transition-colors font-mono"
             >
               support@nap-code.com
             </a>
@@ -61,7 +60,7 @@ export default function SupportPage() {
           </div>
           <a
             href="mailto:support@nap-code.com"
-            className="mt-6 inline-flex items-center justify-center rounded-md border border-black bg-black px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-black"
+            className="mt-6 inline-flex items-center justify-center rounded-md border border-black bg-black px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-black"
           >
             Send Mail Now
           </a>
@@ -71,7 +70,7 @@ export default function SupportPage() {
         <div className="bg-black rounded-2xl p-10 mb-10 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Looking for quick answers?</h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-            Check out our comprehensive FAQ section for answers to common questions about Surfers.
+            Check out our comprehensive FAQ section for answers to common questions about Nap.
           </p>
           <a href="/faqs" className="inline-block bg-white text-black px-8 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
             Browse FAQs
