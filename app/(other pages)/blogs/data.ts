@@ -15,24 +15,24 @@ export const blogs: BlogPost[] = [
     {
         id: 1,
         slug: "introducing-nap-editor",
-        title: "Introducing Nap Editor: The Future of AI-Powered Coding",
-        excerpt: "Today we're excited to announce the launch of Nap Editor — a next-generation code editor built from the ground up with AI at its core. Unlike traditional editors that bolt on AI features as an afterthought, Nap was designed to make AI an integral part of your development workflow.",
-        content: `Today we're excited to announce the launch of Nap Editor — a next-generation code editor built from the ground up with AI at its core. Unlike traditional editors that bolt on AI features as an afterthought, Nap was designed to make AI an integral part of your development workflow.
+        title: "Introducing Nap Editor: Orchestrated Agent Coding",
+        excerpt: "Today we're excited to announce the launch of Nap Editor, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.",
+        content: `Today we're excited to announce the launch of Nap Editor, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.
 
 ## Why We Built Nap Editor
 
-The way developers write code is changing rapidly. With the emergence of powerful AI models, we saw an opportunity to reimagine the entire coding experience. Traditional editors were designed for a world where developers typed every character themselves. But what if your editor truly understood your code and could help you write it?
+The way developers write code is changing rapidly. With the emergence of powerful AI models, we saw an opportunity to reimagine the entire coding experience. Traditional editors were designed for a world where developers typed every character themselves. Nap coordinates multiple agents and tools so you can delegate work across files and tasks with clear oversight.
 
 ## Key Features
 
 ### Intelligent Code Understanding
-Nap Editor doesn't just see your code as text — it understands the semantic meaning, relationships between functions, and the overall architecture of your project.
+Nap Editor doesn't just see your code as text. It understands the semantic meaning, relationships between functions, and the overall architecture of your project so agents can operate safely.
 
 ### Natural Language Commands
-Tell the AI what you want to accomplish in plain English, and watch as it generates, refactors, or explains code for you.
+Tell Nap what you want to accomplish in plain English, and it will orchestrate coding agents to generate, refactor, or explain code for you.
 
 ### Context-Aware Suggestions
-Unlike simple autocomplete, Nap's suggestions are informed by your entire codebase, making them relevant and accurate.
+Unlike simple autocomplete, Nap's suggestions are informed by your entire codebase, making them relevant and accurate across multiple files.
 
 ## What's Next
 
@@ -47,8 +47,8 @@ This is just the beginning. We're constantly improving our AI models and adding 
         id: 2,
         slug: "understanding-your-codebase",
         title: "How Nap Understands Your Entire Codebase",
-        excerpt: "One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing, how it builds a comprehensive map of your project, and why this matters for AI-assisted development.",
-        content: `One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing, how it builds a comprehensive map of your project, and why this matters for AI-assisted development.
+        excerpt: "One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing and why it matters for agent orchestration.",
+        content: `One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing and why it matters for agent orchestration.
 
 ## The Problem with Traditional Code Understanding
 
@@ -69,11 +69,11 @@ We parse comments and docstrings to understand the intent behind code, not just 
 
 ## Why This Matters
 
-With this deep understanding, our AI can:
+With this deep understanding, Nap can orchestrate coding agents that:
 
-- **Generate code that fits your patterns** — It knows how you structure your code and follows the same conventions.
-- **Refactor safely** — It understands the ripple effects of changes across your project.
-- **Answer questions accurately** — Ask about any part of your codebase and get informed answers.
+- Generate code that fits your patterns: it knows how you structure your code and follows the same conventions.
+- Refactor safely: it understands the ripple effects of changes across your project.
+- Answer questions accurately: ask about any part of your codebase and get informed answers.
 
 ## Technical Implementation
 
@@ -88,16 +88,16 @@ Our indexing system uses a combination of static analysis, language servers, and
         id: 3,
         slug: "productivity-tips",
         title: "10 Tips to Maximize Your Productivity with Nap",
-        excerpt: "Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of your AI coding assistant. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.",
-        content: `Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of your AI coding assistant. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.
+        excerpt: "Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of Nap's agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.",
+        content: `Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of Nap's agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.
 
 ## 1. Learn the Essential Shortcuts
 
-The fastest way to interact with Nap's AI is through keyboard shortcuts:
+The fastest way to interact with Nap is through keyboard shortcuts:
 
-- **Cmd/Ctrl + K** — Open the AI command palette
-- **Cmd/Ctrl + L** — Start a chat session
-- **Cmd/Ctrl + I** — Inline code generation
+- \`Cmd/Ctrl + K\` Open the agent command palette
+- \`Cmd/Ctrl + L\` Start a chat session
+- \`Cmd/Ctrl + I\` Inline code generation
 
 ## 2. Be Specific in Your Prompts
 
@@ -111,7 +111,7 @@ Reference files, functions, or documentation directly in your prompts: "Using th
 
 Don't expect perfection on the first try. Use follow-up prompts to refine the generated code: "Make it more concise" or "Add TypeScript types."
 
-## 5. Let AI Explain Code
+## 5. Let the Agent Explain Code
 
 When diving into unfamiliar code, select it and ask "Explain this code." It's faster than reading documentation.
 
@@ -123,7 +123,7 @@ Select a function and ask "Write unit tests for this." Nap understands your test
 
 For large refactors, describe the change and let Nap modify multiple files at once while maintaining consistency.
 
-## 8. Review AI Changes Carefully
+## 8. Review Agent Changes Carefully
 
 Always review generated code before committing. The AI is a powerful assistant, but you're still the expert on your codebase.
 

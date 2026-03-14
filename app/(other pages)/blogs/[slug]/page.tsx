@@ -25,6 +25,23 @@ export default async function BlogPage({ params }: BlogPageProps) {
         notFound();
     }
 
+    const renderInline = (text: string) => {
+        const parts = text.split(/`([^`]+)`/g);
+        return parts.map((part, index) => {
+            if (index % 2 === 1) {
+                return (
+                    <span
+                        key={index}
+                        className="rounded-md bg-gray-100 px-2 py-0.5 font-mono text-sm text-gray-800"
+                    >
+                        {part}
+                    </span>
+                );
+            }
+            return <span key={index}>{part}</span>;
+        });
+    };
+
     return (
         <div className="min-h-screen flex flex-col bg-white">
             <Header />
@@ -74,14 +91,14 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             if (paragraph.startsWith('## ')) {
                                 return (
                                     <h2 key={index} className="text-2xl font-bold text-black mt-10 mb-4">
-                                        {paragraph.replace('## ', '')}
+                                        {renderInline(paragraph.replace('## ', ''))}
                                     </h2>
                                 );
                             }
                             if (paragraph.startsWith('### ')) {
                                 return (
                                     <h3 key={index} className="text-xl font-semibold text-black mt-8 mb-3">
-                                        {paragraph.replace('### ', '')}
+                                        {renderInline(paragraph.replace('### ', ''))}
                                     </h3>
                                 );
                             }
@@ -92,7 +109,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                     <ul key={index} className="list-disc list-inside mb-4 text-gray-700 space-y-2">
                                         {items.map((item, i) => (
                                             <li key={i} className="leading-relaxed">
-                                                {item.replace('- ', '')}
+                                                {renderInline(item.replace('- ', ''))}
                                             </li>
                                         ))}
                                     </ul>
@@ -101,7 +118,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             // Regular paragraph
                             return (
                                 <p key={index} className="text-gray-700 leading-relaxed mb-6">
-                                    {paragraph}
+                                    {renderInline(paragraph)}
                                 </p>
                             );
                         })}
@@ -115,7 +132,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             Ready to supercharge your coding?
                         </h3>
                         <p className="text-gray-600 mb-6">
-                            Try Nap Editor today and experience AI-powered development.
+                            Try Nap Editor today and experience agent-powered development.
                         </p>
                         <Link
                             href="/"
