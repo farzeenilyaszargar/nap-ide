@@ -16,7 +16,6 @@ export default function CallbackClientPage() {
 
   useEffect(() => {
     const code = params.get("code")
-    const next = params.get("next") || "/dashboard"
     const desktop = params.get("desktop") === "1"
     const state = params.get("state")
     const nonce = params.get("nonce")
@@ -40,17 +39,7 @@ export default function CallbackClientPage() {
         return
       }
 
-      const serverCallbackUrl = new URL("/auth/callback", window.location.origin)
-      serverCallbackUrl.searchParams.set("next", next)
-      if (desktop) serverCallbackUrl.searchParams.set("desktop", "1")
-      if (state) serverCallbackUrl.searchParams.set("state", state)
-      if (nonce) serverCallbackUrl.searchParams.set("nonce", nonce)
-      if (protocol) serverCallbackUrl.searchParams.set("protocol", protocol)
-      if (redirectUri) serverCallbackUrl.searchParams.set("redirect", redirectUri)
-      if (callbackUri) serverCallbackUrl.searchParams.set("callback", callbackUri)
-
-      setStatus("Sign-in completed. Redirecting...")
-      window.location.replace(serverCallbackUrl.toString())
+      setStatus("Login successful.")
     }
 
     void complete()

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState, type ClipboardEvent, type KeyboardEvent } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -21,13 +21,13 @@ const providers: Array<{
 
 export default function SignIn() {
     const searchParams = useSearchParams()
-    const router = useRouter()
     const [activeProvider, setActiveProvider] = useState<Provider | null>(null)
     const [emailStep, setEmailStep] = useState<'idle' | 'sending' | 'sent' | 'verifying'>('idle')
     const [email, setEmail] = useState('')
     const [otpDigits, setOtpDigits] = useState(Array(6).fill(''))
     const otpRefs = useRef<Array<HTMLInputElement | null>>([])
     const [error, setError] = useState<string | null>(null)
+    const [success, setSuccess] = useState<string | null>(null)
     const [suppressQueryError, setSuppressQueryError] = useState(false)
     const queryError = searchParams.get('error')
     const desktopMode = searchParams.get('desktop') === '1'
@@ -79,17 +79,16 @@ export default function SignIn() {
             if (data.session) {
                 setSuppressQueryError(true)
                 setError(null)
-                if (!desktopMode && queryError) {
-                    router.replace(nextPath)
-                }
+                setSuccess('Login successful.')
             }
         })
-    }, [desktopMode, nextPath, queryError, router])
+    }, [desktopMode, nextPath, queryError])
 
     const handleSignIn = async (provider: Provider) => {
         const supabase = createClient()
         setActiveProvider(provider)
         setError(null)
+        setSuccess(null)
 
         if (desktopMode && !searchParams.get('state')) {
             setError('Missing desktop state. Please restart login from the app.')
@@ -127,6 +126,7 @@ export default function SignIn() {
     const handleEmailSignIn = async () => {
         const supabase = createClient()
         setError(null)
+        setSuccess(null)
         setEmailStep('idle')
 
         const trimmedEmail = email.trim()
@@ -192,6 +192,7 @@ export default function SignIn() {
     const handleVerifyOtp = async () => {
         const supabase = createClient()
         setError(null)
+        setSuccess(null)
 
         const token = otpDigits.join('')
         if (token.length !== otpDigits.length) {
@@ -219,12 +220,7 @@ export default function SignIn() {
             return
         }
 
-        if (desktopMode) {
-            window.location.assign(redirectUrlObject.toString())
-            return
-        }
-
-        window.location.assign(nextPath)
+        setSuccess('Login successful.')
     }
 
     return (
@@ -344,6 +340,13 @@ export default function SignIn() {
                             <div className="mt-6 animate-in fade-in zoom-in-95 duration-300">
                                 <div className="rounded-xl bg-red-50 px-4 py-3 text-center">
                                     <p className="text-sm font-medium text-red-600">{error || queryError}</p>
+                                </div>
+                            </div>
+                        )}
+                        {success && (
+                            <div className="mt-6 animate-in fade-in zoom-in-95 duration-300">
+                                <div className="rounded-xl bg-green-50 px-4 py-3 text-center">
+                                    <p className="text-sm font-medium text-green-700">{success}</p>
                                 </div>
                             </div>
                         )}
