@@ -348,14 +348,6 @@ export default function SignIn() {
                                 </div>
                             </div>
                         )}
-                        {success && (
-                            <div className="mt-6 animate-in fade-in zoom-in-95 duration-300">
-                                <div className="rounded-xl bg-green-50 px-4 py-3 text-center">
-                                    <p className="text-sm font-medium text-green-700">{success}</p>
-                                </div>
-                            </div>
-                        )}
-
                         <div className="mt-6 pt-5 border-t border-gray-50">
                             <p className="text-center text-xs text-gray-400">
                                 By signing in, you agree to our{' '}
