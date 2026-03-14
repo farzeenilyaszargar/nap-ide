@@ -3,6 +3,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { useState } from "react";
+import Script from "next/script";
 
 export default function FAQs() {
   const faqs = [
@@ -51,6 +52,30 @@ export default function FAQs() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
+      <Script
+        id="breadcrumb-faqs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nap-code.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "FAQs",
+                item: "https://www.nap-code.com/faqs",
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
       <div className="flex-1 max-w-4xl mx-auto px-4 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">

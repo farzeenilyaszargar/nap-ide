@@ -1,10 +1,29 @@
-"use client";
+import type { Metadata } from "next";
+import Script from "next/script";
+import Image from "next/image";
+import Link from "next/link";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import DownloadButton from "@/components/customDownload";
-import Image from "next/image";
-import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Nap | Download",
+  description:
+    "Download Nap for macOS, Windows, or Linux. Run coding agents locally and orchestrate multi-file changes with confidence.",
+  alternates: { canonical: "https://www.nap-code.com/download" },
+  openGraph: {
+    title: "Nap | Download",
+    description:
+      "Download Nap for macOS, Windows, or Linux. Run coding agents locally and orchestrate multi-file changes with confidence.",
+    url: "https://www.nap-code.com/download",
+    type: "website",
+  },
+  twitter: {
+    title: "Nap | Download",
+    description:
+      "Download Nap for macOS, Windows, or Linux. Run coding agents locally and orchestrate multi-file changes with confidence.",
+  },
+};
 
 export default function DownloadPage() {
   const macUrl = "/api/download/mac";
@@ -13,6 +32,30 @@ export default function DownloadPage() {
 
   return (
     <div className="min-h-screen text-black">
+      <Script
+        id="breadcrumb-download"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nap-code.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Download",
+                item: "https://www.nap-code.com/download",
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
       <div className="max-w-6xl mx-auto px-4 py-16 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">

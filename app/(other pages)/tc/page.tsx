@@ -1,9 +1,55 @@
+import type { Metadata } from "next";
+import Script from "next/script";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Nap | Terms",
+  description:
+    "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
+  alternates: { canonical: "https://www.nap-code.com/tc" },
+  openGraph: {
+    title: "Nap | Terms",
+    description:
+      "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
+    url: "https://www.nap-code.com/tc",
+    type: "website",
+  },
+  twitter: {
+    title: "Nap | Terms",
+    description:
+      "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
+  },
+};
 
 export default function TC() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
+      <Script
+        id="breadcrumb-terms"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nap-code.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Terms",
+                item: "https://www.nap-code.com/tc",
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
 
       {/* Hero Section */}

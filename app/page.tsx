@@ -1,16 +1,52 @@
-import DemoVid from "@/components/demoVideo";
-import FAQs from "@/components/faqs";
+import type { Metadata } from "next";
+import Script from "next/script";
+
 import Features from "@/components/features";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroPage from "@/components/heroPage";
-import Checkout from "@/components/payment";
 import TryNap from "@/components/trySurfer";
 
+export const metadata: Metadata = {
+  title: "Nap | Run coding agents on your PC",
+  description:
+    "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
+  alternates: { canonical: "https://www.nap-code.com" },
+  openGraph: {
+    title: "Nap | Run coding agents on your PC",
+    description:
+      "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
+    url: "https://www.nap-code.com",
+    type: "website",
+  },
+  twitter: {
+    title: "Nap | Run coding agents on your PC",
+    description:
+      "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
+  },
+};
 
 export default function Home() {
   return (
     <div className="bg-white text-black">
+      <Script
+        id="breadcrumb-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nap-code.com",
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
       <h1 className="sr-only">nap codes multiple files with agents on your pc. download nap. write code fast and with ease. nap code.</h1>
       <HeroPage />
@@ -18,7 +54,6 @@ export default function Home() {
 
       <TryNap />
       <Footer />
-
     </div>
   );
 }

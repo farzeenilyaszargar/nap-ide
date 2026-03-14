@@ -3,6 +3,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Link from "next/link";
+import Script from "next/script";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { blogs } from "./data";
@@ -35,6 +36,30 @@ export default function BlogsPage() {
 
     return (
         <div className="min-h-screen flex flex-col bg-white text-black">
+            <Script
+                id="breadcrumb-blogs"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                            {
+                                "@type": "ListItem",
+                                position: 1,
+                                name: "Home",
+                                item: "https://www.nap-code.com",
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 2,
+                                name: "Blogs",
+                                item: "https://www.nap-code.com/blogs",
+                            },
+                        ],
+                    }),
+                }}
+            />
             <Header />
 
             {/* Hero Header */}

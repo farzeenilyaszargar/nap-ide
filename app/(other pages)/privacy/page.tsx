@@ -1,9 +1,55 @@
+import type { Metadata } from "next";
+import Script from "next/script";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+
+export const metadata: Metadata = {
+  title: "Nap | Privacy",
+  description:
+    "Read Nap’s privacy policy and learn how we handle data for agent orchestration and desktop usage.",
+  alternates: { canonical: "https://www.nap-code.com/privacy" },
+  openGraph: {
+    title: "Nap | Privacy",
+    description:
+      "Read Nap’s privacy policy and learn how we handle data for agent orchestration and desktop usage.",
+    url: "https://www.nap-code.com/privacy",
+    type: "website",
+  },
+  twitter: {
+    title: "Nap | Privacy",
+    description:
+      "Read Nap’s privacy policy and learn how we handle data for agent orchestration and desktop usage.",
+  },
+};
 
 export default function Privacy() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
+      <Script
+        id="breadcrumb-privacy"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nap-code.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Privacy",
+                item: "https://www.nap-code.com/privacy",
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
 
       {/* Hero Section */}

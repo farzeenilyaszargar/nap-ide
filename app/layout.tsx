@@ -42,7 +42,7 @@ const schemaOrg = {
       "publisher": {
         "@id": "https://www.nap-code.com/#organization"
       },
-      "description": "AI-powered code editor that runs coding agents on your PC."
+      "description": "Agent orchestration platform for coding that runs multiple coding agents on your PC."
     },
     {
       "@type": "WebPage",
@@ -62,7 +62,7 @@ const schemaOrg = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.nap-code.com"),
   title: "Nap | Run coding agents on your PC",
-  description: "Nap is an AI-powered code editor that runs coding agents on your PC. Manage workflows, switch context fast, and ship faster with confidence.",
+  description: "Nap is an agent orchestration platform for coding that runs multiple coding agents on your PC.",
   keywords: [
     "Nap",
     "Nap Code",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Nap Code",
-    description: "AI-powered code editor that runs coding agents on your PC.",
+    description: "Agent orchestration platform for coding that runs multiple coding agents on your PC.",
     url: "https://www.nap-code.com",
     siteName: "Nap Code",
     images: [
@@ -110,7 +110,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Nap Code",
-    description: "AI-powered code editor that runs coding agents on your PC.",
+    description: "Agent orchestration platform for coding that runs multiple coding agents on your PC.",
     images: ["/og-image.png"],
   },
 

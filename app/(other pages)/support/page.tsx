@@ -3,6 +3,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Check, Copy } from "lucide-react";
+import Script from "next/script";
 import { useState } from "react";
 
 export default function SupportPage() {
@@ -20,6 +21,30 @@ export default function SupportPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
+      <Script
+        id="breadcrumb-support"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.nap-code.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Support",
+                item: "https://www.nap-code.com/support",
+              },
+            ],
+          }),
+        }}
+      />
       <Header />
 
       {/* Hero Section */}

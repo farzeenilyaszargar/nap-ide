@@ -1,4 +1,5 @@
-"use client";
+import type { Metadata } from "next";
+import Script from "next/script";
 
 import Features from "@/components/features";
 import Footer from "@/components/footer";
@@ -6,9 +7,52 @@ import Header from "@/components/header";
 import TryNap from "@/components/trySurfer";
 import { Zap, Shield, Plug } from "lucide-react";
 
+export const metadata: Metadata = {
+    title: "Nap | Features",
+    description:
+        "Explore Nap’s agent orchestration features: multi-file edits, context-aware changes, and reliable workflows for coding teams.",
+    alternates: { canonical: "https://www.nap-code.com/features" },
+    openGraph: {
+        title: "Nap | Features",
+        description:
+            "Explore Nap’s agent orchestration features: multi-file edits, context-aware changes, and reliable workflows for coding teams.",
+        url: "https://www.nap-code.com/features",
+        type: "website",
+    },
+    twitter: {
+        title: "Nap | Features",
+        description:
+            "Explore Nap’s agent orchestration features: multi-file edits, context-aware changes, and reliable workflows for coding teams.",
+    },
+};
+
 export default function FeaturesPage() {
     return (
         <div className="min-h-screen bg-white text-black">
+            <Script
+                id="breadcrumb-features"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                            {
+                                "@type": "ListItem",
+                                position: 1,
+                                name: "Home",
+                                item: "https://www.nap-code.com",
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 2,
+                                name: "Features",
+                                item: "https://www.nap-code.com/features",
+                            },
+                        ],
+                    }),
+                }}
+            />
             <Header />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10">

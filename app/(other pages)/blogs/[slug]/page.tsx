@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -15,6 +17,38 @@ interface BlogPageProps {
 export async function generateStaticParams() {
     const slugs = getAllBlogSlugs();
     return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata(
+    { params }: BlogPageProps,
+): Promise<Metadata> {
+    const { slug } = await params;
+    const blog = getBlogBySlug(slug);
+
+    if (!blog) {
+        return {
+            title: "Nap | Blog",
+            description: "Read Nap updates and deep dives on agent orchestration.",
+        };
+    }
+
+    return {
+        title: `Nap | ${blog.title}`,
+        description: blog.excerpt,
+        alternates: { canonical: `https://www.nap-code.com/blogs/${blog.slug}` },
+        openGraph: {
+            title: `Nap | ${blog.title}`,
+            description: blog.excerpt,
+            url: `https://www.nap-code.com/blogs/${blog.slug}`,
+            type: "article",
+            images: blog.image ? [{ url: blog.image }] : undefined,
+        },
+        twitter: {
+            title: `Nap | ${blog.title}`,
+            description: blog.excerpt,
+            images: blog.image ? [blog.image] : undefined,
+        },
+    };
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
@@ -44,6 +78,36 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
     return (
         <div className="min-h-screen flex flex-col bg-white">
+            <Script
+                id={`breadcrumb-blog-${blog.slug}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                            {
+                                "@type": "ListItem",
+                                position: 1,
+                                name: "Home",
+                                item: "https://www.nap-code.com",
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 2,
+                                name: "Blogs",
+                                item: "https://www.nap-code.com/blogs",
+                            },
+                            {
+                                "@type": "ListItem",
+                                position: 3,
+                                name: blog.title,
+                                item: `https://www.nap-code.com/blogs/${blog.slug}`,
+                            },
+                        ],
+                    }),
+                }}
+            />
             <Header />
 
             <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
