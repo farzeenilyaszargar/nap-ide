@@ -21,7 +21,8 @@ export default function ElectronAuthSuccess() {
   const legacyDeepLink = token
     ? `nap://auth?token=${token}${refreshToken ? `&refresh_token=${refreshToken}` : ""}`
     : null;
-  const primaryHref = deepLink || callbackHref || legacyDeepLink;
+  const primaryHref = deepLink || legacyDeepLink || callbackHref;
+  const hasCallbackFallback = Boolean(callbackHref && deepLink);
 
   const [showOpenButton, setShowOpenButton] = useState(
     Boolean(callbackHref && !deepLink)
@@ -59,6 +60,7 @@ export default function ElectronAuthSuccess() {
   const primaryLabel = primaryHref?.startsWith("http")
     ? "Open callback page"
     : "Open app";
+  const callbackLabel = "Complete sign-in";
 
   return (
     <main className="min-h-screen bg-white text-gray-900">
@@ -76,6 +78,16 @@ export default function ElectronAuthSuccess() {
                 }}
               >
                 {primaryLabel}
+              </button>
+            )}
+            {hasCallbackFallback && callbackHref && (
+              <button
+                className="rounded-xl border border-black px-5 py-3 text-sm font-medium text-black hover:bg-gray-100"
+                onClick={() => {
+                  window.location.href = callbackHref;
+                }}
+              >
+                {callbackLabel}
               </button>
             )}
 
