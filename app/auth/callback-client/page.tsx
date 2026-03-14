@@ -39,6 +39,19 @@ export default function CallbackClientPage() {
         return
       }
 
+      if (desktop) {
+        const serverCallbackUrl = new URL("/auth/callback", window.location.origin)
+        if (state) serverCallbackUrl.searchParams.set("state", state)
+        if (nonce) serverCallbackUrl.searchParams.set("nonce", nonce)
+        if (protocol) serverCallbackUrl.searchParams.set("protocol", protocol)
+        if (redirectUri) serverCallbackUrl.searchParams.set("redirect", redirectUri)
+        if (callbackUri) serverCallbackUrl.searchParams.set("callback", callbackUri)
+        serverCallbackUrl.searchParams.set("desktop", "1")
+        setStatus("Sign-in completed. Redirecting to app...")
+        window.location.replace(serverCallbackUrl.toString())
+        return
+      }
+
       setStatus("Login successful.")
     }
 

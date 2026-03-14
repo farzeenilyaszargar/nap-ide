@@ -97,7 +97,7 @@ export default function SignIn() {
         }
 
         const baseOptions = {
-            redirectTo: clientRedirectUrl.toString(),
+            redirectTo: redirectUrlObject.toString(),
             skipBrowserRedirect: false,
         } as const
 
@@ -217,6 +217,11 @@ export default function SignIn() {
         if (error) {
             setError(error.message)
             setEmailStep('sent')
+            return
+        }
+
+        if (desktopMode) {
+            window.location.assign(redirectUrlObject.toString())
             return
         }
 
