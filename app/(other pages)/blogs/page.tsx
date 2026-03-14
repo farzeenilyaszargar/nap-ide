@@ -50,8 +50,8 @@ export default function BlogsPage() {
                 <div className="relative bg-gray-50 rounded-3xl border border-gray-200 overflow-hidden">
 
                     {/* Blog Content */}
-                    <div className="p-10 md:p-16">
-                        <div className="flex items-center gap-3 mb-6">
+                    <div className="p-10 md:p-16 mx-5">
+                        <div className="flex items-center gap-3 mb-6 ">
                             <span className="bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
                                 {currentBlog.category}
                             </span>
