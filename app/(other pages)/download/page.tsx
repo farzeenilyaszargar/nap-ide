@@ -28,11 +28,13 @@ export default function DownloadPage() {
               <Image src="/apple-icon.png" alt="macOS" width={65} height={65} className="brightness-0" />
             </div>
             <p className="text-3xl font-semibold text-black">macOS</p>
+            <p className="mt-2 text-sm text-gray-500">Apple Silicon & Intel</p>
             <Link
               href={macUrl}
-              className="mt-10 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
             >
               Download
+              <Image src="/download.png" alt="Download" width={16} height={16} className="h-4 w-4" />
             </Link>
           </div>
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
@@ -40,11 +42,13 @@ export default function DownloadPage() {
               <Image src="/windows-icon.png" alt="Windows" width={65} height={65} className="brightness-0" />
             </div>
             <p className="text-3xl font-semibold text-black">Windows</p>
+            <p className="mt-2 text-sm text-gray-500">Windows 10+ (64-bit)</p>
             <Link
               href={windowsUrl}
-              className="mt-10 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
             >
               Download
+              <Image src="/download.png" alt="Download" width={16} height={16} className="h-4 w-4" />
             </Link>
           </div>
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
@@ -52,11 +56,13 @@ export default function DownloadPage() {
               <Image src="/linux-icon.png" alt="Linux" width={65} height={65} className="brightness-0" />
             </div>
             <p className="text-3xl font-semibold text-black">Linux</p>
+            <p className="mt-2 text-sm text-gray-500">Ubuntu, Debian, Fedora</p>
             <Link
               href={linuxUrl}
-              className="mt-10 inline-flex w-full items-center justify-center rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-black bg-black px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
             >
               Download
+              <Image src="/download.png" alt="Download" width={16} height={16} className="h-4 w-4" />
             </Link>
           </div>
         </div>
