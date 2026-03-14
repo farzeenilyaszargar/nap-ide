@@ -27,7 +27,7 @@ export default function SupportPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-6xl font-bold text-[#383838]">support</h2>
+            <h2 className="text-4xl sm:text-6xl font-bold text-[#383838]">support</h2>
           </div>
           <p className="mt-7 text-center text-gray-500">
             Message us to assist you with any questions, issues, or feedback you might have about Nap.

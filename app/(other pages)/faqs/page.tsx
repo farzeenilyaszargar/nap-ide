@@ -56,7 +56,7 @@ export default function FAQs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-6xl font-bold text-[#383838]">faqs</h2>
+            <h2 className="text-4xl sm:text-6xl font-bold text-[#383838]">faqs</h2>
           </div>
           <p className="mt-7 text-center text-gray-500">
             Everything you need to know about Nap.

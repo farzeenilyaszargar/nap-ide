@@ -18,7 +18,7 @@ export default function DownloadPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-6xl font-bold text-[#383838]">download</h2>
+            <h2 className="text-4xl sm:text-6xl font-bold text-[#383838]">download</h2>
           </div>
         </div>
 

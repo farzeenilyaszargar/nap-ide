@@ -11,7 +11,7 @@ export default function TC() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-0">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-6xl font-bold text-black">terms</h2>
+            <h2 className="text-4xl sm:text-6xl font-bold text-black">terms</h2>
           </div>
           <p className="mt-4 text-center text-gray-500">Last updated: January 3, 2026</p>
         </div>
