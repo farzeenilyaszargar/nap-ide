@@ -48,7 +48,7 @@ export default function Home() {
         }}
       />
       <Header />
-      <h1 className="sr-only">nap codes multiple files with agents on your pc. download nap. write code fast and with ease. nap code.</h1>
+      <h1 className="sr-only">nap codes multiple files with agents on your pc.</h1>
       <HeroPage />
       <Features />
 
