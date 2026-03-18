@@ -6,13 +6,13 @@ export default function Head() {
         name="description"
         content="Find answers about Nap, agent orchestration, downloads, and getting started."
       />
-      <link rel="canonical" href="https://www.nap-code.com/faqs" />
+      <link rel="canonical" href="https://nap-code.com/faqs" />
       <meta property="og:title" content="Nap | FAQs" />
       <meta
         property="og:description"
         content="Find answers about Nap, agent orchestration, downloads, and getting started."
       />
-      <meta property="og:url" content="https://www.nap-code.com/faqs" />
+      <meta property="og:url" content="https://nap-code.com/faqs" />
       <meta property="og:type" content="website" />
       <meta name="twitter:title" content="Nap | FAQs" />
       <meta

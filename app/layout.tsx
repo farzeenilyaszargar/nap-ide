@@ -10,10 +10,10 @@ const schemaOrg = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.nap-code.com/#organization",
+      "@id": "https://nap-code.com/#organization",
       "name": "Nap Code",
-      "url": "https://www.nap-code.com",
-      "logo": "https://www.nap-code.com/logo.png",
+      "url": "https://nap-code.com",
+      "logo": "https://nap-code.com/logo.png",
       "sameAs": [
         "https://x.com/farzeenilya",
         "https://www.linkedin.com/in/farzeenilyaszargar/",
@@ -24,43 +24,43 @@ const schemaOrg = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.nap-code.com/#website",
-      "url": "https://www.nap-code.com",
+      "@id": "https://nap-code.com/#website",
+      "url": "https://nap-code.com",
       "name": "Nap Code",
       "publisher": {
-        "@id": "https://www.nap-code.com/#organization"
+        "@id": "https://nap-code.com/#organization"
       }
     },
     {
       "@type": "SoftwareApplication",
-      "@id": "https://www.nap-code.com/#software",
+      "@id": "https://nap-code.com/#software",
       "name": "Nap Code",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "macOS, Windows, Linux",
-      "url": "https://www.nap-code.com",
-      "downloadUrl": "https://www.nap-code.com/download",
+      "url": "https://nap-code.com",
+      "downloadUrl": "https://nap-code.com/download",
       "publisher": {
-        "@id": "https://www.nap-code.com/#organization"
+        "@id": "https://nap-code.com/#organization"
       },
       "description": "Agent orchestration platform for coding that runs multiple coding agents on your PC."
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.nap-code.com/#webpage",
-      "url": "https://www.nap-code.com",
+      "@id": "https://nap-code.com/#webpage",
+      "url": "https://nap-code.com",
       "name": "Nap | Run coding agents on your PC",
       "isPartOf": {
-        "@id": "https://www.nap-code.com/#website"
+        "@id": "https://nap-code.com/#website"
       },
       "about": {
-        "@id": "https://www.nap-code.com/#software"
+        "@id": "https://nap-code.com/#software"
       }
     }
   ]
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.nap-code.com"),
+  metadataBase: new URL("https://nap-code.com"),
   title: "Nap | Run coding agents on your PC",
   description: "Nap is an agent orchestration platform for coding that runs multiple coding agents on your PC.",
   keywords: [
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     "Nap download",
     "Nap desktop"
   ],
-  alternates: { canonical: "https://www.nap-code.com" },
+  alternates: { canonical: "https://nap-code.com" },
   icons: { icon: "/favicon.ico" },
   applicationName: "Nap Code",
   robots: {
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nap Code",
     description: "Agent orchestration platform for coding that runs multiple coding agents on your PC.",
-    url: "https://www.nap-code.com",
+    url: "https://nap-code.com",
     siteName: "Nap Code",
     images: [
       {

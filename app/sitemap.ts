@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://www.nap-code.com";
+const baseUrl = "https://nap-code.com";
 
 const routes = [
   "",
   "/download",
   "/features",
   "/faqs",
+  "/pricing",
   "/support",
   "/blogs",
   "/privacy",

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Nap | Download",
   description:
     "Download Nap for macOS, Windows, or Linux. Run coding agents locally and orchestrate multi-file changes with confidence.",
-  alternates: { canonical: "https://www.nap-code.com/download" },
+  alternates: { canonical: "https://nap-code.com/download" },
   openGraph: {
     title: "Nap | Download",
     description:
       "Download Nap for macOS, Windows, or Linux. Run coding agents locally and orchestrate multi-file changes with confidence.",
-    url: "https://www.nap-code.com/download",
+    url: "https://nap-code.com/download",
     type: "website",
   },
   twitter: {
@@ -44,13 +44,13 @@ export default function DownloadPage() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://www.nap-code.com",
+                item: "https://nap-code.com",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Download",
-                item: "https://www.nap-code.com/download",
+                item: "https://nap-code.com/download",
               },
             ],
           }),

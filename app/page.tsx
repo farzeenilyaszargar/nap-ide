@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Nap | Run coding agents on your PC",
   description:
     "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
-  alternates: { canonical: "https://www.nap-code.com" },
+  alternates: { canonical: "https://nap-code.com" },
   openGraph: {
     title: "Nap | Run coding agents on your PC",
     description:
       "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
-    url: "https://www.nap-code.com",
+    url: "https://nap-code.com",
     type: "website",
   },
   twitter: {
@@ -41,7 +41,7 @@ export default function Home() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://www.nap-code.com",
+                item: "https://nap-code.com",
               },
             ],
           }),

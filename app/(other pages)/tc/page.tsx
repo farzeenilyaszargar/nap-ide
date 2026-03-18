@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Nap | Terms",
   description:
     "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
-  alternates: { canonical: "https://www.nap-code.com/tc" },
+  alternates: { canonical: "https://nap-code.com/tc" },
   openGraph: {
     title: "Nap | Terms",
     description:
       "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
-    url: "https://www.nap-code.com/tc",
+    url: "https://nap-code.com/tc",
     type: "website",
   },
   twitter: {
@@ -38,13 +38,13 @@ export default function TC() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://www.nap-code.com",
+                item: "https://nap-code.com",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Terms",
-                item: "https://www.nap-code.com/tc",
+                item: "https://nap-code.com/tc",
               },
             ],
           }),
@@ -69,7 +69,7 @@ export default function TC() {
           <section className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
             <h2 className="text-2xl font-bold text-black mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
-              By accessing, downloading, installing, or using Nap ("the Software") or visiting our website at www.nap-code.com ("the Website"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Software or Website.
+              By accessing, downloading, installing, or using Nap ("the Software") or visiting our website at nap-code.com ("the Website"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Software or Website.
             </p>
             <p className="text-gray-600 leading-relaxed">
               These Terms constitute a legally binding agreement between you and Nap ("we," "us," or "our"). We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting on our Website.
