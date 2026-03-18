@@ -12,7 +12,7 @@ const routes = [
   "/blogs",
   "/privacy",
   "/tc",
-  "/sitemap",
+  "/site-map",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

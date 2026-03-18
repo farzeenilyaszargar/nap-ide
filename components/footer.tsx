@@ -13,6 +13,7 @@ export default function Footer() {
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/download">Download</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/faqs">FAQ's</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/support">Support</Link>
+                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/site-map">Sitemap</Link>
                 </div>
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
                     <p className="text-sm sm:text-base  mb-2">[ Company ]</p>
