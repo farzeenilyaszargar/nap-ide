@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     title: "Nap | Features",
     description:
         "Explore Nap’s agent orchestration features: multi-file edits, context-aware changes, and reliable workflows for coding teams.",
-    alternates: { canonical: "https://nap-code.com/features" },
+    alternates: { canonical: "https://www.nap-code.com/features" },
     openGraph: {
         title: "Nap | Features",
         description:
             "Explore Nap’s agent orchestration features: multi-file edits, context-aware changes, and reliable workflows for coding teams.",
-        url: "https://nap-code.com/features",
+        url: "https://www.nap-code.com/features",
         type: "website",
     },
     twitter: {
@@ -41,13 +41,13 @@ export default function FeaturesPage() {
                                 "@type": "ListItem",
                                 position: 1,
                                 name: "Home",
-                                item: "https://nap-code.com",
+                                item: "https://www.nap-code.com",
                             },
                             {
                                 "@type": "ListItem",
                                 position: 2,
                                 name: "Features",
-                                item: "https://nap-code.com/features",
+                                item: "https://www.nap-code.com/features",
                             },
                         ],
                     }),

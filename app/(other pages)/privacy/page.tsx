@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Nap | Privacy",
   description:
     "Read Nap’s privacy policy and learn how we handle data for agent orchestration and desktop usage.",
-  alternates: { canonical: "https://nap-code.com/privacy" },
+  alternates: { canonical: "https://www.nap-code.com/privacy" },
   openGraph: {
     title: "Nap | Privacy",
     description:
       "Read Nap’s privacy policy and learn how we handle data for agent orchestration and desktop usage.",
-    url: "https://nap-code.com/privacy",
+    url: "https://www.nap-code.com/privacy",
     type: "website",
   },
   twitter: {
@@ -38,13 +38,13 @@ export default function Privacy() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://nap-code.com",
+                item: "https://www.nap-code.com",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Privacy",
-                item: "https://nap-code.com/privacy",
+                item: "https://www.nap-code.com/privacy",
               },
             ],
           }),

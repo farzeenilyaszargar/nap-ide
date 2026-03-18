@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Nap | Terms",
   description:
     "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
-  alternates: { canonical: "https://nap-code.com/tc" },
+  alternates: { canonical: "https://www.nap-code.com/tc" },
   openGraph: {
     title: "Nap | Terms",
     description:
       "Review Nap’s terms and conditions for using the agent orchestration platform and desktop app.",
-    url: "https://nap-code.com/tc",
+    url: "https://www.nap-code.com/tc",
     type: "website",
   },
   twitter: {
@@ -38,13 +38,13 @@ export default function TC() {
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://nap-code.com",
+                item: "https://www.nap-code.com",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Terms",
-                item: "https://nap-code.com/tc",
+                item: "https://www.nap-code.com/tc",
               },
             ],
           }),
