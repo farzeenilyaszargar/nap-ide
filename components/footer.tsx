@@ -8,6 +8,8 @@ export default function Footer() {
             <div className="flex sm:flex-row flex-col justify-between sm:items-start items-center w-full max-w-7xl gap-10 sm:gap-6 sm:px-10">
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
                     <p className="text-sm sm:text-base  mb-2">[ Resources ]</p>
+                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/features">Product</Link>
+                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/pricing">Pricing</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/download">Download</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/faqs">FAQ's</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/support">Support</Link>
