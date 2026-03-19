@@ -27,7 +27,7 @@ export default function HeroPage() {
                     <DownloadButton />
                 </div>
                 <div className='flex w-full items-center justify-center'>
-                    <Link href="/features" className='text-base text-[#9B9B9B] hover:underline sm:text-lg'>See Features</Link>
+                    <Link href="#features" className='text-base text-[#9B9B9B] hover:underline sm:text-lg'>See Features</Link>
                     <Image src="/next.svg" width={15} height={15} alt='arrow' className='ml-2' />
                 </div>
 

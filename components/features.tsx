@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Features() {
     return (
-        <section className="w-full overflow-hidden py-5 sm:py-10">
+        <section id="features" className="w-full overflow-hidden py-5 sm:py-10">
             <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 sm:gap-10 sm:px-6 lg:px-10">
             <h2 className="sr-only">Features</h2>
             <div className="flex flex-col md:flex-row gap-5 sm:gap-0">
