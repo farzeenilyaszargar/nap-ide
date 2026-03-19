@@ -17,26 +17,33 @@ export default function HeroPage() {
     }, [])
 
     return (
-        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-8 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 lg:px-10'>
+        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-10 px-4 pb-10 pt-10 sm:gap-14 sm:px-6 sm:pb-14 sm:pt-20 lg:px-10'>
             <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
-                <div className='flex flex-col gap-3 sm:gap-6'>
-                    <h2 className='text-center text-3xl font-bold text-[#383838] sm:text-6xl'>Code.</h2>
-                    <h3 className='-mt-1 text-center text-3xl font-bold sm:-mt-4 sm:text-6xl'><span className='text-[#696969]'>Lightning.</span><span className='text-[#A4A4A4]'>Fast.</span></h3>
+                <div className='flex max-w-3xl flex-col gap-4 text-center'>
+                    <p className='font-display text-xs uppercase tracking-[0.3em] text-white/60'>Nap Code</p>
+                    <h2 className='font-display text-4xl font-semibold text-white sm:text-6xl'>
+                        Coordinate coding agents on your machine.
+                    </h2>
+                    <p className='text-base text-white/70 sm:text-lg'>
+                        Edit, refactor, and review across your repo with multiple agents—fast, local, and controlled.
+                    </p>
                 </div>
-                <div className=' w-full justify-center hidden sm:flex'>
-                    <DownloadButton />
+                <div className='flex flex-col items-center gap-3 sm:flex-row'>
+                    <DownloadButton showOnMobile />
+                    <Link href="/features" className='text-sm text-white/60 transition hover:text-white sm:text-base'>
+                        See Features
+                    </Link>
                 </div>
-                <div className='flex w-full items-center justify-center'>
-                    <Link href="/features" className='text-base text-[#9B9B9B] hover:underline sm:text-lg'>See Features</Link>
-                    <Image src="/next.svg" width={15} height={15} alt='arrow' className='ml-2' />
+                <div className='flex flex-wrap items-center justify-center gap-3 text-xs text-white/50 sm:text-sm'>
+                    <span className='rounded-full border border-white/10 px-3 py-1'>macOS • Windows • Linux</span>
+                    <span className='rounded-full border border-white/10 px-3 py-1'>Runs locally</span>
+                    <span className='rounded-full border border-white/10 px-3 py-1'>Multi-agent orchestration</span>
                 </div>
-
             </div>
 
-
             <div className='flex w-full items-center justify-center'>
-                <div className='w-full rounded-2xl sm:rounded-3xl'>
-                    <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-2xl sm:rounded-3xl' />
+                <div className='w-full rounded-2xl border border-white/12 bg-white/5 p-2 sm:rounded-3xl sm:p-3'>
+                    <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-xl border border-white/10 sm:rounded-2xl' />
                 </div>
             </div>
 

@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -22,21 +21,19 @@ export default function Header() {
     
     return (
         <>
-            <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
-                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-5 lg:px-10">
+            <header className="sticky top-0 z-20 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
+                <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 lg:px-10">
                     <Link href="/" className="flex justify-center items-center">
-                        <Image src="/logo.png" alt="Nap" width={32} height={32} className="h-4 w-auto rounded-md sm:h-4.5" />
+                        <Image src="/logo.png" alt="Nap" width={32} height={32} className="h-5 w-auto rounded-md sm:h-6" />
                     </Link>
 
                     {/* Desktop Navigation */}
                     
 
                     <div className="flex justify-center items-center gap-3">
-
-
                         <Link
                             href="/download"
-                            className="hidden sm:flex items-center gap-2 rounded-md border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
+                            className="hidden sm:flex items-center gap-2 rounded-full border border-white/20 bg-white px-5 py-2 text-sm font-semibold text-black shadow-[0_8px_18px_rgba(0,0,0,0.35)] transition hover:bg-white/90"
                         >
                             Download
                         </Link>

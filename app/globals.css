@@ -3,16 +3,41 @@
 
 
 @theme {
-  --color-background: rgba(255, 255, 255, 1);
-  --color-foreground: rgba(0, 0, 0, 1);
+  --color-background: #0b0b0c;
+  --color-foreground: #f5f6f7;
+  --color-muted: #a1a4aa;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-card: rgba(16, 17, 19, 0.92);
 }
 
 @layer base {
-  
+  :root {
+    color-scheme: dark;
+  }
 
   body {
-    background-color: var(--color-background);
+    background: linear-gradient(180deg, #0b0b0c 0%, #121315 50%, #0b0b0c 100%);
     color: var(--color-foreground);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.font-display {
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.font-body {
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
 }

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-transparent text-white">
       <Script
         id="breadcrumb-home"
         type="application/ld+json"

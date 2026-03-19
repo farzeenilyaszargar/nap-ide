@@ -3,7 +3,10 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
 
 const schemaOrg = {
   "@context": "https://schema.org",
@@ -119,7 +122,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} font-body antialiased`}>
         <Script
           id="schema-org"
           type="application/ld+json"

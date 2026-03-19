@@ -69,7 +69,7 @@ export default function DownloadButton({
   return (
     <Link
       href={config.href}
-      className={`${showOnMobile ? "inline-flex" : "hidden sm:inline-flex"} items-center justify-center gap-2 rounded-lg border border-gray-300 bg-black px-7 py-2 text-xl text-white transition hover:bg-gray-800 ${className}`.trim()}
+      className={`${showOnMobile ? "inline-flex" : "hidden sm:inline-flex"} items-center justify-center gap-2 rounded-full border border-white/15 bg-white px-6 py-2.5 text-base font-semibold text-black shadow-[0_8px_20px_rgba(0,0,0,0.35)] transition hover:bg-white/90 active:bg-white/80 sm:px-7 sm:text-lg ${className}`.trim()}
     >
       Download for {config.label}
       <Image

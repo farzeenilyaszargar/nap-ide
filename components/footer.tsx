@@ -4,25 +4,25 @@ import Link from "next/link";
 //features, blog, download, social, tos, pricing
 export default function Footer() {
     return (
-        <footer className="w-full border-t border-gray-300 bg-black px-5 py-10 text-white sm:px-5 sm:py-14 lg:px-10 flex flex-col items-center">
-            <div className="flex sm:flex-row flex-col justify-between sm:items-start items-center w-full max-w-7xl gap-10 sm:gap-6 sm:px-10">
+        <footer className="w-full border-t border-white/10 bg-black/80 px-5 py-12 text-white sm:px-5 sm:py-16 lg:px-10 flex flex-col items-center">
+            <div className="flex sm:flex-row flex-col justify-between sm:items-start items-center w-full max-w-7xl gap-10 sm:gap-8 sm:px-10">
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
-                    <p className="text-sm sm:text-base  mb-2">[ Resources ]</p>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/download">Download</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/faqs">FAQ's</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/support">Support</Link>
+                    <p className="text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 text-white/60">Resources</p>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="/download">Download</Link>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="/faqs">FAQ's</Link>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="/support">Support</Link>
                 </div>
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
-                    <p className="text-sm sm:text-base  mb-2">[ Company ]</p>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/blogs" target="_blank">Blogs</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/tc">T&C</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/privacy">Privacy</Link>
+                    <p className="text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 text-white/60">Company</p>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="/blogs" target="_blank">Blogs</Link>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="/tc">T&C</Link>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="/privacy">Privacy</Link>
                 </div>
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
-                    <p className="text-sm sm:text-base  mb-2">[ Social ]</p>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://x.com/napHQ" target="_blank">X</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.linkedin.com/in/naphq/" target="_blank">Linkedin</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.youtube.com/@napHQ" target="_blank">Youtube</Link>
+                    <p className="text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 text-white/60">Social</p>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="https://x.com/napHQ" target="_blank">X</Link>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="https://www.linkedin.com/in/naphq/" target="_blank">Linkedin</Link>
+                    <Link className="py-0.5 text-sm text-white/60 transition-colors hover:text-white sm:text-base" href="https://www.youtube.com/@napHQ" target="_blank">Youtube</Link>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@ export default function Footer() {
            nap codes multiple files with agents on your pc.
             </p>
 
-            <div className="mt-10 text-center text-sm text-gray-600 sm:mt-14">© {new Date().getFullYear()} Nap Co. By Guds & Fizzy</div>
+            <div className="mt-10 text-center text-xs text-white/40 sm:mt-14">© {new Date().getFullYear()} Nap Co. By Guds & Fizzy</div>
 
 
 

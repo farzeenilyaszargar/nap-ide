@@ -2,43 +2,56 @@ import Image from "next/image";
 
 export default function Features() {
     return (
-        <section className="w-full overflow-hidden py-5 sm:py-10">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 sm:gap-10 sm:px-6 lg:px-10">
-            <h2 className="sr-only">Features</h2>
-            <div className="flex flex-col md:flex-row gap-5 sm:gap-0">
-                <div className="flex flex-col not-last:sm:mr-5 bg-[#F5F5F5] rounded-2xl p-6 sm:p-15 gap-5 text-center">
-                    <h3 className="text-2xl sm:text-4xl font-bold text-[#7E7E7E]">For the <span className="text-[#414141]">Real Devs</span>  <br></br>Nap is the best way to <span className="text-[#414141]">Code.</span></h3>
-                    <p className="text-xs sm:text-base text-[#7E7E7E]">For developers who builds real stuff Nap delivers a world class intelligent agent that sees your entire codebase with absolute clarity, understands every file, every nuance, and builds with the sophistication of a top tier engineer.</p>
-                    <Image src="/parallel.jpeg" width={2000} height={2000} alt="img" className="rounded-2xl" />
+        <section className="w-full overflow-hidden py-10 sm:py-16">
+            <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 sm:gap-12 sm:px-6 lg:px-10">
+                <h2 className="sr-only">Features</h2>
+                <div className="grid gap-5 md:grid-cols-2">
+                    <div className="flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 text-left sm:p-8">
+                        <div className="space-y-3">
+                            <h3 className="font-display text-2xl font-semibold text-white sm:text-4xl">
+                                Precision across your entire codebase.
+                            </h3>
+                            <p className="text-sm text-white/65 sm:text-base">
+                                Agents understand context across files, track intent, and ship changes that feel
+                                engineered—not guessed.
+                            </p>
+                        </div>
+                        <Image src="/parallel.jpeg" width={2000} height={2000} alt="Parallel agents" className="rounded-2xl border border-white/10" />
+                    </div>
+                    <div className="flex h-full flex-col gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 text-left sm:p-8">
+                        <Image src="/files.jpeg" width={2000} height={2000} alt="Multi-file edits" className="rounded-2xl border border-white/10" />
+                        <div className="space-y-3">
+                            <h3 className="font-display text-2xl font-semibold text-white sm:text-4xl">
+                                Multi-file edits, coordinated in minutes.
+                            </h3>
+                            <p className="text-sm text-white/65 sm:text-base">
+                                Manage agents, workflows, and state from one control center—no context switching,
+                                no lost changes.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div className="flex flex-col sm:ml-5 bg-[#1A1A1A] rounded-2xl p-6 sm:p-15 gap-5 text-center">
-                    <Image src="/files.jpeg" width={2000} height={2000} alt="img" className="rounded-2xl" />
-                    <h3 className="text-2xl sm:text-4xl font-bold text-[#EAEAEA]">Nap edits <span className="text-[#6D6D6D]">multiple files at a time</span>  so relax <span className="text-[#6D6D6D]">&amp; take a Nap.</span></h3>
-                    <p className="text-xs sm:text-base text-[#6D6D6D]">Manage agents, workflows, and project state from one place. Switch contexts fast, track changes, and keep the entire build loop under your control.</p>
-                </div>
-            </div>
 
-
-            <div className="flex flex-col md:flex-row items-center gap-5 sm:gap-10">
-                <div className="md:w-1/2 w-full relative ">
-                    <div className="">
+                <div className="flex flex-col items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-6 sm:flex-row sm:gap-10 sm:p-10">
+                    <div className="w-full sm:w-1/2">
                         <Image
                             src="/git.jpeg"
-                            alt="Built for Performance"
-                            className="rounded-2xl md:rounded-r-2xl object-cover"
+                            alt="Built for performance"
+                            className="rounded-2xl border border-white/10 object-cover"
                             width={800}
                             height={600}
                         />
                     </div>
+                    <div className="w-full sm:w-1/2 text-center sm:text-left">
+                        <h3 className="font-display text-2xl font-semibold text-white sm:text-4xl">
+                            Push to Git with confidence.
+                        </h3>
+                        <p className="mt-4 text-sm text-white/65 sm:text-base">
+                            Branches, diffs, and reviews stay in sync while your agents move fast. You stay in
+                            control from start to merge.
+                        </p>
+                    </div>
                 </div>
-                <div className="md:w-1/2 w-full px-5 text-center sm:text-left">
-                    <h3 className="text-2xl sm:text-4xl font-bold mb-4 text-[#969696]">
-                        Control <span className="text-black">Anything</span> &amp; <span className="text-black">Everything</span> on Nap.
-                    </h3>
-                    <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
-                </div>
-
-            </div>
             </div>
         </section>
     );
