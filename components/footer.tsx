@@ -20,9 +20,9 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
                     <p className="text-sm sm:text-base  mb-2">[ Social ]</p>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://x.com/napinc" target="_blank">X</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.linkedin.com/in/farzeenilyaszargar/" target="_blank">Linkedin</Link>
-                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.youtube.com/@nap-tui" target="_blank">Youtube</Link>
+                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://x.com/napHQ" target="_blank">X</Link>
+                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.linkedin.com/in/naphq/" target="_blank">Linkedin</Link>
+                    <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.youtube.com/@napHQ" target="_blank">Youtube</Link>
                 </div>
             </div>
 
