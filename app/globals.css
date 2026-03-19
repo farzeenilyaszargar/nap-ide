@@ -16,7 +16,10 @@
   }
 
   body {
-    background: linear-gradient(180deg, #0b0b0c 0%, #121315 50%, #0b0b0c 100%);
+    background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(255, 255, 255, 0.06), transparent 60%),
+      radial-gradient(900px 500px at 85% 5%, rgba(255, 255, 255, 0.04), transparent 55%),
+      linear-gradient(180deg, #0b0b0c 0%, #121315 50%, #0b0b0c 100%);
     color: var(--color-foreground);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -36,6 +39,46 @@
 .font-display {
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
   letter-spacing: -0.015em;
+}
+
+.bg-metal {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+.metal-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.fade-up {
+  animation: fadeUp 700ms ease-out both;
+}
+
+.fade-up-delay-1 {
+  animation: fadeUp 700ms ease-out 120ms both;
+}
+
+.fade-up-delay-2 {
+  animation: fadeUp 700ms ease-out 240ms both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-up-delay-1,
+  .fade-up-delay-2 {
+    animation: none;
+  }
 }
 
 .font-body {

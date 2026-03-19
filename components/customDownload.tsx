@@ -77,7 +77,7 @@ export default function DownloadButton({
         width={18}
         height={18}
         alt={config.label}
-        className="h-4 w-4"
+        className="h-4 w-4 invert"
       />
     </Link>
   );

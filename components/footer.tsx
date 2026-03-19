@@ -4,7 +4,7 @@ import Link from "next/link";
 //features, blog, download, social, tos, pricing
 export default function Footer() {
     return (
-        <footer className="w-full border-t border-white/10 bg-black/80 px-5 py-12 text-white sm:px-5 sm:py-16 lg:px-10 flex flex-col items-center">
+        <footer className="w-full border-t border-white/10 bg-black px-5 py-12 text-white sm:px-5 sm:py-16 lg:px-10 flex flex-col items-center">
             <div className="flex sm:flex-row flex-col justify-between sm:items-start items-center w-full max-w-7xl gap-10 sm:gap-8 sm:px-10">
                 <div className="flex flex-col text-left sm:w-1/6 w-1/2">
                     <p className="text-xs sm:text-sm uppercase tracking-[0.2em] mb-3 text-white/60">Resources</p>

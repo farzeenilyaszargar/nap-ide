@@ -21,10 +21,10 @@ export default function Header() {
     
     return (
         <>
-            <header className="sticky top-0 z-20 w-full border-b border-white/10 bg-black/70 backdrop-blur-xl">
+            <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-xl">
                 <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 lg:px-10">
                     <Link href="/" className="flex justify-center items-center">
-                        <Image src="/logo.png" alt="Nap" width={32} height={32} className="h-5 w-auto rounded-md sm:h-6" />
+                        <Image src="/white-logo.png" alt="Nap" width={24} height={24} className="h-3.5 w-auto rounded-md sm:h-4" />
                     </Link>
 
                     {/* Desktop Navigation */}
