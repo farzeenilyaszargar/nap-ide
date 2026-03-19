@@ -6,7 +6,10 @@ import DownloadButton from './customDownload'
 
 export default function HeroPage() {
     return (
-        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-8 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 lg:px-10'>
+        <section
+            className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-8 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 lg:px-10 bg-cover bg-center'
+            style={{ backgroundImage: "url('/bg.gif')", backgroundSize: "180% auto" }}
+        >
             <div className='flex w-full flex-col items-center gap-6 sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h1 className='text-center text-3xl font-bold text-[#383838] sm:text-6xl'>Code.</h1>
