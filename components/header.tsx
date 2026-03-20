@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react'
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [showSocials, setShowSocials] = useState(false)
 
     // Close mobile menu on resize to desktop
     useEffect(() => {
@@ -44,6 +45,17 @@ export default function Header() {
                             Download
                         </Link>
                     </div>
+
+                    <button
+                        onClick={() => {
+                            setShowSocials(false)
+                            setMobileMenuOpen(true)
+                        }}
+                        className="ml-auto inline-flex items-center justify-center rounded-md p-2 text-black transition hover:bg-black/5 sm:hidden"
+                        aria-label="Open menu"
+                    >
+                        <Menu className="h-5 w-5" />
+                    </button>
                 </div>
             </header>
 
@@ -57,7 +69,86 @@ export default function Header() {
                     />
 
                     {/* Menu Panel */}
-                    <div className="absolute top-0 right-0 h-full w-72 max-w-[85vw] bg-white shadow-xl">
+                    <div className="absolute inset-0 bg-white">
+                        <div className="flex items-center justify-end px-4 py-3 pr-5">
+                            <button
+                                onClick={() => {
+                                    setMobileMenuOpen(false)
+                                    setShowSocials(false)
+                                }}
+                                className="rounded-md p-2 text-black/70 transition hover:bg-black/5"
+                                aria-label="Close menu"
+                            >
+                                <X className="h-5 w-5" />
+                            </button>
+                        </div>
+                        <nav className="flex flex-col gap-3 px-6 py-6">
+                            {showSocials ? (
+                                <>
+                                    <Link
+                                        href="https://x.com/napHQ"
+                                        target="_blank"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "40ms" }}
+                                    >
+                                        X
+                                    </Link>
+                                    <Link
+                                        href="https://www.linkedin.com/in/naphq/"
+                                        target="_blank"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "140ms" }}
+                                    >
+                                        Linkedin
+                                    </Link>
+                                    <Link
+                                        href="https://www.youtube.com/@napHQ"
+                                        target="_blank"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "240ms" }}
+                                    >
+                                        Youtube
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Link
+                                        href="/"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "40ms" }}
+                                    >
+                                        Overview
+                                    </Link>
+                                    <Link
+                                        href="/blogs"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "140ms" }}
+                                    >
+                                        Blogs
+                                    </Link>
+                                    <Link
+                                        href="/faqs"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "240ms" }}
+                                    >
+                                        FAQ&apos;s
+                                    </Link>
+                                    <button
+                                        onClick={() => setShowSocials(true)}
+                                        className="menu-item rounded-md px-2 py-2 text-left text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "340ms" }}
+                                    >
+                                        Socials
+                                    </button>
+                                </>
+                            )}
+                        </nav>
                     </div>
                 </div>
             )}

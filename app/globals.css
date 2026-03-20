@@ -20,3 +20,23 @@
     scroll-behavior: smooth;
   }
 }
+
+.menu-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: menuFadeIn 520ms ease-out forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes menuFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-item {
+    animation: none;
+  }
+}
