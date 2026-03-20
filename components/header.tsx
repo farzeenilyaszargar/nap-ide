@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
@@ -8,6 +8,8 @@ import { Menu, X } from 'lucide-react'
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [showSocials, setShowSocials] = useState(false)
+    const [isHidden, setIsHidden] = useState(false)
+    const lastScrollY = useRef(0)
 
     // Close mobile menu on resize to desktop
     useEffect(() => {
@@ -20,10 +22,29 @@ export default function Header() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const current = window.scrollY
+            const scrollingDown = current > lastScrollY.current + 4
+            const scrollingUp = current < lastScrollY.current - 4
+
+            if (scrollingDown && current > 40) {
+                setIsHidden(true)
+            } else if (scrollingUp) {
+                setIsHidden(false)
+            }
+
+            lastScrollY.current = current
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     
     return (
         <>
-            <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
+            <header className={`sticky top-0 z-20 w-full bg-transparent backdrop-blur-md transition-transform duration-300 ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
                 <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-start px-5 lg:px-10">
                     <Link href="/" className="flex justify-center items-center">
                         <Image src="/logo.png" alt="Nap" width={28} height={28} className="h-3 w-auto rounded-md sm:h-4.5" />
