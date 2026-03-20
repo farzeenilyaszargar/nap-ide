@@ -5,20 +5,20 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <footer className="w-full border-t border-gray-300 bg-black px-5 py-10 text-white sm:px-5 sm:py-14 lg:px-10 flex flex-col items-center">
-            <div className="flex sm:flex-row flex-col justify-between sm:items-start items-center w-full max-w-7xl gap-10 sm:gap-6 sm:px-10">
-                <div className="flex flex-col text-left sm:w-1/6 w-1/2">
+            <div className="grid w-full max-w-7xl grid-cols-2 gap-6 sm:flex sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:px-10">
+                <div className="flex flex-col text-left w-full sm:w-1/6">
                     <p className="text-sm sm:text-base  mb-2">[ Resources ]</p>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/download">Download</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/faqs">FAQ's</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/support">Support</Link>
                 </div>
-                <div className="flex flex-col text-left sm:w-1/6 w-1/2">
+                <div className="flex flex-col text-left w-full sm:w-1/6">
                     <p className="text-sm sm:text-base  mb-2">[ Company ]</p>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/blogs" target="_blank">Blogs</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/tc">T&C</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="/privacy">Privacy</Link>
                 </div>
-                <div className="flex flex-col text-left sm:w-1/6 w-1/2">
+                <div className="flex flex-col text-left w-full sm:w-1/6">
                     <p className="text-sm sm:text-base  mb-2">[ Social ]</p>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://x.com/napHQ" target="_blank">X</Link>
                     <Link className="py-0.5 text-sm text-gray-500 transition-colors hover:text-[#ffffff] sm:text-base" href="https://www.linkedin.com/in/naphq/" target="_blank">Linkedin</Link>
