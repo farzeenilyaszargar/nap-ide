@@ -23,20 +23,23 @@ export default function Header() {
     return (
         <>
             <header className="sticky top-0 z-20 w-full bg-transparent backdrop-blur-md">
-                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-5 lg:px-10">
+                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-start px-5 lg:px-10">
                     <Link href="/" className="flex justify-center items-center">
-                        <Image src="/logo.png" alt="Nap" width={32} height={32} className="h-4 w-auto rounded-md sm:h-4.5" />
+                        <Image src="/logo.png" alt="Nap" width={28} height={28} className="h-3 w-auto rounded-md sm:h-4.5" />
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    
-
-                    <div className="flex justify-center items-center gap-3">
-
-
+                    <div className="ml-auto hidden items-center gap-6 sm:flex">
+                        <nav className="flex items-center gap-6">
+                            <Link href="/" className="text-sm text-black/70 transition-colors hover:text-black">
+                                Overview
+                            </Link>
+                            <Link href="/blogs" className="text-sm text-black/70 transition-colors hover:text-black">
+                                Blogs
+                            </Link>
+                        </nav>
                         <Link
                             href="/download"
-                            className="hidden sm:flex items-center gap-2 rounded-md border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
+                            className="flex items-center gap-2 rounded-md border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
                         >
                             Download
                         </Link>
