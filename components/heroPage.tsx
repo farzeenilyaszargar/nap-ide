@@ -17,7 +17,7 @@ export default function HeroPage() {
     }, [])
 
     return (
-        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 lg:px-10 overflow-x-hidden'>
+        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-4 lg:px-10 overflow-x-hidden'>
             <div className='flex w-full flex-col items-start gap-6 sm:items-center sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h2 className='text-left text-2xl font-medium tracking-tight text-[#383838] sm:hidden'>
