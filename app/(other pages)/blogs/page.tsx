@@ -94,7 +94,7 @@ export default function BlogsPage() {
                             {currentBlog.excerpt}
                         </p>
 
-                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                             <div className="flex items-center gap-3">
                                 <Image src={"/logo-black.png"} alt={currentBlog.author} width={32} height={32} className="rounded-full" />
                                 <span className="text-gray-700 text-sm sm:text-base font-medium">{currentBlog.author}</span>
