@@ -32,7 +32,7 @@ export default function Features() {
                             <p className="text-xs sm:text-base text-[#6D6D6D]">Manage agents, workflows, and project state from one place. Switch contexts fast, track changes, and keep the entire build loop under your control.</p>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-6 text-left md:flex-row md:items-center">
+                    <div className="flex flex-col gap-6 bg-[#F5F5F5] rounded-sm sm:rounded-lg p-6 sm:p-15 text-left overflow-hidden md:flex-row md:items-center">
                         <div className="overflow-hidden rounded-md sm:rounded-md md:w-2/3">
                             <Image
                                 src="/git.jpeg"
