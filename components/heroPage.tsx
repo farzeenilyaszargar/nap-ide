@@ -17,18 +17,18 @@ export default function HeroPage() {
     }, [])
 
     return (
-        <section className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-0 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-20 lg:px-10 overflow-x-hidden'>
+        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-0 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-25 lg:px-10 overflow-x-hidden'>
             <div className='flex w-full flex-col items-start gap-6 sm:items-center sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h2 className='text-left text-2xl font-bold tracking-tight text-[#383838] sm:hidden'>
                         Nap is the best way to code with AI and run multiple agents on your PC.
                     </h2>
                     <div className='hidden flex-col gap-3 sm:flex sm:gap-6'>
-                        <h2 className='text-center text-2xl font-bold tracking-tight text-[#383838] sm:text-5xl'>Code.
-                            <span className='text-[#696969]'> Lightning. </span>
-                            <span className='text-[#A4A4A4]'>Fast.</span>
+                        <h2 className='text-center text-2xl font-semibold tracking-normal text-[#383838] sm:text-5xl'>Code.
+                            <span className='text-[#5e5e5e]'> Lightning. </span>
+                            <span className='text-[#929292]'>Fast.</span>
                         </h2>
-                        <p className='text-left text-lg text-[#696969] sm:text-xl'>Nap is the best way to code with AI and run multiple agents on your PC.</p>
+                        <p className='text-left text-lg text-[#696969] sm:text-medium'>Nap is the best way to code with AI and run multiple agents on your PC.</p>
 
                     </div>
                 </div>
