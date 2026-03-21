@@ -3,26 +3,31 @@ import Image from "next/image";
 export default function FAQs() {
     const faqs = [
         {
-            question: "What is the purpose of this platform?",
+            question: "Is this app free?",
             answer:
-                "This platform helps users explore various features, tools, and resources designed to simplify everyday workflows.",
+                "Yes, it’s free for everyone, and AI is included.",
         },
         {
-            question: "How secure is my data?",
+            question: "Are there worktrees in this?",
             answer:
-                "Your data is protected with strong encryption and industry-standard security measures to ensure privacy and reliability.",
+                "Yes. You can create worktrees to keep changes isolated and switch contexts fast.",
         },
         {
-            question: "Can I use this service for free?",
+            question: "What are parallel agents and how do I use them here?",
             answer:
-                "Yes, we offer a free tier with access to essential features, and you can upgrade anytime for additional functionality.",
+                "Parallel agents let you split work across tasks at the same time. Assign each agent a goal and review the results before merging.",
+        },
+        {
+            question: "How do commits work in this app?",
+            answer:
+                "You can review changes, stage what you want, and create commits per task or branch for clean history.",
         },
     ];
 
     return (
         <div className="flex justify-center items-center w-full overflow-hidden mt-20">
             <div className="w-full max-w-4xl px-6 sm:px-10 space-y-6">
-                <h2 className="text-2xl py-7 font-normal text-center text-black">Frequently Asked Questions</h2>
+                <h2 className="text-3xl py-7 font-normal text-center text-black">Frequently Asked Questions</h2>
                 <div className="space-y-7">
                     {faqs.map((faq, index) => (
                         <div key={index} className="text-left">
