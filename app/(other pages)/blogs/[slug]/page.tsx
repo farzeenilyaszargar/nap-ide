@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -139,9 +140,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
                         <div className="mt-6 flex flex-wrap items-center gap-6 text-gray-600">
                             <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                                    {blog.author.charAt(0)}
-                                </div>
+                                <Image src={"/logo-black.png"} alt={blog.author} width={32} height={32} className="rounded-full" />
                                 <span className="font-medium">{blog.author}</span>
                             </div>
                             <div className="flex items-center gap-2">

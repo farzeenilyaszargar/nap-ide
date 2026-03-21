@@ -1,62 +1,50 @@
-"use client"
-import { useState } from "react";
+import Image from "next/image";
 
 export default function FAQs() {
     const faqs = [
         {
-            question: "What is the purpose of this platform?",
+            question: "Is this app free?",
             answer:
-                "This platform helps users explore various features, tools, and resources designed to simplify everyday workflows.",
+                "Yes, it’s free for everyone, and AI is included. Start right away without a card.",
         },
         {
-            question: "How secure is my data?",
+            question: "Are there worktrees in this?",
             answer:
-                "Your data is protected with strong encryption and industry-standard security measures to ensure privacy and reliability.",
+                "Yes. Create worktrees to keep changes isolated and switch contexts fast.",
         },
         {
-            question: "Can I use this service for free?",
+            question: "What are parallel agents and how do I use them here?",
             answer:
-                "Yes, we offer a free tier with access to essential features, and you can upgrade anytime for additional functionality.",
+                "Parallel agents let you split work across tasks at the same time. Assign a goal to each agent and review results before merging.",
         },
         {
-            question: "Do you offer customer support?",
+            question: "How do commits work in this app?",
             answer:
-                "We provide 24/7 customer support to assist with any issues or questions you may have.",
+                "Review changes, stage what you want, and commit per task or branch for clean history.",
         },
     ];
 
-    const [open, setOpen] = useState<number | null>(null);
-
-    const toggle = (index: number) => {
-        setOpen(open === index ? null : index);
-    };
-
     return (
-        <div className="flex justify-center items-center w-full overflow-hidden mt-20">
-            <div className="w-full max-w-4xl px-6 sm:px-10 space-y-4">
-                <h2 className="text-3xl font-semibold mb-4 text-center text-black">Frequently Asked Questions</h2>
-                {faqs.map((faq, index) => (
-                    <button
-                        key={index}
-                        type="button"
-                        onClick={() => toggle(index)}
-                        aria-expanded={open === index}
-                        className={`w-full text-left rounded-2xl border p-5 transition-all ${
-                            open === index
-                                ? "border-black bg-white shadow-md"
-                                : "border-gray-200 bg-gray-50 hover:bg-white"
-                        }`}
-                    >
-                        <div className="flex justify-between items-center gap-4">
-                            <span className="text-lg font-medium text-black">{faq.question}</span>
-                            <span className="text-black text-xl">{open === index ? "−" : "+"}</span>
+        <div className="flex justify-center items-center w-full overflow-hidden mt-12 sm:mt-20">
+            <div className="w-full max-w-4xl px-4 py-6 sm:px-10 sm:py-10 space-y-5 sm:space-y-6">
+                <h2 className="text-2xl sm:text-3xl py-5 sm:py-7 font-normal m-5 sm:text-center text-black">Frequently Asked Questions</h2>
+                <div className="space-y-6 sm:space-y-7 m-5">
+                    {faqs.map((faq, index) => (
+                        <div key={index} className="text-left">
+                            <p className="text-base sm:text-lg font-medium text-black">{faq.question}</p>
+                            <div className="mt-2 flex items-start gap-3 text-gray-600">
+                                <Image
+                                    src="/down-left.png"
+                                    alt=""
+                                    width={12}
+                                    height={12}
+                                    className="-scale-x-100 mt-1 h-3 w-3 shrink-0"
+                                />
+                                <p className="text-sm sm:text-base leading-relaxed">{faq.answer}</p>
+                            </div>
                         </div>
-
-                        {open === index && (
-                            <p className="mt-3 text-gray-600">{faq.answer}</p>
-                        )}
-                    </button>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );

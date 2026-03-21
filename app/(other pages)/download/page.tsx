@@ -31,7 +31,7 @@ export default function DownloadPage() {
   const linuxUrl = "/api/download/linux";
 
   return (
-    <div className="min-h-screen text-black">
+    <div className=" text-black">
       <Script
         id="breadcrumb-download"
         type="application/ld+json"
@@ -57,15 +57,15 @@ export default function DownloadPage() {
         }}
       />
       <Header />
-      <div className="max-w-6xl mx-auto px-4 py-16 sm:py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">
+      <div className="max-w-6xl mx-auto px-4 pt-14 pb-10 sm:pt-16 sm:mt-20 mb-5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-6 sm:pb-8">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-4xl sm:text-6xl font-bold text-[#383838]">download</h2>
+            <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#383838] sm:text-5xl">download</h2>
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="my-14 grid grid-cols-1 gap-6 sm:grid-cols-3">
           <div className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-[0_18px_45px_rgba(0,0,0,0.08)]">
             <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center">
               <Image src="/apple-icon.png" alt="macOS" width={65} height={65} className="brightness-0" />

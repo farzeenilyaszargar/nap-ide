@@ -44,10 +44,10 @@ export default function Header() {
     
     return (
         <>
-            <header className={`w-full bg-transparent backdrop-blur-md transition-transform duration-300 sm:fixed sm:top-0 sm:left-0 sm:right-0 sm:z-20 ${isHidden ? '-translate-y-full sm:translate-y-0' : 'translate-y-0'}`}>
-                <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-start px-5 lg:px-10">
+            <header className={`w-full bg-white/70 backdrop-blur-md transition-transform duration-300 sticky top-0 left-0 right-0 z-20 sm:fixed ${isHidden ? '-translate-y-full sm:translate-y-0' : 'translate-y-0'}`}>
+                <div className="mx-auto flex h-12 w-full max-w-6xl items-center justify-start px-4 lg:px-8">
                     <Link href="/" className="flex justify-center items-center">
-                        <Image src="/logo.png" alt="Nap" width={28} height={28} className="h-3 w-auto rounded-md sm:h-4.5" />
+                        <Image src="/logo.png" alt="Nap" width={22} height={22} className="h-2.5 w-auto rounded-md sm:h-3.5" />
                     </Link>
 
                     <div className="ml-auto hidden items-center gap-6 sm:flex">
@@ -61,7 +61,7 @@ export default function Header() {
                         </nav>
                         <Link
                             href="/download"
-                            className="flex items-center gap-2 rounded-lg border border-black bg-black px-3 py-1 text-white transition-colors hover:bg-white hover:text-black hover:border-black"
+                            className="flex items-center gap-2 rounded-full border border-black bg-[#171717] px-2.5 py-1 text-sm text-white transition-colors hover:bg-white hover:text-black hover:border-black"
                         >
                             Download
                         </Link>
@@ -116,15 +116,6 @@ export default function Header() {
                                         X
                                     </Link>
                                     <Link
-                                        href="https://www.linkedin.com/in/naphq/"
-                                        target="_blank"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
-                                        style={{ animationDelay: "140ms" }}
-                                    >
-                                        Linkedin
-                                    </Link>
-                                    <Link
                                         href="https://www.youtube.com/@napHQ"
                                         target="_blank"
                                         onClick={() => setMobileMenuOpen(false)}
@@ -152,18 +143,10 @@ export default function Header() {
                                     >
                                         Blogs
                                     </Link>
-                                    <Link
-                                        href="/faqs"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
-                                        style={{ animationDelay: "240ms" }}
-                                    >
-                                        FAQ&apos;s
-                                    </Link>
                                     <button
                                         onClick={() => setShowSocials(true)}
                                         className="menu-item rounded-md px-2 py-2 text-left text-3xl font-medium text-black transition hover:bg-black/5"
-                                        style={{ animationDelay: "340ms" }}
+                                        style={{ animationDelay: "240ms" }}
                                     >
                                         Socials
                                     </button>
