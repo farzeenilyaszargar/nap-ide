@@ -108,7 +108,6 @@ export default function BlogsPage() {
                                 <Image src="/right-arrow.png" alt="Read" width={16} height={16} className="h-4 w-4 inline-block ml-2 invert" />
                             </Link>
                         </div>
-                        <Image src={currentBlog.image} alt={currentBlog.title} width={800} height={400} className="hidden sm:block w-full h-auto rounded-lg mt-8 sm:mt-10 object-cover" />
                     </div>
 
                     {/* Navigation Arrows */}
