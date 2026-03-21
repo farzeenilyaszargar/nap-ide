@@ -37,6 +37,12 @@ export default function Features() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-6 bg-[#F5F5F5] rounded-sm sm:rounded-lg p-7 text-left overflow-hidden md:flex-row md:items-center">
+                        <div className="w-full px-5 md:w-1/3">
+                            <h3 className="text-2xl sm:text-4xl font-medium tracking-tight mb-4 text-[#969696]">
+                                Control <span className="text-black">Anything</span> &amp; <span className="text-black">Everything</span> on Nap.
+                            </h3>
+                            <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
+                        </div>
                         <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "5 / 3" }}>
                             <Image
                                 src="/git.jpeg"
@@ -45,12 +51,6 @@ export default function Features() {
                                 sizes="(min-width: 768px) 66vw, 100vw"
                                 className="object-cover object-left"
                             />
-                        </div>
-                        <div className="w-full px-5 md:w-1/3">
-                            <h3 className="text-2xl sm:text-4xl font-medium tracking-tight mb-4 text-[#969696]">
-                                Control <span className="text-black">Anything</span> &amp; <span className="text-black">Everything</span> on Nap.
-                            </h3>
-                            <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
                         </div>
                     </div>
                 </div>
