@@ -20,13 +20,13 @@ export default function FAQs() {
     return (
         <div className="flex justify-center items-center w-full overflow-hidden mt-20">
             <div className="w-full max-w-4xl px-6 sm:px-10 space-y-6">
-                <h2 className="text-3xl font-semibold text-center text-black">Frequently Asked Questions</h2>
-                <div className="space-y-5">
+                <h2 className="text-2xl py-7 font-normal text-center text-black">Frequently Asked Questions</h2>
+                <div className="space-y-7">
                     {faqs.map((faq, index) => (
                         <div key={index} className="text-left">
                             <p className="text-lg font-medium text-black">{faq.question}</p>
                             <div className="mt-2 flex items-start gap-3 text-gray-600">
-                                <span className="font-mono text-gray-400">|_</span>
+                                <span className="font-mono text-gray-400 font-spac">|_</span>
                                 <p className="text-sm sm:text-base">{faq.answer}</p>
                             </div>
                         </div>
