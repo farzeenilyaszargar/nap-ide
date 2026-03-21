@@ -67,7 +67,7 @@ export default function BlogsPage() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 sm:pt-16 sm:pb-8 sm:mt-20">
                 <div className="text-center">
                     <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-                    <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#383838] sm:text-5xl">blogs</h2>
+                    <h2 className="text-center text-4xl font-semibold tracking-[-0.04em] text-[#383838] sm:text-5xl">blogs</h2>
                 </div>
             </div>
 
@@ -81,9 +81,9 @@ export default function BlogsPage() {
                             <span className="bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
                                 {currentBlog.category}
                             </span>
-                            <span className="text-gray-400 text-xs sm:text-sm">{currentBlog.date}</span>
-                            <span className="text-gray-400 text-xs sm:text-sm">•</span>
-                            <span className="text-gray-400 text-xs sm:text-sm">{currentBlog.readTime}</span>
+                            <span className="hidden sm:inline text-gray-400 text-xs sm:text-sm">{currentBlog.date}</span>
+                            <span className="hidden sm:inline text-gray-400 text-xs sm:text-sm">•</span>
+                            <span className="hidden sm:inline text-gray-400 text-xs sm:text-sm">{currentBlog.readTime}</span>
                         </div>
 
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-6 leading-tight">
@@ -108,7 +108,7 @@ export default function BlogsPage() {
                                 <Image src="/right-arrow.png" alt="Read" width={16} height={16} className="h-4 w-4 inline-block ml-2 invert" />
                             </Link>
                         </div>
-                        <Image src={currentBlog.image} alt={currentBlog.title} width={800} height={400} className="w-full h-auto rounded-lg mt-8 sm:mt-10 object-cover" />
+                        <Image src={currentBlog.image} alt={currentBlog.title} width={800} height={400} className="hidden sm:block w-full h-auto rounded-lg mt-8 sm:mt-10 object-cover" />
                     </div>
 
                     {/* Navigation Arrows */}

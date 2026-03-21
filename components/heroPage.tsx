@@ -49,7 +49,7 @@ export default function HeroPage() {
 
 
             <div className='flex w-full items-center justify-start overflow-visible sm:justify-center'>
-                <div className='relative w-full max-w-6xl sm:w-[140vw] sm:max-w-none'>
+                <div className='relative w-full max-w-6xl sm:w-[140vw] sm:max-w-none -ml-6 sm:ml-0'>
                     <Image src={"/new-main.png"} width={1280} height={720} alt='demo' className='w-full rounded-md sm:rounded-md h-[60vh] sm:h-auto object-cover object-left' />
                 </div>
             </div>
