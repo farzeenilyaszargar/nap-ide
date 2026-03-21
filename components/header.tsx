@@ -61,7 +61,7 @@ export default function Header() {
                         </nav>
                         <Link
                             href="/download"
-                            className="flex items-center gap-2 rounded-full border border-black bg-black px-2.5 py-1 text-sm text-white transition-colors hover:bg-white hover:text-black hover:border-black"
+                            className="flex items-center gap-2 rounded-full border border-black bg-[#171717] px-2.5 py-1 text-sm text-white transition-colors hover:bg-white hover:text-black hover:border-black"
                         >
                             Download
                         </Link>
