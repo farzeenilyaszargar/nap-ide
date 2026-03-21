@@ -5,28 +5,28 @@ export default function FAQs() {
         {
             question: "Is this app free?",
             answer:
-                "Yes, it’s free for everyone, and AI is included. You can start right away without a credit card.",
+                "Yes, it’s free for everyone, and AI is included. Start right away without a card.",
         },
         {
             question: "Are there worktrees in this?",
             answer:
-                "Yes. You can create worktrees to keep changes isolated and switch contexts fast. It’s great for parallel experiments or quick hotfixes.",
+                "Yes. Create worktrees to keep changes isolated and switch contexts fast.",
         },
         {
             question: "What are parallel agents and how do I use them here?",
             answer:
-                "Parallel agents let you split work across tasks at the same time. Assign each agent a goal and review the results before merging. It’s a simple way to move faster without losing control.",
+                "Parallel agents let you split work across tasks at the same time. Assign a goal to each agent and review results before merging.",
         },
         {
             question: "How do commits work in this app?",
             answer:
-                "You can review changes, stage what you want, and create commits per task or branch for clean history. This keeps your timeline clean and easy to audit.",
+                "Review changes, stage what you want, and commit per task or branch for clean history.",
         },
     ];
 
     return (
         <div className="flex justify-center items-center w-full overflow-hidden mt-12 sm:mt-20">
-            <div className="w-full max-w-4xl px-4 sm:px-10 space-y-5 sm:space-y-6">
+            <div className="w-full max-w-4xl px-4 py-6 sm:px-10 sm:py-10 space-y-5 sm:space-y-6">
                 <h2 className="text-2xl sm:text-3xl py-5 sm:py-7 font-normal text-center text-black">Frequently Asked Questions</h2>
                 <div className="space-y-6 sm:space-y-7">
                     {faqs.map((faq, index) => (
