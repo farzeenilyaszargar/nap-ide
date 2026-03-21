@@ -71,7 +71,6 @@ export default function DownloadButton({
       href={config.href}
       className={`${showOnMobile ? "inline-flex" : "hidden sm:inline-flex"} items-center justify-center gap-2 rounded-full border border-gray-300 bg-black px-7 py-2 text-xl text-white transition hover:bg-gray-800 ${className}`.trim()}
     >
-      Download for {config.label}
       <Image
         src={config.icon}
         width={18}
@@ -79,6 +78,7 @@ export default function DownloadButton({
         alt={config.label}
         className="h-4 w-4"
       />
+      Download for {config.label}
     </Link>
   );
 }
