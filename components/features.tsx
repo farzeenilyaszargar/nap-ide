@@ -32,7 +32,7 @@ export default function Features() {
                             />
                         </div>
                         <div className="flex flex-col gap-5 md:w-1/3">
-                            <h3 className="text-2xl sm:text-3xl font-medium tracking-tight text-[#EAEAEA]">Nap edits <span className="text-[#6D6D6D]">multiple files at a time</span>  so relax <span className="text-[#6D6D6D]">&amp; take a Nap.</span></h3>
+                            <h3 className="text-2xl sm:text-4xl font-medium tracking-tight text-[#EAEAEA]">Nap edits <span className="text-[#6D6D6D]">multiple files at a time</span>  so relax <span className="text-[#6D6D6D]">&amp; take a Nap.</span></h3>
                             <p className="text-xs sm:text-base text-[#6D6D6D]">Manage agents, workflows, and project state from one place. Switch contexts fast, track changes, and keep the entire build loop under your control.</p>
                         </div>
                     </div>
