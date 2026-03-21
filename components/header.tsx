@@ -44,7 +44,7 @@ export default function Header() {
     
     return (
         <>
-            <header className={`w-full bg-white/70 backdrop-blur-md transition-transform duration-300 sm:fixed sm:top-0 sm:left-0 sm:right-0 sm:z-20 ${isHidden ? '-translate-y-full sm:translate-y-0' : 'translate-y-0'}`}>
+            <header className={`w-full bg-white/70 backdrop-blur-md transition-transform duration-300 sticky top-0 left-0 right-0 z-20 sm:fixed ${isHidden ? '-translate-y-full sm:translate-y-0' : 'translate-y-0'}`}>
                 <div className="mx-auto flex h-12 w-full max-w-6xl items-center justify-start px-4 lg:px-8">
                     <Link href="/" className="flex justify-center items-center">
                         <Image src="/logo.png" alt="Nap" width={22} height={22} className="h-2.5 w-auto rounded-md sm:h-3.5" />
