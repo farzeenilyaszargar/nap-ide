@@ -34,15 +34,7 @@ export default function HeroPage() {
                 <div className='w-full justify-center hidden sm:flex'>
                     <DownloadButton />
                 </div>
-                <div className='flex w-full items-center justify-start sm:justify-center'>
-                    <Link
-                        href="#features"
-                        className='inline-flex items-center gap-2 rounded-full bg-black px-4 py-2 text-sm text-white transition hover:bg-black/90 sm:rounded-none sm:bg-transparent sm:px-0 sm:py-0 sm:text-lg sm:text-[#9B9B9B] sm:hover:bg-transparent sm:hover:underline'
-                    >
-                        See Features
-                        <Image src="/right-arrow.png" width={14} height={14} alt='arrow' className='invert opacity-100 sm:invert-0 sm:opacity-60' />
-                    </Link>
-                </div>
+                <div className='flex w-full items-center justify-start sm:justify-center' />
 
             </div>
 
