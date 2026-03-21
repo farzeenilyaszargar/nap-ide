@@ -63,11 +63,11 @@ export default function TC() {
         </div>
       </div>
 
-      <div className="flex-1 max-w-4xl mx-auto px-4 py-12">
+      <div className="flex-1 max-w-4xl mx-auto px-4 py-12 pb-40">
         <div className="space-y-8">
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">1. Acceptance of Terms</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               By accessing, downloading, installing, or using Nap ("the Software") or visiting our website at nap-code.com ("the Website"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use our Software or Website.
             </p>
@@ -77,7 +77,7 @@ export default function TC() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">2. License Grant</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">2. License Grant</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the Software for your personal or commercial development purposes.
             </p>
@@ -90,7 +90,7 @@ export default function TC() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">3. User Accounts</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">3. User Accounts</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               To access certain features of the Software, you may be required to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
             </p>
@@ -100,7 +100,7 @@ export default function TC() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">4. Subscription and Payments</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">4. Subscription and Payments</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Some features of the Software require a paid subscription. By subscribing to a paid plan, you agree to pay all applicable fees as described on our pricing page. All fees are non-refundable except as expressly stated in these Terms.
             </p>
@@ -110,7 +110,7 @@ export default function TC() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">5. Intellectual Property</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">5. Intellectual Property</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               The Software, including all content, features, and functionality, is owned by Nap and is protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.
             </p>
@@ -120,7 +120,7 @@ export default function TC() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">6. Disclaimer of Warranties</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">6. Disclaimer of Warranties</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
             </p>
@@ -130,14 +130,14 @@ export default function TC() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">7. Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">7. Limitation of Liability</h2>
             <p className="text-gray-600 leading-relaxed">
               TO THE MAXIMUM EXTENT PERMITTED BY LAW, SURFERS INC. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR BUSINESS OPPORTUNITIES, ARISING OUT OF OR RELATED TO YOUR USE OF THE SOFTWARE.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-black mb-4">8. Contact Information</h2>
+            <h2 className="text-2xl font-bold text-[#383838] mb-4">8. Contact Information</h2>
             <p className="text-gray-600 leading-relaxed">
               If you have any questions about these Terms, please contact us at <a href="mailto:support@nap-code.com" className="text-blue-600 hover:underline">support@nap-code.com</a> or through our <a href="/support" className="text-blue-600 hover:underline">support page</a>.
             </p>
