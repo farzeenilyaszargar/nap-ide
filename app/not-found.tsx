@@ -22,12 +22,6 @@ export default function NotFound() {
           >
             Back to home
           </Link>
-          <Link
-            href="/download"
-            className="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400"
-          >
-            Download
-          </Link>
         </div>
       </div>
     </main>
