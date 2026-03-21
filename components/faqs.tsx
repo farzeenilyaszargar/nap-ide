@@ -25,22 +25,22 @@ export default function FAQs() {
     ];
 
     return (
-        <div className="flex justify-center items-center w-full overflow-hidden mt-20">
-            <div className="w-full max-w-4xl px-6 sm:px-10 space-y-6">
-                <h2 className="text-3xl py-7 font-normal text-center text-black">Frequently Asked Questions</h2>
-                <div className="space-y-7">
+        <div className="flex justify-center items-center w-full overflow-hidden mt-12 sm:mt-20">
+            <div className="w-full max-w-4xl px-4 sm:px-10 space-y-5 sm:space-y-6">
+                <h2 className="text-2xl sm:text-3xl py-5 sm:py-7 font-normal text-center text-black">Frequently Asked Questions</h2>
+                <div className="space-y-6 sm:space-y-7">
                     {faqs.map((faq, index) => (
                         <div key={index} className="text-left">
-                            <p className="text-lg font-medium text-black">{faq.question}</p>
+                            <p className="text-base sm:text-lg font-medium text-black">{faq.question}</p>
                             <div className="mt-2 flex items-start gap-3 text-gray-600">
                                 <Image
                                     src="/down-left.png"
                                     alt=""
                                     width={12}
                                     height={12}
-                                    className="-scale-x-100 mt-1 h-3 w-3"
+                                    className="-scale-x-100 mt-1 h-3 w-3 shrink-0"
                                 />
-                                <p className="text-sm sm:text-base">{faq.answer}</p>
+                                <p className="text-sm sm:text-base leading-relaxed">{faq.answer}</p>
                             </div>
                         </div>
                     ))}
