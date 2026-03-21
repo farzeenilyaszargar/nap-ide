@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 
 import Features from "@/components/features";
+import FAQs from "@/components/faqs";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroPage from "@/components/heroPage";
@@ -51,6 +52,7 @@ export default function Home() {
       <h1 className="sr-only">nap codes multiple files with agents on your pc.</h1>
       <HeroPage />
       <Features />
+      <FAQs />
 
       <TryNap />
       <Footer />
