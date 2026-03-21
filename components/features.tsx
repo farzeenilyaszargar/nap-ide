@@ -28,7 +28,7 @@ export default function Features() {
                                 alt="img"
                                 fill
                                 sizes="(min-width: 768px) 66vw, 100vw"
-                                className="object-cover object-top"
+                                className="object-cover object-left"
                             />
                         </div>
                         <div className="flex flex-col gap-5 md:w-1/3">
