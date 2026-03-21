@@ -17,7 +17,7 @@ export default function HeroPage() {
     }, [])
 
     return (
-        <section className='mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-12 lg:px-10 overflow-x-hidden'>
+        <section className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-12 lg:px-10 overflow-x-hidden'>
             <div className='flex w-full flex-col items-start gap-6 sm:items-center sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h2 className='text-left text-2xl font-medium tracking-tight text-[#383838] sm:hidden'>
@@ -48,7 +48,7 @@ export default function HeroPage() {
 
 
             <div className='flex w-full items-center justify-start overflow-visible sm:justify-center'>
-                <div className='mr-auto w-[140%] max-w-none sm:mr-0 sm:w-full sm:max-w-7xl'>
+                <div className='mr-auto w-[140%] max-w-none sm:mr-0 sm:w-full sm:max-w-6xl'>
                     <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-md sm:rounded-md min-h-[380px] object-cover object-left sm:min-h-0' />
                 </div>
             </div>
