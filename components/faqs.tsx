@@ -33,7 +33,7 @@ export default function FAQs() {
                                     alt=""
                                     width={12}
                                     height={12}
-                                    className="-scale-y-100 mt-1 h-3 w-3"
+                                    className="-scale-x-100 mt-1 h-3 w-3"
                                 />
                                 <p className="text-sm sm:text-base">{faq.answer}</p>
                             </div>
