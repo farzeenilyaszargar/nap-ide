@@ -17,21 +17,22 @@ export default function HeroPage() {
     }, [])
 
     return (
-        <section className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-32 lg:px-10 overflow-x-hidden'>
-            <div className='flex w-full flex-col items-start gap-6 sm:items-start sm:gap-8'>
+        <section className='mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-4 pb-6 pt-14 sm:gap-12 sm:px-6 sm:pb-8 sm:pt-16 sm:mt-20 lg:px-10 overflow-x-hidden'>
+            <div className='flex w-full flex-col items-start gap-6 sm:items-center sm:gap-8'>
                 <div className='flex flex-col gap-3 sm:gap-6'>
                     <h2 className='text-left text-2xl font-bold tracking-tight text-[#383838] sm:hidden'>
                         Nap is the best way to code with AI and run multiple agents on your PC.
                     </h2>
                     <div className='hidden flex-col gap-3 sm:flex sm:gap-6'>
-                        <h2 className='text-left text-3xl font-bold tracking-tight text-[#383838] sm:text-6xl'>Code.</h2>
-                        <h3 className='-mt-1 mb-2 text-left text-3xl font-bold tracking-tight sm:-mt-4 sm:text-6xl'>
-                            <span className='text-[#696969]'>Lightning. </span>
+                        <h2 className='text-center text-2xl font-bold tracking-tight text-[#383838] sm:text-5xl'>Code.
+                            <span className='text-[#696969]'> Lightning. </span>
                             <span className='text-[#A4A4A4]'>Fast.</span>
-                        </h3>
+                        </h2>
+                        <p className='text-left text-lg text-[#696969] sm:text-xl'>Nap is the best way to code with AI and run multiple agents on your PC.</p>
+
                     </div>
                 </div>
-                <div className='w-full justify-start hidden sm:flex'>
+                <div className='w-full justify-center hidden sm:flex'>
                     <DownloadButton />
                 </div>
                 <div className='flex w-full items-center justify-start sm:justify-center' />
@@ -40,8 +41,8 @@ export default function HeroPage() {
 
 
             <div className='flex w-full items-center justify-start overflow-visible sm:justify-center'>
-                <div className='mr-auto w-[140%] max-w-none sm:mr-0 sm:w-full sm:max-w-6xl'>
-                    <Image src={"/main.jpeg"} width={1280} height={720} alt='demo' className='w-full rounded-md sm:rounded-md min-h-[380px] object-cover object-left sm:min-h-0' />
+                <div className='mr-auto w-[140%] max-w-none sm:mr-0 sm:w-full sm:max-w-7xl'>
+                    <Image src={"/new-main.png"} width={1280} height={720} alt='demo' className='w-full rounded-md sm:rounded-md min-h-[480px] object-cover object-left sm:min-h-0' />
                 </div>
             </div>
 
