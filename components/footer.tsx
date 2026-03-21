@@ -7,11 +7,11 @@ export default function Footer() {
                 <span className="whitespace-nowrap">© 2026 Nap Inc.</span>
                 <div className="hidden flex-wrap items-center justify-center gap-2 sm:flex sm:justify-end">
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="/privacy">Privacy Policy</Link>
-                    <span className="inline-flex items-center leading-none">.</span>
+                    <span className="inline-flex items-center leading-none pb-1.5">.</span>
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="/tc">Terms &amp; Conditions</Link>
-                    <span className="inline-flex items-center leading-none">.</span>
+                    <span className="inline-flex items-center leading-none pb-1.5">.</span>
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="https://x.com/napverse" target="_blank">X</Link>
-                    <span className="inline-flex items-center leading-none">.</span>
+                    <span className="inline-flex items-center leading-none pb-1.5">.</span>
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="https://www.youtube.com/@napHQ" target="_blank">YouTube</Link>
                 </div>
             </div>
