@@ -3,6 +3,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -72,7 +73,7 @@ export default function BlogsPage() {
 
             {/* Blog Slideshow */}
             <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-                <div className="relative bg-gray-50 rounded-3xl border border-gray-200 overflow-hidden">
+                <div className="relative bg-gray-50 rounded-3xl  overflow-hidden">
 
                     {/* Blog Content */}
                     <div className="p-10 md:p-16 mx-5">
@@ -95,9 +96,7 @@ export default function BlogsPage() {
 
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                                    {currentBlog.author.charAt(0)}
-                                </div>
+                                <Image src={"/logo-black.png"} alt={currentBlog.author} width={32} height={32} className="rounded-full" />
                                 <span className="text-gray-700 font-medium">{currentBlog.author}</span>
                             </div>
 
@@ -106,8 +105,10 @@ export default function BlogsPage() {
                                 className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
                             >
                                 Read Article
+                                <Image src="/right-arrow.png" alt="Read" width={16} height={16} className="h-4 w-4 inline-block ml-2 invert" />
                             </Link>
                         </div>
+                        <Image src={currentBlog.image} alt={currentBlog.title} width={800} height={400} className="w-full h-auto rounded-lg mt-10 object-cover" />
                     </div>
 
                     {/* Navigation Arrows */}
