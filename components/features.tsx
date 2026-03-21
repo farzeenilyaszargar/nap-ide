@@ -37,7 +37,7 @@ export default function Features() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-6 bg-[#F5F5F5] rounded-sm sm:rounded-lg p-7 py-10 text-left overflow-hidden md:flex-row md:items-center">
-                        <div className="w-full px-5 md:w-1/3">
+                        <div className="w-full md:w-1/3">
                             <h3 className="text-2xl sm:text-4xl font-medium tracking-tight mb-4 text-[#969696]">
                                 Control <span className="text-black">Anything</span> &amp; <span className="text-black">Everything</span> on Nap.
                             </h3>
