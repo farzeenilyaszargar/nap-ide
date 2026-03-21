@@ -5,22 +5,22 @@ export default function FAQs() {
         {
             question: "Is this app free?",
             answer:
-                "Yes, it’s free for everyone, and AI is included.",
+                "Yes, it’s free for everyone, and AI is included. You can start right away without a credit card.",
         },
         {
             question: "Are there worktrees in this?",
             answer:
-                "Yes. You can create worktrees to keep changes isolated and switch contexts fast.",
+                "Yes. You can create worktrees to keep changes isolated and switch contexts fast. It’s great for parallel experiments or quick hotfixes.",
         },
         {
             question: "What are parallel agents and how do I use them here?",
             answer:
-                "Parallel agents let you split work across tasks at the same time. Assign each agent a goal and review the results before merging.",
+                "Parallel agents let you split work across tasks at the same time. Assign each agent a goal and review the results before merging. It’s a simple way to move faster without losing control.",
         },
         {
             question: "How do commits work in this app?",
             answer:
-                "You can review changes, stage what you want, and create commits per task or branch for clean history.",
+                "You can review changes, stage what you want, and create commits per task or branch for clean history. This keeps your timeline clean and easy to audit.",
         },
     ];
 
