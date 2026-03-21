@@ -116,15 +116,6 @@ export default function Header() {
                                         X
                                     </Link>
                                     <Link
-                                        href="https://www.linkedin.com/in/naphq/"
-                                        target="_blank"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
-                                        style={{ animationDelay: "140ms" }}
-                                    >
-                                        Linkedin
-                                    </Link>
-                                    <Link
                                         href="https://www.youtube.com/@napHQ"
                                         target="_blank"
                                         onClick={() => setMobileMenuOpen(false)}
@@ -153,17 +144,33 @@ export default function Header() {
                                         Blogs
                                     </Link>
                                     <Link
-                                        href="/faqs"
+                                        href="/tc"
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
                                         style={{ animationDelay: "240ms" }}
+                                    >
+                                        Terms &amp; Conditions
+                                    </Link>
+                                    <Link
+                                        href="/privacy"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "340ms" }}
+                                    >
+                                        Privacy Policy
+                                    </Link>
+                                    <Link
+                                        href="/faqs"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="menu-item rounded-md px-2 py-2 text-3xl font-medium text-black transition hover:bg-black/5"
+                                        style={{ animationDelay: "440ms" }}
                                     >
                                         FAQ&apos;s
                                     </Link>
                                     <button
                                         onClick={() => setShowSocials(true)}
                                         className="menu-item rounded-md px-2 py-2 text-left text-3xl font-medium text-black transition hover:bg-black/5"
-                                        style={{ animationDelay: "340ms" }}
+                                        style={{ animationDelay: "540ms" }}
                                     >
                                         Socials
                                     </button>
