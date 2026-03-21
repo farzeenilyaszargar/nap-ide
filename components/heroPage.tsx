@@ -41,8 +41,8 @@ export default function HeroPage() {
 
 
             <div className='flex w-full items-center justify-start overflow-visible sm:justify-center'>
-                <div className='mr-auto w-[180%] max-w-none sm:mr-0 sm:w-[140%] sm:max-w-none'>
-                    <Image src={"/new-main.png"} width={1280} height={720} alt='demo' className='w-full rounded-md sm:rounded-md min-h-[600px] object-cover object-left sm:min-h-0' />
+                <div className='relative left-1/2 mr-auto w-screen max-w-none -translate-x-1/2 sm:w-[140vw]'>
+                    <Image src={"/new-main.png"} width={1280} height={720} alt='demo' className='w-full rounded-md sm:rounded-md min-h-[680px] object-cover object-left sm:min-h-0' />
                 </div>
             </div>
 
