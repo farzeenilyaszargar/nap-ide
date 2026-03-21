@@ -63,22 +63,22 @@ export default function Privacy() {
         </div>
       </div>
 
-      <div className="flex-1 max-w-4xl mx-auto px-4 py-12">
+      <div className="flex-1 max-w-4xl mx-auto px-4 py-12 pb-40">
         <div className="space-y-8">
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">1. Information We Collect</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">1. Information We Collect</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We collect information you provide directly to us when you create an account, subscribe to our services, contact us for support, or interact with our Software and Website.
             </p>
-            <h3 className="text-lg font-semibold text-[#383838] mb-2">Personal Information:</h3>
+            <h3 className="text-lg font-medium text-[#383838] mb-2">Personal Information:</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4 mb-4">
               <li>Name and email address when you create an account</li>
               <li>Payment information when you subscribe to a paid plan</li>
               <li>Communications you send to us (support requests, feedback)</li>
               <li>OAuth data when you sign in with Google or GitHub</li>
             </ul>
-            <h3 className="text-lg font-semibold text-[#383838] mb-2">Usage Information:</h3>
+            <h3 className="text-lg font-medium text-[#383838] mb-2">Usage Information:</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2 ml-4">
               <li>Device information (operating system, browser type)</li>
               <li>Usage patterns and feature interactions within the Software</li>
@@ -87,7 +87,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">2. How We Use Your Information</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">2. How We Use Your Information</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We use the information we collect to provide, maintain, and improve our services:
             </p>
@@ -102,7 +102,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">3. Your Code and Data Privacy</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">3. Your Code and Data Privacy</h2>
             <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-4">
               <p className="text-green-800 font-semibold mb-2">🔒 Your Code Stays Private</p>
               <p className="text-green-700">
@@ -115,7 +115,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">4. Data Sharing</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">4. Data Sharing</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We do not sell your personal information. We may share your information only in the following circumstances:
             </p>
@@ -128,7 +128,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">5. Data Security</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">5. Data Security</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We implement industry-standard security measures to protect your personal information:
             </p>
@@ -142,7 +142,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">6. Your Rights</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">6. Your Rights</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               Depending on your location, you may have the following rights regarding your personal data:
             </p>
@@ -159,7 +159,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">7. Cookies and Tracking</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">7. Cookies and Tracking</h2>
             <p className="text-gray-600 leading-relaxed mb-4">
               We use cookies and similar tracking technologies to improve your experience:
             </p>
@@ -174,7 +174,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-[#383838] mb-4">8. Contact Us</h2>
+            <h2 className="text-2xl font-semibold text-[#383838] mb-4">8. Contact Us</h2>
             <p className="text-gray-600 leading-relaxed">
               If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:support@nap-code.com" className="text-blue-600 hover:underline">support@nap-code.com</a> or visit our <a href="/support" className="text-blue-600 hover:underline">support page</a>.
             </p>
