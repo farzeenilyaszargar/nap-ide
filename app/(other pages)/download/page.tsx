@@ -57,11 +57,11 @@ export default function DownloadPage() {
         }}
       />
       <Header />
-      <div className="max-w-6xl mx-auto px-4 py-16 sm:py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-10">
+      <div className="max-w-6xl mx-auto px-4 pt-14 pb-10 sm:pt-16 sm:mt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-6 sm:pb-8">
           <div className="text-center">
             <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-            <h2 className="text-4xl sm:text-6xl font-bold text-[#383838]">download</h2>
+            <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#383838] sm:text-5xl">download</h2>
           </div>
         </div>
 

@@ -63,10 +63,10 @@ export default function BlogsPage() {
             <Header />
 
             {/* Hero Header */}
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-6 sm:pt-16 sm:pb-8 sm:mt-20">
                 <div className="text-center">
                     <p className="text-gray-400 text-lg font-mono mb-2">/nap/</p>
-                    <h2 className="text-4xl sm:text-6xl font-bold text-[#383838]">blogs</h2>
+                    <h2 className="text-center text-2xl font-semibold tracking-[-0.04em] text-[#383838] sm:text-5xl">blogs</h2>
                 </div>
             </div>
 
