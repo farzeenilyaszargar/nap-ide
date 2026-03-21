@@ -72,56 +72,56 @@ export default function BlogsPage() {
             </div>
 
             {/* Blog Slideshow */}
-            <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-                <div className="relative bg-gray-50 rounded-3xl  overflow-hidden">
+            <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 w-full">
+                <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
 
                     {/* Blog Content */}
-                    <div className="p-10 md:p-16 mx-5">
-                        <div className="flex items-center gap-3 mb-6 ">
+                    <div className="p-6 sm:p-10 md:p-16 mx-0 sm:mx-5">
+                        <div className="flex flex-wrap items-center gap-3 mb-5 sm:mb-6">
                             <span className="bg-black text-white text-xs font-medium px-3 py-1 rounded-full">
                                 {currentBlog.category}
                             </span>
-                            <span className="text-gray-400 text-sm">{currentBlog.date}</span>
-                            <span className="text-gray-400 text-sm">•</span>
-                            <span className="text-gray-400 text-sm">{currentBlog.readTime}</span>
+                            <span className="text-gray-400 text-xs sm:text-sm">{currentBlog.date}</span>
+                            <span className="text-gray-400 text-xs sm:text-sm">•</span>
+                            <span className="text-gray-400 text-xs sm:text-sm">{currentBlog.readTime}</span>
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 sm:mb-6 leading-tight">
                             {currentBlog.title}
                         </h2>
 
-                        <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                        <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                             {currentBlog.excerpt}
                         </p>
 
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                             <div className="flex items-center gap-3">
                                 <Image src={"/logo-black.png"} alt={currentBlog.author} width={32} height={32} className="rounded-full" />
-                                <span className="text-gray-700 font-medium">{currentBlog.author}</span>
+                                <span className="text-gray-700 text-sm sm:text-base font-medium">{currentBlog.author}</span>
                             </div>
 
                             <Link
                                 href={`/blogs/${currentBlog.slug}`}
-                                className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                                className="bg-black text-white px-5 py-3 rounded-lg text-sm sm:text-base font-medium hover:bg-gray-800 transition-colors inline-flex items-center justify-center w-full sm:w-auto"
                             >
                                 Read Article
                                 <Image src="/right-arrow.png" alt="Read" width={16} height={16} className="h-4 w-4 inline-block ml-2 invert" />
                             </Link>
                         </div>
-                        <Image src={currentBlog.image} alt={currentBlog.title} width={800} height={400} className="w-full h-auto rounded-lg mt-10 object-cover" />
+                        <Image src={currentBlog.image} alt={currentBlog.title} width={800} height={400} className="w-full h-auto rounded-lg mt-8 sm:mt-10 object-cover" />
                     </div>
 
                     {/* Navigation Arrows */}
                     <button
                         onClick={goToPrevious}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
+                        className="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-gray-200 rounded-full items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
                     >
                         <ChevronLeft className="w-6 h-6 text-gray-700" />
                     </button>
 
                     <button
                         onClick={goToNext}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
+                        className="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white border border-gray-200 rounded-full items-center justify-center hover:bg-gray-100 transition-colors shadow-lg"
                     >
                         <ChevronRight className="w-6 h-6 text-gray-700" />
                     </button>
