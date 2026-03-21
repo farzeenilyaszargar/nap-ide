@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FAQs() {
     const faqs = [
         {
@@ -26,7 +28,13 @@ export default function FAQs() {
                         <div key={index} className="text-left">
                             <p className="text-lg font-medium text-black">{faq.question}</p>
                             <div className="mt-2 flex items-start gap-3 text-gray-600">
-                                <span className="font-mono text-gray-400 font-spac">|_</span>
+                                <Image
+                                    src="/down-left.png"
+                                    alt=""
+                                    width={12}
+                                    height={12}
+                                    className="-scale-y-100 mt-1 h-3 w-3"
+                                />
                                 <p className="text-sm sm:text-base">{faq.answer}</p>
                             </div>
                         </div>
