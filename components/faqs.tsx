@@ -1,6 +1,3 @@
-"use client"
-import { useState } from "react";
-
 export default function FAQs() {
     const faqs = [
         {
@@ -18,45 +15,23 @@ export default function FAQs() {
             answer:
                 "Yes, we offer a free tier with access to essential features, and you can upgrade anytime for additional functionality.",
         },
-        {
-            question: "Do you offer customer support?",
-            answer:
-                "We provide 24/7 customer support to assist with any issues or questions you may have.",
-        },
     ];
-
-    const [open, setOpen] = useState<number | null>(null);
-
-    const toggle = (index: number) => {
-        setOpen(open === index ? null : index);
-    };
 
     return (
         <div className="flex justify-center items-center w-full overflow-hidden mt-20">
-            <div className="w-full max-w-4xl px-6 sm:px-10 space-y-4">
-                <h2 className="text-3xl font-semibold mb-4 text-center text-black">Frequently Asked Questions</h2>
-                {faqs.map((faq, index) => (
-                    <button
-                        key={index}
-                        type="button"
-                        onClick={() => toggle(index)}
-                        aria-expanded={open === index}
-                        className={`w-full text-left rounded-2xl border p-5 transition-all ${
-                            open === index
-                                ? "border-black bg-white shadow-md"
-                                : "border-gray-200 bg-gray-50 hover:bg-white"
-                        }`}
-                    >
-                        <div className="flex justify-between items-center gap-4">
-                            <span className="text-lg font-medium text-black">{faq.question}</span>
-                            <span className="text-black text-xl">{open === index ? "−" : "+"}</span>
+            <div className="w-full max-w-4xl px-6 sm:px-10 space-y-6">
+                <h2 className="text-3xl font-semibold text-center text-black">Frequently Asked Questions</h2>
+                <div className="space-y-5">
+                    {faqs.map((faq, index) => (
+                        <div key={index} className="text-left">
+                            <p className="text-lg font-medium text-black">{faq.question}</p>
+                            <div className="mt-2 flex items-start gap-3 text-gray-600">
+                                <span className="font-mono text-gray-400">|_</span>
+                                <p className="text-sm sm:text-base">{faq.answer}</p>
+                            </div>
                         </div>
-
-                        {open === index && (
-                            <p className="mt-3 text-gray-600">{faq.answer}</p>
-                        )}
-                    </button>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );
