@@ -15,10 +15,8 @@ const schemaOrg = {
       "url": "https://www.nap-code.com",
       "logo": "https://www.nap-code.com/logo.png",
       "sameAs": [
-        "https://x.com/farzeenilya",
-        "https://www.linkedin.com/in/farzeenilyaszargar/",
-        "https://www.instagram.com/",
-        "https://www.youtube.com/@surfersbot",
+        "https://x.com/napverse",
+        "https://www.youtube.com/@napHQ",
         "https://www.reddit.com/r/surfersbot/"
       ]
     },
