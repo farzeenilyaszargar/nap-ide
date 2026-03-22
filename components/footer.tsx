@@ -1,8 +1,14 @@
 import Link from "next/link";
+import { Wix_Madefor_Text } from "next/font/google";
+
+const wixMadeforText = Wix_Madefor_Text({
+    subsets: ["latin"],
+    weight: ["400", "500", "600"],
+});
 
 export default function Footer() {
     return (
-        <footer className="w-full px-5 text-gray-300 sm:px-5 lg:px-10">
+        <footer className={`w-full px-5 text-gray-300 sm:px-5 lg:px-10 tracking-[-0.015em] ${wixMadeforText.className}`}>
             <div>
                 <p>
                     For anything specific about Nap email us at issues@napeditor.com or you can directly contact us on +91 8855885588 (Nap’s help desk ). Check us on social media on X & Reddit.
