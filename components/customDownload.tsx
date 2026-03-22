@@ -66,19 +66,27 @@ export default function DownloadButton({
     }
   }, [os]);
 
+  const isWaitlist = os === "windows" || os === "linux";
+
   return (
     <Link
-      href={config.href}
+      href={isWaitlist ? "/waitlist" : config.href}
       className={`${showOnMobile ? "inline-flex" : "hidden sm:inline-flex"} items-center  justify-center gap-2 rounded-full border border-gray-300 bg-[#171717] px-7 py-2 text-lg text-white transition hover:bg-gray-800 ${className}`.trim()}
     >
-      <Image
-        src={config.icon}
-        width={18}
-        height={18}
-        alt={config.label}
-        className="h-4 w-4"
-      />
-      Download for {config.label}
+      {isWaitlist ? (
+        "Join Waitlist"
+      ) : (
+        <>
+          <Image
+            src={config.icon}
+            width={18}
+            height={18}
+            alt={config.label}
+            className="h-4 w-4"
+          />
+          Download for {config.label}
+        </>
+      )}
     </Link>
   );
 }
