@@ -19,7 +19,7 @@ export default function Footer() {
                     <Link className="underline underline-offset-2 text-black hover:text-gray-500" href="https://www.youtube.com/@napHQ" target="_blank">YouTube</Link>.
                 </p>
             </div>
-            <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 text-gray-400 sm:flex-row border-t border-gray-200 py-2">
+            <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 text-base text-gray-400 sm:flex-row border-t border-gray-200 py-2">
                 <span className="whitespace-nowrap">Copyright © 2026 Nap Inc. All Rights Reserved.</span>
                 <div className="hidden flex-wrap items-center justify-center gap-2 sm:flex sm:justify-end">
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="/privacy">Privacy Policy</Link>
