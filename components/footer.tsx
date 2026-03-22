@@ -8,7 +8,7 @@ const wixMadeforText = Wix_Madefor_Text({
 
 export default function Footer() {
     return (
-        <footer className={`w-full px-5 py-2 text-gray-300 sm:px-5 lg:px-10 tracking-[-0.015em] text-sm ${wixMadeforText.className} flex flex-col items-center justify-center`}>
+        <footer className={`w-full px-5 py-2 text-gray-300 sm:px-5 lg:px-10 tracking-[-0.015em] text-base ${wixMadeforText.className} flex flex-col items-center justify-center`}>
             <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-2 text-base text-gray-400 py-2 text-center">
                 <p className="text-center">
                     For anything specific about Nap email us at{" "}
