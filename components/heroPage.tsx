@@ -24,7 +24,7 @@ export default function HeroPage() {
                         Nap is the best way to code with AI and run multiple agents on your PC.
                     </h2>
                     <div className='hidden flex-col gap-3 sm:flex sm:gap-6'>
-                        <h2 className='text-center text-2xl font-medium tracking-[-0.07em] text-[#383838] sm:text-6xl'>Code.
+                        <h2 className='text-center text-2xl font-semibold tracking-[-0.06em] text-[#383838] sm:text-6xl'>Code.
                             <span className='text-[#5e5e5e]'> Lightning. </span>
                             <span className='text-[#929292]'>Fast.</span>
                         </h2>
