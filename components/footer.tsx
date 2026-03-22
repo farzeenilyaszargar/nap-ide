@@ -20,12 +20,11 @@ export default function Footer() {
                     Enjoy coding and building projects. Creare est vivere!
                 </p>
             </div>
-            <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-2 text-xs text-gray-400 sm:flex-row border-t border-gray-200 py-2 tracking-[-0.015em]">
+            <div className="mx-auto px-2 flex w-full max-w-5xl flex-col items-center justify-between gap-2 text-xs text-gray-400 sm:flex-row border-t border-gray-200 py-2 tracking-[-0.015em]">
                 <span className="whitespace-nowrap">Copyright © 2026 Nap Inc.</span>
                 <div className="hidden flex-wrap items-center justify-center gap-2 sm:flex sm:justify-end">
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="/download">Download</Link>
                     <span className="inline-flex items-center leading-none ">|</span>
-
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="/privacy">Privacy Policy</Link>
                     <span className="inline-flex items-center leading-none ">|</span>
                     <Link className="whitespace-nowrap transition-colors hover:text-black" href="/tc">Terms &amp; Conditions</Link>
