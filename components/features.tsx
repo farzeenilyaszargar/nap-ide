@@ -11,18 +11,18 @@ export default function Features() {
                             <h3 className="text-2xl sm:text-4xl font-medium tracking-tight text-[#7E7E7E]">For the <span className="text-[#414141]">Real Devs</span>  <br></br>Nap is the best way to <span className="text-[#414141]">Code.</span></h3>
                             <p className="text-xs sm:text-base text-[#7E7E7E]">For developers who builds real stuff Nap delivers a world class intelligent agent that sees your entire codebase with absolute clarity, understands every file, every nuance, and builds with the sophistication of a top tier engineer.</p>
                         </div>
-                        <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "5 / 3" }}>
+                        <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "4 / 3" }}>
                             <Image
-                                src="/feature1.png"
+                                src="/featuru1.png"
                                 alt="img"
                                 fill
                                 sizes="(min-width: 768px) 66vw, 100vw"
-                                className="object-cover object-left"
+                                className="object-cover object-right"
                             />
                         </div>
                     </div>
                     <div className="flex flex-col gap-6 bg-[#1A1A1A] rounded-sm sm:rounded-lg p-7 py-10 text-left overflow-hidden md:flex-row md:items-center">
-                        <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "5 / 3" }}>
+                        <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "4 / 3" }}>
                             <Image
                                 src="/files.jpeg"
                                 alt="img"
@@ -43,7 +43,7 @@ export default function Features() {
                             </h3>
                             <p className="text-gray-500 text-sm sm:text-lg leading-relaxed">Nap pushes your work to GitHub with the grace of engineered silence branches and repos synced without a ripple.</p>
                         </div>
-                        <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "5 / 3" }}>
+                        <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "4 / 3" }}>
                             <Image
                                 src="/git.jpeg"
                                 alt="Built for Performance"
