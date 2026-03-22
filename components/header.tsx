@@ -9,6 +9,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [showSocials, setShowSocials] = useState(false)
     const [isHidden, setIsHidden] = useState(false)
+    const [os, setOs] = useState<"mac" | "windows" | "linux" | "unknown">("unknown")
     const lastScrollY = useRef(0)
 
     // Close mobile menu on resize to desktop
@@ -41,6 +42,27 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    useEffect(() => {
+        const platform =
+            (navigator as unknown as { userAgentData?: { platform?: string } })
+                .userAgentData?.platform ||
+            navigator.platform ||
+            navigator.userAgent
+        const value = platform.toLowerCase()
+
+        if (value.includes("mac")) {
+            setOs("mac")
+        } else if (value.includes("win")) {
+            setOs("windows")
+        } else if (value.includes("linux")) {
+            setOs("linux")
+        } else {
+            setOs("unknown")
+        }
+    }, [])
+
+    const isWaitlist = os === "windows" || os === "linux"
+
     
     return (
         <>
@@ -60,10 +82,10 @@ export default function Header() {
                             </Link>
                         </nav>
                         <Link
-                            href="/download"
+                            href={isWaitlist ? "/waitlist" : "/download"}
                             className="flex items-center gap-2 rounded-full border border-black bg-[#171717] px-2.5 py-1 text-sm text-white transition-colors hover:bg-white hover:text-black hover:border-black"
                         >
-                            Download
+                            {isWaitlist ? "Join Waitlist" : "Download"}
                         </Link>
                     </div>
 
