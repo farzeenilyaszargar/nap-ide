@@ -13,7 +13,7 @@ export default function Features() {
                         </div>
                         <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "5 / 3" }}>
                             <Image
-                                src="/parallel.jpeg"
+                                src="/feature1.png"
                                 alt="img"
                                 fill
                                 sizes="(min-width: 768px) 66vw, 100vw"
