@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function getSearchParams(): URLSearchParams {
   if (typeof window === "undefined") {
@@ -23,21 +23,24 @@ export default function ElectronAuthSuccess() {
     : null;
   const appHref = deepLink || legacyDeepLink;
   const primaryHref = appHref || callbackHref;
-  const hasCallbackFallback = false;
 
   const showOpenButton = Boolean(appHref);
+  const [showCallbackButton, setShowCallbackButton] = useState(false);
   const callbackTriggeredRef = useRef(false);
 
   const triggerHiddenCallback = (href: string) => {
     if (!href || callbackTriggeredRef.current) return;
     callbackTriggeredRef.current = true;
+    // Prefer a passive resource load to avoid mixed-content iframe blocking on HTTPS.
+    const img = new Image();
+    img.src = href;
+    img.alt = "";
+    // Fallback iframe for environments that don't fire image requests.
     const iframe = document.createElement("iframe");
     iframe.style.display = "none";
     iframe.src = href;
     document.body.appendChild(iframe);
-    window.setTimeout(() => {
-      iframe.remove();
-    }, 2000);
+    window.setTimeout(() => iframe.remove(), 2000);
   };
 
   useEffect(() => {
@@ -52,12 +55,22 @@ export default function ElectronAuthSuccess() {
 
     if (callbackHref) {
       triggerHiddenCallback(callbackHref);
+      if (desktopMode) {
+        const timer = window.setTimeout(() => {
+          if (document.hasFocus()) {
+            setShowCallbackButton(true);
+          }
+        }, 1500);
+        return () => window.clearTimeout(timer);
+      }
     }
   }, [callbackHref, deepLink, desktopMode, legacyDeepLink, refreshToken, token]);
 
   const statusText = showOpenButton
     ? "Authentication complete. You can open the app below."
-    : "Authentication complete. You can close this tab.";
+    : showCallbackButton
+      ? "Authentication complete. If the app doesn't open, complete sign-in below."
+      : "Authentication complete. You can close this tab.";
 
   const primaryLabel = appHref ? "Open Nap" : "Open callback page";
   const callbackLabel = "Complete sign-in";
@@ -68,7 +81,7 @@ export default function ElectronAuthSuccess() {
         <h2 className="text-2xl font-semibold">Authentication Complete</h2>
         <p className="mt-4 text-sm text-gray-600">{statusText}</p>
 
-        {showOpenButton && (
+        {(showOpenButton || showCallbackButton) && (
           <div className="mt-8 flex flex-col gap-3">
             {primaryHref && (
               <button
@@ -80,7 +93,7 @@ export default function ElectronAuthSuccess() {
                 {primaryLabel}
               </button>
             )}
-            {hasCallbackFallback && callbackHref && (
+            {showCallbackButton && callbackHref && (
               <button
                 className="rounded-xl border border-black px-5 py-3 text-sm font-medium text-black hover:bg-gray-100"
                 onClick={() => {
