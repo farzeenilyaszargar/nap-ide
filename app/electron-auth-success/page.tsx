@@ -32,6 +32,10 @@ export default function ElectronAuthSuccess() {
     if (desktopMode && deepLink) {
       window.location.href = deepLink;
       const timer = window.setTimeout(() => {
+        if (callbackHref && document.hasFocus()) {
+          window.location.href = callbackHref;
+          return;
+        }
         setShowOpenButton(true);
       }, 1200);
       return () => window.clearTimeout(timer);
@@ -80,7 +84,7 @@ export default function ElectronAuthSuccess() {
                 {primaryLabel}
               </button>
             )}
-            {hasCallbackFallback && callbackHref && !desktopMode && (
+            {hasCallbackFallback && callbackHref && (
               <button
                 className="rounded-xl border border-black px-5 py-3 text-sm font-medium text-black hover:bg-gray-100"
                 onClick={() => {
