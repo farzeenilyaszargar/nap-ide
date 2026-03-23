@@ -27,12 +27,25 @@ export default function ElectronAuthSuccess() {
   const showOpenButton = Boolean(appHref);
   const [showCallbackButton, setShowCallbackButton] = useState(false);
   const callbackTriggeredRef = useRef(false);
+  const callbackAttemptsRef = useRef(0);
+  const alertShownRef = useRef(false);
 
-  const triggerHiddenCallback = (href: string) => {
-    if (!href || callbackTriggeredRef.current) return;
-    callbackTriggeredRef.current = true;
-    // Prefer a passive resource load to avoid mixed-content iframe blocking on HTTPS.
+  const fireHiddenCallback = (href: string) => {
+    // Prefer passive loads to reduce mixed-content blocking on HTTPS.
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(href, new Blob([], { type: "text/plain" }));
+      }
+    } catch {}
+    try {
+      void fetch(href, {
+        mode: "no-cors",
+        cache: "no-store",
+        credentials: "omit",
+      });
+    } catch {}
     const img = new Image();
+    img.referrerPolicy = "no-referrer";
     img.src = href;
     img.alt = "";
     // Fallback iframe for environments that don't fire image requests.
@@ -43,7 +56,24 @@ export default function ElectronAuthSuccess() {
     window.setTimeout(() => iframe.remove(), 2000);
   };
 
+  const triggerHiddenCallback = (href: string) => {
+    if (!href) return;
+    callbackAttemptsRef.current += 1;
+    if (!callbackTriggeredRef.current) {
+      callbackTriggeredRef.current = true;
+    }
+    fireHiddenCallback(href);
+    if (callbackAttemptsRef.current < 3) {
+      window.setTimeout(() => triggerHiddenCallback(href), 800);
+    }
+  };
+
   useEffect(() => {
+    if (desktopMode && !alertShownRef.current) {
+      alertShownRef.current = true;
+      window.alert("Please open the Nap app to complete sign-in.");
+    }
+
     if (window.opener && token) {
       window.opener.postMessage(
         { channel: "auth-success", token, refreshToken },
@@ -97,7 +127,7 @@ export default function ElectronAuthSuccess() {
               <button
                 className="rounded-xl border border-black px-5 py-3 text-sm font-medium text-black hover:bg-gray-100"
                 onClick={() => {
-                  window.location.href = callbackHref;
+                  triggerHiddenCallback(callbackHref);
                 }}
               >
                 {callbackLabel}
