@@ -127,7 +127,20 @@ export default function ElectronAuthSuccess() {
               <button
                 className="rounded-xl border border-black px-5 py-3 text-sm font-medium text-black hover:bg-gray-100"
                 onClick={() => {
-                  triggerHiddenCallback(callbackHref);
+                  const popup = window.open(
+                    callbackHref,
+                    "nap-auth",
+                    "width=10,height=10,left=-10000,top=-10000"
+                  );
+                  if (popup) {
+                    window.setTimeout(() => {
+                      try {
+                        popup.close();
+                      } catch {}
+                    }, 1500);
+                  } else {
+                    triggerHiddenCallback(callbackHref);
+                  }
                 }}
               >
                 {callbackLabel}
