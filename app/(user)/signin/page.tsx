@@ -40,8 +40,19 @@ export default function SignIn() {
 
     const redirectUrlObject = useMemo(() => {
         const browserOrigin = typeof window !== 'undefined' ? window.location.origin : ''
-        let siteUrl = browserOrigin || process.env.NEXT_PUBLIC_SITE_URL || ''
+        const envSiteUrl =
+            process.env.NEXT_PUBLIC_SITE_URL || process.env.NEXT_PUBLIC_VERCEL_URL || ''
+        let siteUrl = browserOrigin || envSiteUrl
         siteUrl = siteUrl.replace(/\/$/, '')
+        if (siteUrl && !/^https?:\/\//i.test(siteUrl)) {
+            siteUrl = `https://${siteUrl}`
+        }
+        if (!siteUrl) {
+            siteUrl =
+                process.env.NODE_ENV === 'development'
+                    ? 'http://localhost:3000'
+                    : 'https://www.nap-code.com'
+        }
 
         const redirectUrl = new URL('/auth/callback', siteUrl)
 
@@ -241,7 +252,7 @@ export default function SignIn() {
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
                     <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                         <div className="flex flex-col items-center text-center">
-                            <h2 className="mb-3 text-3xl font-semibold tracking-tight text-gray-900">
+                            <h2 className="mb-3 text-3xl font-medium tracking-tight text-gray-900">
                                 {desktopMode ? 'Continue to Nap' : 'Welcome'}
                             </h2>
                             <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
