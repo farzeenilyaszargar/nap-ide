@@ -195,16 +195,6 @@ export async function GET(request: Request) {
       const callbackPage = new URL('/electron-auth-success', origin)
       callbackPage.searchParams.set('desktop', '1')
       callbackPage.searchParams.set('deep_link', deepLink)
-      if (callbackUri) {
-        try {
-          const callbackUrl = new URL(callbackUri)
-          callbackUrl.searchParams.set('code', desktopCode)
-          callbackUrl.searchParams.set('state', state)
-          callbackPage.searchParams.set('callback', callbackUrl.toString())
-        } catch {
-          callbackPage.searchParams.set('callback', callbackUri)
-        }
-      }
       callbackPage.searchParams.set('state', state)
       return NextResponse.redirect(callbackPage)
     }
