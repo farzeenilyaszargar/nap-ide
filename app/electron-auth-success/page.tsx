@@ -13,16 +13,19 @@ export default function ElectronAuthSuccess() {
   const params = useMemo(() => getSearchParams(), []);
 
   const desktopMode = params.get("desktop") === "1";
-  const deepLink = null;
+  const deepLink = params.get("deep_link");
   const callbackHref = params.get("callback");
   const token = params.get("token");
   const refreshToken = params.get("refresh_token");
 
-  const legacyDeepLink = null;
-  const primaryHref = callbackHref;
+  const legacyDeepLink = token
+    ? `nap://auth?token=${token}${refreshToken ? `&refresh_token=${refreshToken}` : ""}`
+    : null;
+  const appHref = deepLink || legacyDeepLink;
+  const primaryHref = appHref || callbackHref;
   const hasCallbackFallback = false;
 
-  const showOpenButton = false;
+  const showOpenButton = Boolean(appHref);
   const callbackTriggeredRef = useRef(false);
 
   const triggerHiddenCallback = (href: string) => {
@@ -52,9 +55,11 @@ export default function ElectronAuthSuccess() {
     }
   }, [callbackHref, deepLink, desktopMode, legacyDeepLink, refreshToken, token]);
 
-  const statusText = "Authentication complete. You can close this tab.";
+  const statusText = showOpenButton
+    ? "Authentication complete. You can open the app below."
+    : "Authentication complete. You can close this tab.";
 
-  const primaryLabel = "Open callback page";
+  const primaryLabel = appHref ? "Open Nap" : "Open callback page";
   const callbackLabel = "Complete sign-in";
 
   return (
