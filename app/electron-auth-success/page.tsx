@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 function getSearchParams(): URLSearchParams {
   if (typeof window === "undefined") {
@@ -25,6 +25,51 @@ export default function ElectronAuthSuccess() {
 
   const showOpenButton = Boolean(appHref);
   const [showOpenFallback, setShowOpenFallback] = useState(false);
+  const callbackTriggeredRef = useRef(false);
+
+  const parsedDeepLink = useMemo(() => {
+    if (!deepLink) return null;
+    try {
+      return new URL(deepLink);
+    } catch {
+      return null;
+    }
+  }, [deepLink]);
+
+  const deepLinkCode = parsedDeepLink?.searchParams.get("code") || null;
+  const deepLinkState = parsedDeepLink?.searchParams.get("state") || null;
+
+  const triggerHiddenCallback = useCallback(() => {
+    if (callbackTriggeredRef.current) return;
+    if (!deepLinkCode) return;
+    callbackTriggeredRef.current = true;
+    const callbackUrl = new URL("http://localhost:21321/auth/callback");
+    callbackUrl.searchParams.set("code", deepLinkCode);
+    if (deepLinkState) callbackUrl.searchParams.set("state", deepLinkState);
+
+    // Fire a hidden request without exposing localhost in the address bar.
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(callbackUrl.toString(), new Blob([], { type: "text/plain" }));
+      }
+    } catch {}
+    try {
+      void fetch(callbackUrl.toString(), {
+        mode: "no-cors",
+        cache: "no-store",
+        credentials: "omit",
+      });
+    } catch {}
+    const img = new Image();
+    img.referrerPolicy = "no-referrer";
+    img.src = callbackUrl.toString();
+    img.alt = "";
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = callbackUrl.toString();
+    document.body.appendChild(iframe);
+    window.setTimeout(() => iframe.remove(), 2000);
+  }, [deepLinkCode, deepLinkState]);
 
   useEffect(() => {
     if (window.opener && token) {
@@ -41,11 +86,12 @@ export default function ElectronAuthSuccess() {
       const timer = window.setTimeout(() => {
         if (document.hasFocus()) {
           setShowOpenFallback(true);
+          triggerHiddenCallback();
         }
       }, 1200);
       return () => window.clearTimeout(timer);
     }
-  }, [appHref, desktopMode, refreshToken, token]);
+  }, [appHref, desktopMode, refreshToken, token, triggerHiddenCallback]);
 
   const statusText = showOpenFallback
     ? "If the app did not open, use the button below."
