@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function getSearchParams(): URLSearchParams {
   if (typeof window === "undefined") {
@@ -27,13 +27,26 @@ export default function ElectronAuthSuccess() {
   const [showOpenButton, setShowOpenButton] = useState(
     Boolean(callbackHref && !deepLink)
   );
+  const callbackTriggeredRef = useRef(false);
+
+  const triggerHiddenCallback = (href: string) => {
+    if (!href || callbackTriggeredRef.current) return;
+    callbackTriggeredRef.current = true;
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = href;
+    document.body.appendChild(iframe);
+    window.setTimeout(() => {
+      iframe.remove();
+    }, 2000);
+  };
 
   useEffect(() => {
     if (desktopMode && deepLink) {
       window.location.href = deepLink;
       const timer = window.setTimeout(() => {
         if (callbackHref && document.hasFocus()) {
-          window.location.href = callbackHref;
+          triggerHiddenCallback(callbackHref);
           return;
         }
         setShowOpenButton(true);
@@ -52,6 +65,11 @@ export default function ElectronAuthSuccess() {
 
     if (legacyDeepLink) {
       window.location.href = legacyDeepLink;
+      return;
+    }
+
+    if (callbackHref) {
+      triggerHiddenCallback(callbackHref);
     }
   }, [callbackHref, deepLink, desktopMode, legacyDeepLink, refreshToken, token]);
 
