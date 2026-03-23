@@ -11,7 +11,12 @@ const AUTH_CODE_TTL_MINUTES = Number(
   process.env.DESKTOP_AUTH_CODE_TTL_MINUTES || 10,
 )
 
-const DEFAULT_PROTOCOLS = ["twentyfirst-agents", "twentyfirst-agents-dev"]
+const DEFAULT_PROTOCOLS = [
+  "nap",
+  "nap-agents",
+  "twentyfirst-agents",
+  "twentyfirst-agents-dev",
+]
 const DESKTOP_PROTOCOLS = (
   process.env.DESKTOP_ALLOWED_PROTOCOLS || DEFAULT_PROTOCOLS.join(",")
 )
