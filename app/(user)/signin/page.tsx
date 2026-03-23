@@ -241,8 +241,6 @@ export default function SignIn() {
 
     return (
         <div className="min-h-screen bg-white">
-            <GenHeader />
-
             <main className="relative flex min-h-[calc(100vh-56px)] flex-col items-center justify-center overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
                 {/* Modern subtle background background */}
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(0,123,255,0.03)_0%,rgba(255,255,255,0)_100%)]" />
@@ -252,6 +250,7 @@ export default function SignIn() {
                 <div className="w-full max-w-[420px] transition-all duration-700 animate-in fade-in slide-in-from-bottom-6">
                     <div className="overflow-hidden rounded-[28px] border border-gray-100 bg-white/80 p-6 shadow-[0_8px_40px_rgba(0,0,0,0.04)] backdrop-blur-2xl sm:p-8">
                         <div className="flex flex-col items-center text-center">
+                            <Image src="/logo.png" alt="Nap" width={120} height={40} className="h-9 w-auto rounded-md my-8" />
                             <h2 className="mb-3 text-3xl font-medium tracking-tight text-gray-900">
                                 {desktopMode ? 'Continue to Nap' : 'Welcome'}
                             </h2>
