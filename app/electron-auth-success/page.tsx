@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 function getSearchParams(): URLSearchParams {
   if (typeof window === "undefined") {
@@ -13,20 +13,16 @@ export default function ElectronAuthSuccess() {
   const params = useMemo(() => getSearchParams(), []);
 
   const desktopMode = params.get("desktop") === "1";
-  const deepLink = params.get("deep_link");
+  const deepLink = null;
   const callbackHref = params.get("callback");
   const token = params.get("token");
   const refreshToken = params.get("refresh_token");
 
-  const legacyDeepLink = token
-    ? `nap://auth?token=${token}${refreshToken ? `&refresh_token=${refreshToken}` : ""}`
-    : null;
-  const primaryHref = deepLink || legacyDeepLink || callbackHref;
-  const hasCallbackFallback = Boolean(callbackHref && deepLink);
+  const legacyDeepLink = null;
+  const primaryHref = callbackHref;
+  const hasCallbackFallback = false;
 
-  const [showOpenButton, setShowOpenButton] = useState(
-    Boolean(callbackHref && !deepLink)
-  );
+  const showOpenButton = false;
   const callbackTriggeredRef = useRef(false);
 
   const triggerHiddenCallback = (href: string) => {
@@ -42,18 +38,6 @@ export default function ElectronAuthSuccess() {
   };
 
   useEffect(() => {
-    if (desktopMode && deepLink) {
-      window.location.href = deepLink;
-      const timer = window.setTimeout(() => {
-        if (callbackHref && document.hasFocus()) {
-          triggerHiddenCallback(callbackHref);
-          return;
-        }
-        setShowOpenButton(true);
-      }, 1200);
-      return () => window.clearTimeout(timer);
-    }
-
     if (window.opener && token) {
       window.opener.postMessage(
         { channel: "auth-success", token, refreshToken },
@@ -63,25 +47,14 @@ export default function ElectronAuthSuccess() {
       return;
     }
 
-    if (legacyDeepLink) {
-      window.location.href = legacyDeepLink;
-      return;
-    }
-
     if (callbackHref) {
       triggerHiddenCallback(callbackHref);
     }
   }, [callbackHref, deepLink, desktopMode, legacyDeepLink, refreshToken, token]);
 
-  const statusText = desktopMode && deepLink
-    ? showOpenButton
-      ? "If the app did not open, use one of the buttons below."
-      : "Opening Nap Desktop..."
-    : "Authentication complete.";
+  const statusText = "Authentication complete. You can close this tab.";
 
-  const primaryLabel = primaryHref?.startsWith("http")
-    ? "Open callback page"
-    : "Open app";
+  const primaryLabel = "Open callback page";
   const callbackLabel = "Complete sign-in";
 
   return (
