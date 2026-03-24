@@ -148,6 +148,18 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                 <span>{blog.readTime}</span>
                             </div>
                         </div>
+                        {blog.image ? (
+                            <div className="mt-8">
+                                <Image
+                                    src={blog.image}
+                                    alt={blog.title}
+                                    width={1600}
+                                    height={900}
+                                    className="w-full h-auto rounded-2xl border border-gray-200"
+                                    priority
+                                />
+                            </div>
+                        ) : null}
                         <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                     </header>
 
