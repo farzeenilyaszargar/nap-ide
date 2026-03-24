@@ -56,9 +56,29 @@ Nap Code is built for product engineers, startups, and teams that want faster it
 
 Your codebase context stays close to where you work, and the system is designed to minimize friction when you move from idea to code to commit. This is not a chat toy - it's a practical developer tool for shipping software.
 
+## Use Cases for Agentic Coding
+
+Nap Code is an AI coding assistant built for real engineering outcomes. Common use cases include:
+
+- Multi-file refactors that require consistent naming and architecture
+- Test generation to cover new features quickly
+- Documentation updates that stay aligned with implementation
+- Code review support and summary explanations for teammates
+
 ## Summary: An AI Coding Assistant You Can Trust
 
 If you've been looking for a code editor that supports agent orchestration and reliable multi-file changes, Nap Code is built for that exact workflow. It's a developer-first, local-first environment for modern agentic coding.
+
+## Frequently Asked Questions
+
+### Is Nap Code an AI model?
+No. Nap Code is an agent orchestration layer that connects AI models, tools, and your codebase context. You choose models, and Nap coordinates them into a reliable developer workflow.
+
+### Who should use Nap Code?
+Teams and solo developers who want an AI coding assistant that handles multi-file edits, refactors, and test generation with clear review.
+
+### Does it work with real production repositories?
+Yes. Nap Code is built for real repositories with many files, dependencies, and conventions. It prioritizes safe, reviewable changes.
 
 ## What's Next
 
@@ -105,6 +125,14 @@ A key part of reliable code understanding is parsing source files into abstract 
 ## Semantic Search for Code
 
 Semantic search connects natural language queries to the code that actually implements an idea. Instead of searching for exact string matches, the system uses embeddings and structural signals to find relevant files, functions, and symbols. This is how Nap can answer questions like "where does authentication happen?" or "what validates user input?" with accurate, project-specific results.
+
+## Hybrid Retrieval for Accurate Results
+
+Modern code search works best with a hybrid approach that combines semantic embeddings with exact-symbol and keyword matching. This makes it possible to find both conceptual matches and precise references, which is critical for tasks like refactors or API migrations.
+
+## Keeping the Index Fresh
+
+As your code changes, the index must stay up to date. Nap updates incrementally so that new files, renamed symbols, and deleted modules are reflected quickly. This keeps agent suggestions accurate and prevents stale context from leaking into edits.
 
 ## Why This Matters
 
@@ -189,7 +217,23 @@ Adjust AI behavior in settings to match your preferences for verbosity, code sty
 
 ## 10. Stay Updated
 
-We ship improvements weekly. Keep Nap updated to get the latest AI models and features.`,
+We ship improvements weekly. Keep Nap updated to get the latest AI models and features.
+
+## Example Workflow for Fast Feature Delivery
+
+A simple workflow with Nap Code looks like: describe the change in plain English, let the agents propose edits across files, review the diff, then refine with a second prompt. This keeps the AI coding assistant productive while maintaining code quality and clarity.
+
+## Common Mistakes to Avoid
+
+Even the best agentic coding tools need good inputs. Avoid these pitfalls:
+
+- Vague prompts that skip requirements or edge cases
+- Accepting multi-file changes without a quick review
+- Skipping tests when the change touches core logic
+
+## Final Takeaway
+
+Nap Code helps developers ship faster without losing control. With consistent prompts, good review habits, and a clear workflow, you can get the most out of AI coding agents every day.`,
         author: "Nap Team",
         date: "January 2, 2026",
         readTime: "6 min read",
