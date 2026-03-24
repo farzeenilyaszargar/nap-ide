@@ -156,7 +156,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                             src={blog.image}
                                             alt={blog.title}
                                             fill
-                                            className="object-cover object-center"
+                                            className="object-cover object-center rounded-2xl"
                                             sizes="(min-width: 1024px) 896px, (min-width: 640px) 640px, 100vw"
                                             priority
                                         />
@@ -174,7 +174,6 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                 )}
                             </div>
                         ) : null}
-                        <div className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
                     </header>
 
                     {/* Article Content */}
