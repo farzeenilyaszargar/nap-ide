@@ -198,6 +198,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                 const match = paragraph.match(/^!\[(.*)\]\((.*)\)$/);
                                 if (match) {
                                     const [, alt, src] = match;
+                                    const isCompact = src === "/blog22.webp";
                                     return (
                                         <div key={index} className="my-8">
                                             <Image
@@ -205,7 +206,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                                 alt={alt}
                                                 width={1600}
                                                 height={900}
-                                                className="w-full h-auto"
+                                                className={isCompact ? "h-[240px] w-auto max-w-full mx-auto sm:h-[280px]" : "w-full h-auto"}
                                                 sizes="(min-width: 1024px) 896px, (min-width: 640px) 640px, 100vw"
                                             />
                                         </div>
