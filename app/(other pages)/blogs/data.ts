@@ -239,21 +239,6 @@ Before committing agent changes, scan for:
 ## Final Takeaway
 
 The goal is speed without chaos. With clear prompts, good review habits, and a stable workflow, Nap Code becomes a dependable AI coding assistant for shipping real software.`,
-## Example Workflow for Fast Feature Delivery
-
-A simple workflow with Nap Code looks like: describe the change in plain English, let the agents propose edits across files, review the diff, then refine with a second prompt. This keeps the AI coding assistant productive while maintaining code quality and clarity.
-
-## Common Mistakes to Avoid
-
-Even the best agentic coding tools need good inputs. Avoid these pitfalls:
-
-- Vague prompts that skip requirements or edge cases
-- Accepting multi-file changes without a quick review
-- Skipping tests when the change touches core logic
-
-## Final Takeaway
-
-Nap Code helps developers ship faster without losing control. With consistent prompts, good review habits, and a clear workflow, you can get the most out of AI coding agents every day.`,
         author: "Nap Team",
         date: "January 2, 2026",
         readTime: "6 min read",
