@@ -67,7 +67,7 @@ This is just the beginning. We're constantly improving our AI models and adding 
         date: "December 15, 2025",
         readTime: "5 min read",
         category: "Announcement",
-        image: "/demo.png"
+        image: "/blog1.png"
     },
     {
         id: 2,
@@ -125,7 +125,7 @@ Our indexing system uses a combination of static analysis, language servers, and
         date: "December 28, 2025",
         readTime: "8 min read",
         category: "Technical",
-        image: "/demo.png"
+        image: "/blog2.png"
     },
     {
         id: 3,
@@ -186,7 +186,7 @@ We ship improvements weekly. Keep Nap updated to get the latest AI models and fe
         date: "January 2, 2026",
         readTime: "6 min read",
         category: "Tutorial",
-        image: "/demo.png"
+        image: "/blog3.png"
     }
 ];
 
