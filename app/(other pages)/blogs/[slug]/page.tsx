@@ -149,7 +149,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                             </div>
                         </div>
                         {blog.image ? (
-                            <div className="mt-8 overflow-hidden rounded-2xl border border-gray-200">
+                            <div className="mt-8">
                                 <div className="relative w-full aspect-video">
                                     <Image
                                         src={blog.image}
