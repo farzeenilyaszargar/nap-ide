@@ -194,6 +194,24 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                     </h3>
                                 );
                             }
+                            if (paragraph.startsWith('![')) {
+                                const match = paragraph.match(/^!\[(.*)\]\((.*)\)$/);
+                                if (match) {
+                                    const [, alt, src] = match;
+                                    return (
+                                        <div key={index} className="my-8">
+                                            <Image
+                                                src={src}
+                                                alt={alt}
+                                                width={1600}
+                                                height={900}
+                                                className="w-full h-auto"
+                                                sizes="(min-width: 1024px) 896px, (min-width: 640px) 640px, 100vw"
+                                            />
+                                        </div>
+                                    );
+                                }
+                            }
                             // Check if it's a list item
                             if (paragraph.startsWith('- ')) {
                                 const items = paragraph.split('\n');
