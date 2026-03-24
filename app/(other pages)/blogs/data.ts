@@ -219,6 +219,26 @@ Adjust AI behavior in settings to match your preferences for verbosity, code sty
 
 We ship improvements weekly. Keep Nap updated to get the latest AI models and features.
 
+## Bonus Tips for Consistent Results
+
+Small habits add up. Try keeping a short prompt template for common tasks like "add tests", "refactor for readability", or "update documentation". Consistency helps the agents produce more predictable changes.
+
+## When to Use Agents vs Manual Edits
+
+Use agents for cross-file edits, repetitive changes, and scaffolding. For tiny one-line tweaks, manual edits are often faster. This keeps your workflow efficient and keeps you in control.
+
+## Build a Review Checklist
+
+Before committing agent changes, scan for:
+
+- Correctness against requirements
+- Consistent naming and style
+- Tests updated or added
+- Edge cases handled
+
+## Final Takeaway
+
+The goal is speed without chaos. With clear prompts, good review habits, and a stable workflow, Nap Code becomes a dependable AI coding assistant for shipping real software.`,
 ## Example Workflow for Fast Feature Delivery
 
 A simple workflow with Nap Code looks like: describe the change in plain English, let the agents propose edits across files, review the diff, then refine with a second prompt. This keeps the AI coding assistant productive while maintaining code quality and clarity.
