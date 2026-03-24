@@ -12,6 +12,7 @@ const schemaOrg = {
       "@type": "Organization",
       "@id": "https://www.nap-code.com/#organization",
       "name": "Nap Code",
+      "alternateName": "Nap",
       "url": "https://www.nap-code.com",
       "logo": "https://www.nap-code.com/logo.png",
       "sameAs": [
@@ -25,6 +26,7 @@ const schemaOrg = {
       "@id": "https://www.nap-code.com/#website",
       "url": "https://www.nap-code.com",
       "name": "Nap Code",
+      "alternateName": "Nap",
       "publisher": {
         "@id": "https://www.nap-code.com/#organization"
       }
