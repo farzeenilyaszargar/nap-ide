@@ -18,8 +18,12 @@ export const blogs: BlogPost[] = [
         slug: "introducing-nap-editor",
         title: "Introducing Nap: Orchestrated Agent Coding",
         subtitle: "Nap coordinates specialized coding agents so you can ship features across files with clarity and control.",
-        excerpt: "Today we're excited to announce the launch of Nap, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.",
-        content: `Today we're excited to announce the launch of Nap, a next-generation coding environment built for agent orchestration. Nap is a coding agent and orchestration layer that connects models and tools, not an AI model itself.
+        excerpt: "Today we're excited to announce the launch of Nap Code, a next-generation coding environment built for AI coding agents and agent orchestration. Nap is an orchestration layer that connects models and tools, not a model itself, so you can ship faster with clarity and control.",
+        content: `Today we're excited to announce the launch of Nap Code, a next-generation coding environment built for AI coding agents and agent orchestration. Nap is an orchestration layer that connects models and tools, not a model itself, so you can ship faster with clarity and control.
+
+## What Is Nap Code?
+
+Nap Code is an agentic coding environment that helps developers coordinate multiple coding agents across files and tasks. Instead of working in isolation, agents can collaborate on refactors, new features, and documentation while you stay in the loop with clear diffs and review.
 
 ## Why We Built Nap
 
@@ -36,6 +40,14 @@ Tell Nap what you want to accomplish in plain English, and it will orchestrate c
 ### Context-Aware Suggestions
 Unlike simple autocomplete, Nap's suggestions are informed by your entire codebase, making them relevant and accurate across multiple files.
 
+## Who It's For
+
+Nap Code is built for product engineers, startups, and teams that want faster iteration without losing engineering rigor. If you need a reliable AI coding assistant that understands your repo and supports multi-file edits, Nap keeps the workflow clear and reviewable.
+
+## Local-First, Developer-Friendly
+
+Your codebase context stays close to where you work, and the system is designed to minimize friction when you move from idea to code to commit. This is not a chat toy - it's a practical developer tool for shipping software.
+
 ## What's Next
 
 This is just the beginning. We're constantly improving our AI models and adding new features based on developer feedback. Stay tuned for more updates!`,
@@ -50,8 +62,8 @@ This is just the beginning. We're constantly improving our AI models and adding 
         slug: "understanding-your-codebase",
         title: "How Nap Understands Your Entire Codebase",
         subtitle: "A deeper look at how Nap builds a live map of your project to coordinate reliable changes.",
-        excerpt: "One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing and why it matters for agent orchestration.",
-        content: `One of the most powerful features of Nap is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore the technology behind our semantic code indexing and why it matters for agent orchestration.
+        excerpt: "One of the most powerful features of Nap Code is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore semantic code indexing, why it matters for AI coding agents, and how it improves multi-file changes.",
+        content: `One of the most powerful features of Nap Code is its ability to understand your entire codebase with absolute clarity. In this deep dive, we explore semantic code indexing, why it matters for AI coding agents, and how it improves multi-file changes.
 
 ## The Problem with Traditional Code Understanding
 
@@ -78,6 +90,14 @@ With this deep understanding, Nap can orchestrate coding agents that:
 - Refactor safely: it understands the ripple effects of changes across your project.
 - Answer questions accurately: ask about any part of your codebase and get informed answers.
 
+## Better Results for AI Coding Agents
+
+Semantic indexing gives your AI coding agents the exact context they need. It reduces hallucinations, makes edits consistent across files, and keeps architectural decisions aligned with your existing patterns.
+
+## Practical Benefits for Developers
+
+When the system understands your repo, you get fewer broken builds, clearer diffs, and more accurate suggestions. That means faster reviews, fewer back-and-forth fixes, and a smoother developer workflow.
+
 ## Technical Implementation
 
 Our indexing system uses a combination of static analysis, language servers, and custom parsers to extract meaning from your code. The index is stored locally and updated incrementally as you work.`,
@@ -92,8 +112,8 @@ Our indexing system uses a combination of static analysis, language servers, and
         slug: "productivity-tips",
         title: "10 Tips to Maximize Your Productivity with Nap",
         subtitle: "Practical habits and shortcuts that make agent workflows feel fast and predictable.",
-        excerpt: "Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of Nap's agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.",
-        content: `Whether you're new to Nap or a seasoned user, these 10 tips will help you get the most out of Nap's agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to supercharge your development workflow and ship code faster than ever.
+        excerpt: "Whether you're new to Nap Code or a seasoned user, these 10 tips will help you get the most out of AI coding agents and agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to ship code faster and keep quality high.",
+        content: `Whether you're new to Nap Code or a seasoned user, these 10 tips will help you get the most out of AI coding agents and agent orchestration. From keyboard shortcuts to advanced prompting techniques, learn how to ship code faster and keep quality high.
 
 ## 1. Learn the Essential Shortcuts
 
