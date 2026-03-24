@@ -74,19 +74,6 @@ export default function BlogsPage() {
             {/* Blog Slideshow */}
             <div className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 w-full">
                 <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
-                    {currentBlog.image ? (
-                        <div className="hidden sm:block w-full border-b border-gray-200 bg-white">
-                            <Image
-                                src={currentBlog.image}
-                                alt={currentBlog.title}
-                                width={1600}
-                                height={900}
-                                className="w-full h-auto"
-                                priority
-                            />
-                        </div>
-                    ) : null}
-
                     {/* Blog Content */}
                     <div className="p-6 sm:p-10 md:p-16 mx-0 sm:mx-5">
                         <div className="flex flex-wrap items-center gap-3 mb-5 sm:mb-6">
