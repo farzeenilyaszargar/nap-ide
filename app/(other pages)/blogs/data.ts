@@ -194,7 +194,7 @@ We ship improvements weekly. Keep Nap updated to get the latest AI models and fe
         date: "January 2, 2026",
         readTime: "6 min read",
         category: "Tutorial",
-        image: "/blog3.png"
+        image: "/blog3.jpg"
     }
 ];
 
