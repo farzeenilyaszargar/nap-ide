@@ -122,13 +122,9 @@ We parse comments and docstrings to understand the intent behind code, not just 
 
 A key part of reliable code understanding is parsing source files into abstract syntax trees (ASTs). ASTs represent the structure of code - functions, classes, expressions, and dependencies - in a way that machines can traverse and analyze consistently. This makes it possible to reason about code changes safely instead of relying on raw text or brittle regex heuristics.
 
-![AST visualization](/blog21.png)
-
 ## Semantic Search for Code
 
 Semantic search connects natural language queries to the code that actually implements an idea. Instead of searching for exact string matches, the system uses embeddings and structural signals to find relevant files, functions, and symbols. This is how Nap can answer questions like "where does authentication happen?" or "what validates user input?" with accurate, project-specific results.
-
-![Semantic search illustration](/blog22.webp)
 
 ## Hybrid Retrieval for Accurate Results
 
