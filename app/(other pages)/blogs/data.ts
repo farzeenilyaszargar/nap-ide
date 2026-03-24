@@ -87,7 +87,7 @@ This is just the beginning. We're constantly improving our AI models and adding 
         date: "December 15, 2025",
         readTime: "5 min read",
         category: "Announcement",
-        image: "/blog1.png"
+        image: "/blogy1.png"
     },
     {
         id: 2,
