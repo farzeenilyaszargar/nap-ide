@@ -21,7 +21,7 @@ export default function Features() {
                             />
                         </div>
                     </div>
-                    <div className="flex flex-col gap-6 bg-[#1A1A1A] rounded-md sm:rounded-lg p-7 text-right overflow-hidden md:flex-row md:items-center">
+                    <div className="flex flex-col gap-6 bg-[#1A1A1A] rounded-md sm:rounded-lg p-7 sm:text-right overflow-hidden md:flex-row md:items-center">
                         <div className="relative w-full overflow-hidden rounded-md sm:rounded-md md:w-2/3" style={{ aspectRatio: "4 / 3" }}>
                             <Image
                                 src="/featuru2.png"

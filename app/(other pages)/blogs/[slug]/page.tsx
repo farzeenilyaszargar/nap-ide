@@ -206,7 +206,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                                                 alt={alt}
                                                 width={1600}
                                                 height={900}
-                                                className={isCompact ? "h-[240px] w-auto max-w-full mx-auto sm:h-[280px]" : "w-full h-auto"}
+                                                className={isCompact ? "h-[240px] w-auto max-w-full mx-auto sm:h-[480px]" : "w-full h-auto"}
                                                 sizes="(min-width: 1024px) 896px, (min-width: 640px) 640px, 100vw"
                                             />
                                         </div>
