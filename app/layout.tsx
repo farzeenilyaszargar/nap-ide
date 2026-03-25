@@ -81,7 +81,9 @@ export const metadata: Metadata = {
     "coding",
     "download",
     "Nap download",
-    "Nap desktop"
+    "Nap desktop",
+    "download nap",
+    "ADE"
   ],
   alternates: { canonical: "https://www.nap-code.com" },
   icons: { icon: "/favicon.ico" },
@@ -98,7 +100,7 @@ export const metadata: Metadata = {
     siteName: "Nap Code",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.nap-code.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "Nap Code preview"
@@ -111,7 +113,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nap Code",
     description: "Agent orchestration platform for coding that runs multiple coding agents on your PC.",
-    images: ["/og-image.png"],
+    images: ["https://www.nap-code.com/og-image.png"],
   },
 
 };
