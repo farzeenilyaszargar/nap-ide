@@ -64,12 +64,12 @@ export const metadata: Metadata = {
   title: "Nap | Run coding agents on your PC",
   description: "Nap is an agent orchestration platform for coding that runs multiple coding agents on your PC.",
   keywords: [
-    "Nap",
-    "Nap Code",
+    "nap",
+    "nap code",
     "coding agents",
-    "AI coding agents",
-    "AI code editor",
-    "AI IDE",
+    "ai coding agents",
+    "ai code editor",
+    "ai ide",
     "code assistant",
     "agentic coding",
     "multi-file edits",
@@ -80,11 +80,12 @@ export const metadata: Metadata = {
     "code",
     "coding",
     "download",
-    "Nap download",
-    "Nap desktop",
+    "nap download",
+    "nap desktop",
     "download nap",
     "parallel coding agents",
-    "ADE"
+    "ade",
+    "agent orchestration",
   ],
   alternates: { canonical: "https://www.nap-code.com" },
   icons: { icon: "/favicon.ico" },
@@ -101,10 +102,10 @@ export const metadata: Metadata = {
     siteName: "Nap Code",
     images: [
       {
-        url: "/og-img.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nap Code preview"
+        alt: "Nap Code Preview"
       }
     ],
     locale: "en_US",
@@ -114,7 +115,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nap Code",
     description: "agent orchestration platform for coding that runs multiple coding agents on your PC.",
-    images: ["/og-img.png"],
+    images: ["/og-image.png"],
   }
 
 };
