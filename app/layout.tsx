@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     siteName: "Nap Code",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-imagee.png",
         width: 1200,
         height: 630,
         alt: "Nap Code preview"
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     title: "Nap Code",
     description: "agent orchestration platform for coding that runs multiple coding agents on your PC.",
     creator: "@farzeenilya", 
-    images: ["/og-image.png"],
+    images: ["/og-imagee.png"],
   }
 
 };
