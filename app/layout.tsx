@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     title: "Nap Code",
     description: "agent orchestration platform for coding that runs multiple coding agents on your PC.",
     creator: "@farzeenilya", 
-    images: ["/preview-og-image.png"],
+    images: ["/og-image.png"],
   }
 
 };
