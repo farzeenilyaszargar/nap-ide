@@ -53,7 +53,6 @@ export default function Home() {
       <HeroPage />
       <Features />
       <FAQs />
-
       <TryNap />
       <Footer />
     </div>
