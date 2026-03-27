@@ -19,11 +19,21 @@ export const metadata: Metadata = {
       "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
     url: "https://www.nap-code.com",
     type: "website",
+    images: [
+      {
+        url: "/og-img.png",
+        width: 1243,
+        height: 699,
+        alt: "Nap Code preview",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "Nap | Run coding agents on your PC",
     description:
       "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
+    images: ["/og-img.png"],
   },
 };
 
