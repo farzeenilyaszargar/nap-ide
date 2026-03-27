@@ -161,7 +161,7 @@ Our indexing system uses a combination of static analysis, language servers, and
         date: "December 28, 2025",
         readTime: "8 min read",
         category: "Technical",
-        image: "/blog2.png"
+        image: "/blog21.png"
     },
     {
         id: 3,
