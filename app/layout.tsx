@@ -103,9 +103,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Nap Code Preview"
+        width: 2800,
+        height: 1577,
+        alt: "Nap Code preview"
       }
     ],
     locale: "en_US",

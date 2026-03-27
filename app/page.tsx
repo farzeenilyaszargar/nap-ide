@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-img.png",
-        width: 1243,
-        height: 699,
+        url: "/og-image.png",
+        width: 2800,
+        height: 1577,
         alt: "Nap Code preview",
       },
     ],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Nap | Run coding agents on your PC",
     description:
       "Nap is an agent orchestration layer for coding. Run multiple coding agents locally to edit, refactor, and review across files with control.",
-    images: ["/og-img.png"],
+    images: ["/og-image.png"],
   },
 };
 
