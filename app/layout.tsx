@@ -83,6 +83,7 @@ export const metadata: Metadata = {
     "Nap download",
     "Nap desktop",
     "download nap",
+    "parallel coding agents",
     "ADE"
   ],
   alternates: { canonical: "https://www.nap-code.com" },
